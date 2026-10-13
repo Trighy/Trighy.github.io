@@ -2,17 +2,35 @@ const translations = {
     en: {
         greeting: "Hello, I'm Trighy / Oryn!",
         subtitle: "Autistic, INFJ, Straight, White, Male.",
-        description: "Welcome to my little refuge on the internet! Here I'll guide you through my interests and who I am. Feel free to look around, you're welcome!"
+        description: "Welcome to my little refuge on the internet! Here I'll guide you through my interests and who I am. Feel free to look around, you're welcome!",
+        gamesTitle: "Games",
+        favoritesGames: "My Favorites",
+        moviesTitle: "Movies, Series & Anime",
+        favoritesMovies: "My Favorites",
+        booksTitle: "Books & Manga",
+        favoritesBooks: "My Favorites"
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
         subtitle: "Autista, INFJ, Hétero, Branco, Homem.",
-        description: "Bem-vindo ao meu pequeno refúgio na internet! Aqui vou te guiar pelos meus interesses e quem eu sou. Fique à vontade para olhar em volta, seja bem-vindo!"
+        description: "Bem-vindo ao meu pequeno refúgio na internet! Aqui vou te guiar pelos meus interesses e quem eu sou. Fique à vontade para olhar em volta, seja bem-vindo!",
+        gamesTitle: "Jogos",
+        favoritesGames: "Meus Favoritos",
+        moviesTitle: "Filmes, Séries & Animes",
+        favoritesMovies: "Meus Favoritos",
+        booksTitle: "Livros & Mangás",
+        favoritesBooks: "Meus Favoritos"
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
         subtitle: "Autista, INFJ, Hetero, Blanco, Hombre.",
-        description: "¡Bienvenido a mi pequeño refugio en internet! Aquí te guiaré por mis intereses y quién soy. Siéntete libre de mirar a tu alrededor, ¡eres bienvenido!"
+        description: "¡Bienvenido a mi pequeño refugio en internet! Aquí te guiaré por mis intereses y quién soy. Siéntete libre de mirar a tu alrededor, ¡eres bienvenido!",
+        gamesTitle: "Juegos",
+        favoritesGames: "Mis Favoritos",
+        moviesTitle: "Películas, Series y Anime",
+        favoritesMovies: "Mis Favoritos",
+        booksTitle: "Libros y Manga",
+        favoritesBooks: "Mis Favoritos"
     }
 };
 
