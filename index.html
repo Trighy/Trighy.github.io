@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Refuge | Trighy / Oryn</title>
+    <title>Trighy / Oryn | Refúgio Ori</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Ícones gratuitos do FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonte suave do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="spirit-tree-bg"></div>
     
-    <div class="container fade-in">
+    <div class="container fade-in visible">
         <header>
             <div class="profile-pic"></div>
             <h1 data-i18n="greeting">Hello, I'm Trighy / Oryn!</h1>
@@ -35,19 +37,20 @@
         </section>
     </div>
 
-        <audio id="bgMusic" loop preload="auto">
-            <source src="musica.flac" type="audio/flac">
-        </audio>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="musica.mp3" type="audio/mpeg">
+        <source src="musica.flac" type="audio/flac">
+    </audio>
 
-        <button id="musicToggle" class="music-btn glow-button ori-light">
-            <i class="fas fa-music"></i>
-        </button>
+    <button id="musicToggle" class="music-btn glow-button ori-light">
+        <i class="fas fa-music"></i>
+    </button>
 
-        <div class="lang-switcher">
-            <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="changeLanguage('pt')">
-            <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="changeLanguage('en')">
-            <img src="https://flagcdn.com/w40/es.png" alt="Español" onclick="changeLanguage('es')">
-        </div>
+    <div class="lang-switcher">
+        <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="changeLanguage('pt')">
+        <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="changeLanguage('en')">
+        <img src="https://flagcdn.com/w40/es.png" alt="Español" onclick="changeLanguage('es')">
+    </div>
 
     <script src="script.js"></script>
 </body>
