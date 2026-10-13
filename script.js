@@ -37,32 +37,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const music = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicToggle");
-    const icon = musicBtn.querySelector("i");
-    let isPlaying = false;
 
-    if (music) {
-        music.volume = 0.3;
-        
+    if (music && musicBtn) {
+        const icon = musicBtn.querySelector("i");
+        let isPlaying = false;
+        music.volume = 0.3; 
+
         musicBtn.addEventListener("click", () => {
             if (isPlaying) {
                 music.pause();
-                icon.classList.remove("fa-pause");
-                icon.classList.add("fa-music");
+                icon.className = "fas fa-music";
                 isPlaying = false;
             } else {
-                let playPromise = music.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.then(_ => {
-                        icon.classList.remove("fa-music");
-                        icon.classList.add("fa-pause");
-                        isPlaying = true;
-                    })
-                    .catch(error => {
-                        console.error("Erro ao reproduzir a música:", error);
-                        alert("Não foi possível tocar a música. Verifique se o nome do arquivo musica.flac está exatamente igual no GitHub!");
-                    });
-                }
+                music.play().then(() => {
+                    icon.className = "fas fa-pause";
+                    isPlaying = true;
+                }).catch(error => {
+                    console.error("Erro ao tocar áudio:", error);
+                    alert("Verifique se o arquivo musica.mp3 foi enviado com esse nome exato para o GitHub!");
+                });
             }
         });
     }
+});
