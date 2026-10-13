@@ -40,18 +40,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const icon = musicBtn.querySelector("i");
     let isPlaying = false;
 
-    music.volume = 0.3; 
-
-    musicBtn.addEventListener("click", () => {
-        if (isPlaying) {
-            music.pause();
-            icon.classList.remove("fa-pause");
-            icon.classList.add("fa-music");
-        } else {
-            music.play();
-            icon.classList.remove("fa-music");
-            icon.classList.add("fa-pause");
-        }
-        isPlaying = !isPlaying;
-    });
-});
+    if (music) {
+        music.volume = 0.3;
+        
+        musicBtn.addEventListener("click", () => {
+            if (isPlaying) {
+                music.pause();
+                icon.classList.remove("fa-pause");
+                icon.classList.add("fa-music");
+                isPlaying = false;
+            } else {
+                let playPromise = music.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(_ => {
+                        icon.classList.remove("fa-music");
+                        icon.classList.add("fa-pause");
+                        isPlaying = true;
+                    })
+                    .catch(error => {
+                        console.error("Erro ao reproduzir a música:", error);
+                        alert("Não foi possível tocar a música. Verifique se o nome do arquivo musica.flac está exatamente igual no GitHub!");
+                    });
+                }
+            }
+        });
+    }
