@@ -14,12 +14,12 @@
     <div class="container fade-in">
         <header>
             <div class="profile-pic"></div>
-            <h1>Hello, I'm Trighy / Oryn!</h1>
-            <p class="subtitle">Autistic, INFJ, Straight, White, Male.</p>
+            <h1 data-i18n="greeting">Hello, I'm Trighy / Oryn!</h1>
+            <p class="subtitle" data-i18n="subtitle">Autistic, INFJ, Straight, White, Male.</p>
         </header>
 
         <section class="about">
-            <p>Welcome to my little regufe on the Internet! Here I'll guide you trought my interests and who I am. Fell free to look around, you're welcome!</p>
+            <p data-i18n="description">Welcome to my little refuge on the internet! Here I'll guide you through my interests and who I am. Feel free to look around, you're welcome!</p>
         </section>
 
         <section class="links">
@@ -34,6 +34,20 @@
             </a>
         </section>
     </div>
+
+        <audio id="bgMusic" loop>
+            <source src="musica.flac" type="audio/flac">
+        </audio>
+
+        <button id="musicToggle" class="music-btn glow-button ori-light">
+            <i class="fas fa-music"></i>
+        </button>
+
+        <div class="lang-switcher">
+            <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="changeLanguage('pt')">
+            <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="changeLanguage('en')">
+            <img src="https://flagcdn.com/w40/es.png" alt="Español" onclick="changeLanguage('es')">
+        </div>
 
     <script src="script.js"></script>
 </body>

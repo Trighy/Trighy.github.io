@@ -123,3 +123,40 @@ h1 {
     border: 2px solid #64ffda;
     box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
 }
+
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    width: 55px;
+    height: 55px;
+}
+
+.lang-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 100;
+}
+
+.lang-switcher img {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.lang-switcher img:hover {
+    opacity: 1;
+    transform: scale(1.15) translateY(-5px);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.6);
+}
