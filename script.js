@@ -46,7 +46,12 @@ const translations = {
     }
 };
 
+let currentLang = 'en'; // Idioma padrão
+
 function changeLanguage(lang) {
+    currentLang = lang;
+
+    // 1. Atualiza os textos da página
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -57,31 +62,84 @@ function changeLanguage(lang) {
             }, 200);
         }
     });
+
+    // 2. Recarrega a playlist de trailers na nova língua
+    reloadTrailersForLanguage();
 }
 
 // =========================================================
-// TRAILERS COM INCORPORAÇÃO LIBERADA PELO YOUTUBE
+// BANCO DE TRAILERS MULTI-IDIOMA (EN, PT, ES)
 // =========================================================
 const verifiedTrailers = {
     // Jogos
-    "ori and the will of the wisps": "kd0zbNw1VOg&t",
-    // "outer wilds": "d6LGNVCL13A",
-    // "oneshot": "Z_3tF19-5K8",
-    // "spiritfarer": "48X2E1s8_80",
-    
+    "ori and the will of the wisps": {
+        en: "kd0zbNw1VOg",
+        pt: "kd0zbNw1VOg",
+        es: "kd0zbNw1VOg"
+    },
+    /*
+    "outer wilds": {
+        en: "d6LGNVCL13A",
+        pt: "d6LGNVCL13A",
+        es: "d6LGNVCL13A"
+    },
+    "oneshot": {
+        en: "Z_3tF19-5K8",
+        pt: "Z_3tF19-5K8",
+        es: "Z_3tF19-5K8"
+    },
+    "spiritfarer": {
+        en: "48X2E1s8_80",
+        pt: "48X2E1s8_80",
+        es: "48X2E1s8_80"
+    },
+
     // Filmes
-    // "the wild robot": "ySCcyseywK0",
-    // "monster": "c62f2O7L-qM",
-    // "puss in boots: the last wish": "RqrXhwS333U",
+    "the wild robot": {
+        en: "67vbA5ZJ43M",
+        pt: "ySCcyseywK0",
+        es: "67vbA5ZJ43M"
+    },
+    "monster": {
+        en: "c62f2O7L-qM",
+        pt: "c62f2O7L-qM",
+        es: "c62f2O7L-qM"
+    },
+    "puss in boots: the last wish": {
+        en: "RqrXhwS333U",
+        pt: "RqrXhwS333U",
+        es: "RqrXhwS333U"
+    },
 
     // Séries
-    // "gravity falls": "X2DUpD66S68",
-    // "amphibia": "99s1S6n8mS4",
-    // "the owl house": "3d9Jg0h4d_U",
+    "gravity falls": {
+        en: "X2DUpD66S68",
+        pt: "X2DUpD66S68",
+        es: "X2DUpD66S68"
+    },
+    "amphibia": {
+        en: "99s1S6n8mS4",
+        pt: "99s1S6n8mS4",
+        es: "99s1S6n8mS4"
+    },
+    "the owl house": {
+        en: "3d9Jg0h4d_U",
+        pt: "3d9Jg0h4d_U",
+        es: "3d9Jg0h4d_U"
+    },
 
     // Animes
-    // "bna brand new animal": "d1aJ5jL0g7c",
-    // "kill la kill": "83M8N7R46R0"
+    "bna brand new animal": {
+        en: "d1aJ5jL0g7c",
+        pt: "d1aJ5jL0g7c",
+        es: "d1aJ5jL0g7c"
+    },
+    "kill la kill": {
+        en: "83M8N7R46R0",
+        pt: "83M8N7R46R0",
+        es: "83M8N7R46R0"
+    }
+    */
 };
 
 let videoQueue = [];
@@ -89,7 +147,14 @@ let currentTrailerIndex = 0;
 let youtubePlayer = null;
 let isSwitchingVideo = false;
 
-// Extrai os títulos das imagens
+// Obtém o ID do vídeo para a entrada do banco de dados (suporta formato de string simples ou objeto multi-idioma)
+function getVideoIdForCurrentLang(trailerData) {
+    if (!trailerData) return null;
+    if (typeof trailerData === 'string') return trailerData; // Para compatibilidade retroativa com string direta
+    return trailerData[currentLang] || trailerData['en'] || trailerData['pt'] || trailerData['es'];
+}
+
+// Extrai os títulos das imagens e monta a fila
 function buildTrailerPlaylist() {
     const images = document.querySelectorAll('.favorites-grid img');
     const detectedTitles = [];
@@ -101,24 +166,41 @@ function buildTrailerPlaylist() {
         }
     });
 
+    videoQueue = [];
+
     detectedTitles.forEach(title => {
         const cleanKey = title.toLowerCase();
         if (verifiedTrailers[cleanKey]) {
-            videoQueue.push({
-                title: title,
-                videoId: verifiedTrailers[cleanKey]
-            });
+            const videoId = getVideoIdForCurrentLang(verifiedTrailers[cleanKey]);
+            if (videoId) {
+                videoQueue.push({
+                    title: title,
+                    videoId: videoId
+                });
+            }
         }
     });
 
-    // Randomiza a ordem dos trailers
-    videoQueue.sort(() => Math.random() - 0.5);
-
-    if (videoQueue.length > 0) {
+    if (videoQueue.length > 0 && !youtubePlayer) {
+        // Randomiza a ordem apenas na primeira carga
+        videoQueue.sort(() => Math.random() - 0.5);
         initYouTubePlayer();
-    } else {
+    } else if (videoQueue.length === 0) {
         const badge = document.getElementById('trailer-title-badge');
         if (badge) badge.style.display = 'none';
+    }
+}
+
+// Recarrega o trailer atual quando o usuário clica para alterar o idioma da página
+function reloadTrailersForLanguage() {
+    buildTrailerPlaylist();
+
+    if (youtubePlayer && videoQueue.length > 0) {
+        currentTrailerIndex = currentTrailerIndex % videoQueue.length;
+        if (youtubePlayer.loadVideoById) {
+            youtubePlayer.loadVideoById(videoQueue[currentTrailerIndex].videoId);
+            updateTrailerBadge();
+        }
     }
 }
 
@@ -188,65 +270,14 @@ function updateTrailerBadge() {
     }
 }
 
-// ==========================================
-// CONTROLES DO TRAILER: SOM & MODO CINEMA
-// ==========================================
-
-// 1. Alternar Som do Trailer (E pausar a música de fundo para não encavalar)
-const trailerSoundBtn = document.getElementById("trailerSoundToggle");
-let isTrailerMuted = true;
-
-if (trailerSoundBtn) {
-    trailerSoundBtn.addEventListener("click", () => {
-        if (!youtubePlayer) return;
-
-        const icon = trailerSoundBtn.querySelector("i");
-        const bgMusic = document.getElementById("bgMusic");
-
-        if (isTrailerMuted) {
-            // Desmuta o trailer
-            youtubePlayer.unMute();
-            youtubePlayer.setVolume(80);
-            icon.className = "fas fa-volume-up";
-            isTrailerMuted = false;
-
-            // Se a música de fundo estiver tocando, pausa ela pra ouvir o trailer
-            if (bgMusic && !bgMusic.paused) {
-                bgMusic.pause();
-                const musicBtnIcon = document.querySelector("#musicToggle i");
-                if (musicBtnIcon) musicBtnIcon.className = "fas fa-music";
-            }
-        } else {
-            // Muta o trailer
-            youtubePlayer.mute();
-            icon.className = "fas fa-volume-mute";
-            isTrailerMuted = true;
-        }
-    });
-}
-
-// 2. Modo Cinema (Esconder / Mostrar Interface)
-const cinemaBtn = document.getElementById("cinemaModeToggle");
-if (cinemaBtn) {
-    cinemaBtn.addEventListener("click", () => {
-        document.body.classList.toggle("cinema-mode");
-        
-        const icon = cinemaBtn.querySelector("i");
-        if (document.body.classList.contains("cinema-mode")) {
-            icon.className = "fas fa-compress"; // Ícone de restaurar
-        } else {
-            icon.className = "fas fa-expand";   // Ícone de expandir
-        }
-    });
-}
-
-// Inicialização
+// Inicialização e Eventos
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
     if (container) {
         setTimeout(() => container.classList.add('visible'), 100);
     }
 
+    // 1. Controle da Música de Fundo
     const music = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicToggle");
 
@@ -271,5 +302,53 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 2. Alternar Som do Trailer (E pausar a música de fundo)
+    const trailerSoundBtn = document.getElementById("trailerSoundToggle");
+    let isTrailerMuted = true;
+
+    if (trailerSoundBtn) {
+        trailerSoundBtn.addEventListener("click", () => {
+            if (!youtubePlayer) return;
+
+            const icon = trailerSoundBtn.querySelector("i");
+
+            if (isTrailerMuted) {
+                youtubePlayer.unMute();
+                youtubePlayer.setVolume(80);
+                icon.className = "fas fa-volume-up";
+                isTrailerMuted = false;
+
+                // Pausa a música de fundo se estiver tocando
+                if (music && !music.paused) {
+                    music.pause();
+                    if (musicBtn) {
+                        const musicIcon = musicBtn.querySelector("i");
+                        if (musicIcon) musicIcon.className = "fas fa-music";
+                    }
+                }
+            } else {
+                youtubePlayer.mute();
+                icon.className = "fas fa-volume-mute";
+                isTrailerMuted = true;
+            }
+        });
+    }
+
+    // 3. Modo Cinema (Esconder / Mostrar Interface)
+    const cinemaBtn = document.getElementById("cinemaModeToggle");
+    if (cinemaBtn) {
+        cinemaBtn.addEventListener("click", () => {
+            document.body.classList.toggle("cinema-mode");
+            
+            const icon = cinemaBtn.querySelector("i");
+            if (document.body.classList.contains("cinema-mode")) {
+                icon.className = "fas fa-compress";
+            } else {
+                icon.className = "fas fa-expand";
+            }
+        });
+    }
+
+    // Inicia a geração da playlist de trailers
     buildTrailerPlaylist();
 });
