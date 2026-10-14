@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="IconePagina.png">
 </head>
 <body>
+    <!-- Fundo de vídeo dos trailers -->
+    <div id="trailer-bg-container" class="trailer-bg-container">
+        <div id="player"></div>
+        <div class="trailer-overlay"></div>
+    </div>
+
+    <!-- Fallback / Fundo antigo se o vídeo estiver desativado -->
     <div class="spirit-tree-bg"></div>
 
     <div class="container fade-in visible">
@@ -25,10 +33,13 @@
     <div class="sections-wrapper fade-in visible">
         
         <section class="category-card">
-        <h2><i class="fas fa-gamepad"></i> <span data-i18n="gamesTitle"></i>   Games</h2>
+            <h2><i class="fas fa-gamepad"></i> <span data-i18n="gamesTitle">Games</span></h2>
             <div class="links-row">
                 <a href="https://steamcommunity.com/id/Oryn76561198375640870/" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fab fa-steam"></i> Steam
+                </a>
+                <a href="https://www.xbox.com/pt-BR/play/user/Trighy3" target="_blank" class="glow-button ori-light small-btn">
+                    <i class="fas fa-xbox"></i> Xbox
                 </a>
                 <a href="https://backloggd.com/u/Trighy/" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fas fa-gamepad"></i> Backloggd
@@ -37,15 +48,15 @@
             
             <h3 data-i18n="favoritesGames">My Favorites</h3>
             <div class="favorites-grid portrait">
-                <a href="https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/9/94/Ori_and_the_Will_of_the_Wisps.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Ori and the Will of the Wisps"></a>
-                <a href="https://store.steampowered.com/app/753640/Outer_Wilds/" target="_blank"><img src="https://thumb.wikimedia.org/wikipedia/en/thumb/f/f6/Outer_Wilds_Steam_artwork.jpg/250px-Outer_Wilds_Steam_artwork.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" alt="Jogo 2"></a>
-                <a href="https://store.steampowered.com/app/420530/OneShot/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/8/81/OneShot_cover_art.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Jogo 3"></a>
-                <a href="https://store.steampowered.com/app/972660/Spiritfarer_Edicao_Farewell/" target="_blank"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202009/1416/AtfZ3Eg2SByD7EE4m1pdnr7a.jpg" alt="Jogo 4"></a>
+                <a href="https://store.steampowered.com/app/1057090/Ori_and_the_Will_of_the_Wisps/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/9/94/Ori_and_the_Will_of_the_Wisps.jpg" alt="Ori and the Will of the Wisps"></a>
+                <a href="https://store.steampowered.com/app/753640/Outer_Wilds/" target="_blank"><img src="https://thumb.wikimedia.org/wikipedia/en/thumb/f/f6/Outer_Wilds_Steam_artwork.jpg/250px-Outer_Wilds_Steam_artwork.jpg" alt="Outer Wilds"></a>
+                <a href="https://store.steampowered.com/app/420530/OneShot/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/8/81/OneShot_cover_art.png" alt="OneShot"></a>
+                <a href="https://store.steampowered.com/app/972660/Spiritfarer_Edicao_Farewell/" target="_blank"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202009/1416/AtfZ3Eg2SByD7EE4m1pdnr7a.jpg" alt="Spiritfarer"></a>
             </div>
         </section>
 
         <section class="category-card">
-        <h2><i class="fas fa-film"></i> <span data-i18n="moviesTitle"></i> Movies</h2>
+            <h2><i class="fas fa-film"></i> <span data-i18n="moviesTitle">Movies</span></h2>
             <div class="links-row">
                 <a href="https://letterboxd.com/trighy/" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fas fa-film"></i> Letterboxd
@@ -54,15 +65,15 @@
             
             <h3 data-i18n="favoritesMovies">My Favorites</h3>
             <div class="favorites-grid portrait">
-                <a href="https://www.imdb.com/title/tt29623480/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/1/0/7/1/1/9/6/1071196-the-wild-robot-0-230-0-345-crop.jpg?v=a70bdbaea0" alt="The Wild Robot"></a>
-                <a href="https://www.imdb.com/title/tt3858372/" target="_blank"><img src="https://m.media-amazon.com/images/S/pv-target-images/ba132b49c2f3b6b211f888a1a493b8f803aaa08d1ee6392b48242a6e3c9dad07.png" alt="Filme 2"></a>
-                <a href="https://www.imdb.com/title/tt3915174/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMzg0MWUzMjctYjVlOS00NzVjLWIwZDMtNzg1YzNkYzdjNTMwXkEyXkFqcGc@._V1_.jpg" alt="Filme 3"></a>
-                <a href="#" target="_blank"><img src="LINK_DO_POSTER_4" alt="Filme 4"></a>
+                <a href="https://www.imdb.com/title/tt29623480/" target="_blank"><img src="https://a.ltrbxd.com/resized/film-poster/1/0/7/1/1/9/6/1071196-the-wild-robot-0-230-0-345-crop.jpg" alt="The Wild Robot"></a>
+                <a href="https://www.imdb.com/title/tt3858372/" target="_blank"><img src="https://m.media-amazon.com/images/S/pv-target-images/ba132b49c2f3b6b211f888a1a493b8f803aaa08d1ee6392b48242a6e3c9dad07.png" alt="Monster"></a>
+                <a href="https://www.imdb.com/title/tt3915174/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMzg0MWUzMjctYjVlOS00NzVjLWIwZDMtNzg1YzNkYzdjNTMwXkEyXkFqcGc@._V1_.jpg" alt="Puss in Boots: The Last Wish"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Filme 4"></a>
             </div>
         </section>
 
         <section class="category-card">
-        <h2><i class="fas fa-tv"></i> <span data-i18n="seriesTitle"> Series</h2>
+            <h2><i class="fas fa-tv"></i> <span data-i18n="seriesTitle">Series</span></h2>
             <div class="links-row">
                 <a href="#" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fas fa-tv"></i> Serializd
@@ -71,15 +82,15 @@
             
             <h3 data-i18n="favoritesSeries">My Favorites</h3>
             <div class="favorites-grid portrait">
-                <a href="https://www.imdb.com/title/tt1865718/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMTEzNDc3MDQ2NzNeQTJeQWpwZ15BbWU4MDYzMzUwMDIx._V1_FMjpg_UX1000_.jpg" alt="Serie 1"></a>
-                <a href="https://www.imdb.com/title/tt8050740/" target="_blank"><img src="https://static.wikia.nocookie.net/amphibiapedia/images/4/45/Season_2_poster.jpg/revision/latest?cb=20210416153005" alt="Serie 2"></a>
-                <a href="https://www.imdb.com/title/tt8050756/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMWI2ZWQ3ZWItZjU2My00ZDg0LWIyMDEtNGQ1ZDdlMTVhZTg0XkEyXkFqcGc@._V1_.jpg" alt="Serie 3"></a>
-                <a href="#" target="_blank"><img src="LINK_DO_POSTER_4" alt="Serie 4"></a>
+                <a href="https://www.imdb.com/title/tt1865718/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMTEzNDc3MDQ2NzNeQTJeQWpwZ15BbWU4MDYzMzUwMDIx._V1_FMjpg_UX1000_.jpg" alt="Gravity Falls"></a>
+                <a href="https://www.imdb.com/title/tt8050740/" target="_blank"><img src="https://static.wikia.nocookie.net/amphibiapedia/images/4/45/Season_2_poster.jpg" alt="Amphibia"></a>
+                <a href="https://www.imdb.com/title/tt8050756/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMWI2ZWQ3ZWItZjU2My00ZDg0LWIyMDEtNGQ1ZDdlMTVhZTg0XkEyXkFqcGc@._V1_.jpg" alt="The Owl House"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Filme 4"></a>
             </div>
         </section>
 
         <section class="category-card">
-            <h2><i class="fas fa-star"></i> <span data-i18n="animesTitle"> Anime</h2>                  
+            <h2><i class="fas fa-star"></i> <span data-i18n="animesTitle">Anime</span></h2>
             <div class="links-row">
                 <a href="#" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fas fa-star"></i> AniList
@@ -88,15 +99,15 @@
             
             <h3 data-i18n="favoritesAnimes">My Favorites</h3>
             <div class="favorites-grid portrait">
-                <a href="https://www.imdb.com/title/tt12013558/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/pt/9/94/BNA_poster.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Anime 1"></a>
-                <a href="https://www.imdb.com/title/tt3114390/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Killlakillpromo.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Anime 2"></a>
-                <a href="#" target="_blank"><img src="LINK_DO_POSTER_3" alt="Anime 3"></a>
-                <a href="#" target="_blank"><img src="LINK_DO_POSTER_4" alt="Anime 4"></a>
+                <a href="https://www.imdb.com/title/tt12013558/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/pt/9/94/BNA_poster.jpg" alt="BNA Brand New Animal"></a>
+                <a href="https://www.imdb.com/title/tt3114390/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/a/a9/Killlakillpromo.jpg" alt="Kill la Kill"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Anime 3"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Anime 4"></a>
             </div>
         </section>
 
         <section class="category-card">
-        <h2><i class="fas fa-book"></i> <span data-i18n="booksTitle"></i> Books & Mangas</h2>
+            <h2><i class="fas fa-book"></i> <span data-i18n="booksTitle">Books & Manga</span></h2>
             <div class="links-row">
                 <a href="#" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fas fa-book-open"></i> StoryGraph
@@ -105,10 +116,10 @@
             
             <h3 data-i18n="favoritesBooks">My Favorites</h3>
             <div class="favorites-grid portrait">
-                <a href="#" target="_blank"><img src="LINK_DA_CAPA_1" alt="Livro 1"></a>
-                <a href="#" target="_blank"><img src="LINK_DA_CAPA_2" alt="Livro 2"></a>
-                <a href="#" target="_blank"><img src="LINK_DA_CAPA_3" alt="Livro 3"></a>
-                <a href="#" target="_blank"><img src="LINK_DA_CAPA_4" alt="Livro 4"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Livro 1"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Livro 2"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Livro 3"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Livro 4"></a>
             </div>
         </section>
 
@@ -119,7 +130,7 @@
         <source src="musica.flac" type="audio/flac">
     </audio>
 
-    <button id="musicToggle" class="music-btn glow-button ori-light">
+    <button id="musicToggle" class="music-btn glow-button ori-light" title="Música de Fundo">
         <i class="fas fa-music"></i>
     </button>
 
@@ -127,6 +138,11 @@
         <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="changeLanguage('pt')">
         <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="changeLanguage('en')">
         <img src="https://flagcdn.com/w40/es.png" alt="Español" onclick="changeLanguage('es')">
+    </div>
+
+    <!-- Indicador do trailer atual tocando no fundo -->
+    <div id="trailer-title-badge" class="trailer-badge">
+        <i class="fas fa-play-circle"></i> <span id="current-trailer-name">Carregando trailers...</span>
     </div>
 
     <script src="script.js"></script>
