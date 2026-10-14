@@ -59,94 +59,70 @@ function changeLanguage(lang) {
     });
 }
 
-// ==========================================
-// ALGORITMO AUTOMÁTICO DE TRAILERS DE FUNDO
-// ==========================================
-
-// Mapeamento prévio de emergência para resposta instantânea
-const fallbackTrailers = {
-    "ori and the will of the wisps": "c0i88t0K_A8",
+// =========================================================
+// BANCO DE DADOS DE TRAILERS TESTADOS (SEM BLOQUEIO DE IFRAME)
+// =========================================================
+const verifiedTrailers = {
+    // Jogos
+    "ori and the will of the wisps": "2reK8k84428",
     "outer wilds": "d6LGNVCL13A",
     "oneshot": "Z_3tF19-5K8",
     "spiritfarer": "48X2E1s8_80",
+    
+    // Filmes
     "the wild robot": "67vbA5ZJ43M",
-    "monster": "93jF7sB5N3E",
+    "monster": "c62f2O7L-qM",
     "puss in boots: the last wish": "RqrXhwS333U",
+
+    // Séries
     "gravity falls": "X2DUpD66S68",
     "amphibia": "99s1S6n8mS4",
     "the owl house": "3d9Jg0h4d_U",
+
+    // Animes
     "bna brand new animal": "d1aJ5jL0g7c",
     "kill la kill": "83M8N7R46R0"
 };
 
-let playlistItems = [];
 let videoQueue = [];
 let currentTrailerIndex = 0;
 let youtubePlayer = null;
 
-// Captura todos os títulos das imagens do HTML automaticamente
-function extractFavoritesFromPage() {
+// Extrai os títulos do HTML e seleciona os vídeos
+function buildTrailerPlaylist() {
     const images = document.querySelectorAll('.favorites-grid img');
-    const titles = [];
+    const detectedTitles = [];
 
     images.forEach(img => {
         const alt = img.getAttribute('alt');
-        // Ignora marcadores genéricos (ex: "Jogo 2", "Filme 3")
         if (alt && !alt.match(/^(Jogo|Filme|Serie|Anime|Livro)\s*\d+$/i)) {
-            titles.push(alt.trim());
+            detectedTitles.push(alt.trim());
         }
     });
 
-    return [...new Set(titles)]; // Remove duplicados se houver
-}
-
-// Busca o trailer no YouTube via API pública do Invidious
-async function fetchYouTubeTrailerId(title) {
-    // 1. Tenta pegar do fallback local instantâneo
-    const cleanKey = title.toLowerCase();
-    if (fallbackTrailers[cleanKey]) {
-        return fallbackTrailers[cleanKey];
-    }
-
-    // 2. Se não estiver no fallback, faz a busca dinâmica sem chave de API
-    try {
-        const query = encodeURIComponent(`${title} official trailer`);
-        const res = await fetch(`https://invidious.api.store/api/v1/search?q=${query}&type=video`);
-        if (res.ok) {
-            const data = await res.json();
-            if (data && data.length > 0) {
-                return data[0].videoId;
-            }
+    // Mapeia para os IDs do banco de dados
+    detectedTitles.forEach(title => {
+        const cleanKey = title.toLowerCase();
+        if (verifiedTrailers[cleanKey]) {
+            videoQueue.push({
+                title: title,
+                videoId: verifiedTrailers[cleanKey]
+            });
         }
-    } catch (e) {
-        console.warn(`Não foi possível buscar o trailer dinâmico para: ${title}`, e);
-    }
+    });
 
-    return null;
-}
-
-// Prepara a fila de vídeos
-async function buildTrailerPlaylist() {
-    playlistItems = extractFavoritesFromPage();
-    
-    // Embaralha para que a ordem dos trailers mude a cada visita à página
-    playlistItems.sort(() => Math.random() - 0.5);
-
-    for (const title of playlistItems) {
-        const videoId = await fetchYouTubeTrailerId(title);
-        if (videoId) {
-            videoQueue.push({ title, videoId });
-        }
-    }
+    // Embaralha a ordem para não rodar sempre na mesma sequência
+    videoQueue.sort(() => Math.random() - 0.5);
 
     if (videoQueue.length > 0) {
         initYouTubePlayer();
     } else {
-        document.getElementById('trailer-title-badge').style.display = 'none';
+        const badge = document.getElementById('trailer-title-badge');
+        if (badge) badge.style.display = 'none';
     }
 }
 
-// Carrega a API do YouTube
+// Inicializa o Player
 function initYouTubePlayer() {
     if (window.YT && window.YT.Player) {
         onYouTubeIframeAPIReady();
@@ -164,7 +140,7 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'autoplay': 1,
             'controls': 0,
-            'mute': 1,             // Mudo por padrão para o navegador autorizar o Autoplay
+            'mute': 1,             // Mudo para permitir autoplay no navegador
             'loop': 0,
             'showinfo': 0,
             'rel': 0,
@@ -177,15 +153,25 @@ function onYouTubeIframeAPIReady() {
                 updateTrailerBadge();
             },
             'onStateChange': (event) => {
-                // Quando o vídeo atual termina, toca o próximo
+                // Se der erro ou o vídeo terminar, pula para o próximo trailer
                 if (event.data === YT.PlayerState.ENDED) {
-                    currentTrailerIndex = (currentTrailerIndex + 1) % videoQueue.length;
-                    youtubePlayer.loadVideoById(videoQueue[currentTrailerIndex].videoId);
-                    updateTrailerBadge();
+                    playNextTrailer();
                 }
+            },
+            'onError': (event) => {
+                console.warn("Vídeo com erro/restrição. Pulando para o próximo...", event.data);
+                playNextTrailer();
             }
         }
     });
+}
+
+function playNextTrailer() {
+    currentTrailerIndex = (currentTrailerIndex + 1) % videoQueue.length;
+    if (youtubePlayer && youtubePlayer.loadVideoById) {
+        youtubePlayer.loadVideoById(videoQueue[currentTrailerIndex].videoId);
+        updateTrailerBadge();
+    }
 }
 
 function updateTrailerBadge() {
@@ -225,12 +211,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     isPlaying = true;
                 }).catch(error => {
                     console.error("Erro ao tocar áudio:", error);
-                    alert("Verifique se o arquivo musica.mp3 foi enviado com esse nome exato!");
                 });
             }
         });
     }
 
-    // Inicia a geração da fila de trailers
+    // Inicia a playlist de trailers
     buildTrailerPlaylist();
 });
