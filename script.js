@@ -5,7 +5,7 @@ const translations = {
         description: "Welcome to my little refuge on the internet! Here I'll guide you through my interests and who I am. Feel free to look around, you're welcome!",
         gamesTitle: "Games",
         favoritesGames: "My Favorites",
-        moviesTitle: "Movies & Anime",
+        moviesTitle: "Movies",
         favoritesMovies: "My Favorites",
         seriesTitle: "Series",
         favoritesSeries: "My Favorites",
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (music && musicBtn) {
         const icon = musicBtn.querySelector("i");
         let isPlaying = false;
-        music.volume = 0.3; 
+        music.volume = 0.5; 
 
         musicBtn.addEventListener("click", () => {
             if (isPlaying) {
