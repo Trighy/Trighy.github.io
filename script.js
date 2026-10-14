@@ -140,13 +140,14 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'autoplay': 1,
             'controls': 0,
-            'mute': 1,             // Mudo para permitir autoplay no navegador
+            'mute': 1,
             'loop': 0,
             'showinfo': 0,
             'rel': 0,
             'modestbranding': 1,
-            'playsinline': 1
-        },
+            'playsinline': 1,
+            'origin': window.location.origin
+        }
         events: {
             'onReady': (event) => {
                 event.target.playVideo();
