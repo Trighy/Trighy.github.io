@@ -60,17 +60,17 @@ function changeLanguage(lang) {
 }
 
 // =========================================================
-// BANCO DE DADOS DE TRAILERS TESTADOS (SEM BLOQUEIO DE IFRAME)
+// TRAILERS COM INCORPORAÇÃO LIBERADA PELO YOUTUBE
 // =========================================================
 const verifiedTrailers = {
     // Jogos
-    "ori and the will of the wisps": "2reK8k84428",
+    "ori and the will of the wisps": "ZRy8qgvBVu0",
     "outer wilds": "d6LGNVCL13A",
     "oneshot": "Z_3tF19-5K8",
     "spiritfarer": "48X2E1s8_80",
     
     // Filmes
-    "the wild robot": "67vbA5ZJ43M",
+    "the wild robot": "ySCcyseywK0",
     "monster": "c62f2O7L-qM",
     "puss in boots: the last wish": "RqrXhwS333U",
 
@@ -87,8 +87,9 @@ const verifiedTrailers = {
 let videoQueue = [];
 let currentTrailerIndex = 0;
 let youtubePlayer = null;
+let isSwitchingVideo = false;
 
-// Extrai os títulos do HTML e seleciona os vídeos
+// Extrai os títulos das imagens
 function buildTrailerPlaylist() {
     const images = document.querySelectorAll('.favorites-grid img');
     const detectedTitles = [];
@@ -100,7 +101,6 @@ function buildTrailerPlaylist() {
         }
     });
 
-    // Mapeia para os IDs do banco de dados
     detectedTitles.forEach(title => {
         const cleanKey = title.toLowerCase();
         if (verifiedTrailers[cleanKey]) {
@@ -111,7 +111,7 @@ function buildTrailerPlaylist() {
         }
     });
 
-    // Embaralha a ordem para não rodar sempre na mesma sequência
+    // Randomiza a ordem dos trailers
     videoQueue.sort(() => Math.random() - 0.5);
 
     if (videoQueue.length > 0) {
@@ -122,7 +122,6 @@ function buildTrailerPlaylist() {
     }
 }
 
-// Inicializa o Player
 function initYouTubePlayer() {
     if (window.YT && window.YT.Player) {
         onYouTubeIframeAPIReady();
@@ -146,28 +145,36 @@ function onYouTubeIframeAPIReady() {
             'rel': 0,
             'modestbranding': 1,
             'playsinline': 1,
+            'enablejsapi': 1,
             'origin': window.location.origin
-        }
+        },
         events: {
             'onReady': (event) => {
                 event.target.playVideo();
                 updateTrailerBadge();
             },
             'onStateChange': (event) => {
-                // Se der erro ou o vídeo terminar, pula para o próximo trailer
                 if (event.data === YT.PlayerState.ENDED) {
                     playNextTrailer();
                 }
             },
             'onError': (event) => {
-                console.warn("Vídeo com erro/restrição. Pulando para o próximo...", event.data);
-                playNextTrailer();
+                console.warn(`Erro no vídeo [${event.data}]. Aguardando antes de trocar...`);
+                // Evita que o player fique flicando se múltiplos vídeos falharem
+                if (!isSwitchingVideo) {
+                    isSwitchingVideo = true;
+                    setTimeout(() => {
+                        playNextTrailer();
+                        isSwitchingVideo = false;
+                    }, 1500); // Espera 1.5s antes de ir pro próximo
+                }
             }
         }
     });
 }
 
 function playNextTrailer() {
+    if (videoQueue.length === 0) return;
     currentTrailerIndex = (currentTrailerIndex + 1) % videoQueue.length;
     if (youtubePlayer && youtubePlayer.loadVideoById) {
         youtubePlayer.loadVideoById(videoQueue[currentTrailerIndex].videoId);
@@ -182,17 +189,13 @@ function updateTrailerBadge() {
     }
 }
 
-// ==========================================
-// INICIALIZAÇÃO DA PÁGINA
-// ==========================================
-
+// Inicialização
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
     if (container) {
         setTimeout(() => container.classList.add('visible'), 100);
     }
 
-    // Controle da Música de Fundo
     const music = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicToggle");
 
@@ -217,6 +220,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Inicia a playlist de trailers
     buildTrailerPlaylist();
 });
