@@ -12,7 +12,8 @@ const translations = {
         animesTitle: "Anime",
         favoritesAnimes: "My Favorites",
         booksTitle: "Books & Manga",
-        favoritesBooks: "My Favorites"
+        favoritesBooks: "My Favorites",
+        selectTrailer: "Select a Trailer"
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
@@ -27,7 +28,8 @@ const translations = {
         animesTitle: "Anime",
         favoritesAnimes: "Meus Favoritos",
         booksTitle: "Livros & Mangás",
-        favoritesBooks: "Meus Favoritos"
+        favoritesBooks: "Meus Favoritos",
+        selectTrailer: "Escolha um Trailer"
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
@@ -42,7 +44,8 @@ const translations = {
         animesTitle: "Anime",
         favoritesAnimes: "Mis Favoritos",
         booksTitle: "Libros y Manga",
-        favoritesBooks: "Mis Favoritos"
+        favoritesBooks: "Mis Favoritos",
+        selectTrailer: "Elige un Trailer"
     }
 };
 
@@ -51,7 +54,7 @@ let currentLang = 'en'; // Idioma padrão
 function changeLanguage(lang) {
     currentLang = lang;
 
-    // 1. Atualiza os textos da página
+    // 1. Atualiza os textos da página que usam data-i18n
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -63,7 +66,13 @@ function changeLanguage(lang) {
         }
     });
 
-    // 2. Recarrega a playlist de trailers na nova língua
+    // 2. Atualiza o título do cabeçalho do dropdown de trailers
+    const dropdownHeader = document.querySelector('.dropdown-header');
+    if (dropdownHeader && translations[lang] && translations[lang].selectTrailer) {
+        dropdownHeader.innerHTML = `<i class="fas fa-list"></i> ${translations[lang].selectTrailer}`;
+    }
+
+    // 3. Recarrega a playlist de trailers na nova língua
     reloadTrailersForLanguage();
 }
 
@@ -76,6 +85,11 @@ const verifiedTrailers = {
         en: "kd0zbNw1VOg",
         pt: "kd0zbNw1VOg",
         es: "kd0zbNw1VOg"
+    }
+    "outer wilds": {
+        en: "d6LGNVCL13A",
+        pt: "d6LGNVCL13A",
+        es: "d6LGNVCL13A"
     }
 };
 
