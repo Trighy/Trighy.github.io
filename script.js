@@ -85,7 +85,7 @@ const verifiedTrailers = {
         en: "kd0zbNw1VOg",
         pt: "kd0zbNw1VOg",
         es: "kd0zbNw1VOg"
-    }
+    },
     "outer wilds": {
         en: "d6LGNVCL13A",
         pt: "d6LGNVCL13A",
