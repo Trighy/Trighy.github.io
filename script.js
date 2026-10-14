@@ -97,9 +97,9 @@ const verifiedTrailers = {
         es: "ctYNBd6t4-g"
     },
     "spiritfarer": {
-        en: "YXi5H04EnN",
-        pt: "YXi5H04EnN",
-        es: "YXi5H04EnN"
+        en: "YXi5H04EnN0",
+        pt: "YXi5H04EnN0",
+        es: "YXi5H04EnN0"
     },
     "silksong": {
         en: "6XGeJwsUP9c",
