@@ -39,7 +39,7 @@
                     <i class="fab fa-steam"></i> Steam
                 </a>
                 <a href="https://www.xbox.com/pt-BR/play/user/Trighy3" target="_blank" class="glow-button ori-light small-btn">
-                    <i class="fas fa-xbox"></i> Xbox
+                    <i class="fas fa-gamepad"></i> Xbox
                 </a>
                 <a href="https://backloggd.com/u/Trighy/" target="_blank" class="glow-button ori-light small-btn">
                     <i class="fas fa-gamepad"></i> Backloggd
@@ -85,7 +85,7 @@
                 <a href="https://www.imdb.com/title/tt1865718/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMTEzNDc3MDQ2NzNeQTJeQWpwZ15BbWU4MDYzMzUwMDIx._V1_FMjpg_UX1000_.jpg" alt="Gravity Falls"></a>
                 <a href="https://www.imdb.com/title/tt8050740/" target="_blank"><img src="https://static.wikia.nocookie.net/amphibiapedia/images/4/45/Season_2_poster.jpg" alt="Amphibia"></a>
                 <a href="https://www.imdb.com/title/tt8050756/" target="_blank"><img src="https://m.media-amazon.com/images/M/MV5BMWI2ZWQ3ZWItZjU2My00ZDg0LWIyMDEtNGQ1ZDdlMTVhZTg0XkEyXkFqcGc@._V1_.jpg" alt="The Owl House"></a>
-                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Filme 4"></a>
+                <a href="#" target="_blank"><img src="https://t3.ftcdn.net/jpg/00/51/45/62/360_F_51456278_3y8SC99iozvWZZXfUdtJ21TlJaqgQHWK.jpg" alt="Serie 4"></a>
             </div>
         </section>
 
@@ -130,9 +130,23 @@
         <source src="musica.flac" type="audio/flac">
     </audio>
 
-    <button id="musicToggle" class="music-btn glow-button ori-light" title="Música de Fundo">
-        <i class="fas fa-music"></i>
-    </button>
+    <!-- Barra de Ferramentas (Canto Inferior Esquerdo) -->
+    <div class="controls-bar">
+        <!-- Botão da Música de Fundo -->
+        <button id="musicToggle" class="music-btn glow-button ori-light" title="Música de Fundo">
+            <i class="fas fa-music"></i>
+        </button>
+
+        <!-- Botão de Som do Trailer -->
+        <button id="trailerSoundToggle" class="music-btn glow-button ori-light" title="Ativar Som do Trailer">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+
+        <!-- Botão Modo Cinema (Esconder Interface) -->
+        <button id="cinemaModeToggle" class="music-btn glow-button ori-light" title="Modo Cinema (Esconder Página)">
+            <i class="fas fa-expand"></i>
+        </button>
+    </div>
 
     <div class="lang-switcher">
         <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="changeLanguage('pt')">

@@ -64,24 +64,24 @@ function changeLanguage(lang) {
 // =========================================================
 const verifiedTrailers = {
     // Jogos
-    "ori and the will of the wisps": "ZRy8qgvBVu0",
-    "outer wilds": "d6LGNVCL13A",
-    "oneshot": "Z_3tF19-5K8",
-    "spiritfarer": "48X2E1s8_80",
+    "ori and the will of the wisps": "kd0zbNw1VOg&t",
+    // "outer wilds": "d6LGNVCL13A",
+    // "oneshot": "Z_3tF19-5K8",
+    // "spiritfarer": "48X2E1s8_80",
     
     // Filmes
-    "the wild robot": "ySCcyseywK0",
-    "monster": "c62f2O7L-qM",
-    "puss in boots: the last wish": "RqrXhwS333U",
+    // "the wild robot": "ySCcyseywK0",
+    // "monster": "c62f2O7L-qM",
+    // "puss in boots: the last wish": "RqrXhwS333U",
 
     // Séries
-    "gravity falls": "X2DUpD66S68",
-    "amphibia": "99s1S6n8mS4",
-    "the owl house": "3d9Jg0h4d_U",
+    // "gravity falls": "X2DUpD66S68",
+    // "amphibia": "99s1S6n8mS4",
+    // "the owl house": "3d9Jg0h4d_U",
 
     // Animes
-    "bna brand new animal": "d1aJ5jL0g7c",
-    "kill la kill": "83M8N7R46R0"
+    // "bna brand new animal": "d1aJ5jL0g7c",
+    // "kill la kill": "83M8N7R46R0"
 };
 
 let videoQueue = [];
@@ -160,13 +160,12 @@ function onYouTubeIframeAPIReady() {
             },
             'onError': (event) => {
                 console.warn(`Erro no vídeo [${event.data}]. Aguardando antes de trocar...`);
-                // Evita que o player fique flicando se múltiplos vídeos falharem
                 if (!isSwitchingVideo) {
                     isSwitchingVideo = true;
                     setTimeout(() => {
                         playNextTrailer();
                         isSwitchingVideo = false;
-                    }, 1500); // Espera 1.5s antes de ir pro próximo
+                    }, 1500);
                 }
             }
         }
@@ -187,6 +186,58 @@ function updateTrailerBadge() {
     if (badge && videoQueue[currentTrailerIndex]) {
         badge.innerText = videoQueue[currentTrailerIndex].title;
     }
+}
+
+// ==========================================
+// CONTROLES DO TRAILER: SOM & MODO CINEMA
+// ==========================================
+
+// 1. Alternar Som do Trailer (E pausar a música de fundo para não encavalar)
+const trailerSoundBtn = document.getElementById("trailerSoundToggle");
+let isTrailerMuted = true;
+
+if (trailerSoundBtn) {
+    trailerSoundBtn.addEventListener("click", () => {
+        if (!youtubePlayer) return;
+
+        const icon = trailerSoundBtn.querySelector("i");
+        const bgMusic = document.getElementById("bgMusic");
+
+        if (isTrailerMuted) {
+            // Desmuta o trailer
+            youtubePlayer.unMute();
+            youtubePlayer.setVolume(80);
+            icon.className = "fas fa-volume-up";
+            isTrailerMuted = false;
+
+            // Se a música de fundo estiver tocando, pausa ela pra ouvir o trailer
+            if (bgMusic && !bgMusic.paused) {
+                bgMusic.pause();
+                const musicBtnIcon = document.querySelector("#musicToggle i");
+                if (musicBtnIcon) musicBtnIcon.className = "fas fa-music";
+            }
+        } else {
+            // Muta o trailer
+            youtubePlayer.mute();
+            icon.className = "fas fa-volume-mute";
+            isTrailerMuted = true;
+        }
+    });
+}
+
+// 2. Modo Cinema (Esconder / Mostrar Interface)
+const cinemaBtn = document.getElementById("cinemaModeToggle");
+if (cinemaBtn) {
+    cinemaBtn.addEventListener("click", () => {
+        document.body.classList.toggle("cinema-mode");
+        
+        const icon = cinemaBtn.querySelector("i");
+        if (document.body.classList.contains("cinema-mode")) {
+            icon.className = "fas fa-compress"; // Ícone de restaurar
+        } else {
+            icon.className = "fas fa-expand";   // Ícone de expandir
+        }
+    });
 }
 
 // Inicialização

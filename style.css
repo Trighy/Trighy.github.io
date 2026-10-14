@@ -288,24 +288,99 @@ h1 {
 .trailer-badge {
     position: fixed;
     bottom: 20px;
-    left: 20px;
-    background: rgba(0, 0, 0, 0.6);
+    left: 80px; /* Movido para a direita para não ficar em cima do botão de música */
+    background: rgba(0, 0, 0, 0.65);
     color: #fff;
-    padding: 8px 14px;
+    padding: 10px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-family: 'Quicksand', sans-serif;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     z-index: 10;
     display: flex;
     align-items: center;
     gap: 8px;
     pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.trailer-badge i {
+    color: #8a2be2; /* Cor roxa alinhada ao estilo Ori */
+}
+
+/* Agrupador de botões no canto inferior esquerdo */
+.controls-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+/* Reutiliza o estilo original dos botões */
+.controls-bar .music-btn {
+    position: relative; /* Sobrescreve o fixed individual */
+    bottom: auto;
+    left: auto;
+}
+
+/* Posiciona a badge ao lado dos 3 botões */
+.trailer-badge {
+    position: fixed;
+    bottom: 20px;
+    left: 175px; /* Espaço suficiente para os 3 botões */
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Quicksand', sans-serif;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+    transition: all 0.4s ease;
 }
 
 .trailer-badge i {
     color: #8a2be2;
+}
+
+/* ==========================================
+   MODO CINEMA (ESCONDE A INTERFACE)
+   ========================================== */
+
+/* Esconde todos os containers com transição suave */
+body.cinema-mode .container,
+body.cinema-mode .sections-wrapper,
+body.cinema-mode .lang-switcher,
+body.cinema-mode .spirit-tree-bg,
+body.cinema-mode .trailer-overlay {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+/* Libera os cliques no vídeo caso a pessoa queira interagir no fundo */
+body.cinema-mode .trailer-bg-container {
+    pointer-events: auto;
+}
+
+/* Mantém os botões visíveis, mas translúcidos até passar o mouse */
+body.cinema-mode .controls-bar,
+body.cinema-mode .trailer-badge {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+body.cinema-mode .controls-bar:hover,
+body.cinema-mode .trailer-badge:hover {
+    opacity: 1;
 }
 
 @media (max-width: 650px) {
