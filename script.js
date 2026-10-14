@@ -76,7 +76,7 @@ const verifiedTrailers = {
         en: "kd0zbNw1VOg",
         pt: "kd0zbNw1VOg",
         es: "kd0zbNw1VOg"
-    },
+    }
 };
 
 let videoQueue = [];
@@ -87,7 +87,7 @@ let isSwitchingVideo = false;
 // Obtém o ID do vídeo para a entrada do banco de dados (suporta formato de string simples ou objeto multi-idioma)
 function getVideoIdForCurrentLang(trailerData) {
     if (!trailerData) return null;
-    if (typeof trailerData === 'string') return trailerData; // Para compatibilidade retroativa com string direta
+    if (typeof trailerData === 'string') return trailerData; 
     return trailerData[currentLang] || trailerData['en'] || trailerData['pt'] || trailerData['es'];
 }
 
@@ -123,8 +123,8 @@ function buildTrailerPlaylist() {
         videoQueue.sort(() => Math.random() - 0.5);
         initYouTubePlayer();
     } else if (videoQueue.length === 0) {
-        const badge = document.getElementById('trailer-title-badge');
-        if (badge) badge.style.display = 'none';
+        const badgeContainer = document.getElementById('trailer-selector-container');
+        if (badgeContainer) badgeContainer.style.display = 'none';
     }
 }
 
@@ -200,11 +200,67 @@ function playNextTrailer() {
     }
 }
 
+// ==========================================
+// SELETOR INTERATIVO DE TRAILERS (DROPDOWN)
+// ==========================================
+
+function renderTrailerDropdown() {
+    const listContainer = document.getElementById("trailer-list");
+    if (!listContainer) return;
+
+    listContainer.innerHTML = "";
+
+    videoQueue.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "trailer-option";
+        if (index === currentTrailerIndex) li.classList.add("active");
+
+        li.innerHTML = `
+            <i class="fas ${index === currentTrailerIndex ? 'fa-play' : 'fa-film'}"></i>
+            <span>${item.title}</span>
+        `;
+
+        li.addEventListener("click", (e) => {
+            e.stopPropagation();
+            selectTrailerByIndex(index);
+            toggleTrailerDropdown(false);
+        });
+
+        listContainer.appendChild(li);
+    });
+}
+
+function selectTrailerByIndex(index) {
+    if (index < 0 || index >= videoQueue.length) return;
+
+    currentTrailerIndex = index;
+    if (youtubePlayer && youtubePlayer.loadVideoById) {
+        youtubePlayer.loadVideoById(videoQueue[currentTrailerIndex].videoId);
+        updateTrailerBadge();
+    }
+}
+
+function toggleTrailerDropdown(forceState = null) {
+    const container = document.getElementById("trailer-selector-container");
+    if (!container) return;
+
+    if (forceState !== null) {
+        container.classList.toggle("open", forceState);
+    } else {
+        container.classList.toggle("open");
+    }
+
+    if (container.classList.contains("open")) {
+        renderTrailerDropdown();
+    }
+}
+
 function updateTrailerBadge() {
     const badge = document.getElementById("current-trailer-name");
     if (badge && videoQueue[currentTrailerIndex]) {
         badge.innerText = videoQueue[currentTrailerIndex].title;
     }
+    renderTrailerDropdown();
 }
 
 // Inicialização e Eventos
@@ -221,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (music && musicBtn) {
         const icon = musicBtn.querySelector("i");
         let isPlaying = false;
-        music.volume = 0.75; 
+        music.volume = 1; 
 
         musicBtn.addEventListener("click", () => {
             if (isPlaying) {
@@ -255,7 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 icon.className = "fas fa-volume-up";
                 isTrailerMuted = false;
 
-                // Pausa a música de fundo se estiver tocando
                 if (music && !music.paused) {
                     music.pause();
                     if (musicBtn) {
@@ -285,6 +340,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 4. Seletor Interativo de Trailers (Abrir / Fechar ao clicar no badge)
+    const badgeBtn = document.getElementById("trailer-title-badge");
+    if (badgeBtn) {
+        badgeBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            toggleTrailerDropdown();
+        });
+    }
+
+    // Fecha o menu de escolha se o usuário clicar fora dele
+    document.addEventListener("click", () => {
+        toggleTrailerDropdown(false);
+    });
 
     // Inicia a geração da playlist de trailers
     buildTrailerPlaylist();

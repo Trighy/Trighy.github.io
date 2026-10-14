@@ -168,7 +168,7 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* GRID DE FAVORITOS (CAPAS DE JOGOS/FILMES) */
+/* GRID DE FAVORITOS */
 .favorites-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -255,9 +255,8 @@ h1 {
     z-index: 1000;
 }
 
-/* Estilo unificado para os botões redondos da barra de ferramentas */
 .controls-bar .music-btn {
-    position: static !important; /* Desativa o fixed individual que empilhava os botões */
+    position: static !important;
     width: 48px;
     height: 48px;
     padding: 0;
@@ -282,29 +281,151 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* INDICADOR DE NOME DO TRAILER ATUAL */
-.trailer-badge {
+/* ==========================================
+   SELETOR INTERATIVO DE TRAILERS (DROPDOWN)
+   ========================================== */
+.trailer-selector-wrapper {
     position: fixed;
     bottom: 20px;
-    left: 215px; /* Alinhado logo após os 3 botões */
-    background: rgba(0, 0, 0, 0.65);
+    left: 215px; /* Alinhado ao lado dos 3 botões */
+    z-index: 1000;
+}
+
+/* O Badge clicável */
+.trailer-badge {
+    position: relative;
+    background: rgba(15, 22, 38, 0.75);
     color: #fff;
     padding: 10px 18px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-family: 'Quicksand', sans-serif;
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    z-index: 900;
+    border: 1px solid rgba(74, 144, 226, 0.4);
     display: flex;
     align-items: center;
-    gap: 8px;
-    pointer-events: none;
-    transition: all 0.4s ease;
+    gap: 10px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.trailer-badge:hover {
+    background: rgba(74, 144, 226, 0.25);
+    border-color: #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+    transform: translateY(-2px);
 }
 
 .trailer-badge i {
     color: #8a2be2;
+}
+
+.trailer-badge i.arrow-icon {
+    font-size: 0.75rem;
+    color: #64ffda;
+    transition: transform 0.3s ease;
+    margin-left: 4px;
+}
+
+/* Gira a setinha quando abre o menu */
+.trailer-selector-wrapper.open .trailer-badge i.arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* MENU DROPDOWN (SUSPENSO ACIMA DO BADGE) */
+.trailer-dropdown {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 260px;
+    max-height: 280px;
+    background: rgba(15, 22, 38, 0.95);
+    border: 1px solid rgba(100, 255, 218, 0.4);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(100, 255, 218, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.trailer-selector-wrapper.open .trailer-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.dropdown-header {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64ffda;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+#trailer-list {
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    overflow-y: auto;
+    max-height: 220px;
+}
+
+#trailer-list::-webkit-scrollbar {
+    width: 5px;
+}
+#trailer-list::-webkit-scrollbar-thumb {
+    background: rgba(100, 255, 218, 0.3);
+    border-radius: 10px;
+}
+
+.trailer-option {
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #e2f1f8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.trailer-option i {
+    font-size: 0.75rem;
+    color: #a0b2c6;
+    width: 14px;
+}
+
+.trailer-option:hover {
+    background: rgba(74, 144, 226, 0.2);
+    color: #ffffff;
+    padding-left: 16px;
+}
+
+.trailer-option.active {
+    background: rgba(100, 255, 218, 0.15);
+    color: #64ffda;
+    font-weight: 700;
+}
+
+.trailer-option.active i {
+    color: #64ffda;
 }
 
 /* SELETOR DE IDIOMAS (CANTO INFERIOR DIREITO) */
@@ -351,13 +472,13 @@ body.cinema-mode .trailer-bg-container {
 }
 
 body.cinema-mode .controls-bar,
-body.cinema-mode .trailer-badge {
+body.cinema-mode .trailer-selector-wrapper {
     opacity: 0.25;
     transition: opacity 0.3s ease;
 }
 
 body.cinema-mode .controls-bar:hover,
-body.cinema-mode .trailer-badge:hover {
+body.cinema-mode .trailer-selector-wrapper:hover {
     opacity: 1;
 }
 
@@ -369,7 +490,12 @@ body.cinema-mode .trailer-badge:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .trailer-badge {
-        display: none; /* Esconde o nome do trailer em telas muito pequenas para não poluir */
+    .trailer-selector-wrapper {
+        left: 20px;
+        bottom: 80px;
+    }
+    
+    .trailer-dropdown {
+        width: 240px;
     }
 }
