@@ -105,6 +105,11 @@ const verifiedTrailers = {
         en: "6XGeJwsUP9c",
         pt: "6XGeJwsUP9c",
         es: "6XGeJwsUP9c"
+    },
+    "spore": {
+        en: "zi2GvqboQfY",
+        pt: "zi2GvqboQfY",
+        es: "zi2GvqboQfY"
     }
 };
 
