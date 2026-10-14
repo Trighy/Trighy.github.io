@@ -95,6 +95,16 @@ const verifiedTrailers = {
         en: "ctYNBd6t4-g",
         pt: "ctYNBd6t4-g",
         es: "ctYNBd6t4-g"
+    },
+    "spiritfarer": {
+        en: "YXi5H04EnN0",
+        pt: "YXi5H04EnN0",
+        es: "YXi5H04EnN0"
+    },
+    "silksong": {
+        en: "6XGeJwsUP9c",
+        pt: "6XGeJwsUP9c",
+        es: "6XGeJwsUP9c"
     }
 };
 
