@@ -77,69 +77,6 @@ const verifiedTrailers = {
         pt: "kd0zbNw1VOg",
         es: "kd0zbNw1VOg"
     },
-    /*
-    "outer wilds": {
-        en: "d6LGNVCL13A",
-        pt: "d6LGNVCL13A",
-        es: "d6LGNVCL13A"
-    },
-    "oneshot": {
-        en: "Z_3tF19-5K8",
-        pt: "Z_3tF19-5K8",
-        es: "Z_3tF19-5K8"
-    },
-    "spiritfarer": {
-        en: "48X2E1s8_80",
-        pt: "48X2E1s8_80",
-        es: "48X2E1s8_80"
-    },
-
-    // Filmes
-    "the wild robot": {
-        en: "67vbA5ZJ43M",
-        pt: "ySCcyseywK0",
-        es: "67vbA5ZJ43M"
-    },
-    "monster": {
-        en: "c62f2O7L-qM",
-        pt: "c62f2O7L-qM",
-        es: "c62f2O7L-qM"
-    },
-    "puss in boots: the last wish": {
-        en: "RqrXhwS333U",
-        pt: "RqrXhwS333U",
-        es: "RqrXhwS333U"
-    },
-
-    // Séries
-    "gravity falls": {
-        en: "X2DUpD66S68",
-        pt: "X2DUpD66S68",
-        es: "X2DUpD66S68"
-    },
-    "amphibia": {
-        en: "99s1S6n8mS4",
-        pt: "99s1S6n8mS4",
-        es: "99s1S6n8mS4"
-    },
-    "the owl house": {
-        en: "3d9Jg0h4d_U",
-        pt: "3d9Jg0h4d_U",
-        es: "3d9Jg0h4d_U"
-    },
-
-    // Animes
-    "bna brand new animal": {
-        en: "d1aJ5jL0g7c",
-        pt: "d1aJ5jL0g7c",
-        es: "d1aJ5jL0g7c"
-    },
-    "kill la kill": {
-        en: "83M8N7R46R0",
-        pt: "83M8N7R46R0",
-        es: "83M8N7R46R0"
-    }
-    */
 };
 
 let videoQueue = [];
