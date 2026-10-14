@@ -90,6 +90,11 @@ const verifiedTrailers = {
         en: "ZKJUMMCJvGM",
         pt: "ZKJUMMCJvGM",
         es: "ZKJUMMCJvGM"
+    },
+    "oneshot": {
+        en: "ctYNBd6t4-g",
+        pt: "ctYNBd6t4-g",
+        es: "ctYNBd6t4-g"
     }
 };
 
