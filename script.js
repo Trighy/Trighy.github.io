@@ -463,12 +463,13 @@ function startLoopCheck() {
         if (youtubePlayer && typeof youtubePlayer.getCurrentTime === 'function' && typeof youtubePlayer.getDuration === 'function') {
             const duration = youtubePlayer.getDuration();
             const currentTime = youtubePlayer.getCurrentTime();
-            if (duration > 0 && currentTime >= duration - 1.5) {
+            // Reinicia o vídeo 5 segundos antes do fim para bloquear cartões/recomendações do YouTube
+            if (duration > 0 && currentTime >= duration - 5) {
                 youtubePlayer.seekTo(0);
                 youtubePlayer.playVideo();
             }
         }
-    }, 500);
+    }, 250);
 }
 
 function onYouTubeIframeAPIReady() {
