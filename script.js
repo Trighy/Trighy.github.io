@@ -118,7 +118,7 @@ let currentTrailerIndex = 0;
 let youtubePlayer = null;
 let isSwitchingVideo = false;
 
-// Obtém o ID do vídeo para a entrada do banco de dados (suporta formato de string simples ou objeto multi-idioma)
+// Obtém o ID do vídeo para a entrada do banco de dados
 function getVideoIdForCurrentLang(trailerData) {
     if (!trailerData) return null;
     if (typeof trailerData === 'string') return trailerData; 
@@ -127,7 +127,8 @@ function getVideoIdForCurrentLang(trailerData) {
 
 // Extrai os títulos das imagens e monta a fila
 function buildTrailerPlaylist() {
-    const images = document.querySelectorAll('.favorites-grid img');
+    // Atualizado de .favorites-grid para .favorites-track
+    const images = document.querySelectorAll('.favorites-track img');
     const detectedTitles = [];
 
     images.forEach(img => {
@@ -153,7 +154,6 @@ function buildTrailerPlaylist() {
     });
 
     if (videoQueue.length > 0 && !youtubePlayer) {
-        // Randomiza a ordem apenas na primeira carga
         videoQueue.sort(() => Math.random() - 0.5);
         initYouTubePlayer();
     } else if (videoQueue.length === 0) {
@@ -237,7 +237,6 @@ function playNextTrailer() {
 // ==========================================
 // SELETOR INTERATIVO DE TRAILERS (DROPDOWN)
 // ==========================================
-
 function renderTrailerDropdown() {
     const listContainer = document.getElementById("trailer-list");
     if (!listContainer) return;
@@ -297,12 +296,80 @@ function updateTrailerBadge() {
     renderTrailerDropdown();
 }
 
-// Inicialização e Eventos
+
+// ==========================================
+// LÓGICA DO CARROSSEL INFINITO
+// ==========================================
+function initCarousels() {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('.favorites-track');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+
+        let isMoving = false; // Previne cliques duplos rápidos
+
+        // Botão PRÓXIMO (Move para a Esquerda)
+        nextBtn.addEventListener('click', () => {
+            if (isMoving) return;
+            isMoving = true;
+            
+            const items = track.querySelectorAll('a');
+            // Calcula o tamanho do item + o espaço (gap) de 15px configurado no CSS
+            const itemWidth = items[0].offsetWidth + 15; 
+
+            // Aplica a animação visual
+            track.style.transition = 'transform 0.3s ease-in-out';
+            track.style.transform = `translateX(-${itemWidth}px)`;
+
+            // Após a animação (300ms), movemos o 1º elemento pro final para criar o loop invisível
+            setTimeout(() => {
+                track.style.transition = 'none'; // Desliga a animação
+                track.appendChild(items[0]); // Joga o 1º pro fim
+                track.style.transform = 'translateX(0)'; // Reseta a posição instantaneamente
+                
+                setTimeout(() => isMoving = false, 50); // Libera o clique novamente
+            }, 300);
+        });
+
+        // Botão ANTERIOR (Move para a Direita)
+        prevBtn.addEventListener('click', () => {
+            if (isMoving) return;
+            isMoving = true;
+
+            const items = track.querySelectorAll('a');
+            const itemWidth = items[0].offsetWidth + 15;
+
+            // 1. Movemos o último elemento para o começo INSTANTANEAMENTE invisível
+            track.style.transition = 'none';
+            track.insertBefore(items[items.length - 1], items[0]);
+            
+            // 2. Colocamos o trilho deslocado para a esquerda para preparar a animação
+            track.style.transform = `translateX(-${itemWidth}px)`;
+
+            // 3. Força o navegador a reconhecer a mudança antes de animar (Reflow)
+            track.offsetHeight; 
+
+            // 4. Liga a animação e move para a posição 0 suavemente
+            track.style.transition = 'transform 0.3s ease-in-out';
+            track.style.transform = 'translateX(0)';
+
+            setTimeout(() => isMoving = false, 300);
+        });
+    });
+}
+
+
+// Inicialização e Eventos Globais
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
     if (container) {
         setTimeout(() => container.classList.add('visible'), 100);
     }
+
+    // Inicializa os Carrosseis
+    initCarousels();
 
     // 1. Controle da Música de Fundo
     const music = document.getElementById("bgMusic");
@@ -375,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. Seletor Interativo de Trailers (Abrir / Fechar ao clicar no badge)
+    // 4. Seletor Interativo de Trailers
     const badgeBtn = document.getElementById("trailer-title-badge");
     if (badgeBtn) {
         badgeBtn.addEventListener("click", (e) => {
@@ -384,7 +451,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Fecha o menu de escolha se o usuário clicar fora dele
     document.addEventListener("click", () => {
         toggleTrailerDropdown(false);
     });
