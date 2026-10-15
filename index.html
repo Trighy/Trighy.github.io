@@ -40,17 +40,6 @@
             <!-- ================= SEÇÃO JOGOS ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-gamepad"></i> <span data-i18n="gamesTitle">Games</span></h2>
-                <div class="links-row">
-                    <a href="https://steamcommunity.com/id/Oryn76561198375640870/" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fab fa-steam"></i> Steam
-                    </a>
-                    <a href="https://www.xbox.com/pt-BR/play/user/Trighy3" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fab fa-xbox"></i> Xbox
-                    </a>
-                    <a href="https://backloggd.com/u/Trighy/" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-gamepad"></i> Backloggd
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesGames">My Favorites</h3>
 
@@ -74,11 +63,6 @@
             <!-- ================= SEÇÃO FILMES ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-film"></i> <span data-i18n="moviesTitle">Movies</span></h2>
-                <div class="links-row">
-                    <a href="https://letterboxd.com/trighy/" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-film"></i> Letterboxd
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesMovies">My Favorites</h3>
 
@@ -98,11 +82,6 @@
             <!-- ================= SEÇÃO SÉRIES ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-tv"></i> <span data-i18n="seriesTitle">Series</span></h2>
-                <div class="links-row">
-                    <a href="#" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-tv"></i> Serializd
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesSeries">My Favorites</h3>
 
@@ -122,11 +101,6 @@
             <!-- ================= SEÇÃO ANIMES ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-star"></i> <span data-i18n="animesTitle">Anime</span></h2>
-                <div class="links-row">
-                    <a href="#" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-star"></i> AniList
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesAnimes">My Favorites</h3>
                 <div class="carousel-container">
@@ -144,11 +118,6 @@
             <!-- ================= SEÇÃO LIVROS ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-book"></i> <span data-i18n="booksTitle">Books</span></h2>
-                <div class="links-row">
-                    <a href="#" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-book-open"></i> StoryGraph
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesBooks">My Favorites</h3>
                 <div class="carousel-container">
@@ -164,11 +133,6 @@
             <!-- ================= SEÇÃO MANGÁS ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-book"></i> <span data-i18n="mangasTitle">Mangas</span></h2>
-                <div class="links-row">
-                    <a href="#" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-star"></i> AniList
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesMangas">My Favorites</h3>
                 <div class="carousel-container">
@@ -184,11 +148,6 @@
             <!-- ================= SEÇÃO MANHWA ================= -->
             <section class="category-card">
                 <h2><i class="fas fa-book"></i> <span data-i18n="manhwasTitle">Manhwa</span></h2>
-                <div class="links-row">
-                    <a href="#" target="_blank" class="glow-button ori-light small-btn">
-                        <i class="fas fa-star"></i> AniList
-                    </a>
-                </div>
                 
                 <h3 data-i18n="favoritesManhwa">My Favorites</h3>
                 <div class="carousel-container">
@@ -205,7 +164,7 @@
         </div>
     </div>
 
-    <!-- ================= PAINEL DE DETALHES ================= -->
+    <!-- ================= PAINEL DE DETALHES (ESQUERDA) ================= -->
     <aside id="details-panel" class="details-panel">
         <button id="close-details-btn" class="glow-button ori-light small-btn close-panel-btn">
             <i class="fas fa-arrow-left"></i>
@@ -216,13 +175,10 @@
                 <img id="details-cover" src="" alt="Capa Expandida">
                 
                 <div class="platforms-container">
-                    <!-- Botões de Jogos -->
                     <a href="#" id="platform-steam" target="_blank" class="glow-button ori-light platform-btn"><i class="fab fa-steam"></i> Steam</a>
                     <a href="#" id="platform-xbox" target="_blank" class="glow-button ori-light platform-btn"><i class="fab fa-xbox"></i> Xbox</a>
                     <a href="#" id="platform-ps" target="_blank" class="glow-button ori-light platform-btn"><i class="fab fa-playstation"></i> PS</a>
                     <a href="#" id="platform-nin" target="_blank" class="glow-button ori-light platform-btn"><i class="fas fa-gamepad"></i> Switch</a>
-                    
-                    <!-- Botões de Outras Mídias -->
                     <a href="#" id="platform-imdb" target="_blank" class="glow-button ori-light platform-btn"><i class="fab fa-imdb"></i> IMDb</a>
                     <a href="#" id="platform-anilist" target="_blank" class="glow-button ori-light platform-btn"><i class="fas fa-star"></i> AniList</a>
                     <a href="#" id="platform-book" target="_blank" class="glow-button ori-light platform-btn"><i class="fas fa-book-open"></i> Ver Livro</a>
@@ -235,6 +191,19 @@
                     <p id="details-review"></p>
                 </div>
             </div>
+        </div>
+    </aside>
+
+    <!-- ================= PAINEL DE LISTAS PESSOAIS (DIREITA) ================= -->
+    <aside id="list-panel" class="list-panel">
+        <div class="list-panel-header">
+            <h2 id="list-panel-main-title"><i class="fas fa-bookmark"></i> <span data-i18n="myListsTitle">My Status Lists</span></h2>
+            <button id="close-list-btn" class="glow-button ori-light small-btn close-panel-btn">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div id="list-panel-content" class="list-panel-content">
+            <!-- Gerado dinamicamente via JS a partir do userLists -->
         </div>
     </aside>
 
@@ -251,6 +220,10 @@
 
         <button id="trailerSoundToggle" class="music-btn glow-button ori-light" title="Ativar Som do Trailer">
             <i class="fas fa-volume-mute"></i>
+        </button>
+
+        <button id="listPanelToggle" class="music-btn glow-button ori-light" title="Minhas Listas">
+            <i class="fas fa-list-ul"></i>
         </button>
 
         <button id="cinemaModeToggle" class="music-btn glow-button ori-light" title="Modo Cinema">
