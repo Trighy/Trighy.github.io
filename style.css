@@ -188,7 +188,7 @@ h1 {
 }
 
 /* ==========================================
-   FUNDO DE VÍDEO DOS TRAILERS
+   FUNDO DE MÍDIA (TRAILERS E IMAGENS ESTÁTICAS)
    ========================================== */
 .trailer-bg-container {
     position: fixed;
@@ -223,6 +223,18 @@ body.showing-trailer .trailer-bg-container {
     left: 50%;
     transform: translate(-50%, -50%);
     border: none;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: cover;
+    object-position: center;
+    display: none;
 }
 
 .trailer-overlay {

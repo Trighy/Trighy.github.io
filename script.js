@@ -1,9 +1,10 @@
 // ==========================================
-// BANCO DE DADOS COMPLETO (REVIEWS, LINKS E TRAILERS)
+// BANCO DE DADOS COMPLETO (REVIEWS, LINKS, TRAILERS E IMAGENS)
 // ==========================================
 const itemsDatabase = {
     "ori and the will of the wisps": {
         trailer: "kd0zbNw1VOg",
+        bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1057090/",
             xbox: "https://www.xbox.com/pt-BR/games/store/ori-and-the-will-of-the-wisps/9N8CD0XZKLP4",
@@ -18,6 +19,7 @@ const itemsDatabase = {
     },
     "outer wilds": {
         trailer: "ZKJUMMCJvGM",
+        bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/753640/",
             xbox: "https://www.xbox.com/games/store/outer-wilds/B2VG2K3B29L2",
@@ -32,6 +34,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
+        bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
             xbox: "https://www.xbox.com/games/store/oneshot-world-machine-edition/9p8pqw389q60",
@@ -46,6 +49,7 @@ const itemsDatabase = {
     },
     "spiritfarer": {
         trailer: "UoS-ow4NeHE",
+        bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/972660/",
             xbox: "https://www.xbox.com/games/store/spiritfarer/9NG918349231",
@@ -60,6 +64,7 @@ const itemsDatabase = {
     },
     "silksong": {
         trailer: "6XGeJwsUP9c",
+        bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1030300/",
             xbox: "https://www.xbox.com/games/store/hollow-knight-silksong/9n116v0599bm",
@@ -74,6 +79,7 @@ const itemsDatabase = {
     },
     "spore": {
         trailer: "jVH9Q8M8eaQ",
+        bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
             xbox: null,
@@ -92,9 +98,8 @@ const itemsDatabase = {
             pt: "TbLVc8fnw7c",
             es: "pSI0XetHZCw"
         },
-        links: {
-            imdb: "https://www.imdb.com/title/tt29623480/"
-        },
+        bgImage: null,
+        links: { imdb: "https://www.imdb.com/title/tt29623480/" },
         review: {
             en: "I went to the theater to see The Wild Robot, expecting it to be a beautiful film based on the trailers—but what I actually experienced was beyond my expectations. You know when something is so beautiful that you simply run out of words to describe it? That is literally this movie. Unfortunately, this review won’t be very long because, as I mentioned, I just don’t have the words—PLEASE, just go watch it! Did you know it’s based on a book series? And that a second film, covering the second book, is already in production? I’m eagerly awaiting the trailer—and, eventually, the movie itself!",
             pt: "O Robô Selvagem, eu fui ao cinema para ver o filme pensando que séria de fato um filme bonito vendo pelos seus trailers mas oque eu acabei vendo eu não esperava, sabe quando algo é tão bonito que você não tem palavras para descrever? É literalmente esse filme, infelizmente essa review não vai ser tão longa pois, como falei anteriormente, não tenho palavras para descrever esse filme, SÓ POR FAVOR ASSISTA! inclusive sabias que ele é baseado em uma série de livros? E que o segundo filme do segundo livro já está sendo produzido? Eu estou esperando ansiosamente (no sentido bom) para o trailer eventualmente filme.",
@@ -103,6 +108,7 @@ const itemsDatabase = {
     },
     "mune: the guardian of the moon": {
         trailer: "X-YuxDOO8pU",
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3858372/" },
         review: {
             en: "If you were to ask me what my favorite animated film is, it would undoubtedly be Mune: Guardian of the Moon. Yes, the characters are generic—the scrawny protagonist is chosen to be the Guardian of the Moon, while the muscular jerk is the Guardian of the Sun, and a clever girl has to guide this trio to save their world! I won’t deny that the film is extremely generic in that regard, but—my God—what an original, beautiful, and vibrant world it has! If I had to choose just one film to show everyone in my life, this would be it, without a shadow of a doubt.",
@@ -116,6 +122,7 @@ const itemsDatabase = {
             pt: "Dyc8YANE6i8",
             es: "Q9ExW8jvVwE"
         },
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3915174/" },
         review: {
             en: "Puss in Boots: The Last Wish—what an unexpectedly incredible film! The first movie was pretty generic and largely ignored by everyone, so when a sequel was announced, I assumed it would just be another run-of-the-mill, uninspired entry. Thankfully, I—and everyone else—was wrong. My goodness, what a fantastic film! If you’re looking for something that can be silly, yet deep and serious when it needs to be—featuring multiple villains who interact with one another in a masterfully orchestrated way—or if you just need something to watch on an afternoon when you have no idea what to pick, please, watch this movie.",
@@ -129,6 +136,7 @@ const itemsDatabase = {
             pt: "cbm4lnb5vWw",
             es: "fye6jbyWfG0"
         },
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt1865718/" },
         review: {
             en: "Gravity Falls is the first in a trilogy of Disney mystery series (though not all by the same producer) that begin with a silly tone but evolve into deeply complex, unforgettable stories. I first watched it during my teenage years, and—my goodness—the mysteries, the theories, and the interactive elements are incredible! Anyone can get involved, yet those who want to dive deeper—deciphering codes and hunting for hidden secrets—will find a real challenge. How did a show like this ever get the green light from Disney? Gravity Falls is truly unique among Disney series; its very existence defies the typical Disney fare—which often consists of nothing more than endless, mindless silliness—by encouraging children to think, all while respecting their intelligence. If I had to recommend just one series for you to watch? Gravity Falls—please, give it a watch.",
@@ -138,6 +146,7 @@ const itemsDatabase = {
     },
     "amphibia": {
         trailer: "cuL48NyEL6o",
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt8050740/" },
         review: {
             en: "Amphibia is the second entry in a Disney trilogy of sorts—a collection of series (not all by the same producer) that feature deep, complex storylines, despite starting off with a silly tone and eventually evolving into unforgettable shows. I only discovered Amphibia after finishing The Owl House and looking for something similar; consequently, I ended up watching it well after it had concluded—technically in the 'wrong' order. Even so, it remains an excellent series. While it doesn't quite surpass *Gravity Falls*, if you’re looking for something that leans more into adventure than the mystery-focused style of Gravity Falls, give this show a watch. Trust me—it’s well worth pushing through the sillier moments of the first season.",
@@ -147,6 +156,7 @@ const itemsDatabase = {
     },
     "the owl house": {
         trailer: "9eoDJufrO3k",
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt8050756/" },
         review: {
             en: "The Owl House is the third entry in what I consider a trilogy of Disney series—though not produced by the same person—that share a common DNA: they begin as lighthearted, silly shows, but evolve into deeply complex, unforgettable stories. I followed The Owl House as it was being released, and to this day, I remain frustrated by Disney’s decision to cancel it and truncate its third season into just three extended episodes. If you enjoy magic, fantastical worlds, and adventures that explore differing perspectives—as well as the reality that some people are simply incapable of change—then you should watch *The Owl House*. It’s less 'silly' than Amphibia; even in its first season, it takes itself more seriously, despite the occasional lighthearted moment. It also features the most well-developed villain of the entire trio. Please, give this series a chance.",
@@ -156,6 +166,7 @@ const itemsDatabase = {
     },
     "bna brand new animal": {
         trailer: "rg8dp-AGonE",
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt12013558/" },
         review: {
             en: "Okay, I know this might look bad, but trust me—it’s a good anime. BNA: Brand New Animal—a series that, at first glance, seems like just another silly anime about a school-age girl and a serious, older guy—actually delves into themes like identity, prejudice, personal freedom, and the power of choice. It may seem frivolous on the surface, but it’s quite profound underneath. I realize it might look like 'furry bait', but please, give it a chance!",
@@ -165,6 +176,7 @@ const itemsDatabase = {
     },
     "kill la kill": {
         trailer: "B98NY8Hfo7I",
+        bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3114390/" },
         review: {
             en: "Okay, I know this might sound EVEN WORSE than BNA, but please trust me once again—this is, without a doubt, my favorite anime. If I had to choose just one anime to recommend to anyone in my life, this would be it. It features wild, frenetic action; if you’re into that, you’re going to love it. And while the way the characters gain strength might seem silly—even ridiculous—I won’t deny that; but that very absurdity is actually the core message of the show. It’s about the freedom to be yourself and express yourself however you choose—keeping your personality and dreams intact, with the determination to achieve whatever it is you desire. Please, give this anime a chance.",
@@ -174,6 +186,7 @@ const itemsDatabase = {
     },
     "of all things, i became a crow": {
         trailer: null,
+        bgImage: "https://i.pinimg.com/736x/71/8b/1b/718b1b205e0da6a1ca4a9027f9afccea.jpg",
         links: { anilist: "https://anilist.co/manga/145538/Hapirimyeon-Kkamagwiga-Doeeobeoryeotda" },
         review: {
             en: "Of All Things, I Became a Crow—let’s be honest, who doesn’t love a classic isekai? Personally, I prefer the ones that don’t just lead to an overpowered protagonist—you know, the strongest character ever trope, collecting a harem, blah, blah, blah—all that tedious stuff we’ve seen a thousand times before. I like unique *isekai* stories, and this happens to be one of them. If you’re into isekai that steer clear of the typical, absurdly overpowered hero who crushes everyone in their path—and would rather follow a crow trying to navigate a fantasy world—give this manhwa a chance.",
@@ -262,10 +275,9 @@ function changeLanguage(lang) {
             if (itemData.review && itemData.review[lang]) {
                 document.getElementById('details-review').innerText = itemData.review[lang];
             }
-            const newVideoId = getTrailerId(itemData.trailer);
-            if (newVideoId) {
-                playTrailerId(newVideoId);
-            }
+            const videoId = getTrailerId(itemData.trailer);
+            const bgImageUrl = itemData.bgImage || null;
+            showMediaBackground(videoId, bgImageUrl);
         }
     }
 }
@@ -290,7 +302,6 @@ function startLoopCheck() {
         if (youtubePlayer && typeof youtubePlayer.getCurrentTime === 'function' && typeof youtubePlayer.getDuration === 'function') {
             const duration = youtubePlayer.getDuration();
             const currentTime = youtubePlayer.getCurrentTime();
-            // Reinicia o vídeo 1.5s antes do final para evitar que o YouTube exiba a tela final de recomendações
             if (duration > 0 && currentTime >= duration - 1.5) {
                 youtubePlayer.seekTo(0);
                 youtubePlayer.playVideo();
@@ -336,6 +347,33 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
+// GERENCIADOR DE MÍDIA DE FUNDO (VÍDEO OU IMAGEM ESTÁTICA)
+function showMediaBackground(videoId, bgImageUrl) {
+    const bgImg = document.getElementById('bg-image');
+    const playerElem = document.getElementById('player');
+
+    if (videoId) {
+        if (bgImg) bgImg.style.display = 'none';
+        if (playerElem) playerElem.style.display = 'block';
+        playTrailerId(videoId);
+    } else if (bgImageUrl) {
+        if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
+            youtubePlayer.pauseVideo();
+            if (typeof youtubePlayer.mute === 'function') youtubePlayer.mute();
+        }
+        if (loopTimer) clearInterval(loopTimer);
+
+        if (playerElem) playerElem.style.display = 'none';
+        if (bgImg) {
+            bgImg.src = bgImageUrl;
+            bgImg.style.display = 'block';
+        }
+        document.body.classList.add('showing-trailer');
+    } else {
+        stopTrailer();
+    }
+}
+
 function playTrailerId(videoId) {
     if (!videoId) return;
 
@@ -367,6 +405,13 @@ function stopTrailer() {
     if (loopTimer) clearInterval(loopTimer);
     document.body.classList.remove('showing-trailer');
     currentLoadedTrailer = null;
+
+    const bgImg = document.getElementById('bg-image');
+    if (bgImg) bgImg.style.display = 'none';
+
+    const playerElem = document.getElementById('player');
+    if (playerElem) playerElem.style.display = 'block';
+
     if (youtubePlayer) {
         if (typeof youtubePlayer.pauseVideo === 'function') {
             youtubePlayer.pauseVideo();
@@ -517,11 +562,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 setupBtn('platform-book', bookUrl);
                 
                 const videoId = getTrailerId(itemData.trailer);
-                if (videoId) {
-                    playTrailerId(videoId);
-                } else {
-                    stopTrailer();
-                }
+                const bgImageUrl = itemData.bgImage || null;
+                showMediaBackground(videoId, bgImageUrl);
             } else {
                 const reviewBox = document.getElementById('details-review');
                 if (reviewBox) reviewBox.innerText = "Análise em construção...";
