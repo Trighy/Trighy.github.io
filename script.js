@@ -231,6 +231,7 @@ let youtubePlayer = null;
 let isTrailerMuted = true;
 let pendingTrailer = null;
 let currentLoadedTrailer = null;
+let loopTimer = null;
 
 function getTrailerId(trailerData) {
     if (!trailerData) return null;
@@ -283,6 +284,21 @@ function initYouTubePlayer() {
     }
 }
 
+function startLoopCheck() {
+    if (loopTimer) clearInterval(loopTimer);
+    loopTimer = setInterval(() => {
+        if (youtubePlayer && typeof youtubePlayer.getCurrentTime === 'function' && typeof youtubePlayer.getDuration === 'function') {
+            const duration = youtubePlayer.getDuration();
+            const currentTime = youtubePlayer.getCurrentTime();
+            // Reinicia o vídeo 1.5s antes do final para evitar que o YouTube exiba a tela final de recomendações
+            if (duration > 0 && currentTime >= duration - 1.5) {
+                youtubePlayer.seekTo(0);
+                youtubePlayer.playVideo();
+            }
+        }
+    }, 500);
+}
+
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
         videoId: 'kd0zbNw1VOg',
@@ -295,6 +311,7 @@ function onYouTubeIframeAPIReady() {
             'playlist': 'kd0zbNw1VOg', 
             'showinfo': 0,
             'rel': 0,
+            'iv_load_policy': 3,
             'modestbranding': 1,
             'playsinline': 1,
             'enablejsapi': 1
@@ -308,7 +325,10 @@ function onYouTubeIframeAPIReady() {
                 }
             },
             'onStateChange': (event) => {
-                if (event.data === YT.PlayerState.ENDED && youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
+                if (event.data === YT.PlayerState.PLAYING) {
+                    startLoopCheck();
+                } else if (event.data === YT.PlayerState.ENDED && youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
+                    youtubePlayer.seekTo(0);
                     youtubePlayer.playVideo(); 
                 }
             }
@@ -337,12 +357,14 @@ function playTrailerId(videoId) {
             youtubePlayer.setVolume(80);
         }
         youtubePlayer.playVideo(); 
+        startLoopCheck();
     } else {
         pendingTrailer = videoId;
     }
 }
 
 function stopTrailer() {
+    if (loopTimer) clearInterval(loopTimer);
     document.body.classList.remove('showing-trailer');
     currentLoadedTrailer = null;
     if (youtubePlayer) {
@@ -350,7 +372,7 @@ function stopTrailer() {
             youtubePlayer.pauseVideo();
         }
         if (typeof youtubePlayer.mute === 'function') {
-            youtubePlayer.mute(); // Muta o player para evitar vazamento de áudio ao fechar
+            youtubePlayer.mute();
         }
     }
 }
