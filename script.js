@@ -93,7 +93,7 @@ const itemsDatabase = {
             es: "67vbA5ZJdKQ&t"
         },
         links: {
-            steam: null, xbox: null, ps: null, nin: null
+            imdb: "https://www.imdb.com/title/tt29623480/"
         },
         review: {
             en: "An extraordinary journey of a robot adapting to nature and learning love.",
@@ -103,7 +103,7 @@ const itemsDatabase = {
     },
     "mune: the guardian of the moon": {
         trailer: "X-YuxDOO8pU",
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt3858372/" },
         review: {
             en: "A magical tale of a faun who unexpectedly becomes guardian of the moon.",
             pt: "Uma fábula mágica sobre um fauno que se torna guardião da lua.",
@@ -116,7 +116,7 @@ const itemsDatabase = {
             pt: "Dyc8YANE6i8",
             es: "Q9ExW8jvVwE"
         },
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt3915174/" },
         review: {
             en: "An animation masterclass regarding life, mortality, and fear.",
             pt: "Uma verdadeira aula de animação sobre mortalidade, valorização da vida e coragem.",
@@ -129,7 +129,7 @@ const itemsDatabase = {
             pt: "cbm4lnb5vWw",
             es: "fye6jbyWfG0"
         },
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt1865718/" },
         review: {
             en: "The gold standard of animated mystery and childhood summer adventures.",
             pt: "O ápice do mistério animado e do sentimento de férias de verão.",
@@ -138,7 +138,7 @@ const itemsDatabase = {
     },
     "amphibia": {
         trailer: "cuL48NyEL6o",
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt8050740/" },
         review: {
             en: "A beautiful coming-of-age story in a frog-inhabited world.",
             pt: "Uma jornada linda de crescimento e amizade em um mundo habitado por anfíbios.",
@@ -147,7 +147,7 @@ const itemsDatabase = {
     },
     "the owl house": {
         trailer: "9eoDJufrO3k",
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt8050756/" },
         review: {
             en: "A magical journey celebrating individuality and found family.",
             pt: "Uma aventura mágica sobre aceitar quem você é e encontrar sua família do coração.",
@@ -156,7 +156,7 @@ const itemsDatabase = {
     },
     "bna brand new animal": {
         trailer: "rg8dp-AGonE",
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt12013558/" },
         review: {
             en: "Dynamic Studio Trigger animation filled with vibrant colors and action.",
             pt: "Animação vibrante e cheia de estilo do Studio Trigger.",
@@ -165,11 +165,20 @@ const itemsDatabase = {
     },
     "kill la kill": {
         trailer: "B98NY8Hfo7I",
-        links: { steam: null, xbox: null, ps: null, nin: null },
+        links: { imdb: "https://www.imdb.com/title/tt3114390/" },
         review: {
             en: "High-octane action and unmatched visual energy.",
             pt: "Ação frenética e energia visual sem paralelos.",
             es: "Acción frenética y energía visual inigualable."
+        }
+    },
+    "of all things, i became a crow": {
+        trailer: null,
+        links: { anilist: "https://anilist.co/manga/145538/Hapirimyeon-Kkamagwiga-Doeeobeoryeotda" },
+        review: {
+            en: "A fun fantasy manhwa about being reincarnated as a crow.",
+            pt: "Um manhwa divertido de fantasia sobre ser reencarnada como uma gralha.",
+            es: "Un manhwa divertido sobre ser reencarnado como un cuervo."
         }
     }
 };
@@ -223,7 +232,6 @@ let isTrailerMuted = true;
 let pendingTrailer = null;
 let currentLoadedTrailer = null;
 
-// FUNÇÃO AUXILIAR: Extrai a ID do vídeo de acordo com o idioma ou formato
 function getTrailerId(trailerData) {
     if (!trailerData) return null;
     if (typeof trailerData === 'string') return trailerData;
@@ -253,7 +261,6 @@ function changeLanguage(lang) {
             if (itemData.review && itemData.review[lang]) {
                 document.getElementById('details-review').innerText = itemData.review[lang];
             }
-            // Troca o vídeo em tempo real para o novo idioma
             const newVideoId = getTrailerId(itemData.trailer);
             if (newVideoId) {
                 playTrailerId(newVideoId);
@@ -449,16 +456,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
+            // Reseta a visibilidade de todos os botões do painel antes de aplicar
+            ['platform-steam', 'platform-xbox', 'platform-ps', 'platform-nin', 'platform-imdb', 'platform-anilist', 'platform-book'].forEach(id => setupBtn(id, null));
+
+            const clickedHref = link.getAttribute('href');
+            const parentCard = link.closest('.category-card');
+            const cardHeader = parentCard ? parentCard.querySelector('h2').innerText.toLowerCase() : '';
+
             if (itemData) {
                 const reviewBox = document.getElementById('details-review');
                 if (reviewBox) {
                     reviewBox.innerText = itemData.review[currentLang] || itemData.review['pt'] || itemData.review['en'] || "";
                 }
 
-                setupBtn('platform-steam', itemData.links ? itemData.links.steam : link.href);
-                setupBtn('platform-xbox', itemData.links ? itemData.links.xbox : null);
-                setupBtn('platform-ps', itemData.links ? itemData.links.ps : null);
-                setupBtn('platform-nin', itemData.links ? itemData.links.nin : null);
+                const links = itemData.links || {};
+
+                // Jogos
+                let steamUrl = links.steam || (clickedHref && clickedHref.includes('steampowered.com') ? clickedHref : null);
+                setupBtn('platform-steam', steamUrl);
+                setupBtn('platform-xbox', links.xbox);
+                setupBtn('platform-ps', links.ps);
+                setupBtn('platform-nin', links.nin);
+
+                // IMDb (Filmes, Séries, Animes)
+                let imdbUrl = links.imdb || (clickedHref && clickedHref.includes('imdb.com') ? clickedHref : null);
+                setupBtn('platform-imdb', imdbUrl);
+
+                // AniList (Mangás e Manhwa)
+                let anilistUrl = links.anilist || (clickedHref && clickedHref.includes('anilist.co') ? clickedHref : null);
+                setupBtn('platform-anilist', anilistUrl);
+
+                // Livros
+                let bookUrl = links.book || links.storygraph || (cardHeader.includes('book') || cardHeader.includes('livro') ? clickedHref : null);
+                setupBtn('platform-book', bookUrl);
                 
                 const videoId = getTrailerId(itemData.trailer);
                 if (videoId) {
@@ -470,10 +500,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const reviewBox = document.getElementById('details-review');
                 if (reviewBox) reviewBox.innerText = "Análise em construção...";
                 
-                setupBtn('platform-steam', link.href);
-                setupBtn('platform-xbox', null);
-                setupBtn('platform-ps', null);
-                setupBtn('platform-nin', null);
+                // Se o item não estiver no banco, mapeia diretamente pelo link do carrossel
+                if (clickedHref && clickedHref !== '#') {
+                    if (clickedHref.includes('steampowered.com')) setupBtn('platform-steam', clickedHref);
+                    else if (clickedHref.includes('imdb.com')) setupBtn('platform-imdb', clickedHref);
+                    else if (clickedHref.includes('anilist.co')) setupBtn('platform-anilist', clickedHref);
+                    else if (cardHeader.includes('book') || cardHeader.includes('livro')) setupBtn('platform-book', clickedHref);
+                    else setupBtn('platform-steam', clickedHref);
+                }
                 
                 stopTrailer();
             }
