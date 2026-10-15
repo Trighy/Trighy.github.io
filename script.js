@@ -223,6 +223,16 @@ let isTrailerMuted = true;
 let pendingTrailer = null;
 let currentLoadedTrailer = null;
 
+// FUNÇÃO AUXILIAR: Extrai a ID do vídeo de acordo com o idioma ou formato
+function getTrailerId(trailerData) {
+    if (!trailerData) return null;
+    if (typeof trailerData === 'string') return trailerData;
+    if (typeof trailerData === 'object') {
+        return trailerData[currentLang] || trailerData['pt'] || trailerData['en'] || trailerData['es'] || null;
+    }
+    return null;
+}
+
 function changeLanguage(lang) {
     currentLang = lang;
 
@@ -239,8 +249,15 @@ function changeLanguage(lang) {
 
     if (document.body.classList.contains('panel-open') && currentOpenItemTitle) {
         const itemData = itemsDatabase[currentOpenItemTitle];
-        if (itemData && itemData.review && itemData.review[lang]) {
-            document.getElementById('details-review').innerText = itemData.review[lang];
+        if (itemData) {
+            if (itemData.review && itemData.review[lang]) {
+                document.getElementById('details-review').innerText = itemData.review[lang];
+            }
+            // Troca o vídeo em tempo real para o novo idioma
+            const newVideoId = getTrailerId(itemData.trailer);
+            if (newVideoId) {
+                playTrailerId(newVideoId);
+            }
         }
     }
 }
@@ -261,7 +278,7 @@ function initYouTubePlayer() {
 
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
-        videoId: 'kd0zbNw1VOg', // ID inicial padrão para instanciar o iframe corretamente
+        videoId: 'kd0zbNw1VOg',
         host: 'https://www.youtube.com',
         playerVars: {
             'autoplay': 0, 
@@ -320,6 +337,7 @@ function playTrailerId(videoId) {
 
 function stopTrailer() {
     document.body.classList.remove('showing-trailer');
+    currentLoadedTrailer = null;
     if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
         youtubePlayer.pauseVideo();
     }
@@ -442,8 +460,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 setupBtn('platform-ps', itemData.links ? itemData.links.ps : null);
                 setupBtn('platform-nin', itemData.links ? itemData.links.nin : null);
                 
-                if (itemData.trailer) {
-                    playTrailerId(itemData.trailer);
+                const videoId = getTrailerId(itemData.trailer);
+                if (videoId) {
+                    playTrailerId(videoId);
                 } else {
                     stopTrailer();
                 }
