@@ -223,19 +223,15 @@ const userLists = {
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVi-KkLmBs_334q_Jz2KDqj0Gp54OhNNkuubdyPh6X5RCtnZbO_jgkz_W&s=10"
         ],
         frontlog: [
-            "https://upload.wikimedia.org/wikipedia/en/9/94/Ori_and_the_Will_of_the_Wisps.jpg"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
+            "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4"
         ],
-        backlog: [
-            "https://thumb.wikimedia.org/wikipedia/en/thumb/f/f6/Outer_Wilds_Steam_artwork.jpg/250px-Outer_Wilds_Steam_artwork.jpg"
-        ]
+        backlog: []
     },
     movies: {
         title: { en: "Movies", pt: "Filmes", es: "Películas" },
         icon: "fas fa-film",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        active: [
-            "https://a.ltrbxd.com/resized/film-poster/1/0/7/1/1/9/6/1071196-the-wild-robot-0-230-0-345-crop.jpg"
-        ],
         frontlog: [],
         backlog: []
     },
@@ -243,10 +239,8 @@ const userLists = {
         title: { en: "Series", pt: "Séries", es: "Series" },
         icon: "fas fa-tv",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        active: [
-            "https://m.media-amazon.com/images/M/MV5BMTEzNDc3MDQ2NzNeQTJeQWpwZ15BbWU4MDYzMzUwMDIx._V1_FMjpg_UX1000_.jpg"
-        ],
-        frontlog: [],
+        active: [],
+        frontlog: ["https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_.jpg"],
         backlog: []
     },
     animes: {
@@ -277,9 +271,7 @@ const userLists = {
         title: { en: "Manhwa", pt: "Manhwa", es: "Manhwa" },
         icon: "fas fa-book-reader",
         activeLabel: { en: "Reading", pt: "Lendo", es: "Leyendo" },
-        active: [
-            "https://static.wikia.nocookie.net/asurascans/images/9/95/OATIBAC.webp/revision/latest?cb=20220720044928"
-        ],
+        active: [],
         frontlog: [],
         backlog: []
     }
