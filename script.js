@@ -53,9 +53,9 @@ const itemsDatabase = {
             nin: "https://www.nintendo.com/store/products/spiritfarer-farewell-edition-switch/"
         },
         review: {
-            en: "A cozy management game about saying goodbye.",
-            pt: "Um jogo aconchegante sobre amar e aprender a dizer adeus.",
-            es: "Un juego acogedor de gestión sobre decir adiós."
+            en: "To this day, I have only ever attended one funeral—it was for a family member, though not someone particularly close to me. Even so, while I didn’t cry, I still felt a sense of sadness. The game *Spiritfarer* carries a similar, melancholic tone; it places you in the role of—for lack of a better term—Death itself, the being who guides souls into the afterlife. It’s a game filled with NPCs so full of personality that you’ll inevitably grow fond of them. If you enjoy management games and vibrant, lifelike characters, you will both love and hate *Spiritfarer*. Because, like it or not, you have to fulfill the final wishes of every spirit, learn how to say goodbye, and cherish every moment of a life that could end at any time.",
+            pt: "Olha até hoje na minha vida eu só fui em um único funeral, era é uma pessoa da minha família mas não tão próximo á mim, mesmo assim, apessar de não chorar eu me senti triste e esse jogo, 'Spiritfarer' ele é melancólico, um melancólico que te faz ser oque podemos disser a morte, áquele ser que guia almas para o além, é um jogo com NPC's cheios de personalidade e que vais acabar se apaixonando, se gostas de jogo de gerenciamento e NPC's vivos, vais amar e ao mesmo tempo odiar 'Spiritfarer', por que querendo ou não, terás que atender os últimos desejos de cada espirito, aprender a disser adeus e á aproveitar cada momento nessa vida que não sabemos quando acabara.",
+            es: "Hasta el día de hoy, solo he asistido a un funeral en mi vida; era un familiar, aunque no muy cercano a mí. Aun así, a pesar de no llorar, me sentí triste. Y este juego, 'Spiritfarer', es melancólico; una melancolía que te lleva a encarnar —por así decirlo— a la muerte, a ese ser que guía a las almas hacia el más allá. Es un juego con personajes no jugables (NPCs) llenos de personalidad, de los que terminarás encariñándote. Si te gustan los juegos de gestión y los personajes con mucha vida, amarás y, al mismo tiempo, odiarás 'Spiritfarer', porque, quieras o no, tendrás que cumplir los últimos deseos de cada espíritu, aprender a decir adiós y aprovechar cada instante de esta vida, de la cual no sabemos cuándo llegará a su fin."
         }
     },
     "silksong": {
@@ -67,9 +67,9 @@ const itemsDatabase = {
             nin: null
         },
         review: {
-            en: "Highly anticipated action-platformer sequel.",
-            pt: "Uma das sequências mais aguardadas do mundo dos jogos.",
-            es: "Una de las secuelas más esperadas."
+            en: "I still can’t believe that this WONDERFUL, INCREDIBLE game—which I’ve been waiting for for SO many years—was released on my birthday! September 4th! And let me just say, this game managed to exceed the immense expectations the entire community had for the sequel to Hollow Knight. If you love a Metroidvania that drops you right into a living, breathing world and essentially says, 'Figure it out—use your own gaming skills to conquer this'—all while featuring a story that runs deep and connects back to the first game—then you have to play this. Aside from Ori and the Will of the Wisps, this is the one other game I BEG everyone in my life to play. And don’t even try to tell me, 'Oh, it’s too expensive'—it’s dirt cheap! In my local currency, it’s half the price of *Ori and the Will of the Wisps* and a quarter of the price of a AAA title. Even if you didn’t like Ori, please, give Silksong a try.",
+            pt: "Eu ainda não creio que esse jogo MARAVILHOSO, INCRIVEL que estive esperando por MUITOS anos lançou na mesma data do meu aniversario! 4 de setembro e me deixe disser como esse jogo conseguiu superar as expectativas imensas que toda a comunidade tinha para a continuação de Hollow Knight. Se você adora um metroidvania que te taca no meio do mundo em um mundo vivo e fala se vira ae use suas habilidades de jogador para vencer esse jogo e uma historia que se aprofunda e se conecta ao primeiro jogo, jogue esse jogo, se alguém nega de jogar Ori and the Will of the Wisps, esse é o segundo jogo que eu IMPLORO para qualquer um da minha vida, jogar. E nem venha com essa 'ah é muito caro' É BARATO PRA CARAMBA, aqui na minha moeda? metade do preço do Ori and the Will of the Wisps, um quarto do preço de um triplo AAA, se você não gostou de Ori, por favor, tente Silksong.",
+            es: "¡Todavía no puedo creer que este juego MARAVILLOSO e INCREÍBLE, que he estado esperando durante MUCHOS años, se haya lanzado justo el día de mi cumpleaños! El 4 de septiembre. Y tengo que decir que este juego logró superar las inmensas expectativas que toda la comunidad tenía para la continuación de Hollow Knight. Si te encantan los *metroidvania* que te sueltan en medio de un mundo vivo y te dicen '¡espabílate y usa tus habilidades como jugador para superar el desafío!', junto con una historia que profundiza y conecta con el primer título, ¡tienes que jugar a este juego! Si ya de por sí recomiendo encarecidamente Ori and the Will of the Wisps, este es el segundo título que le IMPLORO a todo el mundo que pruebe. Y ni se te ocurra decir 'es que es muy caro': ¡es baratísimo! En mi moneda, cuesta la mitad que Ori and the Will of the Wisps y una cuarta parte de lo que vale un juego 'triple A'. Si no te gustó Ori, por favor, dale una oportunidad a Silksong."
         }
     },
     "spore": {
@@ -81,33 +81,33 @@ const itemsDatabase = {
             nin: null
         },
         review: {
-            en: "Create and evolve your species from microscopic organism to galactic ruler.",
-            pt: "Crie e evolua sua espécie desde uma ameba até o domínio da galáxia.",
-            es: "Crea y evoluciona tu especie desde una célula até un imperio galáctico."
+            en: "Spore—what an incredible game from my childhood! If you enjoy The Sims (it was made by the same creators) or games that combine multiple gameplay styles into one, please give Spore a try. There is—and I dare say this—absolutely nothing else like it; it is an exceptionally unique game with a distinct personality, and you can really feel that it was crafted with care. It was originally intended to be more detailed, but the developers decided to simplify things—partly to appeal to a younger audience and partly due to budget constraints. Regardless, even if you end up only enjoying the creature stage and not the space stage (which is quite extensive if you play all the way to the end), please, give it a chance.",
+            pt: "Spore, que jogo da minha infacia incrível! Se você gosta de The Sims (feito pelos mesmos criadores de The Sims) ou jogos que inclui múltiplos estilos de jogos em um único só, por favor de uma chance á Spore, não tem NENHUM eu ouso disser, NENHUM outro jogo parecido com Spore, é um jogo extremamente único e com sua própria personalidade e da para sentir que ele foi feito com carinho, era para ele originalmente ser mais detalhado mas decidiram simplificar as coisas por questão de chamar mais atenção do público menor e também por custos, mas de qualquer forma, por favor mesmo que você acabe só gostando do estagio criatura e não goste do estagio espacial (que também é BEM longo se fores até o final do jogo) de uma chance.",
+            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detallado, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
         }
     },
     "the wild robot": {
         trailer: {
-            en: "67vbA5ZJdKQ&t",
+            en: "pSI0XetHZCw",
             pt: "TbLVc8fnw7c",
-            es: "67vbA5ZJdKQ&t"
+            es: "pSI0XetHZCw"
         },
         links: {
             imdb: "https://www.imdb.com/title/tt29623480/"
         },
         review: {
-            en: "An extraordinary journey of a robot adapting to nature and learning love.",
-            pt: "Uma jornada extraordinária de uma robô adaptando-se à natureza e descobrindo a maternidade.",
-            es: "Un viaje extraordinario de un robot adaptándose a la naturaleza."
+            en: "I went to the theater to see The Wild Robot, expecting it to be a beautiful film based on the trailers—but what I actually experienced was beyond my expectations. You know when something is so beautiful that you simply run out of words to describe it? That is literally this movie. Unfortunately, this review won’t be very long because, as I mentioned, I just don’t have the words—PLEASE, just go watch it! Did you know it’s based on a book series? And that a second film, covering the second book, is already in production? I’m eagerly awaiting the trailer—and, eventually, the movie itself!",
+            pt: "O Robô Selvagem, eu fui ao cinema para ver o filme pensando que séria de fato um filme bonito vendo pelos seus trailers mas oque eu acabei vendo eu não esperava, sabe quando algo é tão bonito que você não tem palavras para descrever? É literalmente esse filme, infelizmente essa review não vai ser tão longa pois, como falei anteriormente, não tenho palavras para descrever esse filme, SÓ POR FAVOR ASSISTA! inclusive sabias que ele é baseado em uma série de livros? E que o segundo filme do segundo livro já está sendo produzido? Eu estou esperando ansiosamente (no sentido bom) para o trailer eventualmente filme.",
+            es: "Fui al cine a ver Robot salvaje, pensando —a juzgar por los tráileres— que sería una película realmente hermosa; pero lo que vi superó mis expectativas. ¿Sabes cuando algo es tan bonito que te faltan palabras para describirlo? Pues así es, literalmente, esta película. Lamentablemente, esta reseña no será muy larga porque, como dije antes, no tengo palabras para describirla; ¡solo, por favor, mírala! Por cierto, ¿sabías que está basada en una serie de libros? ¿Y que ya se está produciendo la segunda parte, basada en el segundo libro? ¡Espero con muchas ganas el tráiler de la próxima película!"
         }
     },
     "mune: the guardian of the moon": {
         trailer: "X-YuxDOO8pU",
         links: { imdb: "https://www.imdb.com/title/tt3858372/" },
         review: {
-            en: "A magical tale of a faun who unexpectedly becomes guardian of the moon.",
-            pt: "Uma fábula mágica sobre um fauno que se torna guardião da lua.",
-            es: "Un cuento mágico sobre un fauno que se convierte en guardián de la luna."
+            en: "If you were to ask me what my favorite animated film is, it would undoubtedly be Mune: Guardian of the Moon. Yes, the characters are generic—the scrawny protagonist is chosen to be the Guardian of the Moon, while the muscular jerk is the Guardian of the Sun, and a clever girl has to guide this trio to save their world! I won’t deny that the film is extremely generic in that regard, but—my God—what an original, beautiful, and vibrant world it has! If I had to choose just one film to show everyone in my life, this would be it, without a shadow of a doubt.",
+            pt: "Mune o Guardião da Lua, se você me perguntar qual é o meu filme de animação favorito, é esse sem dúvidas, sim os personagens são genéricos o protagonista que parece com um magricelo é escolhido para ser o guardião da lua, enquanto o musculoso babaca é o guardião do sol e a garota inteligente tem que guiar esse trio para salvar o mundo deles! Sim, nessa questão o filme é extremamente genérico não nego disso, mas MEU DEUS QUE MUNDO ORIGINAL, LINDO E VIVO. Esse é o filme, que se for para eu escolher para mostrar um único filme á todo mundo da minha vida, é esse sem sequer uma dúvida, esse filme.",
+            es: "Mune, el guardián de la Luna: si me preguntas cuál es mi película de animación favorita, es esta, sin lugar a dudas. Sí, los personajes son genéricos: el protagonista —que parece un tipo escuálido— es elegido para ser el guardián de la Luna, mientras que el musculoso imbécil es el guardián del Sol, ¡y la chica inteligente tiene que guiar a este trío para salvar su mundo! Es cierto, en ese aspecto la película es extremadamente genérica, no lo niego; pero, ¡Dios mío, qué mundo tan original, hermoso y lleno de vida! Si tuviera que elegir una sola película para mostrársela a todas las personas importantes de mi vida, sería esta, sin la menor duda."
         }
     },
     "puss in boots: the last wish": {
@@ -118,9 +118,9 @@ const itemsDatabase = {
         },
         links: { imdb: "https://www.imdb.com/title/tt3915174/" },
         review: {
-            en: "An animation masterclass regarding life, mortality, and fear.",
-            pt: "Uma verdadeira aula de animação sobre mortalidade, valorização da vida e coragem.",
-            es: "Una obra maestra de la animación sobre la vida y la mortalidad."
+            en: "Puss in Boots: The Last Wish—what an unexpectedly incredible film! The first movie was pretty generic and largely ignored by everyone, so when a sequel was announced, I assumed it would just be another run-of-the-mill, uninspired entry. Thankfully, I—and everyone else—was wrong. My goodness, what a fantastic film! If you’re looking for something that can be silly, yet deep and serious when it needs to be—featuring multiple villains who interact with one another in a masterfully orchestrated way—or if you just need something to watch on an afternoon when you have no idea what to pick, please, watch this movie.",
+            pt: "Gato de Botas e o último desejo, que filme inesperadamente incrível, o primeiro filme foi um filme genérico e que ninguém deu bola basicamente, então quando anunciaram uma continuação eu pensei que séria mais um genérico com nada de diferente, ainda bem que eu e todo mundo estava errado, pois MEU DEUS que filme simplesmente BOM, se queres um filme bobo mas quando é necessário profundo e sério com múltiplos vilões que conseguem se interagir entre si de uma forma muito bem orchestrada ou um filme para assistir em uma tarde sem ideia de oque assistir? Por favor, assista esse filme. ",
+            es: "El Gato con Botas: El último deseo — ¡qué película tan increíble e inesperada! La primera entrega fue bastante genérica y, básicamente, a nadie le importó; por eso, cuando anunciaron una secuela, pensé que sería otra película genérica más, sin nada especial. Menos mal que yo —y todo el mundo— estábamos equivocados, porque, ¡madre mía!, ¡qué película tan buena! ¿Buscas algo que sea divertido y ligero, pero que a la vez sepa ponerse serio y profundo cuando hace falta? ¿Quieres una historia con varios villanos que interactúan entre sí de una forma magistralmente orquestada? ¿O simplemente no sabes qué ver una tarde cualquiera? ¡Por favor, mira esta película!"
         }
     },
     "gravity falls": {
@@ -131,54 +131,54 @@ const itemsDatabase = {
         },
         links: { imdb: "https://www.imdb.com/title/tt1865718/" },
         review: {
-            en: "The gold standard of animated mystery and childhood summer adventures.",
-            pt: "O ápice do mistério animado e do sentimento de férias de verão.",
-            es: "El estándar de oro del misterio animado."
+            en: "Gravity Falls is the first in a trilogy of Disney mystery series (though not all by the same producer) that begin with a silly tone but evolve into deeply complex, unforgettable stories. I first watched it during my teenage years, and—my goodness—the mysteries, the theories, and the interactive elements are incredible! Anyone can get involved, yet those who want to dive deeper—deciphering codes and hunting for hidden secrets—will find a real challenge. How did a show like this ever get the green light from Disney? Gravity Falls is truly unique among Disney series; its very existence defies the typical Disney fare—which often consists of nothing more than endless, mindless silliness—by encouraging children to think, all while respecting their intelligence. If I had to recommend just one series for you to watch? Gravity Falls—please, give it a watch.",
+            pt: "Gravity Falls, a primeira séria da Disney da Trilogia (não do mesmo produtor) das séries de mistério e historias extremamente profundas que começam de forma boba e que lá para frente se tornam séries inesquecíveis, esse como sendo o primero eu vi na minha adolescência e meu deus os mistérios, teorias formas de feitas que qualquer um pode participar mas ao mesmo tempo quem se aprofunda em cifras e caçar mistérios tem com oque se desafiar em uma série que de alguma forma passou o greenlight da Disney de todas as coisas? Gravity Falls é único em questão de série DA Disney, a sua mera existência desafia todas as outras séries da Disney que são apenas coisas bobas com mais coisa bobas, fazendo as crianças pensar e não questionando suas inteligências. Se for para eu escolher para veres uma única série? Gravity Falls, por favor, assista.",
+            es: "Gravity Falls es la primera de una trilogía de series de Disney (aunque no del mismo productor) centradas en el misterio y en tramas sumamente profundas; comienzan de manera sencilla y desenfadada, pero con el tiempo se transforman en obras inolvidables. Siendo la primera de ellas, la vi durante mi adolescencia y, ¡madre mía!, los misterios, las teorías y la forma en que están planteados permiten que cualquiera participe; al mismo tiempo, quienes deciden profundizar —descifrando códigos y buscando enigmas— encuentran un verdadero desafío. ¿Cómo es posible que una serie así recibiera luz verde de Disney? Gravity Falls es única dentro del catálogo de Disney; su mera existencia desafía al resto de sus producciones —que suelen limitarse a contenidos triviales—, invitando a los niños a pensar y respetando su inteligencia. Si tuviera que recomendarte una sola serie, sería Gravity Falls. Por favor, mírala."
         }
     },
     "amphibia": {
         trailer: "cuL48NyEL6o",
         links: { imdb: "https://www.imdb.com/title/tt8050740/" },
         review: {
-            en: "A beautiful coming-of-age story in a frog-inhabited world.",
-            pt: "Uma jornada linda de crescimento e amizade em um mundo habitado por anfíbios.",
-            es: "Una hermosa historia de crecimiento y amistad."
+            en: "Amphibia is the second entry in a Disney trilogy of sorts—a collection of series (not all by the same producer) that feature deep, complex storylines, despite starting off with a silly tone and eventually evolving into unforgettable shows. I only discovered Amphibia after finishing The Owl House and looking for something similar; consequently, I ended up watching it well after it had concluded—technically in the 'wrong' order. Even so, it remains an excellent series. While it doesn't quite surpass *Gravity Falls*, if you’re looking for something that leans more into adventure than the mystery-focused style of Gravity Falls, give this show a watch. Trust me—it’s well worth pushing through the sillier moments of the first season.",
+            pt: "Amphibia, a segunda série da Disney da Trilogia (não do mesmo produtor) das séries de mistério e historias extremamente profundas que começam de forma boba e que lá para frente se tornam séries inesquecíveis, esse como sendo o segundo eu acabei vendo bem depois da sua finalização, sinceramente só descobri sua existência após ter assistido The Owl House e procurando algo similar para assistir, mesmo assim, eu acidentalmente vendo na ordem supostamente 'errada', ainda é uma série muito boa, não ultrapassa Gravity Falls, mas se queres algo com mais aventura do que mistério que é Gravity Falls, assista essa série, confie em mim, valera apena as coisas bobas da primeira temporada.",
+            es: "Amphibia es la segunda entrega de una trilogía de series de Disney (aunque no del mismo productor) caracterizadas por sus misterios y tramas sumamente profundas; comienzan de manera desenfadada, pero con el tiempo se transforman en obras inolvidables. En mi caso, al ser la segunda, la vi mucho después de que hubiera concluido. De hecho, solo descubrí su existencia tras haber visto The Owl House y buscar algo similar. A pesar de haberla visto en un orden supuestamente 'incorrecto', sigue siendo una serie excelente. Si bien no llega al nivel de *Gravity Falls*, si buscas algo con más aventura —a diferencia de Gravity Falls, que se centra más en el misterio—, dale una oportunidad. Créeme, valdrá la pena soportar los momentos más tontos de la primera temporada."
         }
     },
     "the owl house": {
         trailer: "9eoDJufrO3k",
         links: { imdb: "https://www.imdb.com/title/tt8050756/" },
         review: {
-            en: "A magical journey celebrating individuality and found family.",
-            pt: "Uma aventura mágica sobre aceitar quem você é e encontrar sua família do coração.",
-            es: "Una aventura mágica sobre la individualidad."
+            en: "The Owl House is the third entry in what I consider a trilogy of Disney series—though not produced by the same person—that share a common DNA: they begin as lighthearted, silly shows, but evolve into deeply complex, unforgettable stories. I followed The Owl House as it was being released, and to this day, I remain frustrated by Disney’s decision to cancel it and truncate its third season into just three extended episodes. If you enjoy magic, fantastical worlds, and adventures that explore differing perspectives—as well as the reality that some people are simply incapable of change—then you should watch *The Owl House*. It’s less 'silly' than Amphibia; even in its first season, it takes itself more seriously, despite the occasional lighthearted moment. It also features the most well-developed villain of the entire trio. Please, give this series a chance.",
+            pt: "A Casa Coruja, a terceira série da Disney da Trilogia (não do mesmo produtor) das séries de mistério e historias extremamente profundas que começam de forma boba e que lá para frente se tornam séries inesquecíveis, esse como sendo o terceiro eu acabei vendo esse também no seus lançamentos e até hoje continuo irritado como a Disney cancelou e diminuiu a terceira temporada para apenas 3 episódios longos. Mas bem, se gostas mais de magia e um mundo mágico com umas aventuras aqui e ali com questionamento de pespectivas diferentes e como algumas pessoas não conseguem mudar, assista A Casa Coruja, é menos bobo que Amphibia, na primeira temporada já se leva mais a sério apessar de ter coisas bobas aqui e ali, além de ter o vilão mais detalhado da Trilogia, por favor, de uma chance á essa série.",
+            es: "The Owl House es la tercera entrega de una trilogía de series de Disney —aunque no comparten el mismo productor— centradas en el misterio y en tramas sumamente profundas; comienzan de manera desenfadada, pero con el tiempo se transforman en obras inolvidables. Al ser la tercera, la seguí desde su estreno, y hasta el día de hoy me indigna cómo Disney la canceló y redujo su tercera temporada a solo tres episodios de larga duración. En fin, si te gusta la magia, los mundos fantásticos, las aventuras y el planteamiento de diferentes perspectivas —incluyendo la idea de que algunas personas simplemente no pueden cambiar—, dale una oportunidad a The Owl House. Es menos infantil que *Amphibia*; desde la primera temporada se toma más en serio, a pesar de contener algunos momentos ligeros o tontos aquí y allá. Además, cuenta con el villano mejor desarrollado de toda la trilogía. ¡Por favor, dale una oportunidad a esta serie!"
         }
     },
     "bna brand new animal": {
         trailer: "rg8dp-AGonE",
         links: { imdb: "https://www.imdb.com/title/tt12013558/" },
         review: {
-            en: "Dynamic Studio Trigger animation filled with vibrant colors and action.",
-            pt: "Animação vibrante e cheia de estilo do Studio Trigger.",
-            es: "Animación dinámica del Studio Trigger llena de color."
+            en: "Okay, I know this might look bad, but trust me—it’s a good anime. BNA: Brand New Animal—a series that, at first glance, seems like just another silly anime about a school-age girl and a serious, older guy—actually delves into themes like identity, prejudice, personal freedom, and the power of choice. It may seem frivolous on the surface, but it’s quite profound underneath. I realize it might look like 'furry bait', but please, give it a chance!",
+            pt: "Ok, eu sei que isso parece ruim, mas confie em mim, é um anime bom. BNA: Brand New Animal, essa série que parece ser mais um anime bobo de uma garota estudantil com um cara mais velho sério acaba levando em consideração questionamento de identidade, preconceito de qualquer forma e de liberdade pessoal e de escolhas enquanto parece bobo por fora e profundo por dentro, Sei que parece um bait de anime furry, mas por favor, de uma chance á esse anime!",
+            es: "Vale, sé que esto suena mal, pero confía en mí: es un buen anime. BNA: Brand New Animal —una serie que, a simple vista, parece el típico anime tonto sobre una chica estudiante y un tipo mayor más serio— termina abordando cuestiones como la identidad, los prejuicios, la libertad personal y la capacidad de elección. Por fuera puede parecer una tontería, pero por dentro es profundo. Sé que puede parecer un simple gancho para atraer a los fans de lo furry, ¡pero, por favor, dale una oportunidad a este anime!"
         }
     },
     "kill la kill": {
         trailer: "B98NY8Hfo7I",
         links: { imdb: "https://www.imdb.com/title/tt3114390/" },
         review: {
-            en: "High-octane action and unmatched visual energy.",
-            pt: "Ação frenética e energia visual sem paralelos.",
-            es: "Acción frenética y energía visual inigualable."
+            en: "Okay, I know this might sound EVEN WORSE than BNA, but please trust me once again—this is, without a doubt, my favorite anime. If I had to choose just one anime to recommend to anyone in my life, this would be it. It features wild, frenetic action; if you’re into that, you’re going to love it. And while the way the characters gain strength might seem silly—even ridiculous—I won’t deny that; but that very absurdity is actually the core message of the show. It’s about the freedom to be yourself and express yourself however you choose—keeping your personality and dreams intact, with the determination to achieve whatever it is you desire. Please, give this anime a chance.",
+            pt: "Ok, eu sei que isso parece AINDA MAIS RUIM que BNA, mas por favor confie em mim mais uma vez, pois esse é sem sobra de dúvidas meu anime favorito, se for para eu escolher e pedir para qualquer um da minha vida assistir um único anime, séria esse. Esse anime tem uma ação frenetica e maluca, se gostas disso vais adorar esse anime e apessar de se parecer levar a bobo da forma que as personagens ficam fortes e até mesmo ridículo, eu não nego, mas esse mesmo ridículo é a própria mensagem que esse anime quer disser, ele quer disser a liberdade de ser e se representar da forma que quiser, de manter sua personalidade e sonhos intactos com uma determinação de alcançar não importa oque desejas. Por favor, de uma chance á esse anime.",
+            es: "Vale, sé que esto parece AÚN PEOR que BNA, pero por favor, confía en mí una vez más; sin lugar a dudas, este es mi anime favorito. Si tuviera que elegir un solo anime para recomendarle a alguien importante en mi vida, sería este. Tiene una acción frenética y alocada; si te gusta eso, te va a encantar. Aunque pueda parecer una tontería —incluso algo ridículo— la forma en que los personajes se vuelven tan fuertes, no lo niego; pero es precisamente ese aspecto ridículo el que transmite el mensaje central de la obra: la libertad de ser y expresarse como uno quiera, de mantener intactos la propia personalidad y los sueños, con la determinación de alcanzar cualquier meta, sin importar lo que desees. Por favor, dale una oportunidad a este anime."
         }
     },
     "of all things, i became a crow": {
         trailer: null,
         links: { anilist: "https://anilist.co/manga/145538/Hapirimyeon-Kkamagwiga-Doeeobeoryeotda" },
         review: {
-            en: "A fun fantasy manhwa about being reincarnated as a crow.",
-            pt: "Um manhwa divertido de fantasia sobre ser reencarnada como uma gralha.",
-            es: "Un manhwa divertido sobre ser reencarnado como un cuervo."
+            en: "Of All Things, I Became a Crow—let’s be honest, who doesn’t love a classic isekai? Personally, I prefer the ones that don’t just lead to an overpowered protagonist—you know, the strongest character ever trope, collecting a harem, blah, blah, blah—all that tedious stuff we’ve seen a thousand times before. I like unique *isekai* stories, and this happens to be one of them. If you’re into isekai that steer clear of the typical, absurdly overpowered hero who crushes everyone in their path—and would rather follow a crow trying to navigate a fantasy world—give this manhwa a chance.",
+            pt: "Of All Things, I became a Crow, vamos ser sinceros, quem não gosta de um clássico isekai? Já eu gosto dos ques não levam á um personagem extremamente poderoso sendo o mais forte conseguindo um harem blá blá blá o coisa chata que já foi repetida pela milanesima vez, eu gosto de isekais únicos e esse acaba sendo um deles, se gostas de isekais que não levam á um personagem extremamente bobadão que destrói todo mundo mas sim uma corva tentando viver em um mundo fantasioso, de uma chance á esse manhwa.",
+            es: "Of All Things, I became a Crow — seamos sinceros, ¿a quién no le gusta un isekai clásico? Personalmente, prefiero aquellos que no terminan con un protagonista absurdamente poderoso —el más fuerte de todos, rodeado de un harén y todo ese rollo aburrido que ya hemos visto mil veces—. Me gustan los isekai que se salen de lo común, y este es uno de ellos. Si buscas una historia que no gire en torno a un protagonista exageradamente roto que arrasa con todo, sino más bien a una cuerva intentando sobrevivir en un mundo de fantasía, dale una oportunidad a este manhwa."
         }
     }
 };
