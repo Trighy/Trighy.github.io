@@ -469,4 +469,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Inicia a geração da playlist de trailers
     buildTrailerPlaylist();
+
+    // ==========================================
+    // SISTEMA DO PAINEL DE DETALHES E ANÁLISES
+    // ==========================================
+    const trackLinks = document.querySelectorAll('.favorites-track a');
+    const closePanelBtn = document.getElementById('close-details-btn');
+    
+    // Função para abrir o painel
+    trackLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o navegador de ir para a Steam/IMDB imediatamente
+            
+            // Pega a imagem que foi clicada
+            const img = link.querySelector('img');
+            const title = img.getAttribute('alt');
+            const imgSrc = img.getAttribute('src');
+            
+            // Preenche o painel com as informações do item clicado
+            document.getElementById('details-title').innerText = title;
+            document.getElementById('details-cover').src = imgSrc;
+            
+            // DICA PARA O FUTURO: Você pode colocar o link original no botão Steam/Letterboxd dinamicamente
+            document.getElementById('platform-steam').href = link.href;
+
+            // Ativa a animação de abrir
+            document.body.classList.add('panel-open');
+        });
+    });
+
+    // Função para fechar o painel (Clicando no botão VOLTAR)
+    if (closePanelBtn) {
+        closePanelBtn.addEventListener('click', () => {
+            document.body.classList.remove('panel-open');
+        });
+    }
+
+    // Função para fechar o painel (Clicando na página principal encolhida na direita)
+    document.addEventListener('click', (e) => {
+        // Se o painel estiver aberto, e o usuário clicar no meio do nada (no pseudo-elemento do body)
+        if (document.body.classList.contains('panel-open')) {
+            // Verifica se o clique NÃO foi dentro do painel
+            const panel = document.getElementById('details-panel');
+            if (!panel.contains(e.target) && !e.target.closest('.favorites-track a')) {
+                document.body.classList.remove('panel-open');
+            }
+        }
+    });
 });
