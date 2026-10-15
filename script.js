@@ -74,7 +74,7 @@ const itemsDatabase = {
         review: {
             en: "I still can’t believe that this WONDERFUL, INCREDIBLE game—which I’ve been waiting for for SO many years—was released on my birthday! September 4th! And let me just say, this game managed to exceed the immense expectations the entire community had for the sequel to Hollow Knight. If you love a Metroidvania that drops you right into a living, breathing world and essentially says, 'Figure it out—use your own gaming skills to conquer this'—all while featuring a story that runs deep and connects back to the first game—then you have to play this. Aside from Ori and the Will of the Wisps, this is the one other game I BEG everyone in my life to play. And don’t even try to tell me, 'Oh, it’s too expensive'—it’s dirt cheap! In my local currency, it’s half the price of *Ori and the Will of the Wisps* and a quarter of the price of a AAA title. Even if you didn’t like Ori, please, give Silksong a try.",
             pt: "Eu ainda não creio que esse jogo MARAVILHOSO, INCRIVEL que estive esperando por MUITOS anos lançou na mesma data do meu aniversario! 4 de setembro e me deixe disser como esse jogo conseguiu superar as expectativas imensas que toda a comunidade tinha para a continuação de Hollow Knight. Se você adora um metroidvania que te taca no meio do mundo em um mundo vivo e fala se vira ae use suas habilidades de jogador para vencer esse jogo e uma historia que se aprofunda e se conecta ao primeiro jogo, jogue esse jogo, se alguém nega de jogar Ori and the Will of the Wisps, esse é o segundo jogo que eu IMPLORO para qualquer um da minha vida, jogar. E nem venha com essa 'ah é muito caro' É BARATO PRA CARAMBA, aqui na minha moeda? metade do preço do Ori and the Will of the Wisps, um quarto do preço de um triplo AAA, se você não gostou de Ori, por favor, tente Silksong.",
-            es: "¡Todavía no puedo creer que este juego MARAVILLOSO e INCREÍBLE, que he estado esperando durante MUCHOS años, se haya lanzado justo el día de mi cumpleaños! El 4 de septiembre. Y tengo que decir que este juego logró superar las inmensas expectativas que toda la comunidad tenía para la continuación de Hollow Knight. Si te encantan los *metroidvania* que te sueltan en medio de un mundo vivo y te dicen '¡espabílate y usa tus habilidades como jugador para superar el desafío!', junto con una historia que profundiza y conecta con el primer título, ¡tienes que jugar a este juego! Si ya de por sí recomiendo encarecidamente Ori and the Will of the Wisps, este es el segundo título que le IMPLORO a todo el mundo que pruebe. Y ni se te ocurra decir 'es que es muito caro': ¡es baratísimo! En mi moneda, cuesta la mitad que Ori and the Will of the Wisps y una cuarta parte de lo que vale un juego 'triple A'. Si no te gustó Ori, por favor, dale una oportunidad a Silksong."
+            es: "¡Todavía no puedo creer que este juego MARAVILLOSO e INCREÍBLE, que he estado esperando durante MUCHOS años, se haya lanzado justo el día de mi cumpleaños! El 4 de septiembre. Y tengo que decir que este juego logró superar las inmensas expectativas que toda la comunidad tenía para la continuación de Hollow Knight. Si te encantan los *metroidvania* que te sueltan en medio de un mundo vivo y te dicen '¡espabílate y usa tus habilidades como jugador para superar el desafío!', junto con una historia que profundiza y conecta con el primer título, ¡tienes que jugar a este juego! Si ya de por sí recomiendo encarecidamente Ori and the Will of the Wisps, este es el segundo título que le IMPLORO a todo el mundo que pruebe. Y ni se te ocurra decir 'es que es muy caro': ¡es baratísimo! En mi moneda, cuesta la mitad que Ori and the Will of the Wisps y una cuarta parte de lo que vale un juego 'triple A'. Si no te gustó Ori, por favor, dale una oportunidad a Silksong."
         }
     },
     "spore": {
@@ -89,7 +89,7 @@ const itemsDatabase = {
         review: {
             en: "Spore—what an incredible game from my childhood! If you enjoy The Sims (it was made by the same creators) or games that combine multiple gameplay styles into one, please give Spore a try. There is—and I dare say this—absolutely nothing else like it; it is an exceptionally unique game with a distinct personality, and you can really feel that it was crafted with care. It was originally intended to be more detailed, but the developers decided to simplify things—partly to appeal to a younger audience and partly due to budget constraints. Regardless, even if you end up only enjoying the creature stage and not the space stage (which is quite extensive if you play all the way to the end), please, give it a chance.",
             pt: "Spore, que jogo da minha infacia incrível! Se você gosta de The Sims (feito pelos mesmos criadores de The Sims) ou jogos que inclui múltiplos estilos de jogos em um único só, por favor de uma chance á Spore, não tem NENHUM eu ouso disser, NENHUM outro jogo parecido com Spore, é um jogo extremamente único e com sua própria personalidade e da para sentir que ele foi feito com carinho, era para ele originalmente ser mais detalhado mas decidiram simplificar as coisas por questão de chamar mais atenção do público menor e também por custos, mas de qualquer forma, por favor mesmo que você acabe só gostando do estagio criatura e não goste do estagio espacial (que também é BEM longo se fores até o final do jogo) de uma chance.",
-            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detailed, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
+            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detallado, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
         }
     },
     "plants vs zombies": {
@@ -118,7 +118,7 @@ const itemsDatabase = {
         review: {
             en: "I went to the theater to see The Wild Robot, expecting it to be a beautiful film based on the trailers—but what I actually experienced was beyond my expectations. You know when something is so beautiful that you simply run out of words to describe it? That is literally this movie. Unfortunately, this review won’t be very long because, as I mentioned, I just don’t have the words—PLEASE, just go watch it! Did you know it’s based on a book series? And that a second film, covering the second book, is already in production? I’m eagerly awaiting the trailer—and, eventually, the movie itself!",
             pt: "O Robô Selvagem, eu fui ao cinema para ver o filme pensando que séria de fato um filme bonito vendo pelos seus trailers mas oque eu acabei vendo eu não esperava, sabe quando algo é tão bonito que você não tem palavras para descrever? É literalmente esse filme, infelizmente essa review não vai ser tão longa pois, como falei anteriormente, não tenho palavras para descrever esse filme, SÓ POR FAVOR ASSISTA! inclusive sabias que ele é baseado em uma série de livros? E que o segundo filme do segundo livro já está sendo produzido? Eu estou esperando ansiosamente (no sentido bom) para o trailer eventualmente filme.",
-            es: "Fui al cine a ver Robot salvaje, pensando —a juzgar por los tráileres— que sería una película realmente hermosa; pero lo que vi superó mis expectativas. ¿Sabes cuando algo es tan bonito que te faltan palabras para describirlo? Pues así es, literalmente, esta película. Lamentablemente, esta reseña no será muy larga porque, como dije antes, no tengo palavras para describirla; ¡solo, por favor, mírala! Por cierto, ¿sabías que está basada en una serie de libros? ¿Y que ya se está produciendo la segunda parte, basada en el segundo libro? ¡Espero con muchas ganas el tráiler de la próxima película!"
+            es: "Fui al cine a ver Robot salvaje, pensando —a juzgar por los tráileres— que sería una película realmente hermosa; pero lo que vi superó mis expectativas. ¿Sabes cuando algo es tan bonito que te faltan palabras para describirlo? Pues así es, literalmente, esta película. Lamentablemente, esta reseña no será muy larga porque, como dije antes, no tengo palabras para describirla; ¡solo, por favor, mírala! Por cierto, ¿sabías que está basada en una serie de libros? ¿Y que ya se está produciendo la segunda parte, basada en el segundo libro? ¡Espero con muchas ganas el tráiler de la próxima película!"
         }
     },
     "mune: the guardian of the moon": {
@@ -142,7 +142,7 @@ const itemsDatabase = {
         review: {
             en: "Puss in Boots: The Last Wish—what an unexpectedly incredible film! The first movie was pretty generic and largely ignored by everyone, so when a sequel was announced, I assumed it would just be another run-of-the-mill, uninspired entry. Thankfully, I—and everyone else—was wrong. My goodness, what a fantastic film! If you’re looking for something that can be silly, yet deep and serious when it needs to be—featuring multiple villains who interact with one another in a masterfully orchestrated way—or if you just need something to watch on an afternoon when you have no idea what to pick, please, watch this movie.",
             pt: "Gato de Botas e o último desejo, que filme inesperadamente incrível, o primeiro filme foi um filme genérico e que ninguém deu bola basicamente, então quando anunciaram uma continuação eu pensei que séria mais um genérico com nada de diferente, ainda bem que eu e todo mundo estava errado, pois MEU DEUS que filme simplesmente BOM, se queres um filme bobo mas quando é necessário profundo e sério com múltiplos vilões que conseguem se interagir entre si de uma forma muito bem orchestrada ou um filme para assistir em uma tarde sem ideia de oque assistir? Por favor, assista esse filme. ",
-            es: "El Gato con Botas: El último desejo — ¡qué película tan increíble e inesperada! La primera entrega fue bastante genérica y, básicamente, a nadie le importó; por eso, cuando anunciaron una secuela, pensé que sería otra película genérica más, sin nada especial. Menos mal que yo —y todo el mundo— estábamos equivocados, porque, ¡madre mía!, ¡qué película tan buena! ¿Buscas algo que sea divertido y ligero, pero que a la vez sepa ponerse serio y profundo cuando hace falta? ¿Quieres una historia con varios villanos que interactúan entre sí de una forma magistralmente orquestada? ¿O simplemente no sabes qué ver una tarde cualquiera? ¡Por favor, mira esta película!"
+            es: "El Gato con Botas: El último deseo — ¡qué película tan increíble e inesperada! La primera entrega fue bastante genérica y, básicamente, a nadie le importó; por eso, cuando anunciaron una secuela, pensé que sería otra película genérica más, sin nada especial. Menos mal que yo —y todo el mundo— estábamos equivocados, porque, ¡madre mía!, ¡qué película tan buena! ¿Buscas algo que sea divertido y ligero, pero que a la vez sepa ponerse serio y profundo cuando hace falta? ¿Quieres una historia con varios villanos que interactúan entre sí de una forma magistralmente orquestada? ¿O simplemente no sabes qué ver una tarde cualquiera? ¡Por favor, mira esta película!"
         }
     },
     "gravity falls": {
@@ -156,7 +156,7 @@ const itemsDatabase = {
         review: {
             en: "Gravity Falls is the first in a trilogy of Disney mystery series (though not all by the same producer) that begin with a silly tone but evolve into deeply complex, unforgettable stories. I first watched it during my teenage years, and—my goodness—the mysteries, the theories, and the interactive elements are incredible! Anyone can get involved, yet those who want to dive deeper—deciphering codes and hunting for hidden secrets—will find a real challenge. How did a show like this ever get the green light from Disney? Gravity Falls is truly unique among Disney series; its very existence defies the typical Disney fare—which often consists of nothing more than endless, mindless silliness—by encouraging children to think, all while respecting their intelligence. If I had to recommend just one series for you to watch? Gravity Falls—please, give it a watch.",
             pt: "Gravity Falls, a primeira séria da Disney da Trilogia (não do mesmo produtor) das séries de mistério e historias extremamente profundas que começam de forma boba e que lá para frente se tornam séries inesquecíveis, esse como sendo o primero eu vi na minha adolescência e meu deus os mistérios, teorias formas de feitas que qualquer um pode participar mas ao mesmo tempo quem se aprofunda em cifras e caçar mistérios tem com oque se desafiar em uma série que de alguma forma passou o greenlight da Disney de todas as coisas? Gravity Falls é único em questão de série DA Disney, a sua mera existência desafia todas as outras séries da Disney que são apenas coisas bobas com mais coisa bobas, fazendo as crianças pensar e não questionando suas inteligências. Se for para eu escolher para veres uma única série? Gravity Falls, por favor, assista.",
-            es: "Gravity Falls es la primera de una trilogía de series de Disney (aunque no del mismo productor) centradas en el misterio y en tramas sumamente profundas; comienzan de manera sencilla y desenfadada, pero con el tiempo se transforman en obras inolvidables. Siendo la primera de ellas, la vi durante mi adolescencia y, ¡madre mía!, los misterios, las teorías y la forma en que están planteados permiten que cualquiera participe; al mismo tiempo, quienes deciden profundizar —descifrando códigos y buscando enigmas— encuentran un verdadero desafío. ¿Cómo es posible que una serie así recibiera luz verde de Disney? Gravity Falls es única dentro del catálogo de Disney; su mera existencia desafía al resto de sus producciones —que suelen limitarse a contenidos triviales—, invitando a los niños a pensar y respetando su inteligencia. Si tuviera que recomendarte una sola serie, sería Gravity Falls. Por favor, mírala."
+            es: "Gravity Falls es la primera de una trilogía de series de Disney (aunque no del mismo productor) centradas en el misterio y en tramas sumamente profundas; comienzan de manera sencilla y desenfadada, pero con el tiempo se transforman en obras inolvidables. Siendo la primera de ellas, la vi durante mi adolescencia y, ¡madre mía!, los misterios, las teorías y la forma en que están planteados permiten que cualquiera participe; al mismo tiempo, quienes deciden profundizar —descifrando códigos y buscando enigmas— encuentran un verdadero desafío. ¿Cómo es possible que una serie así recibiera luz verde de Disney? Gravity Falls es única dentro del catálogo de Disney; su mera existencia desafía al resto de sus producciones —que suelen limitarse a contenidos triviales—, invitando a los niños a pensar y respetando su inteligencia. Si tuviera que recomendarte una sola serie, sería Gravity Falls. Por favor, mírala."
         }
     },
     "amphibia": {
@@ -185,7 +185,7 @@ const itemsDatabase = {
         links: { imdb: "https://www.imdb.com/title/tt12013558/" },
         review: {
             en: "Okay, I know this might look bad, but trust me—it’s a good anime. BNA: Brand New Animal—a series that, at first glance, seems like just another silly anime about a school-age girl and a serious, older guy—actually delves into themes like identity, prejudice, personal freedom, and the power of choice. It may seem frivolous on the surface, but it’s quite profound underneath. I realize it might look like 'furry bait', but please, give it a chance!",
-            pt: "Ok, eu sei que isso parece ruim, mas confie em mim, é um anime bom. BNA: Brand New Animal, essa série que parece ser mais um anime bobo de uma garota estudantil com um cara mais velho sério acaba levando em consideração questionamento de identidade, preconceito de qualquer forma e de liberdade pessoal e de escolhas enquanto parece bobo por fora e profundo por dentro, Sei que parece um bait de anime furry, mas por favor, de uma chance á esse anime!",
+            pt: "Ok, eu sei que isso parece ruim, mas confie em mim, é um anime bom. BNA: Brand New Animal, essa série que parece ser mais um anime bobo de uma garota estudantil com um cara mais velho sério acaba levando em consideration questionamento de identidade, preconceito de qualquer forma e de liberdade pessoal e de escolhas enquanto parece bobo por fora e profundo por dentro, Sei que parece um bait de anime furry, mas por favor, de uma chance á esse anime!",
             es: "Vale, sé que esto suena mal, pero confía en mí: es un buen anime. BNA: Brand New Animal —una serie que, a simple vista, parece el típico anime tonto sobre una chica estudiante y un tipo mayor más serio— termina abordando cuestiones como la identidad, los prejuicios, la libertad personal y la capacidad de elección. Por fuera puede parecer una tontería, pero por dentro es profundo. Sé que puede parecer un simple gancho para atraer a los fans de lo furry, ¡pero, por favor, dale una oportunidad a este anime!"
         }
     },
@@ -206,14 +206,13 @@ const itemsDatabase = {
         review: {
             en: "Of All Things, I Became a Crow—let’s be honest, who doesn’t love a classic isekai? Personally, I prefer the ones that don’t just lead to an overpowered protagonist—you know, the strongest character ever trope, collecting a harem, blah, blah, blah—all that tedious stuff we’ve seen a thousand times before. I like unique *isekai* stories, and this happens to be one of them. If you’re into isekai that steer clear of the typical, absurdly overpowered hero who crushes everyone in their path—and would rather follow a crow trying to navigate a fantasy world—give this manhwa a chance.",
             pt: "Of All Things, I became a Crow, vamos ser sinceros, quem não gosta de um clássico isekai? Já eu gosto dos ques não levam á um personagem extremamente poderoso sendo o mais forte conseguindo um harem blá blá blá o coisa chata que já foi repetida pela milanesima vez, eu gosto de isekais únicos e esse acaba sendo um deles, se gostas de isekais que não levam á um personagem extremamente bobadão que destrói todo mundo mas sim uma corva tentando viver em um mundo fantasioso, de uma chance á esse manhwa.",
-            es: "Of All Things, I became a Crow — seamos sinceros, ¿a quién no le gusta un isekai clásico? Personalmente, prefiero aquellos que no terminan con un protagonista absurdamente poderoso —el más forte de todos, rodeado de un harén y todo ese rollo aburrido que ya hemos visto mil veces—. Me gustan los isekai que se salen de lo común, y este es uno de ellos. Si buscas una historia que no gire en torno a un protagonista exageradamente roto que arrasa con todo, sino más bien a una cuerva intentando sobrevivir en un mundo de fantasía, dale una oportunidad a este manhwa."
+            es: "Of All Things, I became a Crow — seamos sinceros, ¿a quién no le gusta un isekai clásico? Personalmente, prefiero aquellos que no terminan con un protagonista absurdamente poderoso —el más fuerte de todos, rodeado de un harén y todo ese rollo aburrido que ya hemos visto mil veces—. Me gustan los isekai que se salen de lo común, y este es uno de ellos. Si buscas una historia que no gire en torno a un protagonista exageradamente roto que arrasa con todo, sino más bien a una cuerva intentando sobrevivir en un mundo de fantasía, dale una oportunidad a este manhwa."
         }
     }
 };
 
 // ==========================================
 // BANCO DE DADOS DAS LISTAS PESSOAIS (DIREITA)
-// Configure aqui o que você está jogando/assistindo/lendo!
 // ==========================================
 const userLists = {
     games: {
@@ -221,20 +220,22 @@ const userLists = {
         icon: "fas fa-gamepad",
         activeLabel: { en: "Playing", pt: "Jogando", es: "Jugando" },
         active: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2X_KlUsXlCqqaceNg_XkXP0z5syuyQ-AhctcW0RyGAHyZ3x3Im7hgZhs&s=10",
-            "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVi-KkLmBs_334q_Jz2KDqj0Gp54OhNNkuubdyPh6X5RCtnZbO_jgkz_W&s=10"
         ],
         frontlog: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA8aoRlMiv-JHgazo6Ek5hPqbydHtb6HzyEzEU2RUtP0JAanmRPk4x3DyA&s=10",
-            "https://m.media-amazon.com/images/M/MV5BM2NhYjJhMWYtN2Q3Yy00Y2IxLTg4MTQtZjA2ODk0MjZlMzVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            "https://upload.wikimedia.org/wikipedia/en/9/94/Ori_and_the_Will_of_the_Wisps.jpg"
         ],
         backlog: [
-            "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/NmTEnt5SIVRk4dHDqcydervu.png"
+            "https://thumb.wikimedia.org/wikipedia/en/thumb/f/f6/Outer_Wilds_Steam_artwork.jpg/250px-Outer_Wilds_Steam_artwork.jpg"
         ]
     },
     movies: {
         title: { en: "Movies", pt: "Filmes", es: "Películas" },
         icon: "fas fa-film",
+        activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
+        active: [
+            "https://a.ltrbxd.com/resized/film-poster/1/0/7/1/1/9/6/1071196-the-wild-robot-0-230-0-345-crop.jpg"
+        ],
         frontlog: [],
         backlog: []
     },
@@ -242,23 +243,25 @@ const userLists = {
         title: { en: "Series", pt: "Séries", es: "Series" },
         icon: "fas fa-tv",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        active: [],
-        frontlog: ["https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_.jpg"],
+        active: [
+            "https://m.media-amazon.com/images/M/MV5BMTEzNDc3MDQ2NzNeQTJeQWpwZ15BbWU4MDYzMzUwMDIx._V1_FMjpg_UX1000_.jpg"
+        ],
+        frontlog: [],
         backlog: []
     },
     animes: {
         title: { en: "Anime", pt: "Animes", es: "Anime" },
         icon: "fas fa-star",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        active: ["https://m.media-amazon.com/images/M/MV5BMzIyNzY4NTMtNmVhYS00OWFhLTkwMWMtOGFkNTdmNWU2ZDdiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"],
-        frontlog: ["https://a.storyblok.com/f/178900/1500x2115/f6d8a6ac14/steel-ball-run-jojos-bizarre-adventure-key-visual.jpg/m/filters:quality(95)format(webp)"],
+        active: [],
+        frontlog: [],
         backlog: []
     },
     books: {
         title: { en: "Books", pt: "Livros", es: "Libros" },
         icon: "fas fa-book",
         activeLabel: { en: "Reading", pt: "Lendo", es: "Leyendo" },
-        active: ["https://m.media-amazon.com/images/I/61Inkv0s0AL.jpg"],
+        active: [],
         frontlog: [],
         backlog: []
     },
@@ -274,7 +277,9 @@ const userLists = {
         title: { en: "Manhwa", pt: "Manhwa", es: "Manhwa" },
         icon: "fas fa-book-reader",
         activeLabel: { en: "Reading", pt: "Lendo", es: "Leyendo" },
-        active: [],
+        active: [
+            "https://static.wikia.nocookie.net/asurascans/images/9/95/OATIBAC.webp/revision/latest?cb=20220720044928"
+        ],
         frontlog: [],
         backlog: []
     }
@@ -397,7 +402,6 @@ function renderUserLists() {
         const frontlogImgs = cat.frontlog || [];
         const backlogImgs = cat.backlog || [];
 
-        // Só renderiza se houver pelo menos uma imagem
         if (activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0) continue;
 
         html += `
@@ -407,7 +411,6 @@ function renderUserLists() {
                 </div>
         `;
 
-        // 1. Jogando / Assistindo / Lendo
         if (activeImgs.length > 0) {
             html += `
                 <div class="list-status-subblock">
@@ -419,7 +422,6 @@ function renderUserLists() {
             `;
         }
 
-        // 2. Frontlog
         if (frontlogImgs.length > 0) {
             html += `
                 <div class="list-status-subblock">
@@ -431,7 +433,6 @@ function renderUserLists() {
             `;
         }
 
-        // 3. Backlog
         if (backlogImgs.length > 0) {
             html += `
                 <div class="list-status-subblock">
@@ -518,7 +519,6 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-// GERENCIADOR DE MÍDIA DE FUNDO
 function showMediaBackground(videoId, bgImageUrl) {
     const bgImg = document.getElementById('bg-image');
     const playerElem = document.getElementById('player');
@@ -669,7 +669,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initYouTubePlayer();
     renderUserLists();
 
-    // 1. GERENCIADOR DO PAINEL ESQUERDO (DETALHES DA MIDIA)
+    // 1. GERENCIADOR DO PAINEL ESQUERDO (DETALHES DA MÍDIA DA PÁGINA PRINCIPAL)
     const trackLinks = document.querySelectorAll('.favorites-track a');
     const closePanelBtn = document.getElementById('close-details-btn');
     
@@ -767,18 +767,14 @@ document.addEventListener("DOMContentLoaded", () => {
         closePanelBtn.addEventListener('click', closeDetailsPanel);
     }
 
-    // 2. GERENCIADOR DO PAINEL DIREITO (LISTAS PESSOAIS)
-    const listPanelToggleBtn = document.getElementById('listPanelToggle');
+    // 2. GERENCIADOR DA FAIXA DA BORDA DIREITA (ABRE LISTAS PESSOAIS)
+    const rightPeekTrigger = document.getElementById('right-panel-peek');
     const closeListBtn = document.getElementById('close-list-btn');
 
-    if (listPanelToggleBtn) {
-        listPanelToggleBtn.addEventListener('click', () => {
-            if (document.body.classList.contains('right-panel-open')) {
-                closeListPanel();
-            } else {
-                closeDetailsPanel(); // Fecha o painel de detalhes se estivesse aberto
-                document.body.classList.add('right-panel-open');
-            }
+    if (rightPeekTrigger) {
+        rightPeekTrigger.addEventListener('click', () => {
+            closeDetailsPanel(); // Fecha o painel esquerdo se estiver aberto
+            document.body.classList.add('right-panel-open');
         });
     }
 
@@ -786,7 +782,7 @@ document.addEventListener("DOMContentLoaded", () => {
         closeListBtn.addEventListener('click', closeListPanel);
     }
 
-    // FECHAR PAINÉIS AO CLICAR FORA
+    // FECHAR PAINÉIS AO CLICAR FORA (NO SOBREPOSIÇÃO)
     document.addEventListener('click', (e) => {
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
@@ -796,7 +792,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (document.body.classList.contains('right-panel-open')) {
             const listPanel = document.getElementById('list-panel');
-            if (listPanel && !listPanel.contains(e.target) && !e.target.closest('#listPanelToggle')) {
+            if (listPanel && !listPanel.contains(e.target) && !e.target.closest('#right-panel-peek')) {
                 closeListPanel();
             }
         }

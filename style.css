@@ -337,7 +337,8 @@ body.cinema-mode .lang-switcher,
 body.cinema-mode .spirit-tree-bg,
 body.cinema-mode .trailer-overlay,
 body.cinema-mode .details-panel,
-body.cinema-mode .list-panel {
+body.cinema-mode .list-panel,
+body.cinema-mode .right-panel-peek {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -434,7 +435,7 @@ body.cinema-mode .controls-bar:hover {
 }
 
 /* ==========================================
-   ANIMAÇÃO DE DESLIZE DA TELA PRINCIPAL
+   ANIMAÇÕES DE DESLIZE DA TELA PRINCIPAL
    ========================================== */
 .main-wrapper {
     width: 100%;
@@ -442,15 +443,16 @@ body.cinema-mode .controls-bar:hover {
     flex-direction: column;
     align-items: center;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
-    transform-origin: center right;
 }
 
+/* Clicar em item abre painel esquerdo -> desvia site para DIREITA */
 body.panel-open .main-wrapper {
     transform: translateX(50%) scale(0.85);
     opacity: 0.3;
     pointer-events: none;
 }
 
+/* Clicar na borda direita abre painel direito -> desvia site para ESQUERDA */
 body.right-panel-open .main-wrapper {
     transform: translateX(-50%) scale(0.85);
     opacity: 0.3;
@@ -472,7 +474,7 @@ body.panel-open::after { right: 0; }
 body.right-panel-open::after { left: 0; }
 
 /* ==========================================
-   DESIGN DOS PAINÉIS LATERAIS (ESQUERDA & DIREITA)
+   PAINEL DE DETALHES (ESQUERDA)
    ========================================== */
 .details-panel {
     position: fixed;
@@ -496,7 +498,49 @@ body.panel-open .details-panel {
     transform: translateX(0);
 }
 
-/* PAINEL DIREITO (LISTAS) */
+/* ==========================================
+   ABA ESCONDIDA E PAINEL DIREITO (LISTAS PESSOAIS)
+   ========================================== */
+.right-panel-peek {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 120px;
+    background: rgba(15, 22, 38, 0.7);
+    border: 1px solid rgba(100, 255, 218, 0.4);
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    z-index: 950;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.right-panel-peek:hover {
+    width: 28px;
+    background: rgba(74, 144, 226, 0.3);
+    border-color: #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+}
+
+.right-panel-peek i {
+    color: #64ffda;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease;
+}
+
+body.right-panel-open .right-panel-peek,
+body.panel-open .right-panel-peek {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .list-panel {
     position: fixed;
     top: 0;
@@ -593,7 +637,7 @@ body.right-panel-open .list-panel {
     height: 100%;
     object-fit: cover;
     display: block;
-    pointer-events: none; /* Imagens não interativas */
+    pointer-events: none; /* Imagens não clicáveis */
 }
 
 .close-panel-btn {
