@@ -293,7 +293,7 @@ const userLists = {
 };
 
 // ==========================================
-// SISTEMA DE TRADUÇÃO
+// SISTEMA DE TRADUÇÃO E DETECÇÃO AUTOMÁTICA
 // ==========================================
 const translations = {
     en: {
@@ -382,6 +382,22 @@ let currentLoadedTrailer = null;
 let loopTimer = null;
 let openedFromFullGrid = false; // Controle de estado para reabrir o "Mostrar Mais"
 
+// 1. Descobre o idioma inicial (respeita escolha salva ou detecta o navegador)
+function getInitialLanguage() {
+    const savedLang = localStorage.getItem('preferred_lang');
+    if (savedLang && ['pt', 'en', 'es'].includes(savedLang)) {
+        return savedLang;
+    }
+
+    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+
+    if (browserLang.startsWith('pt')) return 'pt';
+    if (browserLang.startsWith('es')) return 'es';
+    if (browserLang.startsWith('en')) return 'en';
+
+    return 'en';
+}
+
 function getTrailerId(trailerData) {
     if (!trailerData) return null;
     if (typeof trailerData === 'string') return trailerData;
@@ -393,6 +409,7 @@ function getTrailerId(trailerData) {
 
 function changeLanguage(lang) {
     currentLang = lang;
+    localStorage.setItem('preferred_lang', lang); // Guarda a preferência no navegador
 
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -844,7 +861,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initCarousels();
     initYouTubePlayer();
-    renderUserLists();
+
+    // Aplica a detecção automática do idioma (ou preferência salva) ao carregar
+    const initialLang = getInitialLanguage();
+    changeLanguage(initialLang);
 
     // 1. GERENCIADOR DE CLIQUE NOS FAVORITOS DOS CARROSSEIS
     const trackLinks = document.querySelectorAll('.favorites-track a');
