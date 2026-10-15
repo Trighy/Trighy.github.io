@@ -86,6 +86,14 @@ function changeLanguage(lang) {
 
     // 3. Recarrega a playlist de trailers na nova língua
     reloadTrailersForLanguage();
+
+    // 4. Atualiza o texto do painel de detalhes em tempo real (se estiver aberto)
+    if (document.body.classList.contains('panel-open') && typeof currentOpenItemTitle !== 'undefined') {
+        const itemData = itemsDatabase[currentOpenItemTitle];
+        if (itemData && itemData.review[lang]) {
+            document.getElementById('details-review').innerText = itemData.review[lang];
+        }
+    }
 }
 
 // =========================================================
@@ -470,50 +478,119 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicia a geração da playlist de trailers
     buildTrailerPlaylist();
 
-    // ==========================================
-    // SISTEMA DO PAINEL DE DETALHES E ANÁLISES
-    // ==========================================
-    const trackLinks = document.querySelectorAll('.favorites-track a');
-    const closePanelBtn = document.getElementById('close-details-btn');
-    
-    // Função para abrir o painel
-    trackLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o navegador de ir para a Steam/IMDB imediatamente
-            
-            // Pega a imagem que foi clicada
-            const img = link.querySelector('img');
-            const title = img.getAttribute('alt');
-            const imgSrc = img.getAttribute('src');
-            
-            // Preenche o painel com as informações do item clicado
-            document.getElementById('details-title').innerText = title;
-            document.getElementById('details-cover').src = imgSrc;
-            
-            // DICA PARA O FUTURO: Você pode colocar o link original no botão Steam/Letterboxd dinamicamente
-            document.getElementById('platform-steam').href = link.href;
+// ==========================================
+// BANCO DE DADOS DE ANÁLISES E LINKS
+// ==========================================
+// O nome do jogo aqui deve ser exatamente igual ao que está no "alt" da imagem no HTML (em letras minúsculas)
+const itemsDatabase = {
+    "oneshot": {
+        links: {
+            steam: "https://store.steampowered.com/app/420530/OneShot/",
+            xbox: "https://www.xbox.com/games/store/oneshot-world-machine-edition/9p8pqw389q60",
+            ps: "https://store.playstation.com/product/UP4127-CUSA34845_00-ONESHOTWMEUS0000", 
+            nin: "https://www.nintendo.com/store/products/oneshot-world-machine-edition-switch/" 
+        },
+        review: {
+            en: "OneShot is a surreal top down Puzzle/Adventure game with unique gameplay capabilities...",
+            pt: "Oneshot é surreal. A mecânica de quebrar a quarta parede e o fato de que você tem apenas uma chance torna tudo muito especial.",
+            es: "OneShot es un juego surrealista de aventuras y rompecabezas..."
+        }
+    },
+    "ori and the will of the wisps": {
+        links: {
+            steam: "https://store.steampowered.com/app/1057090/",
+            xbox: "https://www.xbox.com/pt-BR/games/store/ori-and-the-will-of-the-wisps/9N8CD0XZKLP4",
+            ps: null, // Colocar "null" faz o botão desaparecer (pois Ori não tem no PS)
+            nin: "https://www.nintendo.com/pt-br/store/products/ori-and-the-will-of-the-wisps-switch/"
+        },
+        review: {
+            en: "An absolute masterpiece of art, music, and platforming.",
+            pt: "Uma obra-prima absoluta! A direção de arte, a trilha sonora orquestral e a fluidez dos movimentos são inesquecíveis.",
+            es: "Una obra maestra absoluta del arte, la música y las plataformas."
+        }
+    }
+    // Para adicionar mais jogos, filmes ou séries, basta copiar a estrutura acima, colocar uma vírgula e colar!
+};
 
-            // Ativa a animação de abrir
-            document.body.classList.add('panel-open');
-        });
+// ==========================================
+// SISTEMA DO PAINEL DE DETALHES E ANÁLISES
+// ==========================================
+let currentOpenItemTitle = ""; // Guarda qual item está aberto para podermos traduzir em tempo real
+
+const trackLinks = document.querySelectorAll('.favorites-track a');
+const closePanelBtn = document.getElementById('close-details-btn');
+
+// Função para abrir o painel
+trackLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Impede o navegador de ir para a Steam/IMDB imediatamente
+        
+        // Pega a imagem que foi clicada
+        const img = link.querySelector('img');
+        const title = img.getAttribute('alt');
+        const imgSrc = img.getAttribute('src');
+        const cleanTitle = title.toLowerCase().trim();
+        
+        currentOpenItemTitle = cleanTitle;
+
+        // Preenche título e imagem
+        document.getElementById('details-title').innerText = title;
+        document.getElementById('details-cover').src = imgSrc;
+        
+        // Puxa as informações do Banco de Dados
+        const itemData = itemsDatabase[cleanTitle];
+
+        if (itemData) {
+            // 1. Atualiza a Análise com base no idioma (se não achar, usa PT como padrão)
+            document.getElementById('details-review').innerText = itemData.review[currentLang] || itemData.review['pt'];
+
+            // 2. Função interna para ligar/desligar botões
+            function setupBtn(id, url) {
+                const btn = document.getElementById(id);
+                if (url) {
+                    btn.href = url;
+                    btn.style.display = 'flex'; // Mostra o botão
+                } else {
+                    btn.style.display = 'none'; // Esconde o botão se a URL for null
+                }
+            }
+
+            // 3. Configura os botões. Se não tiver link da Steam no banco, ele usa o link href que você colocou no HTML
+            setupBtn('platform-steam', itemData.links.steam || link.href);
+            setupBtn('platform-xbox', itemData.links.xbox);
+            setupBtn('platform-ps', itemData.links.ps);
+            setupBtn('platform-nin', itemData.links.nin);
+            
+        } else {
+            // MODO FALLBACK: Se o jogo não estiver no banco de dados ainda
+            document.getElementById('details-review').innerText = "Análise em construção... / Review in progress...";
+            
+            document.getElementById('platform-steam').href = link.href;
+            document.getElementById('platform-steam').style.display = 'flex';
+            document.getElementById('platform-xbox').style.display = 'none';
+            document.getElementById('platform-ps').style.display = 'none';
+            document.getElementById('platform-nin').style.display = 'none';
+        }
+
+        // Ativa a animação de abrir
+        document.body.classList.add('panel-open');
     });
+});
 
     // Função para fechar o painel (Clicando no botão VOLTAR)
-    if (closePanelBtn) {
-        closePanelBtn.addEventListener('click', () => {
-            document.body.classList.remove('panel-open');
-        });
-    }
-
-    // Função para fechar o painel (Clicando na página principal encolhida na direita)
-    document.addEventListener('click', (e) => {
-        // Se o painel estiver aberto, e o usuário clicar no meio do nada (no pseudo-elemento do body)
-        if (document.body.classList.contains('panel-open')) {
-            // Verifica se o clique NÃO foi dentro do painel
-            const panel = document.getElementById('details-panel');
-            if (!panel.contains(e.target) && !e.target.closest('.favorites-track a')) {
-                document.body.classList.remove('panel-open');
-            }
-        }
+if (closePanelBtn) {
+     closePanelBtn.addEventListener('click', () => {
+        document.body.classList.remove('panel-open');
     });
+}
+
+// Função para fechar o painel (Clicando na página principal encolhida na direita)
+document.addEventListener('click', (e) => {
+    if (document.body.classList.contains('panel-open')) {
+        const panel = document.getElementById('details-panel');
+        if (!panel.contains(e.target) && !e.target.closest('.favorites-track a')) {
+            document.body.classList.remove('panel-open');
+        }
+    }
+});
 });
