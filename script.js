@@ -89,7 +89,7 @@ const itemsDatabase = {
         review: {
             en: "Spore—what an incredible game from my childhood! If you enjoy The Sims (it was made by the same creators) or games that combine multiple gameplay styles into one, please give Spore a try. There is—and I dare say this—absolutely nothing else like it; it is an exceptionally unique game with a distinct personality, and you can really feel that it was crafted with care. It was originally intended to be more detailed, but the developers decided to simplify things—partly to appeal to a younger audience and partly due to budget constraints. Regardless, even if you end up only enjoying the creature stage and not the space stage (which is quite extensive if you play all the way to the end), please, give it a chance.",
             pt: "Spore, que jogo da minha infacia incrível! Se você gosta de The Sims (feito pelos mesmos criadores de The Sims) ou jogos que inclui múltiplos estilos de jogos em um só, por favor de uma chance á Spore, não tem NENHUM eu ouso disser, NENHUM outro jogo parecido com Spore, é um jogo extremamente único e com sua própria personalidade e da para sentir que ele foi feito com carinho, era para ele originalmente ser mais detalhado mas decidiram simplificar as coisas por questão de chamar mais atenção do público menor e também por custos, mas de qualquer forma, por favor mesmo que você acabe só gostando do estagio criatura e não goste do estagio espacial (que também é BEM longo se fores até o final do jogo) de uma chance.",
-            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detallado, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
+            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detalldo, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
         }
     },
     "plants vs zombies": {
@@ -309,7 +309,16 @@ const translations = {
         manhwasTitle: "Manhwa", favoritesManhwa: "My Favorites",
         myListsTitle: "My Status Lists",
         frontlogLabel: "Frontlog",
-        backlogLabel: "Backlog"
+        backlogLabel: "Backlog",
+        showMore: "Show More",
+        showLess: "Show Less",
+        statusGames: "What am I Playing?",
+        statusMovies: "What am I Watching?",
+        statusSeries: "What am I Watching?",
+        statusAnimes: "What am I Watching?",
+        statusBooks: "What am I Reading?",
+        statusMangas: "What am I Reading?",
+        statusManhwas: "What am I Reading?"
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
@@ -320,11 +329,20 @@ const translations = {
         seriesTitle: "Séries", favoritesSeries: "Meus Favoritos",
         animesTitle: "Anime", favoritesAnimes: "Meus Favoritos",
         booksTitle: "Livros", favoritesBooks: "Meus Favoritos",
-        mangasTitle: "Manga", favoritesMangas: "Meus Favoritos",
+        mangasTitle: "Mangás", favoritesMangas: "Meus Favoritos",
         manhwasTitle: "Manhwa", favoritesManhwa: "Meus Favoritos",
         myListsTitle: "Minhas Listas de Status",
         frontlogLabel: "Frontlog",
-        backlogLabel: "Backlog"
+        backlogLabel: "Backlog",
+        showMore: "Mostrar Mais",
+        showLess: "Mostrar Menos",
+        statusGames: "O que estou Jogando?",
+        statusMovies: "O que estou Assistindo?",
+        statusSeries: "O que estou Assistindo?",
+        statusAnimes: "O que estou Assistindo?",
+        statusBooks: "O que estou Lendo?",
+        statusMangas: "O que estou Lendo?",
+        statusManhwas: "O que estou Lendo?"
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
@@ -339,7 +357,16 @@ const translations = {
         manhwasTitle: "Manhwa", favoritesManhwa: "Mis Favoritos",
         myListsTitle: "Mis Listas de Estado",
         frontlogLabel: "Frontlog",
-        backlogLabel: "Backlog"
+        backlogLabel: "Backlog",
+        showMore: "Mostrar más",
+        showLess: "Mostrar menos",
+        statusGames: "¿Qué estoy jugando?",
+        statusMovies: "¿Qué estoy viendo?",
+        statusSeries: "¿Qué estoy viendo?",
+        statusAnimes: "¿Qué estoy viendo?",
+        statusBooks: "¿Qué estoy leyendo?",
+        statusMangas: "¿Qué estoy leyendo?",
+        statusManhwas: "¿Qué estoy leyendo?"
     }
 };
 
@@ -600,6 +627,93 @@ function stopTrailer() {
     }
 }
 
+function openDetailsPanel(linkElement) {
+    closeListPanel(); 
+    
+    const img = linkElement.querySelector('img');
+    if (!img) return;
+
+    const title = img.getAttribute('alt') || "";
+    const cleanTitle = title.toLowerCase().trim();
+    currentOpenItemTitle = cleanTitle;
+
+    const detailsTitle = document.getElementById('details-title');
+    const detailsCover = document.getElementById('details-cover');
+    
+    if (detailsTitle) detailsTitle.innerText = title;
+    if (detailsCover) detailsCover.src = img.getAttribute('src');
+    
+    const itemData = itemsDatabase[cleanTitle];
+
+    function setupBtn(id, url) {
+        const btn = document.getElementById(id);
+        if (btn) {
+            if (url && url !== "#") { 
+                btn.href = url; 
+                btn.style.display = 'flex'; 
+            } else { 
+                btn.style.display = 'none'; 
+            }
+        }
+    }
+
+    ['platform-steam', 'platform-xbox', 'platform-ps', 'platform-nin', 'platform-imdb', 'platform-anilist', 'platform-book'].forEach(id => setupBtn(id, null));
+
+    const clickedHref = linkElement.getAttribute('href');
+    const parentCard = linkElement.closest('.category-card');
+    const cardHeader = parentCard ? parentCard.querySelector('h2').innerText.toLowerCase() : '';
+
+    if (itemData) {
+        const reviewBox = document.getElementById('details-review');
+        if (reviewBox) {
+            reviewBox.innerText = itemData.review[currentLang] || itemData.review['pt'] || itemData.review['en'] || "";
+        }
+
+        const links = itemData.links || {};
+
+        // Jogos
+        let steamUrl = links.steam || (clickedHref && clickedHref.includes('steampowered.com') ? clickedHref : null);
+        setupBtn('platform-steam', steamUrl);
+        setupBtn('platform-xbox', links.xbox);
+        setupBtn('platform-ps', links.ps);
+        setupBtn('platform-nin', links.nin);
+
+        // IMDb (Filmes, Séries, Animes)
+        let imdbUrl = links.imdb || (clickedHref && clickedHref.includes('imdb.com') ? clickedHref : null);
+        setupBtn('platform-imdb', imdbUrl);
+
+        // AniList (Mangás e Manhwa)
+        let anilistUrl = links.anilist || (clickedHref && clickedHref.includes('anilist.co') ? clickedHref : null);
+        setupBtn('platform-anilist', anilistUrl);
+
+        // Livros
+        let bookUrl = links.book || links.storygraph || (cardHeader.includes('book') || cardHeader.includes('livro') ? clickedHref : null);
+        setupBtn('platform-book', bookUrl);
+        
+        const videoId = getTrailerId(itemData.trailer);
+        const bgImageUrl = itemData.bgImage || null;
+        showMediaBackground(videoId, bgImageUrl);
+    } else {
+        const reviewBox = document.getElementById('details-review');
+        if (reviewBox) reviewBox.innerText = "Análise em construção...";
+        
+        if (clickedHref && clickedHref !== '#') {
+            if (clickedHref.includes('steampowered.com')) setupBtn('platform-steam', clickedHref);
+            else if (clickedHref.includes('imdb.com')) setupBtn('platform-imdb', clickedHref);
+            else if (clickedHref.includes('anilist.co')) setupBtn('platform-anilist', clickedHref);
+            else if (cardHeader.includes('book') || cardHeader.includes('livro')) setupBtn('platform-book', clickedHref);
+            else setupBtn('platform-steam', clickedHref);
+        }
+        
+        stopTrailer();
+    }
+
+    document.body.classList.add('panel-open');
+    document.body.classList.remove('cinema-mode');
+    const cinemaIcon = document.querySelector('#cinemaModeToggle i');
+    if (cinemaIcon) cinemaIcon.className = "fas fa-expand";
+}
+
 function closeDetailsPanel() {
     document.body.classList.remove('panel-open');
     stopTrailer();
@@ -613,6 +727,48 @@ function closeDetailsPanel() {
 
 function closeListPanel() {
     document.body.classList.remove('right-panel-open');
+}
+
+function openFullGrid(categoryCard) {
+    const fullGridOverlay = document.getElementById('full-grid-overlay');
+    const fullGridTitle = document.getElementById('full-grid-title');
+    const fullGridContent = document.getElementById('full-grid-content');
+
+    if (!fullGridOverlay || !fullGridContent) return;
+
+    const catTitle = categoryCard.querySelector('h2').innerText;
+    fullGridTitle.innerText = catTitle;
+
+    const items = categoryCard.querySelectorAll('.favorites-track a');
+    fullGridContent.innerHTML = '';
+
+    const uniqueLinks = new Set();
+
+    items.forEach(item => {
+        const href = item.getAttribute('href');
+        const img = item.querySelector('img');
+        if (!img) return;
+
+        const alt = img.getAttribute('alt');
+        const identifier = alt || href;
+
+        if (!uniqueLinks.has(identifier)) {
+            uniqueLinks.add(identifier);
+
+            const clone = item.cloneNode(true);
+            clone.addEventListener('click', (e) => {
+                e.preventDefault();
+                openDetailsPanel(clone);
+            });
+            fullGridContent.appendChild(clone);
+        }
+    });
+
+    document.body.classList.add('full-grid-open');
+}
+
+function closeFullGrid() {
+    document.body.classList.remove('full-grid-open');
 }
 
 // ==========================================
@@ -676,130 +832,57 @@ document.addEventListener("DOMContentLoaded", () => {
     initYouTubePlayer();
     renderUserLists();
 
-    // 1. GERENCIADOR DO PAINEL ESQUERDO (DETALHES DA MÍDIA DA PÁGINA PRINCIPAL)
+    // 1. GERENCIADOR DE CLIQUE NOS FAVORITOS DOS CARROSSEIS
     const trackLinks = document.querySelectorAll('.favorites-track a');
-    const closePanelBtn = document.getElementById('close-details-btn');
-    
     trackLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            closeListPanel(); // Fecha o painel direito se estivesse aberto
-            
-            const img = link.querySelector('img');
-            if (!img) return;
-
-            const title = img.getAttribute('alt') || "";
-            const cleanTitle = title.toLowerCase().trim();
-            currentOpenItemTitle = cleanTitle;
-
-            const detailsTitle = document.getElementById('details-title');
-            const detailsCover = document.getElementById('details-cover');
-            
-            if (detailsTitle) detailsTitle.innerText = title;
-            if (detailsCover) detailsCover.src = img.getAttribute('src');
-            
-            const itemData = itemsDatabase[cleanTitle];
-
-            function setupBtn(id, url) {
-                const btn = document.getElementById(id);
-                if (btn) {
-                    if (url && url !== "#") { 
-                        btn.href = url; 
-                        btn.style.display = 'flex'; 
-                    } else { 
-                        btn.style.display = 'none'; 
-                    }
-                }
-            }
-
-            ['platform-steam', 'platform-xbox', 'platform-ps', 'platform-nin', 'platform-imdb', 'platform-anilist', 'platform-book'].forEach(id => setupBtn(id, null));
-
-            const clickedHref = link.getAttribute('href');
-            const parentCard = link.closest('.category-card');
-            const cardHeader = parentCard ? parentCard.querySelector('h2').innerText.toLowerCase() : '';
-
-            if (itemData) {
-                const reviewBox = document.getElementById('details-review');
-                if (reviewBox) {
-                    reviewBox.innerText = itemData.review[currentLang] || itemData.review['pt'] || itemData.review['en'] || "";
-                }
-
-                const links = itemData.links || {};
-
-                // Jogos
-                let steamUrl = links.steam || (clickedHref && clickedHref.includes('steampowered.com') ? clickedHref : null);
-                setupBtn('platform-steam', steamUrl);
-                setupBtn('platform-xbox', links.xbox);
-                setupBtn('platform-ps', links.ps);
-                setupBtn('platform-nin', links.nin);
-
-                // IMDb (Filmes, Séries, Animes)
-                let imdbUrl = links.imdb || (clickedHref && clickedHref.includes('imdb.com') ? clickedHref : null);
-                setupBtn('platform-imdb', imdbUrl);
-
-                // AniList (Mangás e Manhwa)
-                let anilistUrl = links.anilist || (clickedHref && clickedHref.includes('anilist.co') ? clickedHref : null);
-                setupBtn('platform-anilist', anilistUrl);
-
-                // Livros
-                let bookUrl = links.book || links.storygraph || (cardHeader.includes('book') || cardHeader.includes('livro') ? clickedHref : null);
-                setupBtn('platform-book', bookUrl);
-                
-                const videoId = getTrailerId(itemData.trailer);
-                const bgImageUrl = itemData.bgImage || null;
-                showMediaBackground(videoId, bgImageUrl);
-            } else {
-                const reviewBox = document.getElementById('details-review');
-                if (reviewBox) reviewBox.innerText = "Análise em construção...";
-                
-                if (clickedHref && clickedHref !== '#') {
-                    if (clickedHref.includes('steampowered.com')) setupBtn('platform-steam', clickedHref);
-                    else if (clickedHref.includes('imdb.com')) setupBtn('platform-imdb', clickedHref);
-                    else if (clickedHref.includes('anilist.co')) setupBtn('platform-anilist', clickedHref);
-                    else if (cardHeader.includes('book') || cardHeader.includes('livro')) setupBtn('platform-book', clickedHref);
-                    else setupBtn('platform-steam', clickedHref);
-                }
-                
-                stopTrailer();
-            }
-
-            document.body.classList.add('panel-open');
-            document.body.classList.remove('cinema-mode');
-            const cinemaIcon = document.querySelector('#cinemaModeToggle i');
-            if (cinemaIcon) cinemaIcon.className = "fas fa-expand";
+            e.preventDefault();
+            openDetailsPanel(link);
         });
     });
 
+    const closePanelBtn = document.getElementById('close-details-btn');
     if (closePanelBtn) {
         closePanelBtn.addEventListener('click', closeDetailsPanel);
     }
 
-    // 2. GERENCIADOR DA FAIXA DA BORDA DIREITA (ABRE LISTAS PESSOAIS)
-    const rightPeekTrigger = document.getElementById('right-panel-peek');
     const closeListBtn = document.getElementById('close-list-btn');
-
-    if (rightPeekTrigger) {
-        rightPeekTrigger.addEventListener('click', () => {
-            closeDetailsPanel(); // Fecha o painel esquerdo se estiver aberto
-            document.body.classList.add('right-panel-open');
-        });
-    }
-
     if (closeListBtn) {
         closeListBtn.addEventListener('click', closeListPanel);
     }
 
-    // FECHAR PAINÉIS AO CLICAR FORA (NO SOBREPOSIÇÃO)
+    // 2. BOTÕES DAS CATEGORIAS ("Mostrar Mais" e "O que estou Jogando/Assistindo/Lendo?")
+    document.querySelectorAll('.btn-show-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const parentCard = btn.closest('.category-card');
+            if (parentCard) openFullGrid(parentCard);
+        });
+    });
+
+    document.querySelectorAll('.btn-open-status').forEach(btn => {
+        btn.addEventListener('click', () => {
+            closeDetailsPanel();
+            closeFullGrid();
+            document.body.classList.add('right-panel-open');
+        });
+    });
+
+    const closeFullGridBtn = document.getElementById('close-full-grid-btn');
+    if (closeFullGridBtn) {
+        closeFullGridBtn.addEventListener('click', closeFullGrid);
+    }
+
+    // FECHAR PAINÉIS AO CLICAR FORA
     document.addEventListener('click', (e) => {
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
-            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.controls-bar')) {
+            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.full-grid-content a') && !e.target.closest('.controls-bar')) {
                 closeDetailsPanel();
             }
         }
         if (document.body.classList.contains('right-panel-open')) {
             const listPanel = document.getElementById('list-panel');
-            if (listPanel && !listPanel.contains(e.target) && !e.target.closest('#right-panel-peek')) {
+            if (listPanel && !listPanel.contains(e.target) && !e.target.closest('.btn-open-status')) {
                 closeListPanel();
             }
         }
