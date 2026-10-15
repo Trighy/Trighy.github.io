@@ -11,9 +11,9 @@ const itemsDatabase = {
             nin: "https://www.nintendo.com/pt-br/store/products/ori-and-the-will-of-the-wisps-switch/"
         },
         review: {
-            en: "This game is very special to me; honestly, I don’t even know where to begin explaining it. It is, without a doubt, my all-time favorite game—I even have a tattoo of Ori on my right forearm! This game made me realize things I had been questioning myself about during my darkest moments.",
-            pt: "Esse jogo é muito especial para mim, sinceramente nem sei por onde começar a explicar ele. É certamente meu jogo favorito para sempre, tenho até uma tatuagem do Ori no meu antebraço direito! Esse jogo me fez perceber coisas que eu mesmo me questionava nos meus momentos mais escuros.",
-            es: "Este juego es muy especial para mí; sinceramente, ni siquiera sé por dónde empezar a explicarlo. Es, sin duda, mi juego favorito de todos los tiempos; ¡incluso tengo un tatuaje de Ori en mi antebrazo derecho!"
+            en: "This game is very special to me; honestly, I don’t even know where to begin explaining it. It is, without a doubt, my all-time favorite game—I even have a tattoo of Ori (that tiny, little white character) on my right forearm! The year was 2020, and I was going through—how should I put this?—an emotional crisis. I was questioning whether I was actually capable of feeling emotions; for instance, I went to a funeral and didn’t cry. From that point on, I began to wonder if I was just putting on an act or if I was truly experiencing 'genuine' feelings. Then, one random day, I stumbled upon a video of someone playing Ori. I watched it, thinking, 'Oh, just another game'—but how wrong I was! This game struck a chord with me in a way that’s impossible to put into words. Even though it was quite expensive in my local currency, I bought it at full price—I just had to play it. Would you believe me if I told you I cried within the first five minutes? It was an absolute emotional rollercoaster. If I could wipe my memory and play it all over again, I would—though, if I could wipe my memory twice, I’d save the first time for another game: Outer Wilds. But honestly, if I could ask everyone in my life to play just one game, this would definitely be the one.",
+            pt: "Esse jogo é muito especial para mim, sinceramente nem sei por onde começar a explicar ele. É certamente meu jogo favorito para sempre, tenho até uma tatuagem do Ori no meu antebraço direito! (o personagem branquinho pequenininho) O ano era 2020 e eu estava tendo uma como posso disser? Crise emocional, estava questionando se eu conseguia de fato sentir sentimentos, um exemplo foi eu ir á um funeral e não ter chorado, apartir dai comecei á me questionar se eu estava só fazendo uma atuação ou se eu realmente sentia sentimentos de 'verdade', até que em um dia aleatório descubro um vídeo de alguém jogando Ori, assisto o vídeo pensando 'ah, só mais um jogo' como eu estava errado, esse jogo me pegou de uma forma que eu não tenho palavras para descrever, eu tive que comprar o jogo em preço cheio apessar de ser caro em minha moeda de compra, mesmo assim, comprei e tive que jogar, se eu te disser que eu chorei nós primeiros 5 minutos, acreditarias? Isso foi uma experiencia de uma montanha russsa de emoções e se eu podese apagar minha memoria e rejogar eu faria isso se eu podese apagar minha memoria duas vezes, o primeiro fica para outro jogo, Outer Wilds. Mas bem, se eu podese pedir para todo mundo da minha vida jogar um único jogo, séria certamente esse aqui.",
+            es: "Este juego es muy especial para mí; sinceramente, ni siquiera sé por dónde empezar a explicarlo. Es, sin duda, mi juego favorito de todos los tiempos; ¡incluso tengo un tatuaje de Ori en mi antebrazo derecho! (ese personaje pequeñito y blanquito). Corría el año 2020 y yo estaba pasando por... ¿cómo decirlo? Una crisis emocional. Me cuestionaba si realmente era capaz de experimentar sentimientos; por ejemplo, fui a un funeral y no lloré. A partir de ahí, empecé a preguntarme si solo estaba actuando o si realmente sentía emociones «de verdad». Hasta que, un día cualquiera, me topé con un video de alguien jugando a Ori. Lo vi pensando: 'bah, otro juego más'. ¡Qué equivocado estaba! Este juego me marcó de una forma que no tengo palabras para describir. Tuve que comprarlo a precio completo, a pesar de que resultaba caro en mi moneda local; aun así, lo compré y tuve que jugarlo. Si te dijera que lloré en los primeros cinco minutos, ¿me creerías? Fue una auténtica montaña rusa de emociones. Si pudiera borrar mi memoria para volver a jugarlo, lo haría. Bueno, si pudiera borrar mi memoria dos veces —la primera la reservaría para otro juego: Outer Wilds—, sin duda lo haría. Pero, en fin, si pudiera pedirle a todas las personas de mi vida que jugaran a un solo título, sería, sin lugar a dudas, este."
         }
     },
     "outer wilds": {
@@ -21,17 +21,17 @@ const itemsDatabase = {
         links: {
             steam: "https://store.steampowered.com/app/753640/",
             xbox: "https://www.xbox.com/games/store/outer-wilds/B2VG2K3B29L2",
-            ps: "https://store.playstation.com/concept/233072",
+            ps: "https://www.playstation.com/games/outer-wilds/",
             nin: "https://www.nintendo.com/store/products/outer-wilds-switch/"
         },
         review: {
-            en: "An unforgettable space exploration mystery about curiosity and the beauty of knowledge.",
-            pt: "Uma jornada inesquecível de exploração espacial guiada pela curiosidade pura. Fascinante.",
-            es: "Un misterio de exploración espacial inolvidable sobre la curiosidad y el conocimiento."
+            en: "Outer Wilds, Outer Wilds—where do I even begin? If you’ve never heard of this game, do yourself a favor and heed this request: DO NOT LOOK UP ANYTHING ABOUT IT. At most, watch the trailer that plays in the background on this page, but otherwise, go in completely blind. Trust me—you’ll be doing yourself a huge favor. The most I can say is that it’s a non-linear adventure game where you try to unravel a mystery that goes far beyond your own character. If you enjoy exploration—where you aren’t told exactly where to go and are encouraged to truly think for yourself—then play this game completely blind. If I could erase my own memory to replay any game—just as I mentioned in my review of Ori and the Will of the Wisps—it would undoubtedly be this one.",
+            pt: "Outer Wilds, Outer Wilds, por onde eu começo? Se você nunca ouviu falar desse jogo faça um favor e um pedido á mim, NÃO VEJÁ NADA DELE, no máximo o trailer passando de fundo na página dele selecionado, vá nele completamente as cegas, acredite em mim isso será um favor á você, o máximo que posso disser desse jogo é que é um jogo de aventura não linear de você tentando descobrir um mistério sobre coisas que vão muito além do seu personagem principal, se você gosta de exploração sem explicação para onde ir e realmente pensar, jogue esse jogo as cegas pois se eu podese, como já disse na review do Ori and the Will of the Wisps apagar minha memoria e rejogar um jogo, séria certamente esse aqui.",
+            es: "Outer Wilds, Outer Wilds... ¿por dónde empiezo? Si nunca has oído hablar de este juego, hazme un favor: ¡NO VEAS NADA SOBRE ÉL! Como mucho, el tráiler que se reproduce de fondo en su página; juégalo totalmente a ciegas. Créeme, te estarás haciendo un favor. Lo único que puedo decirte es que es un juego de aventuras no lineal en el que intentas desentrañar un misterio que va mucho más allá de tu personaje principal. Si te gusta la exploración —sin que te indiquen a dónde ir— y te gusta pensar por tu cuenta, juégalo a ciegas. Si pudiera borrar mi memoria para volver a disfrutar de un título —como ya mencioné en mi reseña de Ori and the Will of the Wisps—, sin duda elegiría este."
         }
     },
     "oneshot": {
-        trailer: "Sg463B8O0I0",
+        trailer: "ctYNBd6t4-g",
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
             xbox: "https://www.xbox.com/games/store/oneshot-world-machine-edition/9p8pqw389q60",
@@ -39,8 +39,8 @@ const itemsDatabase = {
             nin: "https://www.nintendo.com/store/products/oneshot-world-machine-edition-switch/" 
         },
         review: {
-            en: "OneShot is a surreal top-down Puzzle/Adventure game with unique mechanics that break the fourth wall.",
-            pt: "Oneshot é surreal. A mecânica de quebrar a quarta parede e o fato de você ter apenas uma chance torna tudo muito especial.",
+            en: "Oneshot, what a incredible unexpected game, I have come into this game because of the cult of the main character thinking 'oh those people what is happening exactly here? I'll have a look' and holy macaroni I was flashbanged with simply one of the most incredible and creative histories in a vídeo game, this game don't just 'breaks' the fourth wall for funnies, you constantely need to be tinkering on the 'games files' (not the actual game files so you don't accidentely break the game obviously, it does affect the game) to pass certain puzzles while also being able to communicate with sorely the main character who is indeed a character but by options like any chosse your path history yknow? but his name is Niko and his not a mindless vessel you simply control yourself he is a child who finds himself in this world and you need to be his guide on this world to save it even if there almost no time left or world to save, do you, save this world or let it die? Remember this question, you will need determination.",
+            pt: "OneShot — que jogo incrível e inesperado! Cheguei a ele por causa da base de fãs dedicada ao protagonista de forma que parece um culto, pensando: 'Mas o que está acontecendo aqui, afinal? Vou dar uma olhada'. E, nossa, fui pego de surpresa por uma das histórias mais incríveis e criativas que já vi em um videogame. O jogo não se limita a 'quebrar a quarta parede' apenas por diversão; você precisa interagir constantemente com os 'arquivos do jogo' (não os arquivos reais do sistema, para evitar que algo quebre por acidente, mas sim elementos que afetam a experiência) para resolver certos quebra-cabeças. Além disso, você pode conversar diretamente com o protagonista — que não é apenas um avatar vazio sob seu controle, mas sim uma criança que se vê perdida neste mundo. Você precisa ser o guia dele para tentar salvar esse lugar, mesmo quando quase não resta tempo — ou um mundo para salvar. Você vai salvá-lo ou deixá-lo morrer? Lembre-se dessa pergunta; você vai precisar de determinação.",
             es: "OneShot es un juego surrealista de aventuras y rompecabezas con mecánicas únicas."
         }
     },
@@ -73,7 +73,7 @@ const itemsDatabase = {
         }
     },
     "spore": {
-        trailer: "zi2GvqboQfY",
+        trailer: "jVH9Q8M8eaQ",
         links: {
             steam: "https://store.steampowered.com/app/17390/",
             xbox: null,
@@ -87,7 +87,11 @@ const itemsDatabase = {
         }
     },
     "the wild robot": {
-        trailer: "67vbA5ZktdE",
+        trailer: {
+            en: "67vbA5ZJdKQ&t",
+            pt: "TbLVc8fnw7c",
+            es: "67vbA5ZJdKQ&t",
+        },
         links: {
             steam: null, xbox: null, ps: null, nin: null
         },
@@ -98,7 +102,7 @@ const itemsDatabase = {
         }
     },
     "mune: the guardian of the moon": {
-        trailer: "S31U2-K3k_o",
+        trailer: "X-YuxDOO8pU",
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "A magical tale of a faun who unexpectedly becomes guardian of the moon.",
@@ -107,7 +111,11 @@ const itemsDatabase = {
         }
     },
     "puss in boots: the last wish": {
-        trailer: "RqrXhwS33Ma",
+        trailer: {
+            en: "Y5zqweZAEKI",
+            pt: "Dyc8YANE6i8",
+            es: "Q9ExW8jvVwE",
+        },
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "An animation masterclass regarding life, mortality, and fear.",
@@ -116,7 +124,11 @@ const itemsDatabase = {
         }
     },
     "gravity falls": {
-        trailer: "tctX731O6hE",
+        trailer: {
+            en: "fye6jbyWfG0",
+            pt: "cbm4lnb5vWw",
+            es: "fye6jbyWfG0",
+        },
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "The gold standard of animated mystery and childhood summer adventures.",
@@ -125,7 +137,7 @@ const itemsDatabase = {
         }
     },
     "amphibia": {
-        trailer: "E3kI2Xg2E9k",
+        trailer: "cuL48NyEL6o",
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "A beautiful coming-of-age story in a frog-inhabited world.",
@@ -134,7 +146,7 @@ const itemsDatabase = {
         }
     },
     "the owl house": {
-        trailer: "fe-48pP_134",
+        trailer: "9eoDJufrO3k",
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "A magical journey celebrating individuality and found family.",
@@ -143,7 +155,7 @@ const itemsDatabase = {
         }
     },
     "bna brand new animal": {
-        trailer: "13-vO8L3m_I",
+        trailer: "rg8dp-AGonE",
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "Dynamic Studio Trigger animation filled with vibrant colors and action.",
@@ -152,7 +164,7 @@ const itemsDatabase = {
         }
     },
     "kill la kill": {
-        trailer: "83mS0l3L1M4",
+        trailer: "B98NY8Hfo7I",
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
             en: "High-octane action and unmatched visual energy.",
