@@ -4,6 +4,7 @@
 // O nome do jogo aqui deve ser exatamente igual ao que está no "alt" da imagem no HTML (em letras minúsculas)
 const itemsDatabase = {
     "ori and the will of the wisps": {
+        trailer: "kd0zbNw1VOg", // ID do Trailer no YouTube
         links: {
             steam: "https://store.steampowered.com/app/1057090/",
             xbox: "https://www.xbox.com/pt-BR/games/store/ori-and-the-will-of-the-wisps/9N8CD0XZKLP4",
@@ -17,6 +18,7 @@ const itemsDatabase = {
         }
     },
     "oneshot": {
+        trailer: "Sg463B8O0I0", // ID do Trailer no YouTube
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
             xbox: "https://www.xbox.com/games/store/oneshot-world-machine-edition/9p8pqw389q60",
@@ -30,16 +32,17 @@ const itemsDatabase = {
         }
     },
     "the wild robot": {
+        trailer: "67vbA5ZktdE", // ID do Trailer no YouTube
         links: {
             imdb: "https://www.imdb.com/title/tt29623480/",
         },
         review: {
-            en: "Teste ingles",
-            pt: "Teste portugues brasileiro",
-            es: "Teste espanhol"
+            en: "An extraordinary journey of a robot adapted to nature.",
+            pt: "Uma jornada extraordinária de uma robô adaptando-se à natureza.",
+            es: "Un viaje extraordinario de un robot adaptándose a la naturaleza."
         }
-    },
-    // Para adicionar mais jogos, filmes ou séries, basta copiar a estrutura acima, colocar uma vírgula e colar!
+    }
+    // Para adicionar mais itens, basta copiar a estrutura acima mantendo o ID do trailer!
 };
 
 // ==========================================
@@ -150,27 +153,31 @@ function initYouTubePlayer() {
 
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
-        host: 'https://www.youtube.com', // Força a origem correta
+        host: 'https://www.youtube.com',
         playerVars: {
-            'autoplay': 0, 
+            'autoplay': 1, 
             'controls': 0,
             'mute': 1,
             'loop': 1,
-            'playlist': 'kd0zbNw1VOg', // OBRIGATÓRIO PARA O LOOP FUNCIONAR
+            'playlist': 'kd0zbNw1VOg', 
             'showinfo': 0,
             'rel': 0,
             'modestbranding': 1,
-            'playsinline': 1
-            // Removido o 'origin' que estava causando o bloqueio no GitHub Pages
+            'playsinline': 1,
+            'enablejsapi': 1
         },
         events: {
             'onReady': (event) => {
-                event.target.mute(); // Garante que comece mudo para o navegador não bloquear
+                event.target.mute(); // Sempre inicia mudo para evitar bloqueios no navegador
                 if (pendingTrailer) {
                     youtubePlayer.loadVideoById({
                         videoId: pendingTrailer
                     });
-                    if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
+                    if (isTrailerMuted) { 
+                        youtubePlayer.mute(); 
+                    } else { 
+                        youtubePlayer.unMute(); 
+                    }
                     youtubePlayer.playVideo();
                     pendingTrailer = null;
                 }
@@ -213,6 +220,8 @@ function initCarousels() {
         const prevBtn = carousel.querySelector('.prev-btn');
         const nextBtn = carousel.querySelector('.next-btn');
         let isMoving = false;
+
+        if (!track || !prevBtn || !nextBtn) return;
 
         nextBtn.addEventListener('click', () => {
             if (isMoving) return;
@@ -269,22 +278,36 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault(); 
             
             const img = link.querySelector('img');
-            const title = img.getAttribute('alt');
+            if (!img) return;
+
+            const title = img.getAttribute('alt') || "";
             const cleanTitle = title.toLowerCase().trim();
             currentOpenItemTitle = cleanTitle;
 
-            document.getElementById('details-title').innerText = title;
-            document.getElementById('details-cover').src = img.getAttribute('src');
+            const detailsTitle = document.getElementById('details-title');
+            const detailsCover = document.getElementById('details-cover');
+            
+            if (detailsTitle) detailsTitle.innerText = title;
+            if (detailsCover) detailsCover.src = img.getAttribute('src');
             
             const itemData = itemsDatabase[cleanTitle];
 
             if (itemData) {
-                document.getElementById('details-review').innerText = itemData.review[currentLang] || itemData.review['pt'];
+                const reviewBox = document.getElementById('details-review');
+                if (reviewBox) {
+                    reviewBox.innerText = itemData.review[currentLang] || itemData.review['pt'];
+                }
 
                 function setupBtn(id, url) {
                     const btn = document.getElementById(id);
-                    if (url) { btn.href = url; btn.style.display = 'flex'; } 
-                    else { btn.style.display = 'none'; }
+                    if (btn) {
+                        if (url) { 
+                            btn.href = url; 
+                            btn.style.display = 'flex'; 
+                        } else { 
+                            btn.style.display = 'none'; 
+                        }
+                    }
                 }
 
                 setupBtn('platform-steam', itemData.links.steam || link.href);
@@ -292,18 +315,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 setupBtn('platform-ps', itemData.links.ps);
                 setupBtn('platform-nin', itemData.links.nin);
                 
-                // LÓGICA CORRIGIDA DO TRAILER (NÃO RECARREGA SE FOR O MESMO)
+                // EXECUTA O CARREGAMENTO DO TRAILER
                 if (itemData.trailer) {
                     document.body.classList.add('showing-trailer'); 
                     
                     if (youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
-                        // Só carrega o vídeo do zero se for um trailer diferente do atual
                         if (currentLoadedTrailer !== itemData.trailer) {
-                            youtubePlayer.loadVideoById({ videoId: itemData.trailer });
+                            youtubePlayer.loadVideoById({ 
+                                videoId: itemData.trailer,
+                                startSeconds: 0
+                            });
                             currentLoadedTrailer = itemData.trailer;
                         }
                         
-                        if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
+                        if (isTrailerMuted) { 
+                            youtubePlayer.mute(); 
+                        } else { 
+                            youtubePlayer.unMute(); 
+                        }
                         youtubePlayer.playVideo(); 
                     } else {
                         pendingTrailer = itemData.trailer; 
@@ -315,12 +344,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             } else {
-                document.getElementById('details-review').innerText = "Análise em construção...";
-                document.getElementById('platform-steam').href = link.href;
-                document.getElementById('platform-steam').style.display = 'flex';
-                document.getElementById('platform-xbox').style.display = 'none';
-                document.getElementById('platform-ps').style.display = 'none';
-                document.getElementById('platform-nin').style.display = 'none';
+                const reviewBox = document.getElementById('details-review');
+                if (reviewBox) reviewBox.innerText = "Análise em construção...";
+                
+                const steamBtn = document.getElementById('platform-steam');
+                if (steamBtn) {
+                    steamBtn.href = link.href;
+                    steamBtn.style.display = 'flex';
+                }
+                
+                ['platform-xbox', 'platform-ps', 'platform-nin'].forEach(id => {
+                    const btn = document.getElementById(id);
+                    if (btn) btn.style.display = 'none';
+                });
                 
                 document.body.classList.remove('showing-trailer');
                 if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
@@ -342,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', (e) => {
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
-            if (!panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.controls-bar')) {
+            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.controls-bar')) {
                 closeDetailsPanel();
             }
         }
@@ -359,11 +395,11 @@ document.addEventListener("DOMContentLoaded", () => {
         musicBtn.addEventListener("click", () => {
             if (isPlaying) {
                 music.pause();
-                icon.className = "fas fa-music";
+                if (icon) icon.className = "fas fa-music";
                 isPlaying = false;
             } else {
                 music.play().then(() => {
-                    icon.className = "fas fa-pause";
+                    if (icon) icon.className = "fas fa-pause";
                     isPlaying = true;
                 }).catch(e => console.error(e));
             }
@@ -382,32 +418,38 @@ document.addEventListener("DOMContentLoaded", () => {
                     youtubePlayer.unMute();
                     youtubePlayer.setVolume(80);
                 }
-                icon.className = "fas fa-volume-up";
+                if (icon) icon.className = "fas fa-volume-up";
                 isTrailerMuted = false;
 
+                // Pausa a música de fundo se o trailer tiver som ligado
                 if (music && !music.paused) {
                     music.pause();
-                    if (musicBtn) musicBtn.querySelector("i").className = "fas fa-music";
+                    if (musicBtn && musicBtn.querySelector("i")) {
+                        musicBtn.querySelector("i").className = "fas fa-music";
+                    }
                 }
             } else {
                 if (typeof youtubePlayer.mute === 'function') youtubePlayer.mute();
-                icon.className = "fas fa-volume-mute";
+                if (icon) icon.className = "fas fa-volume-mute";
                 isTrailerMuted = true;
             }
         });
     }
 
-    // 4. MODO CINEMA (BIG PICTURE)
+    // 4. MODO CINEMA
     const cinemaBtn = document.getElementById("cinemaModeToggle");
     if (cinemaBtn) {
         cinemaBtn.addEventListener("click", () => {
             document.body.classList.toggle("cinema-mode");
             const icon = cinemaBtn.querySelector("i");
-            if (document.body.classList.contains("cinema-mode")) {
-                icon.className = "fas fa-compress";
-            } else {
-                icon.className = "fas fa-expand";
+            if (icon) {
+                if (document.body.classList.contains("cinema-mode")) {
+                    icon.className = "fas fa-compress";
+                } else {
+                    icon.className = "fas fa-expand";
+                }
             }
         });
     }
 });
+ 
