@@ -345,8 +345,13 @@ function playTrailerId(videoId) {
 function stopTrailer() {
     document.body.classList.remove('showing-trailer');
     currentLoadedTrailer = null;
-    if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
-        youtubePlayer.pauseVideo();
+    if (youtubePlayer) {
+        if (typeof youtubePlayer.pauseVideo === 'function') {
+            youtubePlayer.pauseVideo();
+        }
+        if (typeof youtubePlayer.mute === 'function') {
+            youtubePlayer.mute(); // Muta o player para evitar vazamento de áudio ao fechar
+        }
     }
 }
 
@@ -456,7 +461,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Reseta a visibilidade de todos os botões do painel antes de aplicar
             ['platform-steam', 'platform-xbox', 'platform-ps', 'platform-nin', 'platform-imdb', 'platform-anilist', 'platform-book'].forEach(id => setupBtn(id, null));
 
             const clickedHref = link.getAttribute('href');
@@ -500,7 +504,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const reviewBox = document.getElementById('details-review');
                 if (reviewBox) reviewBox.innerText = "Análise em construção...";
                 
-                // Se o item não estiver no banco, mapeia diretamente pelo link do carrossel
                 if (clickedHref && clickedHref !== '#') {
                     if (clickedHref.includes('steampowered.com')) setupBtn('platform-steam', clickedHref);
                     else if (clickedHref.includes('imdb.com')) setupBtn('platform-imdb', clickedHref);
