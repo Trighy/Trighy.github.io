@@ -109,11 +109,11 @@ let currentLang = 'en';
 let currentOpenItemTitle = ""; 
 let youtubePlayer = null;
 let isTrailerMuted = true;
+let pendingTrailer = null; // GUARDA O PEDIDO CASO O YOUTUBE DEMORE A CARREGAR
 
 function changeLanguage(lang) {
     currentLang = lang;
 
-    // 1. Atualiza os textos normais
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -125,7 +125,6 @@ function changeLanguage(lang) {
         }
     });
 
-    // 2. Atualiza a análise no painel (se estiver aberto)
     if (document.body.classList.contains('panel-open') && currentOpenItemTitle) {
         const itemData = itemsDatabase[currentOpenItemTitle];
         if (itemData && itemData.review && itemData.review[lang]) {
@@ -148,11 +147,11 @@ function initYouTubePlayer() {
     }
 }
 
-window.onYouTubeIframeAPIReady = function() {
+function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
-        videoId: 'kd0zbNw1VOg', // Carrega um ID inicial, mas não dá play
+        videoId: 'kd0zbNw1VOg', 
         playerVars: {
-            'autoplay': 0, // Inicia pausado
+            'autoplay': 0, 
             'controls': 0,
             'mute': 1,
             'loop': 1,
@@ -164,8 +163,15 @@ window.onYouTubeIframeAPIReady = function() {
             'origin': window.location.origin
         },
         events: {
+            'onReady': (event) => {
+                // Se alguém clicou em um jogo antes do player estar 100% pronto, toca agora!
+                if (pendingTrailer) {
+                    youtubePlayer.loadVideoById(pendingTrailer);
+                    if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
+                    youtubePlayer.playVideo();
+                }
+            },
             'onStateChange': (event) => {
-                // Se o vídeo acabar, toca de novo (Loop infinito)
                 if (event.data === YT.PlayerState.ENDED) {
                     youtubePlayer.playVideo(); 
                 }
@@ -174,17 +180,14 @@ window.onYouTubeIframeAPIReady = function() {
     });
 }
 
-// Função para fechar completamente o painel e voltar ao início
 function closeDetailsPanel() {
     document.body.classList.remove('panel-open');
-    document.body.classList.remove('showing-trailer'); // Esconde o vídeo da tela
+    document.body.classList.remove('showing-trailer'); 
     
-    // Pausa o trailer
-    if (youtubePlayer && youtubePlayer.pauseVideo) {
+    if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
         youtubePlayer.pauseVideo();
     }
 
-    // Se a pessoa fechou o painel enquanto estava no Modo Cinema, desliga o modo cinema!
     if (document.body.classList.contains('cinema-mode')) {
         document.body.classList.remove('cinema-mode');
         const cinemaIcon = document.querySelector('#cinemaModeToggle i');
@@ -250,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCarousels();
     initYouTubePlayer();
 
-    // 1. SISTEMA DO PAINEL DE DETALHES, CLIQUES E TRAILERS
+    // 1. SISTEMA DO PAINEL DE DETALHES E TRAILERS
     const trackLinks = document.querySelectorAll('.favorites-track a');
     const closePanelBtn = document.getElementById('close-details-btn');
     
@@ -269,10 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const itemData = itemsDatabase[cleanTitle];
 
             if (itemData) {
-                // Seta o review na língua certa
                 document.getElementById('details-review').innerText = itemData.review[currentLang] || itemData.review['pt'];
 
-                // Liga ou desliga botões
                 function setupBtn(id, url) {
                     const btn = document.getElementById(id);
                     if (url) { btn.href = url; btn.style.display = 'flex'; } 
@@ -284,19 +285,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 setupBtn('platform-ps', itemData.links.ps);
                 setupBtn('platform-nin', itemData.links.nin);
                 
-                // O Item tem trailer?
-                if (itemData.trailer && youtubePlayer && youtubePlayer.loadVideoById) {
-                    youtubePlayer.loadVideoById(itemData.trailer);
-                    if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
+                // LÓGICA CORRIGIDA DO TRAILER
+                if (itemData.trailer) {
+                    document.body.classList.add('showing-trailer'); // Fundo do Trailer aparece independente se já carregou ou não
                     
-                    document.body.classList.add('showing-trailer'); // Fundo do Trailer aparece
+                    if (youtubePlayer && typeof youtubePlayer.loadVideoById === 'function') {
+                        youtubePlayer.loadVideoById(itemData.trailer);
+                        if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
+                        youtubePlayer.playVideo(); // FORÇA O PLAY PARA EVITAR TELA PRETA
+                    } else {
+                        pendingTrailer = itemData.trailer; // Guarda se clicou muito rápido
+                    }
                 } else {
-                    // Sem trailer (ex: Mangá). Pausa e esconde o vídeo pra mostrar o fundo padrão.
-                    if (youtubePlayer && youtubePlayer.pauseVideo) youtubePlayer.pauseVideo();
                     document.body.classList.remove('showing-trailer');
+                    if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
+                        youtubePlayer.pauseVideo();
+                    }
                 }
             } else {
-                // Se a obra não estiver no Banco de Dados
                 document.getElementById('details-review').innerText = "Análise em construção...";
                 document.getElementById('platform-steam').href = link.href;
                 document.getElementById('platform-steam').style.display = 'flex';
@@ -304,30 +310,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById('platform-ps').style.display = 'none';
                 document.getElementById('platform-nin').style.display = 'none';
                 
-                // Sem trailer também
-                if (youtubePlayer && youtubePlayer.pauseVideo) youtubePlayer.pauseVideo();
                 document.body.classList.remove('showing-trailer');
+                if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
+                    youtubePlayer.pauseVideo();
+                }
             }
 
-            // Abre o painel
             document.body.classList.add('panel-open');
-            // Garante que o modo cinema comece desativado ao abrir um item
             document.body.classList.remove('cinema-mode');
             const cinemaIcon = document.querySelector('#cinemaModeToggle i');
             if (cinemaIcon) cinemaIcon.className = "fas fa-expand";
         });
     });
 
-    // Botão de voltar do painel
     if (closePanelBtn) {
         closePanelBtn.addEventListener('click', closeDetailsPanel);
     }
 
-    // Clicar fora do painel fecha ele (IGNORANDO a barra de controles pra você poder clicar no Modo Cinema)
     document.addEventListener('click', (e) => {
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
-            // Só fecha se o clique não for no painel, não for em uma capa de jogo, e não for na barra de botões
             if (!panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.controls-bar')) {
                 closeDetailsPanel();
             }
@@ -364,8 +366,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const icon = trailerSoundBtn.querySelector("i");
 
             if (isTrailerMuted) {
-                youtubePlayer.unMute();
-                youtubePlayer.setVolume(80);
+                if (typeof youtubePlayer.unMute === 'function') {
+                    youtubePlayer.unMute();
+                    youtubePlayer.setVolume(80);
+                }
                 icon.className = "fas fa-volume-up";
                 isTrailerMuted = false;
 
@@ -374,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (musicBtn) musicBtn.querySelector("i").className = "fas fa-music";
                 }
             } else {
-                youtubePlayer.mute();
+                if (typeof youtubePlayer.mute === 'function') youtubePlayer.mute();
                 icon.className = "fas fa-volume-mute";
                 isTrailerMuted = true;
             }
