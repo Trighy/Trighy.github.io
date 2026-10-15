@@ -219,13 +219,10 @@ const userLists = {
         title: { en: "Games", pt: "Jogos", es: "Juegos" },
         icon: "fas fa-gamepad",
         activeLabel: { en: "Playing", pt: "Jogando", es: "Jugando" },
-        active: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVi-KkLmBs_334q_Jz2KDqj0Gp54OhNNkuubdyPh6X5RCtnZbO_jgkz_W&s=10"
-        ],
-        frontlog: [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
+        active: [   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
             "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4"
         ],
+        frontlog: [],
         backlog: []
     },
     movies: {
