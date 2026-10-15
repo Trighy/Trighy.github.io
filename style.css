@@ -697,33 +697,34 @@ body.panel-open .details-panel {
     line-height: 1.8;
 }
 
-/* Configuração do Player do YouTube para preencher o fundo */
+/* Configuração base do Player */
 #player {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Fica atrás dos painéis, mas precisamos que o fundo suma */
+    z-index: 0; /* Coloca o vídeo acima do fundo da página */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
 }
 
-/* Quando o trailer é ativado, o vídeo fica visível */
+/* Quando abrir um jogo com trailer */
 body.showing-trailer #player {
     opacity: 1;
 }
 
-/* O fundo original do site DEVE desaparecer quando o trailer tocar */
+/* Esconde qualquer fundo do site para o vídeo aparecer */
 body.showing-trailer {
-    background-image: none !important; /* Remove a imagem de fundo padrão */
-    background-color: #000 !important; /* Fundo preto para as bordas do vídeo */
+    background: #000 !important; /* Fica tudo preto atrás */
 }
 
-/* Opcional: Se tiver uma div específica para o fundo (ex: .bg-image), esconda-a também: */
-body.showing-trailer .sua-classe-de-fundo {
-    opacity: 0 !important;
+/* SE você tiver uma div principal cobrindo a tela (como .container), precisamos deixá-la transparente no fundo */
+body.showing-trailer .container {
+    background: transparent !important;
+    z-index: 10; /* Garante que o texto/painel fique na frente do vídeo */
+    position: relative;
 }
 
 /* Responsividade do Painel */

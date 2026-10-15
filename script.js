@@ -150,10 +150,9 @@ function initYouTubePlayer() {
 
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
-        videoId: 'kd0zbNw1VOg', 
         host: 'https://www.youtube.com', // Força a origem correta
         playerVars: {
-            'autoplay': 1, 
+            'autoplay': 0, 
             'controls': 0,
             'mute': 1,
             'loop': 1,
