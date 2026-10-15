@@ -11,8 +11,12 @@ const translations = {
         favoritesSeries: "My Favorites",
         animesTitle: "Anime",
         favoritesAnimes: "My Favorites",
-        booksTitle: "Books & Manga",
+        booksTitle: "Books",
         favoritesBooks: "My Favorites",
+        mangasTitle: "Manga",
+        favoritesMangas: "My Favorites",
+        manhwasTitle: "Manhwa",
+        favoritesManhwa: "My Favorites",
         selectTrailer: "Select a Trailer"
     },
     pt: {
@@ -29,6 +33,10 @@ const translations = {
         favoritesAnimes: "Meus Favoritos",
         booksTitle: "Livros & Mangás",
         favoritesBooks: "Meus Favoritos",
+        mangasTitle: "Manga",
+        favoritesMangas: "Meus Favoritos",
+        manhwasTitle: "Manhwa",
+        favoritesManhwa: "Meus Favoritos",
         selectTrailer: "Escolha um Trailer"
     },
     es: {
@@ -43,8 +51,12 @@ const translations = {
         favoritesSeries: "Mis Favoritos",
         animesTitle: "Anime",
         favoritesAnimes: "Mis Favoritos",
-        booksTitle: "Libros y Manga",
+        booksTitle: "Libros",
         favoritesBooks: "Mis Favoritos",
+        mangasTitle: "Manga",
+        favoritesMangas: "Mis Favoritos",
+        manhwasTitle: "Manhwa",
+        favoritesManhwa: "Mis Favoritos",
         selectTrailer: "Elige un Trailer"
     }
 };
