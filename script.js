@@ -1,24 +1,37 @@
 // ==========================================
-// BANCO DE DADOS DE ANÁLISES E LINKS
+// BANCO DE DADOS COMPLETO (REVIEWS, LINKS E TRAILERS)
 // ==========================================
-// O nome do jogo aqui deve ser exatamente igual ao que está no "alt" da imagem no HTML (em letras minúsculas)
 const itemsDatabase = {
     "ori and the will of the wisps": {
-        trailer: "kd0zbNw1VOg", // ID do Trailer no YouTube
+        trailer: "kd0zbNw1VOg",
         links: {
             steam: "https://store.steampowered.com/app/1057090/",
             xbox: "https://www.xbox.com/pt-BR/games/store/ori-and-the-will-of-the-wisps/9N8CD0XZKLP4",
-            ps: null, // Colocar "null" faz o botão desaparecer (pois Ori não tem no PS)
+            ps: null,
             nin: "https://www.nintendo.com/pt-br/store/products/ori-and-the-will-of-the-wisps-switch/"
         },
         review: {
-            en: "This game is very special to me; honestly, I don’t even know where to begin explaining it. It is, without a doubt, my all-time favorite game—I even have a tattoo of Ori on my right forearm! This game—this game right here—made me realize things I had been questioning myself about; it prompted me to think and reflect during my darkest moments. If I had to ask everyone in my life to play just one single game, this would definitely be the one.",
-            pt: "Esse jogo é muito especial para mim, sinceramente nem sei por onde começar á explicar ele, ele é certamente meu jogo favorito para sempre, tenho até uma tatugem do Ori no meu antebraço direito! Esse jogo, esse jogo aqui me fez perceber coisas que eu mesmo me questionava, me fez pensar e refletir nos meus momentos mais escuros, se for para eu escolher para pedir todo mundo da minha vida jogar um único jogo, séria certamente esse.",
-            es: "Este juego es muy especial para mí; sinceramente, ni siquiera sé por dónde empezar a explicarlo. Es, sin duda, mi juego favorito de todos los tiempos; ¡incluso tengo un tatuaje de Ori en mi antebrazo derecho! Este juego —sí, este juego— me hizo darme cuenta de cosas que yo mismo me cuestionaba; me llevó a pensar y reflexionar durante mis momentos más oscuros. Si tuviera que pedirle a todas las personas de mi vida que jugaran a un solo título, sin duda elegiría este."
+            en: "This game is very special to me; honestly, I don’t even know where to begin explaining it. It is, without a doubt, my all-time favorite game—I even have a tattoo of Ori on my right forearm! This game made me realize things I had been questioning myself about during my darkest moments.",
+            pt: "Esse jogo é muito especial para mim, sinceramente nem sei por onde começar a explicar ele. É certamente meu jogo favorito para sempre, tenho até uma tatuagem do Ori no meu antebraço direito! Esse jogo me fez perceber coisas que eu mesmo me questionava nos meus momentos mais escuros.",
+            es: "Este juego es muy especial para mí; sinceramente, ni siquiera sé por dónde empezar a explicarlo. Es, sin duda, mi juego favorito de todos los tiempos; ¡incluso tengo un tatuaje de Ori en mi antebrazo derecho!"
+        }
+    },
+    "outer wilds": {
+        trailer: "ZKJUMMCJvGM",
+        links: {
+            steam: "https://store.steampowered.com/app/753640/",
+            xbox: "https://www.xbox.com/games/store/outer-wilds/B2VG2K3B29L2",
+            ps: "https://store.playstation.com/concept/233072",
+            nin: "https://www.nintendo.com/store/products/outer-wilds-switch/"
+        },
+        review: {
+            en: "An unforgettable space exploration mystery about curiosity and the beauty of knowledge.",
+            pt: "Uma jornada inesquecível de exploração espacial guiada pela curiosidade pura. Fascinante.",
+            es: "Un misterio de exploración espacial inolvidable sobre la curiosidad y el conocimiento."
         }
     },
     "oneshot": {
-        trailer: "Sg463B8O0I0", // ID do Trailer no YouTube
+        trailer: "Sg463B8O0I0",
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
             xbox: "https://www.xbox.com/games/store/oneshot-world-machine-edition/9p8pqw389q60",
@@ -26,85 +39,168 @@ const itemsDatabase = {
             nin: "https://www.nintendo.com/store/products/oneshot-world-machine-edition-switch/" 
         },
         review: {
-            en: "OneShot is a surreal top down Puzzle/Adventure game with unique gameplay capabilities...",
-            pt: "Oneshot é surreal. A mecânica de quebrar a quarta parede e o fato de que você tem apenas uma chance torna tudo muito especial.",
-            es: "OneShot es un juego surrealista de aventuras y rompecabezas..."
+            en: "OneShot is a surreal top-down Puzzle/Adventure game with unique mechanics that break the fourth wall.",
+            pt: "Oneshot é surreal. A mecânica de quebrar a quarta parede e o fato de você ter apenas uma chance torna tudo muito especial.",
+            es: "OneShot es un juego surrealista de aventuras y rompecabezas con mecánicas únicas."
+        }
+    },
+    "spiritfarer": {
+        trailer: "UoS-ow4NeHE",
+        links: {
+            steam: "https://store.steampowered.com/app/972660/",
+            xbox: "https://www.xbox.com/games/store/spiritfarer/9NG918349231",
+            ps: "https://store.playstation.com/concept/10000958",
+            nin: "https://www.nintendo.com/store/products/spiritfarer-farewell-edition-switch/"
+        },
+        review: {
+            en: "A cozy management game about saying goodbye.",
+            pt: "Um jogo aconchegante sobre amar e aprender a dizer adeus.",
+            es: "Un juego acogedor de gestión sobre decir adiós."
+        }
+    },
+    "silksong": {
+        trailer: "6XGeJwsUP9c",
+        links: {
+            steam: "https://store.steampowered.com/app/1030300/",
+            xbox: "https://www.xbox.com/games/store/hollow-knight-silksong/9n116v0599bm",
+            ps: "https://store.playstation.com/concept/10005220",
+            nin: null
+        },
+        review: {
+            en: "Highly anticipated action-platformer sequel.",
+            pt: "Uma das sequências mais aguardadas do mundo dos jogos.",
+            es: "Una de las secuelas más esperadas."
+        }
+    },
+    "spore": {
+        trailer: "zi2GvqboQfY",
+        links: {
+            steam: "https://store.steampowered.com/app/17390/",
+            xbox: null,
+            ps: null,
+            nin: null
+        },
+        review: {
+            en: "Create and evolve your species from microscopic organism to galactic ruler.",
+            pt: "Crie e evolua sua espécie desde uma ameba até o domínio da galáxia.",
+            es: "Crea y evoluciona tu especie desde una célula até un imperio galáctico."
         }
     },
     "the wild robot": {
-        trailer: "67vbA5ZktdE", // ID do Trailer no YouTube
+        trailer: "67vbA5ZktdE",
         links: {
-            imdb: "https://www.imdb.com/title/tt29623480/",
+            steam: null, xbox: null, ps: null, nin: null
         },
         review: {
-            en: "An extraordinary journey of a robot adapted to nature.",
-            pt: "Uma jornada extraordinária de uma robô adaptando-se à natureza.",
+            en: "An extraordinary journey of a robot adapting to nature and learning love.",
+            pt: "Uma jornada extraordinária de uma robô adaptando-se à natureza e descobrindo a maternidade.",
             es: "Un viaje extraordinario de un robot adaptándose a la naturaleza."
         }
+    },
+    "mune: the guardian of the moon": {
+        trailer: "S31U2-K3k_o",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "A magical tale of a faun who unexpectedly becomes guardian of the moon.",
+            pt: "Uma fábula mágica sobre um fauno que se torna guardião da lua.",
+            es: "Un cuento mágico sobre un fauno que se convierte en guardián de la luna."
+        }
+    },
+    "puss in boots: the last wish": {
+        trailer: "RqrXhwS33Ma",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "An animation masterclass regarding life, mortality, and fear.",
+            pt: "Uma verdadeira aula de animação sobre mortalidade, valorização da vida e coragem.",
+            es: "Una obra maestra de la animación sobre la vida y la mortalidad."
+        }
+    },
+    "gravity falls": {
+        trailer: "tctX731O6hE",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "The gold standard of animated mystery and childhood summer adventures.",
+            pt: "O ápice do mistério animado e do sentimento de férias de verão.",
+            es: "El estándar de oro del misterio animado."
+        }
+    },
+    "amphibia": {
+        trailer: "E3kI2Xg2E9k",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "A beautiful coming-of-age story in a frog-inhabited world.",
+            pt: "Uma jornada linda de crescimento e amizade em um mundo habitado por anfíbios.",
+            es: "Una hermosa historia de crecimiento y amistad."
+        }
+    },
+    "the owl house": {
+        trailer: "fe-48pP_134",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "A magical journey celebrating individuality and found family.",
+            pt: "Uma aventura mágica sobre aceitar quem você é e encontrar sua família do coração.",
+            es: "Una aventura mágica sobre la individualidad."
+        }
+    },
+    "bna brand new animal": {
+        trailer: "13-vO8L3m_I",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "Dynamic Studio Trigger animation filled with vibrant colors and action.",
+            pt: "Animação vibrante e cheia de estilo do Studio Trigger.",
+            es: "Animación dinámica del Studio Trigger llena de color."
+        }
+    },
+    "kill la kill": {
+        trailer: "83mS0l3L1M4",
+        links: { steam: null, xbox: null, ps: null, nin: null },
+        review: {
+            en: "High-octane action and unmatched visual energy.",
+            pt: "Ação frenética e energia visual sem paralelos.",
+            es: "Acción frenética y energía visual inigualable."
+        }
     }
-    // Para adicionar mais itens, basta copiar a estrutura acima mantendo o ID do trailer!
 };
 
 // ==========================================
-// SISTEMA DE TRADUÇÃO (I18N)
+// SISTEMA DE TRADUÇÃO
 // ==========================================
 const translations = {
     en: {
         greeting: "Hello, I'm Trighy / Oryn!",
         subtitle: "Autistic, INFJ, Straight, White, Male.",
         description: "Welcome to my little refuge on the internet! Here I'll guide you through my interests and who I am. Feel free to look around, you're welcome!",
-        gamesTitle: "Games",
-        favoritesGames: "My Favorites",
-        moviesTitle: "Movies",
-        favoritesMovies: "My Favorites",
-        seriesTitle: "Series",
-        favoritesSeries: "My Favorites",
-        animesTitle: "Anime",
-        favoritesAnimes: "My Favorites",
-        booksTitle: "Books",
-        favoritesBooks: "My Favorites",
-        mangasTitle: "Manga",
-        favoritesMangas: "My Favorites",
-        manhwasTitle: "Manhwa",
-        favoritesManhwa: "My Favorites",
+        gamesTitle: "Games", favoritesGames: "My Favorites",
+        moviesTitle: "Movies", favoritesMovies: "My Favorites",
+        seriesTitle: "Series", favoritesSeries: "My Favorites",
+        animesTitle: "Anime", favoritesAnimes: "My Favorites",
+        booksTitle: "Books", favoritesBooks: "My Favorites",
+        mangasTitle: "Manga", favoritesMangas: "My Favorites",
+        manhwasTitle: "Manhwa", favoritesManhwa: "My Favorites"
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
         subtitle: "Autista, INFJ, Hétero, Branco, Homem.",
         description: "Bem-vindo ao meu pequeno refúgio na internet! Aqui vou te guiar pelos meus interesses e quem eu sou. Fique à vontade para olhar em volta, seja bem-vindo!",
-        gamesTitle: "Jogos",
-        favoritesGames: "Meus Favoritos",
-        moviesTitle: "Filmes",
-        favoritesMovies: "Meus Favoritos",
-        seriesTitle: "Séries",
-        favoritesSeries: "Meus Favoritos",
-        animesTitle: "Anime",
-        favoritesAnimes: "Meus Favoritos",
-        booksTitle: "Livros & Mangás",
-        favoritesBooks: "Meus Favoritos",
-        mangasTitle: "Manga",
-        favoritesMangas: "Meus Favoritos",
-        manhwasTitle: "Manhwa",
-        favoritesManhwa: "Meus Favoritos",
+        gamesTitle: "Jogos", favoritesGames: "Meus Favoritos",
+        moviesTitle: "Filmes", favoritesMovies: "Meus Favoritos",
+        seriesTitle: "Séries", favoritesSeries: "Meus Favoritos",
+        animesTitle: "Anime", favoritesAnimes: "Meus Favoritos",
+        booksTitle: "Livros", favoritesBooks: "Meus Favoritos",
+        mangasTitle: "Mangás", favoritesMangas: "Meus Favoritos",
+        manhwasTitle: "Manhwa", favoritesManhwa: "Meus Favoritos"
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
         subtitle: "Autista, INFJ, Hetero, Blanco, Hombre.",
         description: "¡Bienvenido a mi pequeño refugio en internet! Aquí te guiaré por mis intereses y quién soy. Siéntete libre de mirar a tu alrededor, ¡eres bienvenido!",
-        gamesTitle: "Juegos",
-        favoritesGames: "Mis Favoritos",
-        moviesTitle: "Películas",
-        favoritesMovies: "Mis Favoritos",
-        seriesTitle: "Series",
-        favoritesSeries: "Mis Favoritos",
-        animesTitle: "Anime",
-        favoritesAnimes: "Mis Favoritos",
-        booksTitle: "Libros",
-        favoritesBooks: "Mis Favoritos",
-        mangasTitle: "Manga",
-        favoritesMangas: "Mis Favoritos",
-        manhwasTitle: "Manhwa",
-        favoritesManhwa: "Mis Favoritos",
+        gamesTitle: "Juegos", favoritesGames: "Mis Favoritos",
+        moviesTitle: "Películas", favoritesMovies: "Mis Favoritos",
+        seriesTitle: "Series", favoritesSeries: "Mis Favoritos",
+        animesTitle: "Anime", favoritesAnimes: "Mis Favoritos",
+        booksTitle: "Libros", favoritesBooks: "Mis Favoritos",
+        mangasTitle: "Manga", favoritesMangas: "Mis Favoritos",
+        manhwasTitle: "Manhwa", favoritesManhwa: "Mis Favoritos"
     }
 };
 
@@ -153,9 +249,10 @@ function initYouTubePlayer() {
 
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
+        videoId: 'kd0zbNw1VOg', // ID inicial padrão para instanciar o iframe corretamente
         host: 'https://www.youtube.com',
         playerVars: {
-            'autoplay': 1, 
+            'autoplay': 0, 
             'controls': 0,
             'mute': 1,
             'loop': 1,
@@ -168,39 +265,57 @@ function onYouTubeIframeAPIReady() {
         },
         events: {
             'onReady': (event) => {
-                event.target.mute(); // Sempre inicia mudo para evitar bloqueios no navegador
+                event.target.mute(); 
                 if (pendingTrailer) {
-                    youtubePlayer.loadVideoById({
-                        videoId: pendingTrailer
-                    });
-                    if (isTrailerMuted) { 
-                        youtubePlayer.mute(); 
-                    } else { 
-                        youtubePlayer.unMute(); 
-                    }
-                    youtubePlayer.playVideo();
+                    playTrailerId(pendingTrailer);
                     pendingTrailer = null;
                 }
             },
             'onStateChange': (event) => {
-                if (event.data === YT.PlayerState.ENDED) {
+                if (event.data === YT.PlayerState.ENDED && youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
                     youtubePlayer.playVideo(); 
                 }
-            },
-            'onError': (event) => {
-                console.log("Erro no YouTube API:", event.data);
             }
         }
     });
 }
 
-function closeDetailsPanel() {
-    document.body.classList.remove('panel-open');
-    document.body.classList.remove('showing-trailer'); 
-    
+function playTrailerId(videoId) {
+    if (!videoId) return;
+
+    document.body.classList.add('showing-trailer');
+
+    if (youtubePlayer && typeof youtubePlayer.loadVideoById === 'function') {
+        if (currentLoadedTrailer !== videoId) {
+            currentLoadedTrailer = videoId;
+            youtubePlayer.loadVideoById({
+                videoId: videoId,
+                startSeconds: 0
+            });
+        }
+        
+        if (isTrailerMuted) { 
+            youtubePlayer.mute(); 
+        } else { 
+            youtubePlayer.unMute(); 
+            youtubePlayer.setVolume(80);
+        }
+        youtubePlayer.playVideo(); 
+    } else {
+        pendingTrailer = videoId;
+    }
+}
+
+function stopTrailer() {
+    document.body.classList.remove('showing-trailer');
     if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
         youtubePlayer.pauseVideo();
     }
+}
+
+function closeDetailsPanel() {
+    document.body.classList.remove('panel-open');
+    stopTrailer();
 
     if (document.body.classList.contains('cinema-mode')) {
         document.body.classList.remove('cinema-mode');
@@ -260,7 +375,7 @@ function initCarousels() {
 }
 
 // ==========================================
-// INICIALIZAÇÃO GLOBAL (EVENTOS)
+// INICIALIZAÇÃO E EVENTOS
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector('.container');
@@ -269,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCarousels();
     initYouTubePlayer();
 
-    // 1. SISTEMA DO PAINEL DE DETALHES E TRAILERS
+    // 1. GERENCIADOR DO PAINEL E SELEÇÃO DE ITENS
     const trackLinks = document.querySelectorAll('.favorites-track a');
     const closePanelBtn = document.getElementById('close-details-btn');
     
@@ -292,76 +407,44 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const itemData = itemsDatabase[cleanTitle];
 
+            function setupBtn(id, url) {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    if (url && url !== "#") { 
+                        btn.href = url; 
+                        btn.style.display = 'flex'; 
+                    } else { 
+                        btn.style.display = 'none'; 
+                    }
+                }
+            }
+
             if (itemData) {
                 const reviewBox = document.getElementById('details-review');
                 if (reviewBox) {
-                    reviewBox.innerText = itemData.review[currentLang] || itemData.review['pt'];
+                    reviewBox.innerText = itemData.review[currentLang] || itemData.review['pt'] || itemData.review['en'] || "";
                 }
 
-                function setupBtn(id, url) {
-                    const btn = document.getElementById(id);
-                    if (btn) {
-                        if (url) { 
-                            btn.href = url; 
-                            btn.style.display = 'flex'; 
-                        } else { 
-                            btn.style.display = 'none'; 
-                        }
-                    }
-                }
-
-                setupBtn('platform-steam', itemData.links.steam || link.href);
-                setupBtn('platform-xbox', itemData.links.xbox);
-                setupBtn('platform-ps', itemData.links.ps);
-                setupBtn('platform-nin', itemData.links.nin);
+                setupBtn('platform-steam', itemData.links ? itemData.links.steam : link.href);
+                setupBtn('platform-xbox', itemData.links ? itemData.links.xbox : null);
+                setupBtn('platform-ps', itemData.links ? itemData.links.ps : null);
+                setupBtn('platform-nin', itemData.links ? itemData.links.nin : null);
                 
-                // EXECUTA O CARREGAMENTO DO TRAILER
                 if (itemData.trailer) {
-                    document.body.classList.add('showing-trailer'); 
-                    
-                    if (youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
-                        if (currentLoadedTrailer !== itemData.trailer) {
-                            youtubePlayer.loadVideoById({ 
-                                videoId: itemData.trailer,
-                                startSeconds: 0
-                            });
-                            currentLoadedTrailer = itemData.trailer;
-                        }
-                        
-                        if (isTrailerMuted) { 
-                            youtubePlayer.mute(); 
-                        } else { 
-                            youtubePlayer.unMute(); 
-                        }
-                        youtubePlayer.playVideo(); 
-                    } else {
-                        pendingTrailer = itemData.trailer; 
-                    }
+                    playTrailerId(itemData.trailer);
                 } else {
-                    document.body.classList.remove('showing-trailer');
-                    if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
-                        youtubePlayer.pauseVideo();
-                    }
+                    stopTrailer();
                 }
             } else {
                 const reviewBox = document.getElementById('details-review');
                 if (reviewBox) reviewBox.innerText = "Análise em construção...";
                 
-                const steamBtn = document.getElementById('platform-steam');
-                if (steamBtn) {
-                    steamBtn.href = link.href;
-                    steamBtn.style.display = 'flex';
-                }
+                setupBtn('platform-steam', link.href);
+                setupBtn('platform-xbox', null);
+                setupBtn('platform-ps', null);
+                setupBtn('platform-nin', null);
                 
-                ['platform-xbox', 'platform-ps', 'platform-nin'].forEach(id => {
-                    const btn = document.getElementById(id);
-                    if (btn) btn.style.display = 'none';
-                });
-                
-                document.body.classList.remove('showing-trailer');
-                if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
-                    youtubePlayer.pauseVideo();
-                }
+                stopTrailer();
             }
 
             document.body.classList.add('panel-open');
@@ -410,18 +493,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const trailerSoundBtn = document.getElementById("trailerSoundToggle");
     if (trailerSoundBtn) {
         trailerSoundBtn.addEventListener("click", () => {
-            if (!youtubePlayer) return;
             const icon = trailerSoundBtn.querySelector("i");
 
             if (isTrailerMuted) {
-                if (typeof youtubePlayer.unMute === 'function') {
+                if (youtubePlayer && typeof youtubePlayer.unMute === 'function') {
                     youtubePlayer.unMute();
                     youtubePlayer.setVolume(80);
                 }
                 if (icon) icon.className = "fas fa-volume-up";
                 isTrailerMuted = false;
 
-                // Pausa a música de fundo se o trailer tiver som ligado
                 if (music && !music.paused) {
                     music.pause();
                     if (musicBtn && musicBtn.querySelector("i")) {
@@ -429,7 +510,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
             } else {
-                if (typeof youtubePlayer.mute === 'function') youtubePlayer.mute();
+                if (youtubePlayer && typeof youtubePlayer.mute === 'function') {
+                    youtubePlayer.mute();
+                }
                 if (icon) icon.className = "fas fa-volume-mute";
                 isTrailerMuted = true;
             }
@@ -452,4 +535,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
- 
