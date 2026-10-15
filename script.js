@@ -816,16 +816,32 @@ function openFullGrid(categoryCard) {
     fullGridTitle.innerText = catTitle;
 
     // --- INÍCIO DO SISTEMA DE PESQUISA ---
+// --- INÍCIO DO SISTEMA DE PESQUISA ---
     let searchContainer = document.getElementById('full-grid-search-container');
     if (!searchContainer) {
         searchContainer = document.createElement('div');
         searchContainer.id = 'full-grid-search-container';
-        searchContainer.innerHTML = `<i class="fas fa-search"></i> <input type="text" id="full-grid-search" placeholder="Pesquisar nesta lista...">`;
+
+        // 1. Detecta o idioma atual (lê o atributo lang da tag <html>, ex: <html lang="en">)
+        // Se o seu site usa uma variável global diferente (ex: currentLang), basta trocá-la aqui.
+        const siteLang = document.documentElement.lang || "pt"; 
+
+        // 2. Define as traduções do placeholder
+        const placeholders = {
+            "pt": "Pesquisar nesta lista...",
+            "en": "Search in this list...",
+            "es": "Buscar en esta lista..."
+        };
+
+        // Escolhe o texto correto ou cai no português como padrão
+        const placeholderText = placeholders[siteLang.substring(0, 2)] || placeholders["pt"];
+
+        searchContainer.innerHTML = `<i class="fas fa-search"></i> <input type="text" id="full-grid-search" placeholder="${placeholderText}">`;
         fullGridContent.parentNode.insertBefore(searchContainer, fullGridContent);
 
         document.getElementById('full-grid-search').addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase().trim();
-            savedSearchTerms[currentCategoryKey] = term; // Salva o que foi digitado
+            savedSearchTerms[currentCategoryKey] = term; 
             filterGridItems(term);
         });
     }
@@ -875,12 +891,15 @@ function filterGridItems(term) {
     
     items.forEach(item => {
         const img = item.querySelector('img');
-        const title = img ? (img.getAttribute('alt') || "").toLowerCase() : "";
+        const mainTitle = img ? (img.getAttribute('alt') || "").toLowerCase() : "";
         
-        if (title.includes(term)) {
+        // Captura os títulos alternativos escondidos no HTML
+        const altTitles = (item.getAttribute('data-titles') || "").toLowerCase();
+        
+        // Verifica se o termo pesquisado bate com o título principal OU com os alternativos
+        if (mainTitle.includes(term) || altTitles.includes(term)) {
             item.classList.remove('hidden-item');
             item.style.display = 'block'; 
-            // Pequeno atraso para a animação de entrada funcionar
             setTimeout(() => {
                 item.style.opacity = '1';
                 item.style.transform = 'scale(1)';
@@ -888,7 +907,6 @@ function filterGridItems(term) {
         } else {
             item.style.opacity = '0';
             item.style.transform = 'scale(0)';
-            // Espera a animação de encolher terminar para remover o espaço
             setTimeout(() => {
                 if (item.style.opacity === '0') {
                     item.classList.add('hidden-item');
