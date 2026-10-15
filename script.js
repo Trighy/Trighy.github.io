@@ -13,7 +13,7 @@ const itemsDatabase = {
         },
         review: {
             en: "This game is very special to me; honestly, I don’t even know where to begin explaining it. It is, without a doubt, my all-time favorite game—I even have a tattoo of Ori (that tiny, little white character) on my right forearm! The year was 2020, and I was going through—how should I put this?—an emotional crisis. I was questioning whether I was actually capable of feeling emotions; for instance, I went to a funeral and didn’t cry. From that point on, I began to wonder if I was just putting on an act or if I was truly experiencing 'genuine' feelings. Then, one random day, I stumbled upon a video of someone playing Ori. I watched it, thinking, 'Oh, just another game'—but how wrong I was! This game struck a chord with me in a way that’s impossible to put into words. Even though it was quite expensive in my local currency, I bought it at full price—I just had to play it. Would you believe me if I told you I cried within the first five minutes? It was an absolute emotional rollercoaster. If I could wipe my memory and play it all over again, I would—though, if I could wipe my memory twice, I’d save the first time for another game: Outer Wilds. But honestly, if I could ask everyone in my life to play just one game, this would definitely be the one.",
-            pt: "Esse jogo é muito especial para mim, sinceramente nem sei por onde começar a explicar ele. É certamente meu jogo favorito para sempre, tenho até uma tatuagem do Ori no meu antebraço direito! (o personagem branquinho pequenininho) O ano era 2020 e eu estava tendo uma como posso disser? Crise emocional, estava questionando se eu conseguia de fato sentir sentimentos, um exemplo foi eu ir á um funeral e não ter chorado, apartir dai comecei á me questionar se eu estava só fazendo uma atuação ou se eu realmente sentia sentimentos de 'verdade', até que em um dia aleatório descubro um vídeo de alguém jogando Ori, assisto o vídeo pensando 'ah, só mais um jogo' como eu estava errado, esse jogo me pegou de uma forma que eu não tenho palavras para descrever, eu tive que comprar o jogo em preço cheio apessar de ser caro em minha moeda de compra, mesmo assim, comprei e tive que jogar, se eu te disser que eu chorei nós primeiros 5 minutos, acreditarias? Isso foi uma experiencia de uma montanha russsa de emoções e se eu podese apagar minha memoria e rejogar eu faria isso se eu podese apagar minha memoria duas vezes, o primeiro fica para outro jogo, Outer Wilds. Mas bem, se eu podese pedir para todo mundo da minha vida jogar um único jogo, séria certamente esse aqui.",
+            pt: "Esse jogo é muito especial para mim, sinceramente nem sei por onde começar a explicar ele. É certamente meu jogo favorito para sempre, tenho até uma tatuagem do Ori no meu antebraço direito! (o personagem branquinho pequenininho) O ano era 2020 e eu estava tendo uma como posso disser? Crise emocional, estava questionando se eu conseguia de fato sentir sentimentos, um exemplo foi eu ir á um funeral e não ter chorado, apartir dai comecei á me questionar se eu estava só fazendo uma atuação ou se eu realmente sentia sentimentos de 'verdade', até que em um dia aleatório descubro um vídeo de alguém jogando Ori, assisto o vídeo pensando 'ah, só mais um jogo' como eu estava errado, esse jogo me pegou de uma forma que eu não tenho palavras para descrever, eu tive que comprar o jogo em preço cheio apessar de ser caro em minha moeda de compra, mesmo assim, comprei e tive que jogar, se eu te disser que eu chorei nós primeiros 5 minutos, acreditarias? Isso foi uma experiencia de uma montanha russsa de emoções e se eu podese apagar minha memoria e rejogar eu faria isso se eu podese apagar minha memoria duas vezes, o primeiro fica para outro jogo, Outer Wilds. Mas bem, se eu podese pedir para todo mundo da minha vida jogar um único jogo, seria certamente esse aqui.",
             es: "Este juego es muy especial para mí; sinceramente, ni siquiera sé por dónde empezar a explicarlo. Es, sin duda, mi juego favorito de todos los tiempos; ¡incluso tengo un tatuaje de Ori en mi antebrazo derecho! (ese personaje pequeñito y blanquito). Corría el año 2020 y yo estaba pasando por... ¿cómo decirlo? Una crisis emocional. Me cuestionaba si realmente era capaz de experimentar sentimientos; por ejemplo, fui a un funeral y no lloré. A partir de ahí, empecé a preguntarme si solo estaba actuando o si realmente sentía emociones «de verdad». Hasta que, un día cualquiera, me topé con un video de alguien jugando a Ori. Lo vi pensando: 'bah, otro juego más'. ¡Qué equivocado estaba! Este juego me marcó de una forma que no tengo palabras para describir. Tuve que comprarlo a precio completo, a pesar de que resultaba caro en mi moneda local; aun así, lo compré y tuve que jugarlo. Si te dijera que lloré en los primeros cinco minutos, ¿me creerías? Fue una auténtica montaña rusa de emociones. Si pudiera borrar mi memoria para volver a jugarlo, lo haría. Bueno, si pudiera borrar mi memoria dos veces —la primera la reservaría para otro juego: Outer Wilds—, sin duda lo haría. Pero, en fin, si pudiera pedirle a todas las personas de mi vida que jugaran a un solo título, sería, sin lugar a dudas, este."
         }
     },
@@ -88,7 +88,7 @@ const itemsDatabase = {
         },
         review: {
             en: "Spore—what an incredible game from my childhood! If you enjoy The Sims (it was made by the same creators) or games that combine multiple gameplay styles into one, please give Spore a try. There is—and I dare say this—absolutely nothing else like it; it is an exceptionally unique game with a distinct personality, and you can really feel that it was crafted with care. It was originally intended to be more detailed, but the developers decided to simplify things—partly to appeal to a younger audience and partly due to budget constraints. Regardless, even if you end up only enjoying the creature stage and not the space stage (which is quite extensive if you play all the way to the end), please, give it a chance.",
-            pt: "Spore, que jogo da minha infacia incrível! Se você gosta de The Sims (feito pelos mesmos criadores de The Sims) ou jogos que inclui múltiplos estilos de jogos em um único só, por favor de uma chance á Spore, não tem NENHUM eu ouso disser, NENHUM outro jogo parecido com Spore, é um jogo extremamente único e com sua própria personalidade e da para sentir que ele foi feito com carinho, era para ele originalmente ser mais detalhado mas decidiram simplificar as coisas por questão de chamar mais atenção do público menor e também por custos, mas de qualquer forma, por favor mesmo que você acabe só gostando do estagio criatura e não goste do estagio espacial (que também é BEM longo se fores até o final do jogo) de uma chance.",
+            pt: "Spore, que jogo da minha infacia incrível! Se você gosta de The Sims (feito pelos mesmos criadores de The Sims) ou jogos que inclui múltiplos estilos de jogos em um só, por favor de uma chance á Spore, não tem NENHUM eu ouso disser, NENHUM outro jogo parecido com Spore, é um jogo extremamente único e com sua própria personalidade e da para sentir que ele foi feito com carinho, era para ele originalmente ser mais detalhado mas decidiram simplificar as coisas por questão de chamar mais atenção do público menor e também por custos, mas de qualquer forma, por favor mesmo que você acabe só gostando do estagio criatura e não goste do estagio espacial (que também é BEM longo se fores até o final do jogo) de uma chance.",
             es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detallado, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
         }
     },
@@ -102,9 +102,9 @@ const itemsDatabase = {
             nin: null
         },
         review: {
-            en: "Plants vs. Zombies is another game from my childhood that stands as a pinnacle of the tower defense genre. If you’re looking for a unique tower defense experience—one so intuitive that even a child can pick it up, learn what each plant does, and figure out which plants to use against specific zombies—this is the game for you. It may be silly, but it respects a child’s intelligence, encouraging them to think critically about which plants to bring to counter different zombies. Plus, the soundtrack is truly memorable. Despite its age and its limited, low-resolution display, please make sure to purchase only the original or the GOTY (Game of the Year) version. The Replanted remake was created without any soul or care—to the point that the original developers and the original artist weren't even contacted to help recreate the artwork. If you’re looking for a distinct and one-of-a-kind tower defense game, this is it; please, give it a chance.",
-            pt: "Plantas vs. Zumbis, esse é mais um jogo da minha infância que é um dos picos de tower defense, se você quer um tower defense único onde tudo é intuitivo ao ponto que uma criança pode pegar o jogo e aprender oque cada planta faz e qual planta usar em quais zumbis, é esse o jogo, ele é bobo mas leva a inteligência de crianças á sério e faz elas realmente pensarem em qual plantas levar para conterar quais zumbis além da soundtrack ser memorável, apessar de sua idade e preso em uma resolução pequena, por favor compre apenas a versão original ou GOTY, a versão Replanted remake foi feito sem alma e sem carinho tanto que não contactaram os desenvolvedores originais e nem o artista original para refazer á arte, mas se procuras um tower defense diferenciado e único, é esse o jogo, por favor de á esse jogo uma chance.",
-            es: "Plants vs. Zombies es otro juego de mi infancia que representa uno de los puntos culminantes del género tower defense. Si buscas un tower defense único, donde todo es tan intuitivo que incluso un niño puede empezar a jugar, aprender qué hace cada planta y saber cuál utilizar contra cada tipo de zombi, este es el juego indicado. Aunque tiene un tono desenfadado, respeta la inteligencia de los niños y los obliga a pensar realmente qué plantas elegir para contrarrestar a los distintos zombis; además, su banda sonora es memorable. A pesar de su antigüedad y de estar limitado a una resolución baja, te recomiendo adquirir únicamente la versión original o la edición GOTY. La versión remake llamada Replanted carece de alma y de cariño; de hecho, ni siquiera contactaron a los desarrolladores ni al artista original para rehacer el apartado visual. En definitiva, si buscas un tower defense distinto y único, este es el juego; por favor, dale una oportunidad."
+            en: "Plants vs. Zombies is another game from my childhood that stands as a pinnacle of the tower defense genre. If you’re looking for a unique tower defense experience—one so intuitive that even a child can pick it up, learn what each plant does, and figure out which plants to use against specific zombies—this is the game for you. It may be silly, but it respects a child’s intelligence, encouraging them to think critically about which plants to bring to counter different zombies. Plus, the soundtrack is truly memorable. Despite its age and its limited, low-resolution display, please make sure to purchase only the original or the GOTY (Game of the Year) version. The Replanted remake was created without any soul or care—to the point that the original developers and the original artist weren't even contacted to help recreate the artwork. If you’re looking for a distinct tower defense game, this is it; please, give it a chance.",
+            pt: "Plantas vs. Zumbis, esse é mais um jogo da minha infância que é um dos picos de tower defense, se você quer um tower defense único onde tudo é intuitivo ao ponto que uma criança pode pegar o jogo e aprender oque cada planta faz e qual planta usar em quais zumbis, é esse o jogo, ele é bobo mas leva a inteligência de crianças á sério e faz elas realmente pensarem em qual plantas levar para conterar quais zumbis além da soundtrack ser memorável, apessar de sua idade e preso em uma resolução pequena, por favor compre apenas a versão original ou GOTY, a versão Replanted remake foi feito sem alma e sem carinho tanto que não contactaram os desenvolvedores originais e nem o artista original para refazer á arte, mas se procuras um tower defense diferenciado, é esse o jogo, por favor de á esse jogo uma chance.",
+            es: "Plants vs. Zombies es otro juego de mi infancia que representa uno de los puntos culminantes del género tower defense. Si buscas un tower defense único, donde todo es tan intuitivo que incluso un niño puede empezar a jugar, aprender qué hace cada planta y saber cuál utilizar contra cada tipo de zombi, este es el juego indicado. Aunque tiene un tono desenfadado, respeta la inteligencia de los niños y los obliga a pensar realmente qué plantas elegir para contrarrestar a los distintos zombis; además, su banda sonora es memorable. A pesar de su antigüedad y de estar limitado a una resolución baja, te recomiendo adquirir únicamente la versión original o la edición GOTY. La versión remake llamada Replanted carece de alma y de cariño; de hecho, ni siquiera contactaron a los desarrolladores ni al artista original para rehacer el apartado visual. En definitiva, si buscas un tower defense distinto, este es el juego; por favor, dale una oportunidad."
         }
     },
     "the wild robot": {
@@ -122,7 +122,7 @@ const itemsDatabase = {
         }
     },
     "mune: the guardian of the moon": {
-        trailer: "X-YuxDOO8pU",
+        trailer: "2ONAlFkeYYo",
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3858372/" },
         review: {
@@ -155,12 +155,12 @@ const itemsDatabase = {
         links: { imdb: "https://www.imdb.com/title/tt1865718/" },
         review: {
             en: "Gravity Falls is the first in a trilogy of Disney mystery series (though not all by the same producer) that begin with a silly tone but evolve into deeply complex, unforgettable stories. I first watched it during my teenage years, and—my goodness—the mysteries, the theories, and the interactive elements are incredible! Anyone can get involved, yet those who want to dive deeper—deciphering codes and hunting for hidden secrets—will find a real challenge. How did a show like this ever get the green light from Disney? Gravity Falls is truly unique among Disney series; its very existence defies the typical Disney fare—which often consists of nothing more than endless, mindless silliness—by encouraging children to think, all while respecting their intelligence. If I had to recommend just one series for you to watch? Gravity Falls—please, give it a watch.",
-            pt: "Gravity Falls, a primeira séria da Disney da Trilogia (não do mesmo produtor) das séries de mistério e historias extremamente profundas que começam de forma boba e que lá para frente se tornam séries inesquecíveis, esse como sendo o primero eu vi na minha adolescência e meu deus os mistérios, teorias formas de feitas que qualquer um pode participar mas ao mesmo tempo quem se aprofunda em cifras e caçar mistérios tem com oque se desafiar em uma série que de alguma forma passou o greenlight da Disney de todas as coisas? Gravity Falls é único em questão de série DA Disney, a sua mera existência desafia todas as outras séries da Disney que são apenas coisas bobas com mais coisa bobas, fazendo as crianças pensar e não questionando suas inteligências. Se for para eu escolher para veres uma única série? Gravity Falls, por favor, assista.",
+            pt: "Gravity Falls, a primeira série da Disney da Trilogia (não do mesmo produtor) das séries de mistério e historias extremamente profundas que começam de forma boba e que lá para frente se tornam séries inesquecíveis, esse como sendo o primero eu vi na minha adolescência e meu deus os mistérios, teorias formas de feitas que qualquer um pode participar mas ao mesmo tempo quem se aprofunda em cifras e caçar mistérios tem com oque se desafiar em uma série que de alguma forma passou o greenlight da Disney de todas as coisas? Gravity Falls é único em questão de série DA Disney, a sua mera existência desafia todas as outras séries da Disney que são apenas coisas bobas com mais coisa bobas, fazendo as crianças pensar e não questionando suas inteligências. Se for para eu escolher para veres uma única série? Gravity Falls, por favor, assista.",
             es: "Gravity Falls es la primera de una trilogía de series de Disney (aunque no del mismo productor) centradas en el misterio y en tramas sumamente profundas; comienzan de manera sencilla y desenfadada, pero con el tiempo se transforman en obras inolvidables. Siendo la primera de ellas, la vi durante mi adolescencia y, ¡madre mía!, los misterios, las teorías y la forma en que están planteados permiten que cualquiera participe; al mismo tiempo, quienes deciden profundizar —descifrando códigos y buscando enigmas— encuentran un verdadero desafío. ¿Cómo es possible que una serie así recibiera luz verde de Disney? Gravity Falls es única dentro del catálogo de Disney; su mera existencia desafía al resto de sus producciones —que suelen limitarse a contenidos triviales—, invitando a los niños a pensar y respetando su inteligencia. Si tuviera que recomendarte una sola serie, sería Gravity Falls. Por favor, mírala."
         }
     },
     "amphibia": {
-        trailer: "cuL48NyEL6o",
+        trailer: "1Q10vjRMBrY",
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt8050740/" },
         review: {
@@ -180,12 +180,16 @@ const itemsDatabase = {
         }
     },
     "bna brand new animal": {
-        trailer: "rg8dp-AGonE",
+        trailer: {
+            en: "3Okzra8Anr4",
+            pt: "JCrlEzBDZDQ",
+            es: "3Okzra8Anr4"
+        },
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt12013558/" },
         review: {
             en: "Okay, I know this might look bad, but trust me—it’s a good anime. BNA: Brand New Animal—a series that, at first glance, seems like just another silly anime about a school-age girl and a serious, older guy—actually delves into themes like identity, prejudice, personal freedom, and the power of choice. It may seem frivolous on the surface, but it’s quite profound underneath. I realize it might look like 'furry bait', but please, give it a chance!",
-            pt: "Ok, eu sei que isso parece ruim, mas confie em mim, é um anime bom. BNA: Brand New Animal, essa série que parece ser mais um anime bobo de uma garota estudantil com um cara mais velho sério acaba levando em consideration questionamento de identidade, preconceito de qualquer forma e de liberdade pessoal e de escolhas enquanto parece bobo por fora e profundo por dentro, Sei que parece um bait de anime furry, mas por favor, de uma chance á esse anime!",
+            pt: "Ok, eu sei que isso parece ruim, mas confie em mim, é um anime bom. BNA: Brand New Animal, essa série que parece ser mais um anime bobo de uma garota estudantil com um cara mais velho sério acaba levando em consideração questionamento de identidade, preconceito de qualquer forma e de liberdade pessoal e de escolhas enquanto parece bobo por fora e profundo por dentro, Sei que parece um bait de anime furry, mas por favor, de uma chance á esse anime!",
             es: "Vale, sé que esto suena mal, pero confía en mí: es un buen anime. BNA: Brand New Animal —una serie que, a simple vista, parece el típico anime tonto sobre una chica estudiante y un tipo mayor más serio— termina abordando cuestiones como la identidad, los prejuicios, la libertad personal y la capacidad de elección. Por fuera puede parecer una tontería, pero por dentro es profundo. Sé que puede parecer un simple gancho para atraer a los fans de lo furry, ¡pero, por favor, dale una oportunidad a este anime!"
         }
     },
@@ -220,10 +224,24 @@ const userLists = {
         icon: "fas fa-gamepad",
         activeLabel: { en: "Playing", pt: "Jogando", es: "Jugando" },
         active: [   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
-            "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4"
+            "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4",
+            "https://imgproxy.eneba.games/qeAgvJP7pqfoSJBHVld8LNtHE3dNdOteCr4ONDiHMic/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy91/dGZZRkhuczl4ZVJ3/QUI2WU1nMGxqS2pZ/aHVOajgyZmJDc0h2/c09NNEtJLmpwZw",
+            "https://static.wikia.nocookie.net/ptstarwars/images/f/fc/LEGO_Star_Wars_TCS.jpg/revision/latest?cb=20091230153244"
         ],
-        frontlog: [],
-        backlog: []
+        frontlog: [     "https://m.media-amazon.com/images/M/MV5BOTY2NGMxMDItZjE5ZS00ZTgyLWJmMzktM2EzNzc4ZWM2MDczXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            "https://store-images.s-microsoft.com/image/apps.21257.71633162879241707.7cf18b3b-9fa5-486f-9a68-067f06d50bf1.8f7909cf-d9a5-44aa-9901-2635255ab2ee",
+            "https://m.media-amazon.com/images/M/MV5BM2NhYjJhMWYtN2Q3Yy00Y2IxLTg4MTQtZjA2ODk0MjZlMzVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            "https://store-images.s-microsoft.com/image/apps.15028.14346269945886296.6f97d7ca-56af-436f-ba7f-82aed0a77d47.8ec73e74-2841-466d-bc9c-ed218c885826",
+            "https://upload.wikimedia.org/wikipedia/commons/f/fc/Fez_%28video_game%29_cover_art.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://store-images.s-microsoft.com/image/apps.53771.71995601368241962.063be1f5-e727-44b9-9243-8f287ee0ae94.704f16ca-988d-4f3f-a8d2-17df8306a647",
+            "https://image.api.playstation.com/vulcan/ap/rnd/202011/1819/m7gCTrMRQBTPHi87Mi3leVVY.jpg",
+            "https://store-images.s-microsoft.com/image/apps.615.67362291782661543.eb0267ee-9235-487a-b697-5cc49c0703c1.327dcfde-8472-4f0e-b91e-9b4856238352",
+            "https://store-images.s-microsoft.com/image/apps.52880.65129518710082559.30d43137-919f-4215-820e-038b409fb968.9b56f6c5-bfd1-4b02-beaf-666f707aa0da"
+        ],
+        backlog: [      "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/NmTEnt5SIVRk4dHDqcydervu.png",
+            "https://upload.wikimedia.org/wikipedia/pt/a/a3/Frostpunk_cover_art.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://m.media-amazon.com/images/I/81kAkZVV4RL._UF1000,1000_QL80_.jpg"
+        ]
     },
     movies: {
         title: { en: "Movies", pt: "Filmes", es: "Películas" },
@@ -237,7 +255,7 @@ const userLists = {
         icon: "fas fa-tv",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
         active: [],
-        frontlog: ["https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_.jpg"],
+        frontlog: [],
         backlog: []
     },
     animes: {
@@ -302,7 +320,7 @@ const translations = {
         seriesTitle: "Séries", favoritesSeries: "Meus Favoritos",
         animesTitle: "Anime", favoritesAnimes: "Meus Favoritos",
         booksTitle: "Livros", favoritesBooks: "Meus Favoritos",
-        mangasTitle: "Mangás", favoritesMangas: "Meus Favoritos",
+        mangasTitle: "Manga", favoritesMangas: "Meus Favoritos",
         manhwasTitle: "Manhwa", favoritesManhwa: "Meus Favoritos",
         myListsTitle: "Minhas Listas de Status",
         frontlogLabel: "Frontlog",
@@ -463,13 +481,12 @@ function startLoopCheck() {
         if (youtubePlayer && typeof youtubePlayer.getCurrentTime === 'function' && typeof youtubePlayer.getDuration === 'function') {
             const duration = youtubePlayer.getDuration();
             const currentTime = youtubePlayer.getCurrentTime();
-            // Reinicia o vídeo 5 segundos antes do fim para bloquear cartões/recomendações do YouTube
-            if (duration > 0 && currentTime >= duration - 5) {
+            if (duration > 0 && currentTime >= duration - 0.5) {
                 youtubePlayer.seekTo(0);
                 youtubePlayer.playVideo();
             }
         }
-    }, 250);
+    }, 500);
 }
 
 function onYouTubeIframeAPIReady() {
