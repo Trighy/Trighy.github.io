@@ -1,4 +1,13 @@
 // ==========================================
+// CONFIGURAÇÃO DO IP AUTORIZADO
+// Deixe "" para permitir ver os botões de edição em qualquer PC durante os testes.
+// Cole seu IP público de casa entre as aspas quando quiser bloquear o acesso externo.
+// ==========================================
+const ALLOWED_IP = "0"; 
+let currentCategoryKey = "";
+let savedSearchTerms = {};
+
+// ==========================================
 // BANCO DE DADOS COMPLETO (REVIEWS, LINKS, TRAILERS E IMAGENS)
 // ==========================================
 const itemsDatabase = {
@@ -380,9 +389,53 @@ let isTrailerMuted = true;
 let pendingTrailer = null;
 let currentLoadedTrailer = null;
 let loopTimer = null;
-let openedFromFullGrid = false; // Controle de estado para reabrir o "Mostrar Mais"
+let openedFromFullGrid = false; 
 
-// 1. Descobre o idioma inicial (respeita escolha salva ou detecta o navegador)
+// ==========================================
+// MÉTODOS DE SEGURANÇA POR IP E TRADUÇÃO API
+// ==========================================
+async function checkAllowedIP() {
+    if (ALLOWED_IP === "") {
+        return true; 
+    }
+    try {
+        const res = await fetch("https://api.ipify.org?format=json");
+        const data = await res.json();
+        return data.ip === ALLOWED_IP;
+    } catch (e) {
+        console.error("Erro ao verificar IP público:", e);
+        return false;
+    }
+}
+
+async function translateText(text, targetLang) {
+    try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${targetLang}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data && data.responseData && data.responseData.translatedText) {
+            return data.responseData.translatedText;
+        }
+        return text;
+    } catch (err) {
+        console.error("Erro na tradução automática:", err);
+        return text;
+    }
+}
+
+function loadCustomItems() {
+    const saved = localStorage.getItem("custom_items_database");
+    if (saved) {
+        try {
+            const customItems = JSON.parse(saved);
+            Object.assign(itemsDatabase, customItems);
+        } catch (e) {
+            console.error("Erro ao carregar itens customizados do localStorage:", e);
+        }
+    }
+}
+
+// Descobre o idioma inicial
 function getInitialLanguage() {
     const savedLang = localStorage.getItem('preferred_lang');
     if (savedLang && ['pt', 'en', 'es'].includes(savedLang)) {
@@ -409,7 +462,7 @@ function getTrailerId(trailerData) {
 
 function changeLanguage(lang) {
     currentLang = lang;
-    localStorage.setItem('preferred_lang', lang); // Guarda a preferência no navegador
+    localStorage.setItem('preferred_lang', lang); 
 
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -693,22 +746,18 @@ function openDetailsPanel(linkElement) {
 
         const links = itemData.links || {};
 
-        // Jogos
         let steamUrl = links.steam || (clickedHref && clickedHref.includes('steampowered.com') ? clickedHref : null);
         setupBtn('platform-steam', steamUrl);
         setupBtn('platform-xbox', links.xbox);
         setupBtn('platform-ps', links.ps);
         setupBtn('platform-nin', links.nin);
 
-        // IMDb (Filmes, Séries, Animes)
         let imdbUrl = links.imdb || (clickedHref && clickedHref.includes('imdb.com') ? clickedHref : null);
         setupBtn('platform-imdb', imdbUrl);
 
-        // AniList (Mangás e Manhwa)
         let anilistUrl = links.anilist || (clickedHref && clickedHref.includes('anilist.co') ? clickedHref : null);
         setupBtn('platform-anilist', anilistUrl);
 
-        // Livros
         let bookUrl = links.book || links.storygraph || (cardHeader.includes('book') || cardHeader.includes('livro') ? clickedHref : null);
         setupBtn('platform-book', bookUrl);
         
@@ -746,7 +795,6 @@ function closeDetailsPanel() {
         if (cinemaIcon) cinemaIcon.className = "fas fa-expand";
     }
 
-    // Se o painel foi aberto a partir do "Mostrar Mais", ele retorna ao "Mostrar Mais"
     if (openedFromFullGrid) {
         openedFromFullGrid = false;
         document.body.classList.add('full-grid-open');
@@ -767,6 +815,27 @@ function openFullGrid(categoryCard) {
     const catTitle = categoryCard.querySelector('h2').innerText;
     fullGridTitle.innerText = catTitle;
 
+    // --- INÍCIO DO SISTEMA DE PESQUISA ---
+    let searchContainer = document.getElementById('full-grid-search-container');
+    if (!searchContainer) {
+        searchContainer = document.createElement('div');
+        searchContainer.id = 'full-grid-search-container';
+        searchContainer.innerHTML = `<i class="fas fa-search"></i> <input type="text" id="full-grid-search" placeholder="Pesquisar nesta lista...">`;
+        fullGridContent.parentNode.insertBefore(searchContainer, fullGridContent);
+
+        document.getElementById('full-grid-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase().trim();
+            savedSearchTerms[currentCategoryKey] = term; // Salva o que foi digitado
+            filterGridItems(term);
+        });
+    }
+
+    // Restaura a pesquisa anterior da categoria atual
+    const searchInput = document.getElementById('full-grid-search');
+    const savedTerm = savedSearchTerms[currentCategoryKey] || "";
+    if (searchInput) searchInput.value = savedTerm;
+    // --- FIM DO SISTEMA DE PESQUISA ---
+
     const items = categoryCard.querySelectorAll('.favorites-track a');
     fullGridContent.innerHTML = '';
 
@@ -786,7 +855,7 @@ function openFullGrid(categoryCard) {
             const clone = item.cloneNode(true);
             clone.addEventListener('click', (e) => {
                 e.preventDefault();
-                openedFromFullGrid = true; // Marca que veio do "Mostrar Mais"
+                openedFromFullGrid = true; 
                 document.body.classList.remove('full-grid-open');
                 openDetailsPanel(clone);
             });
@@ -794,7 +863,40 @@ function openFullGrid(categoryCard) {
         }
     });
 
+    // Aplica o filtro imediatamente caso já tenha algo salvo
+    setTimeout(() => filterGridItems(savedTerm), 50);
+
     document.body.classList.add('full-grid-open');
+}
+
+// Função responsável por filtrar e animar os itens
+function filterGridItems(term) {
+    const items = document.querySelectorAll('#full-grid-content a');
+    
+    items.forEach(item => {
+        const img = item.querySelector('img');
+        const title = img ? (img.getAttribute('alt') || "").toLowerCase() : "";
+        
+        if (title.includes(term)) {
+            item.classList.remove('hidden-item');
+            item.style.display = 'block'; 
+            // Pequeno atraso para a animação de entrada funcionar
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
+            }, 10);
+        } else {
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0)';
+            // Espera a animação de encolher terminar para remover o espaço
+            setTimeout(() => {
+                if (item.style.opacity === '0') {
+                    item.classList.add('hidden-item');
+                    item.style.display = 'none';
+                }
+            }, 300);
+        }
+    });
 }
 
 function closeFullGrid() {
@@ -853,9 +955,27 @@ function initCarousels() {
 }
 
 // ==========================================
+// EXPORTAÇÃO AUTOMÁTICA DO SCRIPT.JS PARA ÁREA DE TRANSFERÊNCIA
+// ==========================================
+function exportUpdatedScriptJS() {
+    const formattedDatabase = JSON.stringify(itemsDatabase, null, 4);
+    const textToCopy = `const itemsDatabase = ${formattedDatabase};`;
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert("O código atualizado da variável 'itemsDatabase' foi copiado com sucesso para a sua Área de Transferência!\n\nAgora basta abrir o seu arquivo script.js no VS Code ou editor, colar por cima da variável itemsDatabase antiga, salvar e fazer seu git commit e git push!");
+    }).catch(err => {
+        console.error("Erro ao copiar para a área de transferência:", err);
+        alert("Não foi possível copiar automaticamente. Verifique as permissões do navegador.");
+    });
+}
+
+// ==========================================
 // INICIALIZAÇÃO E EVENTOS
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
+    // Carrega itens customizados já guardados
+    loadCustomItems();
+
     const container = document.querySelector('.container');
     if (container) setTimeout(() => container.classList.add('visible'), 100);
 
@@ -866,7 +986,148 @@ document.addEventListener("DOMContentLoaded", () => {
     const initialLang = getInitialLanguage();
     changeLanguage(initialLang);
 
-    // 1. GERENCIADOR DE CLIQUE NOS FAVORITOS DOS CARROSSEIS
+    // 1. CHECAGEM DE IP PERMITIDO (EXIBIÇÃO DOS BOTÕES EXCLUSIVOS)
+    checkAllowedIP().then(isAllowed => {
+        const addBtn = document.getElementById("open-add-modal-btn");
+        const exportBtn = document.getElementById("export-script-btn");
+        if (isAllowed) {
+            if (addBtn) addBtn.style.display = "inline-flex";
+            if (exportBtn) exportBtn.style.display = "inline-flex";
+        }
+    });
+
+    // Evento de clique do botão Exportar script.js
+    const exportBtn = document.getElementById("export-script-btn");
+    if (exportBtn) {
+        exportBtn.addEventListener("click", exportUpdatedScriptJS);
+    }
+
+    // 2. REGISTRO DE CATEGORIA ATUAL AO ABRIR "MOSTRAR MAIS"
+    document.querySelectorAll('.btn-show-more').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const parentCard = btn.closest('.category-card');
+            if (parentCard) {
+                currentCategoryKey = parentCard.getAttribute('data-category') || "games";
+                openFullGrid(parentCard);
+            }
+        });
+    });
+
+    // 3. EVENTOS DO MODAL DE ADICIONAR ITEM (+)
+    const addModalBtn = document.getElementById("open-add-modal-btn");
+    const addModal = document.getElementById("add-item-modal");
+    const closeAddModalBtn = document.getElementById("close-add-modal-btn");
+
+    if (addModalBtn && addModal) {
+        addModalBtn.addEventListener("click", () => {
+            document.getElementById("add-category-key").value = currentCategoryKey;
+            
+            const catObj = userLists[currentCategoryKey];
+            const catTitleName = catObj ? (catObj.title[currentLang] || catObj.title['pt']) : "Item";
+            document.getElementById("modal-category-name").innerText = catTitleName;
+
+            document.getElementById("group-game-links").style.display = "none";
+            document.getElementById("group-media-links").style.display = "none";
+            document.getElementById("group-manga-links").style.display = "none";
+            document.getElementById("group-book-links").style.display = "none";
+
+            if (currentCategoryKey === "games") {
+                document.getElementById("group-game-links").style.display = "block";
+            } else if (["movies", "series", "animes"].includes(currentCategoryKey)) {
+                document.getElementById("group-media-links").style.display = "block";
+            } else if (["mangas", "manhwas"].includes(currentCategoryKey)) {
+                document.getElementById("group-manga-links").style.display = "block";
+            } else if (currentCategoryKey === "books") {
+                document.getElementById("group-book-links").style.display = "block";
+            }
+
+            addModal.classList.add("active");
+        });
+    }
+
+    if (closeAddModalBtn && addModal) {
+        closeAddModalBtn.addEventListener("click", () => {
+            addModal.classList.remove("active");
+        });
+    }
+
+    // Processamento do Formulário (Salvar e Traduzir)
+    const addItemForm = document.getElementById("add-item-form");
+    if (addItemForm) {
+        addItemForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const saveBtn = document.getElementById("save-item-btn");
+            saveBtn.disabled = true;
+            saveBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Traduzindo...`;
+
+            const title = document.getElementById("add-title").value.trim();
+            const cleanTitle = title.toLowerCase();
+            const coverUrl = document.getElementById("add-cover").value.trim();
+            const trailerId = document.getElementById("add-trailer").value.trim() || null;
+            const bgImage = document.getElementById("add-bg-image").value.trim() || null;
+            const reviewPT = document.getElementById("add-review").value.trim();
+
+            const [reviewEN, reviewES] = await Promise.all([
+                translateText(reviewPT, "en"),
+                translateText(reviewPT, "es")
+            ]);
+
+            const links = {};
+            if (currentCategoryKey === "games") {
+                links.steam = document.getElementById("link-steam").value.trim() || null;
+                links.xbox = document.getElementById("link-xbox").value.trim() || null;
+                links.ps = document.getElementById("link-ps").value.trim() || null;
+                links.nin = document.getElementById("link-nin").value.trim() || null;
+            } else if (["movies", "series", "animes"].includes(currentCategoryKey)) {
+                links.imdb = document.getElementById("link-imdb").value.trim() || null;
+            } else if (["mangas", "manhwas"].includes(currentCategoryKey)) {
+                links.anilist = document.getElementById("link-anilist").value.trim() || null;
+            } else if (currentCategoryKey === "books") {
+                links.book = document.getElementById("link-book").value.trim() || null;
+            }
+
+            itemsDatabase[cleanTitle] = {
+                trailer: trailerId,
+                bgImage: bgImage,
+                links: links,
+                review: {
+                    pt: reviewPT,
+                    en: reviewEN,
+                    es: reviewES
+                }
+            };
+
+            const saved = JSON.parse(localStorage.getItem("custom_items_database") || "{}");
+            saved[cleanTitle] = itemsDatabase[cleanTitle];
+            localStorage.setItem("custom_items_database", JSON.stringify(saved));
+
+            const cardSection = document.querySelector(`.category-card[data-category="${currentCategoryKey}"]`);
+            if (cardSection) {
+                const track = cardSection.querySelector(".favorites-track");
+                if (track) {
+                    const newLink = document.createElement("a");
+                    newLink.href = links.steam || links.imdb || links.anilist || links.book || "#";
+                    newLink.target = "_blank";
+                    newLink.innerHTML = `<img src="${coverUrl}" alt="${title}">`;
+                    newLink.addEventListener("click", (evt) => {
+                        evt.preventDefault();
+                        openedFromFullGrid = false;
+                        openDetailsPanel(newLink);
+                    });
+                    track.appendChild(newLink);
+                }
+
+                openFullGrid(cardSection);
+            }
+
+            saveBtn.disabled = false;
+            saveBtn.innerHTML = `<i class="fas fa-save"></i> Guardar Item`;
+            addItemForm.reset();
+            addModal.classList.remove("active");
+        });
+    }
+
+    // GERENCIADOR DE CLIQUE NOS FAVORITOS DOS CARROSSEIS
     const trackLinks = document.querySelectorAll('.favorites-track a');
     trackLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -886,14 +1147,6 @@ document.addEventListener("DOMContentLoaded", () => {
         closeListBtn.addEventListener('click', closeListPanel);
     }
 
-    // 2. BOTÕES DAS CATEGORIAS ("Mostrar Mais" e "O que estou Jogando/Assistindo/Lendo?")
-    document.querySelectorAll('.btn-show-more').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const parentCard = btn.closest('.category-card');
-            if (parentCard) openFullGrid(parentCard);
-        });
-    });
-
     document.querySelectorAll('.btn-open-status').forEach(btn => {
         btn.addEventListener('click', () => {
             const parentCard = btn.closest('.category-card');
@@ -903,7 +1156,6 @@ document.addEventListener("DOMContentLoaded", () => {
             closeFullGrid();
             document.body.classList.add('right-panel-open');
 
-            // Leva diretamente para o bloco da categoria correspondente
             if (catKey) {
                 setTimeout(() => {
                     const targetElem = document.getElementById(`list-cat-${catKey}`);
@@ -936,7 +1188,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. MÚSICA DE FUNDO
+    // MÚSICA DE FUNDO
     const music = document.getElementById("bgMusic");
     const musicBtn = document.getElementById("musicToggle");
     if (music && musicBtn) {
@@ -958,7 +1210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. ALTERNAR SOM DO TRAILER
+    // ALTERNAR SOM DO TRAILER
     const trailerSoundBtn = document.getElementById("trailerSoundToggle");
     if (trailerSoundBtn) {
         trailerSoundBtn.addEventListener("click", () => {
@@ -988,7 +1240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 5. MODO CINEMA
+    // MODO CINEMA
     const cinemaBtn = document.getElementById("cinemaModeToggle");
     if (cinemaBtn) {
         cinemaBtn.addEventListener("click", () => {
