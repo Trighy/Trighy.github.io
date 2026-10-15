@@ -90,7 +90,7 @@ const itemsDatabase = {
         trailer: {
             en: "67vbA5ZJdKQ&t",
             pt: "TbLVc8fnw7c",
-            es: "67vbA5ZJdKQ&t",
+            es: "67vbA5ZJdKQ&t"
         },
         links: {
             steam: null, xbox: null, ps: null, nin: null
@@ -114,7 +114,7 @@ const itemsDatabase = {
         trailer: {
             en: "Y5zqweZAEKI",
             pt: "Dyc8YANE6i8",
-            es: "Q9ExW8jvVwE",
+            es: "Q9ExW8jvVwE"
         },
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
@@ -127,7 +127,7 @@ const itemsDatabase = {
         trailer: {
             en: "fye6jbyWfG0",
             pt: "cbm4lnb5vWw",
-            es: "fye6jbyWfG0",
+            es: "fye6jbyWfG0"
         },
         links: { steam: null, xbox: null, ps: null, nin: null },
         review: {
