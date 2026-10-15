@@ -92,6 +92,21 @@ const itemsDatabase = {
             es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detallado, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
         }
     },
+    "plants vs zombies": {
+        trailer: "CHAbHz8iYHc",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/17390/",
+            xbox: "https://www.xbox.com/games/store/plants-vs-zombies/br1d9cr82zm8",
+            ps: null,
+            nin: null
+        },
+        review: {
+            en: "Plants vs. Zombies is another game from my childhood that stands as a pinnacle of the tower defense genre. If you’re looking for a unique tower defense experience—one so intuitive that even a child can pick it up, learn what each plant does, and figure out which plants to use against specific zombies—this is the game for you. It may be silly, but it respects a child’s intelligence, encouraging them to think critically about which plants to bring to counter different zombies. Plus, the soundtrack is truly memorable. Despite its age and its limited, low-resolution display, please make sure to purchase only the original or the GOTY (Game of the Year) version. The Replanted remake was created without any soul or care—to the point that the original developers and the original artist weren't even contacted to help recreate the artwork. If you’re looking for a distinct and one-of-a-kind tower defense game, this is it; please, give it a chance.",
+            pt: "Plantas vs. Zumbis, esse é mais um jogo da minha infância que é um dos picos de tower defense, se você quer um tower defense único onde tudo é intuitivo ao ponto que uma criança pode pegar o jogo e aprender oque cada planta faz e qual planta usar em quais zumbis, é esse o jogo, ele é bobo mas leva a inteligência de crianças á sério e faz elas realmente pensarem em qual plantas levar para conterar quais zumbis além da soundtrack ser memorável, apessar de sua idade e preso em uma resolução pequena, por favor compre apenas a versão original ou GOTY, a versão Replanted remake foi feito sem alma e sem carinho tanto que não contactaram os desenvolvedores originais e nem o artista original para refazer á arte, mas se procuras um tower defense diferenciado e único, é esse o jogo, por favor de á esse jogo uma chance.",
+            es: "Plants vs. Zombies es otro juego de mi infancia que representa uno de los puntos culminantes del género tower defense. Si buscas un tower defense único, donde todo es tan intuitivo que incluso un niño puede empezar a jugar, aprender qué hace cada planta y saber cuál utilizar contra cada tipo de zombi, este es el juego indicado. Aunque tiene un tono desenfadado, respeta la inteligencia de los niños y los obliga a pensar realmente qué plantas elegir para contrarrestar a los distintos zombis; además, su banda sonora es memorable. A pesar de su antigüedad y de estar limitado a una resolución baja, te recomiendo adquirir únicamente la versión original o la edición GOTY. La versión remake llamada Replanted carece de alma y de cariño; de hecho, ni siquiera contactaron a los desarrolladores ni al artista original para rehacer el apartado visual. En definitiva, si buscas un tower defense distinto y único, este es el juego; por favor, dale una oportunidad."
+        }
+    },
     "the wild robot": {
         trailer: {
             en: "pSI0XetHZCw",
@@ -221,7 +236,7 @@ const translations = {
         seriesTitle: "Séries", favoritesSeries: "Meus Favoritos",
         animesTitle: "Anime", favoritesAnimes: "Meus Favoritos",
         booksTitle: "Livros", favoritesBooks: "Meus Favoritos",
-        mangasTitle: "Mangás", favoritesMangas: "Meus Favoritos",
+        mangasTitle: "Manga", favoritesMangas: "Meus Favoritos",
         manhwasTitle: "Manhwa", favoritesManhwa: "Meus Favoritos"
     },
     es: {
