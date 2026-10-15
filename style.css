@@ -8,15 +8,21 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Impede qualquer rolagem lateral acidental */
+}
+
 body {
     background: radial-gradient(circle at center, #0f1626 0%, #05080f 100%);
     color: #e2f1f8;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 20px 100px 20px;
-    overflow-x: hidden;
     gap: 30px;
 }
 
@@ -182,6 +188,7 @@ h1 {
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     z-index: 0;
     pointer-events: none;
@@ -200,7 +207,9 @@ body.showing-trailer .trailer-bg-container {
     width: 100vw;
     height: 56.25vw;
     min-height: 100vh;
+    min-height: 100dvh;
     min-width: 177.77vh;
+    min-width: 177.77dvh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -293,8 +302,15 @@ body.showing-trailer .trailer-overlay {
 }
 
 /* ==========================================
-   MODO CINEMA
+   MODO CINEMA (BLOQUEIA ROLAGEM NO CELULAR)
    ========================================== */
+body.cinema-mode {
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow: hidden !important; /* Bloqueia arrastar a página para baixo */
+    touch-action: none;
+}
+
 body.cinema-mode .container,
 body.cinema-mode .sections-wrapper,
 body.cinema-mode .lang-switcher,
@@ -434,6 +450,7 @@ body.panel-open::after {
     left: 0;
     width: 65%;
     height: 100vh;
+    height: 100dvh;
     background: rgba(10, 15, 25, 0.85);
     backdrop-filter: blur(20px);
     border-right: 1px solid rgba(100, 255, 218, 0.3);
@@ -512,16 +529,117 @@ body.panel-open .details-panel {
 }
 
 /* ==========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
    ========================================== */
+
+/* Tablets e telas médias */
 @media (max-width: 900px) {
-    .details-panel { width: 90%; }
-    body.panel-open .main-wrapper { transform: translateX(80%) scale(0.8); opacity: 0.1; }
-    body.panel-open::after { width: 10%; }
+    .details-panel { 
+        width: 100%; 
+        border-right: none;
+    }
+    body.panel-open .main-wrapper { 
+        transform: translateX(100%);
+        opacity: 0; 
+    }
+    body.panel-open::after { 
+        display: none; 
+    }
 }
 
+/* Celulares em pé (Portrait) */
 @media (max-width: 650px) {
-    .details-content { flex-direction: column; }
-    .details-left { flex: 1; width: 100%; }
-    .favorites-track a { flex: 0 0 calc(50% - 7.5px); }
+    body {
+        padding: 20px 12px 90px 12px;
+    }
+
+    .details-panel {
+        padding: 25px 15px;
+    }
+
+    .details-content { 
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+    }
+
+    .details-left { 
+        flex: none; 
+        width: 100%; 
+        max-width: 220px;
+        align-items: center;
+    }
+
+    #details-cover {
+        max-height: 280px;
+        width: auto;
+    }
+
+    .details-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    #details-title {
+        font-size: 1.8rem;
+    }
+
+    .review-box {
+        padding: 15px;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .favorites-track a { 
+        flex: 0 0 calc(50% - 7.5px); 
+    }
+}
+
+/* Celulares deitados (Landscape - Altura reduzida) */
+@media (max-height: 600px) {
+    .details-panel {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .close-panel-btn {
+        margin-bottom: 12px;
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+
+    .details-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .details-left {
+        flex: 0 0 130px;
+        width: 130px;
+        gap: 10px;
+    }
+
+    #details-cover {
+        max-height: 150px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .platform-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    #details-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+
+    .review-box {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
 }
