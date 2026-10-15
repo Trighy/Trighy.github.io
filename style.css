@@ -217,6 +217,14 @@ h1 {
     overflow: hidden;
     z-index: -2;
     pointer-events: none;
+    /* Adicionamos a invisibilidade padrão: */
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* Quando um jogo tiver trailer, ele aparece! */
+body.showing-trailer .trailer-bg-container {
+    opacity: 1;
 }
 
 .trailer-bg-container iframe {
@@ -240,6 +248,13 @@ h1 {
     background: rgba(10, 10, 20, 0.65);
     backdrop-filter: blur(2px);
     z-index: -1;
+}
+
+/* NOVA REGRA: Esconder o painel de detalhes durante o Modo Cinema */
+body.cinema-mode .details-panel {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
 }
 
 /* ==========================================
