@@ -89,7 +89,7 @@ const itemsDatabase = {
         review: {
             en: "Spore—what an incredible game from my childhood! If you enjoy The Sims (it was made by the same creators) or games that combine multiple gameplay styles into one, please give Spore a try. There is—and I dare say this—absolutely nothing else like it; it is an exceptionally unique game with a distinct personality, and you can really feel that it was crafted with care. It was originally intended to be more detailed, but the developers decided to simplify things—partly to appeal to a younger audience and partly due to budget constraints. Regardless, even if you end up only enjoying the creature stage and not the space stage (which is quite extensive if you play all the way to the end), please, give it a chance.",
             pt: "Spore, que jogo da minha infacia incrível! Se você gosta de The Sims (feito pelos mesmos criadores de The Sims) ou jogos que inclui múltiplos estilos de jogos em um só, por favor de uma chance á Spore, não tem NENHUM eu ouso disser, NENHUM outro jogo parecido com Spore, é um jogo extremamente único e com sua própria personalidade e da para sentir que ele foi feito com carinho, era para ele originalmente ser mais detalhado mas decidiram simplificar as coisas por questão de chamar mais atenção do público menor e também por custos, mas de qualquer forma, por favor mesmo que você acabe só gostando do estagio criatura e não goste do estagio espacial (que também é BEM longo se fores até o final do jogo) de uma chance.",
-            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detalldo, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
+            es: "¡Spore, qué juego tan increíble de mi infancia! Si te gusta The Sims (creado por los mismos desarrolladores) o los juegos que combinan múltiples estilos en uno solo, por favor, dale una oportunidad a Spore. No hay NINGÚN otro juego parecido —me atrevería a decir que no existe ninguno—; es un título sumamente único, con una personalidad propia y en el que se nota que fue hecho con mucho cariño. Originalmente iba a ser más detallado, pero decidieron simplificarlo para atraer a un público más joven y también por cuestiones de costos. Aun así, aunque al final solo te guste la etapa de criatura y no la etapa espacial (que, por cierto, es bastante larga si llegas hasta el final del juego), ¡dale una oportunidad!"
         }
     },
     "plants vs zombies": {
@@ -118,7 +118,7 @@ const itemsDatabase = {
         review: {
             en: "I went to the theater to see The Wild Robot, expecting it to be a beautiful film based on the trailers—but what I actually experienced was beyond my expectations. You know when something is so beautiful that you simply run out of words to describe it? That is literally this movie. Unfortunately, this review won’t be very long because, as I mentioned, I just don’t have the words—PLEASE, just go watch it! Did you know it’s based on a book series? And that a second film, covering the second book, is already in production? I’m eagerly awaiting the trailer—and, eventually, the movie itself!",
             pt: "O Robô Selvagem, eu fui ao cinema para ver o filme pensando que séria de fato um filme bonito vendo pelos seus trailers mas oque eu acabei vendo eu não esperava, sabe quando algo é tão bonito que você não tem palavras para descrever? É literalmente esse filme, infelizmente essa review não vai ser tão longa pois, como falei anteriormente, não tenho palavras para descrever esse filme, SÓ POR FAVOR ASSISTA! inclusive sabias que ele é baseado em uma série de livros? E que o segundo filme do segundo livro já está sendo produzido? Eu estou esperando ansiosamente (no sentido bom) para o trailer eventualmente filme.",
-            es: "Fui al cine a ver Robot salvaje, pensando —a juzgar por los tráileres— que sería una película realmente hermosa; pero lo que vi superó mis expectativas. ¿Sabes cuando algo es tan bonito que te faltan palabras para describirlo? Pues así es, literalmente, esta película. Lamentablemente, esta reseña no será muy larga porque, como dije antes, no tengo palabras para describirla; ¡solo, por favor, mírala! Por cierto, ¿sabías que está basada en una serie de libros? ¿Y que ya se está produciendo la segunda parte, basada en el segundo libro? ¡Espero con muchas ganas el tráiler de la próxima película!"
+            es: "Fui al cine a ver Robot salvaje, pensando —a juzgar por los tráileres— que sería una película realmente hermosa; pero lo que vi superó mis expectativas. ¿Sabes cuando algo es tan bonito que te faltan palabras para describirlo? Pues así es, literalmente, esta película. Lamentablemente, esta reseña no será muy larga porque, como dije antes, no tengo palavras para describirla; ¡solo, por favor, mírala! Por cierto, ¿sabías que está basada en una serie de libros? ¿Y que ya se está produciendo la segunda parte, basada en el segundo libro? ¡Espero con muchas ganas el tráiler de la próxima película!"
         }
     },
     "mune: the guardian of the moon": {
@@ -318,7 +318,8 @@ const translations = {
         statusAnimes: "What am I Watching?",
         statusBooks: "What am I Reading?",
         statusMangas: "What am I Reading?",
-        statusManhwas: "What am I Reading?"
+        statusManhwas: "What am I Reading?",
+        emptyList: "Empty at the moment..."
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
@@ -342,7 +343,8 @@ const translations = {
         statusAnimes: "O que estou Assistindo?",
         statusBooks: "O que estou Lendo?",
         statusMangas: "O que estou Lendo?",
-        statusManhwas: "O que estou Lendo?"
+        statusManhwas: "O que estou Lendo?",
+        emptyList: "Vazio no momento..."
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
@@ -366,7 +368,8 @@ const translations = {
         statusAnimes: "¿Qué estoy viendo?",
         statusBooks: "¿Qué estoy leyendo?",
         statusMangas: "¿Qué estoy leyendo?",
-        statusManhwas: "¿Qué estoy leyendo?"
+        statusManhwas: "¿Qué estoy leyendo?",
+        emptyList: "Vacío por el momento..."
     }
 };
 
@@ -377,6 +380,7 @@ let isTrailerMuted = true;
 let pendingTrailer = null;
 let currentLoadedTrailer = null;
 let loopTimer = null;
+let openedFromFullGrid = false; // Controle de estado para reabrir o "Mostrar Mais"
 
 function getTrailerId(trailerData) {
     if (!trailerData) return null;
@@ -424,6 +428,7 @@ function renderUserLists() {
     if (!container) return;
 
     let html = '';
+    const emptyText = translations[currentLang].emptyList || "Vazio no momento...";
 
     for (const catKey in userLists) {
         const cat = userLists[catKey];
@@ -436,53 +441,53 @@ function renderUserLists() {
         const frontlogImgs = cat.frontlog || [];
         const backlogImgs = cat.backlog || [];
 
-        if (activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0) continue;
+        const isEmpty = activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0;
 
         html += `
-            <div class="list-category-block">
+            <div id="list-cat-${catKey}" class="list-category-block">
                 <div class="list-category-title">
                     <i class="${cat.icon}"></i> ${catName}
                 </div>
         `;
 
-        if (activeImgs.length > 0) {
-            html += `
-                <div class="list-status-subblock">
-                    <div class="list-status-title"><i class="fas fa-play-circle"></i> ${activeLabel}</div>
-                    <div class="list-grid">
-                        ${activeImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+        if (isEmpty) {
+            html += `<p style="color: #a0b2c6; font-size: 0.95rem; font-style: italic; padding: 5px 0;">${emptyText}</p>`;
+        } else {
+            if (activeImgs.length > 0) {
+                html += `
+                    <div class="list-status-subblock">
+                        <div class="list-status-title"><i class="fas fa-play-circle"></i> ${activeLabel}</div>
+                        <div class="list-grid">
+                            ${activeImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                        </div>
                     </div>
-                </div>
-            `;
-        }
+                `;
+            }
 
-        if (frontlogImgs.length > 0) {
-            html += `
-                <div class="list-status-subblock">
-                    <div class="list-status-title"><i class="fas fa-forward"></i> ${frontlogLabel}</div>
-                    <div class="list-grid">
-                        ${frontlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+            if (frontlogImgs.length > 0) {
+                html += `
+                    <div class="list-status-subblock">
+                        <div class="list-status-title"><i class="fas fa-forward"></i> ${frontlogLabel}</div>
+                        <div class="list-grid">
+                            ${frontlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                        </div>
                     </div>
-                </div>
-            `;
-        }
+                `;
+            }
 
-        if (backlogImgs.length > 0) {
-            html += `
-                <div class="list-status-subblock">
-                    <div class="list-status-title"><i class="fas fa-clock"></i> ${backlogLabel}</div>
-                    <div class="list-grid">
-                        ${backlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+            if (backlogImgs.length > 0) {
+                html += `
+                    <div class="list-status-subblock">
+                        <div class="list-status-title"><i class="fas fa-clock"></i> ${backlogLabel}</div>
+                        <div class="list-grid">
+                            ${backlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         }
 
         html += `</div>`;
-    }
-
-    if (!html) {
-        html = `<p style="text-align: center; color: #a0b2c6; margin-top: 40px;">Sua lista está vazia no momento!</p>`;
     }
 
     container.innerHTML = html;
@@ -723,6 +728,12 @@ function closeDetailsPanel() {
         const cinemaIcon = document.querySelector('#cinemaModeToggle i');
         if (cinemaIcon) cinemaIcon.className = "fas fa-expand";
     }
+
+    // Se o painel foi aberto a partir do "Mostrar Mais", ele retorna ao "Mostrar Mais"
+    if (openedFromFullGrid) {
+        openedFromFullGrid = false;
+        document.body.classList.add('full-grid-open');
+    }
 }
 
 function closeListPanel() {
@@ -758,6 +769,8 @@ function openFullGrid(categoryCard) {
             const clone = item.cloneNode(true);
             clone.addEventListener('click', (e) => {
                 e.preventDefault();
+                openedFromFullGrid = true; // Marca que veio do "Mostrar Mais"
+                document.body.classList.remove('full-grid-open');
                 openDetailsPanel(clone);
             });
             fullGridContent.appendChild(clone);
@@ -768,6 +781,7 @@ function openFullGrid(categoryCard) {
 }
 
 function closeFullGrid() {
+    openedFromFullGrid = false;
     document.body.classList.remove('full-grid-open');
 }
 
@@ -837,6 +851,7 @@ document.addEventListener("DOMContentLoaded", () => {
     trackLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            openedFromFullGrid = false;
             openDetailsPanel(link);
         });
     });
@@ -861,9 +876,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.btn-open-status').forEach(btn => {
         btn.addEventListener('click', () => {
+            const parentCard = btn.closest('.category-card');
+            const catKey = parentCard ? parentCard.getAttribute('data-category') : null;
+
             closeDetailsPanel();
             closeFullGrid();
             document.body.classList.add('right-panel-open');
+
+            // Leva diretamente para o bloco da categoria correspondente
+            if (catKey) {
+                setTimeout(() => {
+                    const targetElem = document.getElementById(`list-cat-${catKey}`);
+                    if (targetElem) {
+                        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
         });
     });
 
