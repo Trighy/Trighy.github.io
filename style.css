@@ -29,6 +29,11 @@ body {
     background: radial-gradient(circle at top, rgba(74, 144, 226, 0.15) 0%, transparent 60%);
     z-index: -1;
     pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+body.showing-trailer .spirit-tree-bg {
+    opacity: 0;
 }
 
 /* ==========================================
@@ -168,43 +173,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* GRID DE FAVORITOS */
-.favorites-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.favorites-grid a {
-    display: block;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.landscape a { aspect-ratio: 16 / 9; }
-.portrait a { aspect-ratio: 2 / 3; }
-
-.favorites-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-    display: block;
-}
-
-.favorites-grid a:hover {
-    border-color: #64ffda;
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.6);
-    transform: translateY(-5px);
-}
-
-.favorites-grid a:hover img {
-    transform: scale(1.1);
-}
-
 /* ==========================================
    FUNDO DE VÍDEO DOS TRAILERS
    ========================================== */
@@ -222,13 +190,11 @@ h1 {
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* Quando ativa o trailer, torna visível e interativo */
 body.showing-trailer .trailer-bg-container {
     opacity: 1;
     visibility: visible;
 }
 
-/* Ajuste e centralização do Player Iframe */
 .trailer-bg-container iframe,
 .trailer-bg-container #player {
     width: 100vw;
@@ -240,7 +206,6 @@ body.showing-trailer .trailer-bg-container {
     left: 50%;
     transform: translate(-50%, -50%);
     border: none;
-    pointer-events: auto; /* Permite interação se necessário */
 }
 
 .trailer-overlay {
@@ -249,7 +214,7 @@ body.showing-trailer .trailer-bg-container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 20, 0.7);
+    background: rgba(10, 10, 20, 0.75);
     backdrop-filter: blur(3px);
     z-index: 1;
     opacity: 0;
@@ -264,7 +229,7 @@ body.showing-trailer .trailer-overlay {
 }
 
 /* ==========================================
-   BARRA DE CONTROLES (CANTO INFERIOR ESQUERDO)
+   BARRA DE CONTROLES
    ========================================== */
 .controls-bar {
     position: fixed;
@@ -302,154 +267,6 @@ body.showing-trailer .trailer-overlay {
     transform: translateY(-3px);
 }
 
-/* ==========================================
-   SELETOR INTERATIVO DE TRAILERS (DROPDOWN)
-   ========================================== */
-.trailer-selector-wrapper {
-    position: fixed;
-    bottom: 20px;
-    left: 215px; /* Alinhado ao lado dos 3 botões */
-    z-index: 1000;
-}
-
-/* O Badge clicável */
-.trailer-badge {
-    position: relative;
-    background: rgba(15, 22, 38, 0.75);
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-family: 'Quicksand', sans-serif;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(74, 144, 226, 0.4);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    pointer-events: auto;
-    transition: all 0.3s ease;
-    user-select: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-}
-
-.trailer-badge:hover {
-    background: rgba(74, 144, 226, 0.25);
-    border-color: #64ffda;
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
-    transform: translateY(-2px);
-}
-
-.trailer-badge i {
-    color: #8a2be2;
-}
-
-.trailer-badge i.arrow-icon {
-    font-size: 0.75rem;
-    color: #64ffda;
-    transition: transform 0.3s ease;
-    margin-left: 4px;
-}
-
-/* Gira a setinha quando abre o menu */
-.trailer-selector-wrapper.open .trailer-badge i.arrow-icon {
-    transform: rotate(180deg);
-}
-
-/* MENU DROPDOWN (SUSPENSO ACIMA DO BADGE) */
-.trailer-dropdown {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 260px;
-    max-height: 280px;
-    background: rgba(15, 22, 38, 0.95);
-    border: 1px solid rgba(100, 255, 218, 0.4);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(100, 255, 218, 0.2);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px) scale(0.95);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-}
-
-.trailer-selector-wrapper.open .trailer-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-}
-
-.dropdown-header {
-    padding: 12px 16px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #64ffda;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-#trailer-list {
-    list-style: none;
-    margin: 0;
-    padding: 6px;
-    overflow-y: auto;
-    max-height: 220px;
-}
-
-#trailer-list::-webkit-scrollbar {
-    width: 5px;
-}
-#trailer-list::-webkit-scrollbar-thumb {
-    background: rgba(100, 255, 218, 0.3);
-    border-radius: 10px;
-}
-
-.trailer-option {
-    padding: 10px 12px;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    color: #e2f1f8;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.2s ease;
-}
-
-.trailer-option i {
-    font-size: 0.75rem;
-    color: #a0b2c6;
-    width: 14px;
-}
-
-.trailer-option:hover {
-    background: rgba(74, 144, 226, 0.2);
-    color: #ffffff;
-    padding-left: 16px;
-}
-
-.trailer-option.active {
-    background: rgba(100, 255, 218, 0.15);
-    color: #64ffda;
-    font-weight: 700;
-}
-
-.trailer-option.active i {
-    color: #64ffda;
-}
-
-/* SELETOR DE IDIOMAS (CANTO INFERIOR DIREITO) */
 .lang-switcher {
     position: fixed !important;
     bottom: 20px !important;
@@ -476,13 +293,14 @@ body.showing-trailer .trailer-overlay {
 }
 
 /* ==========================================
-   MODO CINEMA (ESCONDER / MOSTRAR INTERFACE)
+   MODO CINEMA
    ========================================== */
 body.cinema-mode .container,
 body.cinema-mode .sections-wrapper,
 body.cinema-mode .lang-switcher,
 body.cinema-mode .spirit-tree-bg,
-body.cinema-mode .trailer-overlay {
+body.cinema-mode .trailer-overlay,
+body.cinema-mode .details-panel {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -492,14 +310,12 @@ body.cinema-mode .trailer-bg-container {
     pointer-events: auto;
 }
 
-body.cinema-mode .controls-bar,
-body.cinema-mode .trailer-selector-wrapper {
+body.cinema-mode .controls-bar {
     opacity: 0.25;
     transition: opacity 0.3s ease;
 }
 
-body.cinema-mode .controls-bar:hover,
-body.cinema-mode .trailer-selector-wrapper:hover {
+body.cinema-mode .controls-bar:hover {
     opacity: 1;
 }
 
@@ -515,7 +331,6 @@ body.cinema-mode .trailer-selector-wrapper:hover {
     position: relative;
 }
 
-/* Botões de navegação do carrossel */
 .carousel-btn {
     background: rgba(15, 22, 38, 0.8);
     border: 1px solid #4a90e2;
@@ -538,24 +353,19 @@ body.cinema-mode .trailer-selector-wrapper:hover {
     transform: scale(1.1);
 }
 
-/* Esconde o que sai da tela */
 .carousel-track-wrapper {
     overflow: hidden;
     width: 100%;
     border-radius: 12px;
 }
 
-/* O trilho horizontal */
 .favorites-track {
     display: flex;
     gap: 15px;
-    /* Transição suave ao mover os itens via JS */
     transition: transform 0.3s ease-in-out; 
 }
 
-/* Tamanho de cada capa (Mostra 4 por vez no PC) */
 .favorites-track a {
-    /* O cálculo subtrai o espaço do 'gap' para caberem 4 exatos */
     flex: 0 0 calc(25% - 11.25px); 
     display: block;
     border-radius: 12px;
@@ -595,17 +405,15 @@ body.cinema-mode .trailer-selector-wrapper:hover {
     flex-direction: column;
     align-items: center;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
-    transform-origin: center right; /* Encolhe em direção à direita */
+    transform-origin: center right;
 }
 
-/* Quando o painel está aberto, a tela principal vai para a direita */
 body.panel-open .main-wrapper {
-    transform: translateX(50%) scale(0.85); /* Vai pra direita e diminui 15% */
+    transform: translateX(50%) scale(0.85);
     opacity: 0.3;
-    pointer-events: none; /* Desativa cliques nos botões antigos */
+    pointer-events: none;
 }
 
-/* Criamos um "escudo" invisível na tela principal para o usuário clicar e voltar */
 body.panel-open::after {
     content: '';
     position: fixed;
@@ -614,31 +422,31 @@ body.panel-open::after {
     width: 40%;
     height: 100vh;
     z-index: 900;
-    cursor: pointer; /* Mostra a mãozinha de clique */
+    cursor: pointer;
 }
 
 /* ==========================================
-   DESIGN DO PAINEL DE DETALHES (ANÁLISES)
+   DESIGN DO PAINEL DE DETALHES
    ========================================== */
 .details-panel {
     position: fixed;
     top: 0;
     left: 0;
-    width: 65%; /* Ocupa 65% da tela */
+    width: 65%;
     height: 100vh;
     background: rgba(10, 15, 25, 0.85);
     backdrop-filter: blur(20px);
     border-right: 1px solid rgba(100, 255, 218, 0.3);
     box-shadow: 20px 0 50px rgba(0,0,0,0.8);
     z-index: 1000;
-    transform: translateX(-100%); /* Começa fora da tela à esquerda */
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
     padding: 40px;
     overflow-y: auto;
 }
 
 body.panel-open .details-panel {
-    transform: translateX(0); /* Desliza para dentro */
+    transform: translateX(0);
 }
 
 .close-panel-btn {
@@ -652,7 +460,7 @@ body.panel-open .details-panel {
 }
 
 .details-left {
-    flex: 0 0 300px; /* Largura fixa para a capa e botões */
+    flex: 0 0 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -679,7 +487,7 @@ body.panel-open .details-panel {
 }
 
 .details-right {
-    flex: 1; /* Ocupa o resto do espaço */
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -703,34 +511,17 @@ body.panel-open .details-panel {
     line-height: 1.8;
 }
 
-/* Responsividade do Painel */
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
 @media (max-width: 900px) {
     .details-panel { width: 90%; }
     body.panel-open .main-wrapper { transform: translateX(80%) scale(0.8); opacity: 0.1; }
     body.panel-open::after { width: 10%; }
 }
 
-/* ==========================================
-   RESPONSIVIDADE (CELULARES)
-   ========================================== */
 @media (max-width: 650px) {
     .details-content { flex-direction: column; }
     .details-left { flex: 1; width: 100%; }
-
-    .favorites-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .trailer-selector-wrapper {
-        left: 20px;
-        bottom: 80px;
-    }
-    
-    .trailer-dropdown {
-        width: 240px;
-    }
-
-    .favorites-track a {
-        flex: 0 0 calc(50% - 7.5px);
-    }
+    .favorites-track a { flex: 0 0 calc(50% - 7.5px); }
 }
