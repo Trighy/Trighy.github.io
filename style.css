@@ -215,9 +215,8 @@ h1 {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: -2;
+    z-index: 0; /* Coloca acima do fundo escuro e da spirit-tree */
     pointer-events: none;
-    /* Adicionamos a invisibilidade padrão: */
     opacity: 0;
     transition: opacity 1s ease;
 }
@@ -227,7 +226,9 @@ body.showing-trailer .trailer-bg-container {
     opacity: 1;
 }
 
-.trailer-bg-container iframe {
+/* O iframe e o player do YouTube recebem a formatação correta de tamanho */
+.trailer-bg-container iframe,
+.trailer-bg-container #player {
     width: 100vw;
     height: 56.25vw;
     min-height: 100vh;
@@ -239,15 +240,28 @@ body.showing-trailer .trailer-bg-container {
     border: none;
 }
 
+/* Camada escura por cima do vídeo para o texto do site continuar legível */
 .trailer-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 20, 0.65);
-    backdrop-filter: blur(2px);
-    z-index: -1;
+    background: rgba(10, 10, 20, 0.7);
+    backdrop-filter: blur(3px);
+    z-index: 1; /* Fica entre o vídeo e os painéis */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+body.showing-trailer .trailer-overlay {
+    opacity: 1;
+}
+
+/* Esconde o fundo da árvore quando o trailer tocar */
+body.showing-trailer .spirit-tree-bg {
+    opacity: 0;
 }
 
 /* NOVA REGRA: Esconder o painel de detalhes durante o Modo Cinema */
@@ -255,6 +269,11 @@ body.cinema-mode .details-panel {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
+}
+
+/* Remove a sobreposição escura no modo cinema para ver o vídeo limpo */
+body.cinema-mode .trailer-overlay {
+    opacity: 0;
 }
 
 /* ==========================================
@@ -695,36 +714,6 @@ body.panel-open .details-panel {
     color: #e2f1f8;
     font-size: 1.15rem;
     line-height: 1.8;
-}
-
-/* Configuração base do Player */
-#player {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0; /* Coloca o vídeo acima do fundo da página */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-
-/* Quando abrir um jogo com trailer */
-body.showing-trailer #player {
-    opacity: 1;
-}
-
-/* Esconde qualquer fundo do site para o vídeo aparecer */
-body.showing-trailer {
-    background: #000 !important; /* Fica tudo preto atrás */
-}
-
-/* SE você tiver uma div principal cobrindo a tela (como .container), precisamos deixá-la transparente no fundo */
-body.showing-trailer .container {
-    background: transparent !important;
-    z-index: 10; /* Garante que o texto/painel fique na frente do vídeo */
-    position: relative;
 }
 
 /* Responsividade do Painel */
