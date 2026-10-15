@@ -150,31 +150,38 @@ function initYouTubePlayer() {
 function onYouTubeIframeAPIReady() {
     youtubePlayer = new YT.Player('player', {
         videoId: 'kd0zbNw1VOg', 
+        host: 'https://www.youtube.com', // Força a origem correta
         playerVars: {
-            'autoplay': 0, 
+            'autoplay': 1, 
             'controls': 0,
             'mute': 1,
             'loop': 1,
+            'playlist': 'kd0zbNw1VOg', // OBRIGATÓRIO PARA O LOOP FUNCIONAR
             'showinfo': 0,
             'rel': 0,
             'modestbranding': 1,
-            'playsinline': 1,
-            'enablejsapi': 1,
-            'origin': window.location.origin
+            'playsinline': 1
+            // Removido o 'origin' que estava causando o bloqueio no GitHub Pages
         },
         events: {
             'onReady': (event) => {
-                // Se alguém clicou em um jogo antes do player estar 100% pronto, toca agora!
+                event.target.mute(); // Garante que comece mudo para o navegador não bloquear
                 if (pendingTrailer) {
-                    youtubePlayer.loadVideoById(pendingTrailer);
+                    youtubePlayer.loadVideoById({
+                        videoId: pendingTrailer
+                    });
                     if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
                     youtubePlayer.playVideo();
+                    pendingTrailer = null;
                 }
             },
             'onStateChange': (event) => {
                 if (event.data === YT.PlayerState.ENDED) {
                     youtubePlayer.playVideo(); 
                 }
+            },
+            'onError': (event) => {
+                console.log("Erro no YouTube API:", event.data);
             }
         }
     });
@@ -287,14 +294,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 // LÓGICA CORRIGIDA DO TRAILER
                 if (itemData.trailer) {
-                    document.body.classList.add('showing-trailer'); // Fundo do Trailer aparece independente se já carregou ou não
+                    document.body.classList.add('showing-trailer'); 
                     
                     if (youtubePlayer && typeof youtubePlayer.loadVideoById === 'function') {
-                        youtubePlayer.loadVideoById(itemData.trailer);
+                        // Passar como objeto previne alguns bugs de carregamento
+                        youtubePlayer.loadVideoById({
+                            videoId: itemData.trailer
+                        });
                         if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
-                        youtubePlayer.playVideo(); // FORÇA O PLAY PARA EVITAR TELA PRETA
+                        youtubePlayer.playVideo(); 
                     } else {
-                        pendingTrailer = itemData.trailer; // Guarda se clicou muito rápido
+                        pendingTrailer = itemData.trailer; 
                     }
                 } else {
                     document.body.classList.remove('showing-trailer');
