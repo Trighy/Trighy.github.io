@@ -109,7 +109,8 @@ let currentLang = 'en';
 let currentOpenItemTitle = ""; 
 let youtubePlayer = null;
 let isTrailerMuted = true;
-let pendingTrailer = null; // GUARDA O PEDIDO CASO O YOUTUBE DEMORE A CARREGAR
+let pendingTrailer = null;
+let currentLoadedTrailer = null;
 
 function changeLanguage(lang) {
     currentLang = lang;
@@ -292,15 +293,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 setupBtn('platform-ps', itemData.links.ps);
                 setupBtn('platform-nin', itemData.links.nin);
                 
-                // LÓGICA CORRIGIDA DO TRAILER
+                // LÓGICA CORRIGIDA DO TRAILER (NÃO RECARREGA SE FOR O MESMO)
                 if (itemData.trailer) {
                     document.body.classList.add('showing-trailer'); 
                     
-                    if (youtubePlayer && typeof youtubePlayer.loadVideoById === 'function') {
-                        // Passar como objeto previne alguns bugs de carregamento
-                        youtubePlayer.loadVideoById({
-                            videoId: itemData.trailer
-                        });
+                    if (youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
+                        // Só carrega o vídeo do zero se for um trailer diferente do atual
+                        if (currentLoadedTrailer !== itemData.trailer) {
+                            youtubePlayer.loadVideoById({ videoId: itemData.trailer });
+                            currentLoadedTrailer = itemData.trailer;
+                        }
+                        
                         if (isTrailerMuted) { youtubePlayer.mute(); } else { youtubePlayer.unMute(); }
                         youtubePlayer.playVideo(); 
                     } else {
