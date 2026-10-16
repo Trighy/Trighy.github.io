@@ -407,7 +407,7 @@ const translations = {
         statusManhwas: "¿Qué estoy leyendo?",
         frontlogExplanation: "Frontlog es similar al Backlog, pero son {items} que planeo {verb} que más me llamaron la atención de todo lo que está en el Backlog y que planeo empezar justo después de terminar algo de '{active}'.",
         emptyList: "Vacío por el momento...",
-        surpriseMeGlobal: "¡Sorpréndeme! (Todos)",
+        surpriseMeGlobal: "¡Sorpréndeme!",
         surpriseMeCat: "¡Sorpréndeme!"
     }
 };
@@ -1356,12 +1356,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Evento do Botão Mundial
     const btnSurpriseGlobal = document.querySelector('.btn-surprise-global');
     if (btnSurpriseGlobal) {
-        btnSurpriseGlobal.addEventListener('click', () => rollSurprise(null));
+        btnSurpriseGlobal.addEventListener('click', (e) => {
+            e.stopPropagation();
+            rollSurprise(null);
+        });
     }
 
     // Evento dos Botões Específicos por Categoria
     document.querySelectorAll('.btn-surprise-cat').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
             const parentCard = this.closest('.category-card');
             const catKey = parentCard ? parentCard.getAttribute('data-category') : null;
             rollSurprise(catKey);
