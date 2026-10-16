@@ -14,6 +14,7 @@ let savedSearchTerms = {};
 const itemsDatabase = {
     "ori and the blind forest": {
         trailer: "zU3rmggIcpc",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/387290/",
@@ -29,6 +30,7 @@ const itemsDatabase = {
     },
     "ori and the will of the wisps": {
         trailer: "kd0zbNw1VOg",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1057090/",
@@ -59,6 +61,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
@@ -74,6 +77,7 @@ const itemsDatabase = {
     },
     "spiritfarer": {
         trailer: "UoS-ow4NeHE",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/972660/",
@@ -102,7 +106,7 @@ const itemsDatabase = {
             es: "¡Hollow Knight! Es como el hermano menor de Ori, pero con un sistema de combate muy superior. Si te gustan los mundos que disfrutan dejándote perdido —y que, a la vez, se sienten rebosantes de vida—, junto con un sistema de combate que incluso se describe como un «soulslike en 2D», entonces este juego es para ti. Es, sin duda, uno de los máximos exponentes del género Metroidvania en la actualidad y sirve como una especie de tutorial para Silksong, ya que su historia conecta directamente con dicha secuela. Por lo tanto, si no tienes nada que hacer y quieres explorar un mundo vivo mientras pones a prueba tus habilidades, Hollow Knight te dejará más que satisfecho."
         }
     },
-    "silksong": {
+    "hollow knight silksong": {
         trailer: "6XGeJwsUP9c",
         bgImage: null,
         links: {
@@ -119,6 +123,7 @@ const itemsDatabase = {
     },
     "spore": {
         trailer: "jVH9Q8M8eaQ",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
@@ -134,6 +139,7 @@ const itemsDatabase = {
     },
     "plants vs zombies": {
         trailer: "CHAbHz8iYHc",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
@@ -194,6 +200,7 @@ const itemsDatabase = {
     },
     "mad max": {
         trailer: "wioZwZbUgn0",
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/234140/",
@@ -244,6 +251,7 @@ const itemsDatabase = {
             pt: "B6-0nTohcW0",
             es: "KCbE47v1qVk"
         },
+        startTime: 2,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1672970/",
@@ -273,6 +281,7 @@ const itemsDatabase = {
     },
     "mune the guardian of the moon": {
         trailer: "2ONAlFkeYYo",
+        startTime: 1,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3858372/" },
         review: {
@@ -336,6 +345,7 @@ const itemsDatabase = {
             pt: "JCrlEzBDZDQ",
             es: "3Okzra8Anr4"
         },
+        startTime: 2,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt12013558/" },
         review: {
@@ -346,6 +356,7 @@ const itemsDatabase = {
     },
     "kill la kill": {
         trailer: "B98NY8Hfo7I",
+        startTime: 2,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3114390/" },
         review: {
