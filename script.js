@@ -477,6 +477,16 @@ function changeLanguage(lang) {
 
     renderUserLists();
 
+    const searchInput = document.getElementById('full-grid-search');
+    if (searchInput) {
+        const placeholders = {
+            "pt": "Pesquisar nesta lista...",
+            "en": "Search in this list...",
+            "es": "Buscar en esta lista..."
+        };
+        searchInput.placeholder = placeholders[lang] || placeholders["pt"];
+    }
+
     if (document.body.classList.contains('panel-open') && currentOpenItemTitle) {
         const itemData = itemsDatabase[currentOpenItemTitle];
         if (itemData) {
@@ -818,7 +828,6 @@ function openFullGrid(categoryCard) {
 // --- INÍCIO DO SISTEMA DE PESQUISA ---
     let searchContainer = document.getElementById('full-grid-search-container');
     if (!searchContainer) {
-        // Cria os elementos apenas na primeira vez
         searchContainer = document.createElement('div');
         searchContainer.id = 'full-grid-search-container';
         searchContainer.innerHTML = `<i class="fas fa-search"></i> <input type="text" id="full-grid-search">`;
@@ -834,22 +843,18 @@ function openFullGrid(categoryCard) {
     const searchInput = document.getElementById('full-grid-search');
     
     if (searchInput) {
-        // 1. Tenta identificar o idioma atual (HTML, localStorage ou variável).
-        // Adapte 'seu_sistema_de_idioma' se você usar localStorage.
-        let siteLang = document.documentElement.lang || localStorage.getItem('lang') || "pt";
+        // Agora usa a variável global do seu próprio sistema de idiomas
+        let siteLang = currentLang;
         
-        // 2. Dicionário de traduções
         const placeholders = {
             "pt": "Pesquisar nesta lista...",
             "en": "Search in this list...",
             "es": "Buscar en esta lista..."
         };
 
-        // 3. Atualiza o texto do placeholder toda vez que a janela abre
-        const langKey = siteLang.substring(0, 2).toLowerCase();
-        searchInput.placeholder = placeholders[langKey] || placeholders["pt"];
+        searchInput.placeholder = placeholders[siteLang] || placeholders["pt"];
 
-        // 4. Restaura a pesquisa anterior da categoria atual
+        // Restaura a pesquisa anterior da categoria atual
         const savedTerm = savedSearchTerms[currentCategoryKey] || "";
         searchInput.value = savedTerm;
     }
