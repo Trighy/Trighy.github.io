@@ -855,8 +855,6 @@ function openFullGrid(categoryCard) {
     }
     // --- FIM DO SISTEMA DE PESQUISA ---
 
-    // Restaura a pesquisa anterior da categoria atual
-    const searchInput = document.getElementById('full-grid-search');
     const savedTerm = savedSearchTerms[currentCategoryKey] || "";
     if (searchInput) searchInput.value = savedTerm;
     // --- FIM DO SISTEMA DE PESQUISA ---
