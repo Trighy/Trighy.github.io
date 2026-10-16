@@ -61,7 +61,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
-        startTime: 5.25,
+        startTime: 5.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
@@ -139,7 +139,7 @@ const itemsDatabase = {
     },
     "plants vs zombies": {
         trailer: "CHAbHz8iYHc",
-        startTime: 3.75,
+        startTime: 4,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
