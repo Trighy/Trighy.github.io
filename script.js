@@ -926,7 +926,7 @@ function openDetailsPanel(linkElement) {
         }
     }
 
-    ['platform-steam', 'platform-xbox', 'platform-ps', 'platform-nin', 'platform-imdb', 'platform-anilist', 'platform-book'].forEach(id => setupBtn(id, null));
+['platform-steam', 'platform-pc', 'platform-xbox', 'platform-ps', 'platform-nin', 'platform-phone', 'platform-imdb', 'platform-anilist', 'platform-book'].forEach(id => setupBtn(id, null));
 
     const clickedHref = linkElement.getAttribute('href');
     const parentCard = linkElement.closest('.category-card');
@@ -942,9 +942,11 @@ function openDetailsPanel(linkElement) {
 
         let steamUrl = links.steam || (clickedHref && clickedHref.includes('steampowered.com') ? clickedHref : null);
         setupBtn('platform-steam', steamUrl);
+        setupBtn('platform-pc', links.pc);
         setupBtn('platform-xbox', links.xbox);
         setupBtn('platform-ps', links.ps);
         setupBtn('platform-nin', links.nin);
+        setupBtn('platform-phone', links.phone);
 
         let imdbUrl = links.imdb || (clickedHref && clickedHref.includes('imdb.com') ? clickedHref : null);
         setupBtn('platform-imdb', imdbUrl);
@@ -1290,9 +1292,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const links = {};
             if (currentCategoryKey === "games") {
                 links.steam = document.getElementById("link-steam").value.trim() || null;
+                links.pc = document.getElementById("link-pc") ? document.getElementById("link-pc").value.trim() || null : null; // <--- NOVO
                 links.xbox = document.getElementById("link-xbox").value.trim() || null;
                 links.ps = document.getElementById("link-ps").value.trim() || null;
                 links.nin = document.getElementById("link-nin").value.trim() || null;
+                links.phone = document.getElementById("link-phone") ? document.getElementById("link-phone").value.trim() || null : null; // <--- NOVO
             } else if (["movies", "series", "animes"].includes(currentCategoryKey)) {
                 links.imdb = document.getElementById("link-imdb").value.trim() || null;
             } else if (["mangas", "manhwas"].includes(currentCategoryKey)) {
