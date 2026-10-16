@@ -38,7 +38,7 @@ const itemsDatabase = {
         },
         review: {
             en: "Well then! The second game in the duology I love most—Ori and the Will of the Wisps—takes everything that was great about the first installment and manages to improve upon it even further. If I had to choose which of the two to save from being erased, it would be this one. I’ll be honest: I’d be a bit sad if you decided to skip the first game and jump straight into the second—but you certainly can, and as long as you play at least the second one, I’ll be happy. This game is more beautiful, larger in scope, features an even better soundtrack (composed by the same person who worked on the first), and has an ending that will make you cry even more than the first one did. Unfortunately, it’s not all perfect; the game had to be rushed. It was originally planned to include two additional areas, which were ultimately cut due to budget and time constraints—to the point that, within the game’s code, the path to one of these areas still exists and can even be reactivated, though it just leads into a void where there’s nothing at all. That said, if I had to pick just one game for everyone in my life to play, it would undoubtedly be Ori and the Will of the Wisps.",
-            pt: "Pois bem! O Segundo jogo da duologia que eu mais amo, Ori and the Will of the Wisps, essa continua pegou tudo de bom do primeiro e conseguiu melhorar ainda mais, se fosse para eu escolher entre qual dos dois salvar de ser apagado, séria esse tanto que se não quiseres jogar o primeiro e começar direto pelo segundo, irei me sentir mais triste não há como eu mentir sobre isso, mas claro que podes, por tanto que jogues pelo menos o segundo eu já ficarei feliz. Pois esse jogo consegue ser mais bonito, maior, com uma soundtrack melhor (com o mesmo compositor do primeiro) e um final que fara você chorar mais do que o final do primeiro. Infelizmente nem tudo são flores, o jogo teve que ser rushado, ele era planejado para ter mais duas áreas que foram removidas dévido á custos e tempo, tanto que nós códigos do jogo, o caminho até uma delas ainda existe e pode ser reativo, porém te leva para o vazio/void aonde tem nada. Portanto, se fosse para eu escolher um único jogo de todo mundo da minha vida jogar, séria certamente Ori and the Will of the Wisps.",
+            pt: "Pois bem! O Segundo jogo da duologia que eu mais amo, Ori and the Will of the Wisps, essa continuação pegou tudo de bom do primeiro e conseguiu melhorar ainda mais, se fosse para eu escolher entre qual dos dois salvar de ser apagado, séria esse tanto que se não quiseres jogar o primeiro e começar direto pelo segundo, irei me sentir mais triste não há como eu mentir sobre isso, mas claro que podes, por tanto que jogues pelo menos o segundo eu já ficarei feliz. Pois esse jogo consegue ser mais bonito, maior, com uma soundtrack melhor (com o mesmo compositor do primeiro) e um final que fara você chorar mais do que o final do primeiro. Infelizmente nem tudo são flores, o jogo teve que ser rushado, ele era planejado para ter mais duas áreas que foram removidas dévido á custos e tempo, tanto que nós códigos do jogo, o caminho até uma delas ainda existe e pode ser reativo, porém te leva para o vazio/void aonde tem nada. Portanto, se fosse para eu escolher um único jogo de todo mundo da minha vida jogar, séria certamente Ori and the Will of the Wisps.",
             es: "¡Pues bien! La segunda entrega de la duología que más adoro, Ori and the Will of the Wisps, tomó todo lo bueno del primer título y logró mejorarlo aún más. Si tuviera que elegir cuál de los dos salvar de ser borrado, elegiría este; de ​​hecho, si decides saltarte el primero y empezar directamente por el segundo, me sentiría un poco triste —no voy a mentir al respecto—, pero, por supuesto, puedes hacerlo; con tal de que juegues al menos el segundo, yo ya estaré feliz. Y es que este juego logra ser más hermoso, más grande, cuenta con una mejor banda sonora (del mismo compositor que el primero) y un final que te hará llorar incluso más que el del primer juego. Lamentablemente, no todo es color de rosa: el desarrollo tuvo que apresurarse. Estaba previsto que incluyera dos áreas más, pero fueron eliminadas debido a cuestiones de costes y tiempo; de hecho, en el código del juego todavía existe el camino hacia una de ellas y es posible reactivarlo, aunque solo conduce al vacío, donde no hay absolutamente nada. Por lo tanto, si tuviera que elegir un solo juego para recomendar a cualquiera, sin duda sería Ori and the Will of the Wisps."
         }
     },
@@ -175,6 +175,70 @@ const itemsDatabase = {
             en: "Slime Rancher 2! If you liked the first one, you’ll enjoy this sequel! It introduces new features absent from the original while maintaining the core gameplay loop: abducting—I mean, capturing—slimes, selling their poops for cash and scientific resources, and acquiring drones to automate the process... wait a minute... do you only get the drones after beating the game??? Why do they require so many materials—to the point where you finish the game before you can even automate anything? Eh... forget about the drones; they’re only useful if you plan on playing past the game’s conclusion. Still, it’s a great game—though I really miss the resource collectors...ANIMINHANIMINHA",
             pt: "Slime Rancher 2! Se gostastes do primeiro, irás gostar dessa continuação! Ela trás coisas novas que o primeiro não possui além de manter a mesma base de você raptar QUERO DISSER capturar os slimes, vender seus cocos por dinheiro e ciência e adquirir drones para automatizar o processo...perae...os drones são após zerar o jogo??? Por que eles demandam tanto material ao ponto que você zera o jogo antes de automatizar? Uh...esquece os drones, só vão ser úteis á você se planejas jogar além do fim do jogo, mas ainda sim é um bom jogo, tirando a coleta de matérias que virou manual...que saudades dos coletores...ANIMINHANIMINHA",
             es: "¡Slime Rancher 2! Si te gustó el primero, ¡te gustará esta continuación! Trae novedades que el primero no tenía, aunque mantiene la misma base: capturar slimes, vender sus cacas para obtener dinero y recursos científicos, y conseguir drones para automatizar el proceso... un momento... ¿los drones se consiguen después de terminar el juego? ¿Cómo es que requieren tantos materiales, al punto de que terminas el juego antes de poder automatizar nada? Bueno... olvida lo de los drones; solo te serán útiles si planeas seguir jugando después del final. Aun así, es un buen juego, aunque la recolección de materiales ahora es manual... ¡cómo extraño los recolectores...ANIMINHANIMINHA"
+        }
+    },
+    "forager": {
+        trailer: "RcmEI2A0vds",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/751780/",
+            xbox: "https://www.xbox.com/games/store/forager/9mv2s7q5phsw",
+            ps: "https://store.playstation.com/product/UP3864-CUSA13967_00-APP0990000000022",
+            nin: "https://www.nintendo.com/store/products/forager-switch/?srsltid=AU7gw4UTI-V9hvHGsizgoQ184_ssb6Tc7ve6RDKWV-0NCyiPXmVIXuvo"
+        },
+        review: {
+            en: "Forager! It’s a simple gathering game where you collect resources and keep progressing further and further. There isn’t much to say about it, other than the fact that I really like it—though it was abandoned by the original creator, even after a multiplayer mode was promised but never added... Oh, and it has mod support! As far as I know, there’s an attempt to create a multiplayer mode for the game via mods, but I’m not sure if that project is still moving forward...",
+            pt: "Forager! Esse jogo é um simples jogo de coletânea, onde juntas recursos e vais avançando mais e mais, não tem muito oque disser á esse jogo anão ser de eu gostar bastante dele e que ele foi abandonado pelo criador original quando prometeram multiplayer e nunca ser adicionado...ah e tem suporte á mods! Até onde eu sei estão tentando criar multiplayer via mods no jogo, mas não sei se esse projeto está indo para frente...",
+            es: "¡Forager! Es un juego sencillo basado en la recolección, donde vas reuniendo recursos y avanzando cada vez más. No hay mucho que decir al respecto, salvo que me gusta bastante; eso sí, el creador original lo abandonó después de haber prometido un modo multijugador que nunca llegó a añadirse... ¡ah, y es compatible con mods! Por lo que sé, están intentando implementar el multijugador mediante mods, pero no tengo claro si ese proyecto sigue adelante..."
+        }
+    },
+    "mad max": {
+        trailer: "wioZwZbUgn0",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/234140/",
+            xbox: "https://www.xbox.com/games/store/mad-max/bq2f1lgnl6m1",
+            ps: "https://www.playstation.com/games/mad-max/",
+            nin: null
+        },
+        review: {
+            en: "Mad Max actually has a game! Coming from the same developers as Just Cause, you can bet there will be plenty of explosions. It features some of the best vehicular combat around, melee combat in the style of the Batman: Arkham series, and upgrade systems for both your car and Max himself—all set within a massive, living world waiting to be explored. If you’re looking for an imaginative world to get lost in—without it being yet another medieval fantasy setting—then this game is for you.",
+            pt: "Mad Max possui sim um jogo! Dos mesmos desenvolvedores de Just Cause então pode acreditar que haverá muitas explosões, é um jogo com um dos melhores combates de carro, combate corpo a corpo estilo Batman Arkham, upgrades tanto para seu carro e Max além de um mundo vivo e gigante para explorar, se estás á procura de um mundo fantasioso para se perder sem ser um medieval pela centesima vez? Esse jogo é para você.",
+            es: "¡Mad Max sí que tiene un videojuego! Es obra de los mismos desarrolladores de Just Cause, así que puedes estar seguro de que habrá muchas explosiones. Cuenta con uno de los mejores sistemas de combate vehicular, combates cuerpo a cuerpo al estilo de Batman Arkham, mejoras tanto para tu vehículo como para Max, y un mundo enorme y lleno de vida para explorar. ¿Buscas un mundo fantástico en el que perderte, que no sea el típico escenario medieval por centésima vez? Entonces, este juego es para ti."
+        }
+    },
+    "madeater": {
+        trailer: "EP8TiVaGDBE",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/629820/",
+            xbox: "https://www.xbox.com/games/store/maneater/9p5b81kvdgp1",
+            ps: "https://store.playstation.com/product/UP0115-PPSA01861_00-MANEATER00000001",
+            nin: "https://www.nintendo.com/store/products/maneater-switch/?srsltid=AU7gw4WBgbKqBLIH9qBVDEwGrVKn5s0ttainxzBAs-vD03jng45CPgQ-"
+        },
+        review: {
+            en: "Maneater! If you’ve always dreamed of a 3D Hungry Shark game, this one is definitely for you! You control a shark that evolves as you progress; you can follow a specific evolutionary path or mix and match traits, gradually becoming capable of devouring larger and larger prey. If you’re looking for pure, chaotic fun—without worrying about a deep, complex story—just dive in and enjoy! This game is guaranteed to put a huge smile on your face! Oh, and a sequel has been announced for 2027—I’m eagerly and happily looking forward to it!",
+            pt: "Maneater! Se você sempre sonhou em um Hungry Shark 3D esse jogo é definitivamente para você! Você controla um tubarão que evolui conforme avanças no jogo podendo seguir o seu próprio caminho evolutivo ou misturar eles se quiseres e lentamente podendo comer coisas maiores e maiores, se queres puro chãos e diversão sem estar interessado em historia profunda, se divirta! Esse jogo vai te dar um sorrisão! Ah e a continuação foi anunciada para 2027, estou aguardando ansiosamente alegre!",
+            es: "¡Maneater! Si siempre has soñado con un *Hungry Shark* en 3D, ¡este juego es definitivamente para ti! Controlas a un tiburón que evoluciona a medida que avanzas; puedes seguir tu propia ruta evolutiva o combinar varias, permitiéndote devorar presas cada vez más grandes. Si buscas pura acción y diversión, sin necesidad de una historia profunda, ¡disfrútalo! ¡Este juego te sacará una gran sonrisa! Ah, y se ha anunciado una secuela para 2027; ¡la espero con mucha ilusión!"
+        }
+    },
+    "minecraft dungeons": {
+        trailer: {
+            en: "KCbE47v1qVk",
+            pt: "B6-0nTohcW0",
+            es: "KCbE47v1qVk"
+        },
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/1672970/",
+            xbox: "https://www.xbox.com/games/store/minecraft-dungeons/9n8nj74fztg9",
+            ps: "https://store.playstation.com/product/UP4433-CUSA18779_00-DUNGEONSPS400000",
+            nin: "https://www.nintendo.com/store/products/minecraft-dungeons-switch/?srsltid=AU7gw4X81w4ocIyB60NaG3OHQ7h1Z2IYrEHcFDC00-K1aMXhgUbD8PH_"
+        },
+        review: {
+            en: "Minecraft Dungeons! Are you looking for a simple dungeon crawler that a child can understand, yet one that’s deep enough for you to become incredibly overpowered? This is the game for you! It features multiplayer for up to 4 players, and with all its DLCs included, it’s very affordable and will keep you entertained for hours. If you’re looking for a great introduction to the dungeon crawler genre, this is the game, my friend!",
+            pt: "Minecraft Dungeons! Se procuras um Dungeon's Crawler simples que uma criança consegue entender mas ao mesmo profundo que consegues ficar extremamente OP? Esse jogo é para você! Ele possui multiplayer até 4 jogados, com todas as suas DLC's sai um preço baratinho e vai te divertir por horas, se procuras um belo introdutor á Dungeon's Crawler esse é o jogo meu caro!",
+            es: "¡Minecraft Dungeons! ¿Buscas un dungeon crawler sencillo, que un niño pueda entender, pero a la vez lo suficientemente profundo como para volverte extremadamente poderoso? ¡Este juego es para ti! Cuenta con modo multijugador para hasta 4 personas; con todos sus DLC, sale a un precio muy económico y te mantendrá entretenido durante horas. Si buscas una excelente introducción a los dungeon crawlers, ¡este es el juego, amigo mío!"
         }
     },
     "the wild robot": {
