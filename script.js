@@ -234,7 +234,7 @@ const itemsDatabase = {
         },
         review: {
             en: "Minecraft, Minecraft! The second best-selling game in history and, without a doubt, a landmark in gaming. I’ve never had a particularly deep history with Minecraft—I played it a few times during my childhood, but never to the point of having a unique, long-term world saved somewhere (like on an old Xbox or PlayStation). Even so, I still have a soft spot for it, and I’m always asking my friends to play with me every now and then (though most of them say no—looking at you, Daniel!). What a game, though—just have fun building!",
-            pt: "Minecraft, Minecraft! O segundo jogo mais vendido da historia e certamente um marco para os jogos, eu nunca possui uma historia muito profunda com Minecraft, joguei algumas vezes na minha infância mas nada ao ponto de ter um mundo único salvo para sempre que ainda tenho la de sei la do Xbox our Playstation, mesmo assim, sinto um carinho por esse jogo e sempre peço para os meus amigos para jogarmos de vez em quando (apessar da maioria negar, principalmente você Daniel) eu que jogo é esse, só se divirta ae construindo.",
+            pt: "Minecraft, Minecraft! O segundo jogo mais vendido da historia e certamente um marco para os jogos, eu nunca possui uma historia muito profunda com Minecraft, joguei algumas vezes na minha infância mas nada ao ponto de ter um mundo único salvo para sempre que ainda tenho la de sei la do Xbox our Playstation, mesmo assim, sinto um carinho por esse jogo e sempre peço para os meus amigos para jogarmos de vez em quando (apessar da maioria negar, principalmente você Daniel) mas que jogo é esse em, só se divirta ae construindo.",
             es: "¡Minecraft, Minecraft! El segundo juego más vendido de la historia y, sin duda, un hito en el mundo de los videojuegos. Nunca tuve una relación muy profunda con Minecraft; jugué algunas veces durante mi infancia, pero no tanto como para haber conservado un mundo único guardado para siempre —quizás en alguna Xbox o PlayStation de hace tiempo—. Aun así, le guardo cariño a este juego y siempre les pido a mis amigos que juguemos de vez en cuando (aunque la mayoría se niega, ¡especialmente tú, Daniel!). ¡Qué gran juego! Simplemente diviértete construyendo."
         }
     },
@@ -321,7 +321,7 @@ const itemsDatabase = {
     },
     "the owl house": {
         trailer: "9tLbSLMt2Co",
-        startTime: 2.5,
+        startTime: 2.75,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt8050756/" },
         review: {
@@ -561,6 +561,7 @@ let pendingTrailer = null;
 let currentLoadedTrailer = null;
 let loopTimer = null;
 let openedFromFullGrid = false; 
+let currentStartTime = 0;
 
 // ==========================================
 // MÉTODOS DE SEGURANÇA POR IP E TRADUÇÃO API
@@ -779,7 +780,7 @@ function startLoopCheck() {
             const duration = youtubePlayer.getDuration();
             const currentTime = youtubePlayer.getCurrentTime();
             if (duration > 0 && currentTime >= duration - 0.5) {
-                youtubePlayer.seekTo(0);
+                youtubePlayer.seekTo(currentStartTime);
                 youtubePlayer.playVideo();
             }
         }
@@ -807,7 +808,7 @@ function onYouTubeIframeAPIReady() {
             'onReady': (event) => {
                 event.target.mute(); 
                 if (pendingTrailer) {
-                    playTrailerId(pendingTrailer);
+                    playTrailerId(pendingTrailer, currentStartTime);
                     pendingTrailer = null;
                 }
             },
@@ -815,7 +816,7 @@ function onYouTubeIframeAPIReady() {
                 if (event.data === YT.PlayerState.PLAYING) {
                     startLoopCheck();
                 } else if (event.data === YT.PlayerState.ENDED && youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
-                    youtubePlayer.seekTo(0);
+                    youtubePlayer.seekTo(currentStartTime); // <--- Muda de 0 para currentStartTime
                     youtubePlayer.playVideo(); 
                 }
             }
@@ -852,14 +853,14 @@ function showMediaBackground(videoId, bgImageUrl, startTime = 0) {
 function playTrailerId(videoId, startSeconds = 0) {
     if (!videoId) return;
 
+    currentStartTime = startSeconds; // <--- Guarda o tempo inicial para ser usado no loop!
     document.body.classList.add('showing-trailer');
 
     if (youtubePlayer && typeof youtubePlayer.loadVideoById === 'function') {
-        // Recarrega se for um vídeo diferente ou se for um tempo de início diferente
         currentLoadedTrailer = videoId;
         youtubePlayer.loadVideoById({
             videoId: videoId,
-            startSeconds: startSeconds // <--- Aqui o YouTube pula direto para o segundo desejado
+            startSeconds: startSeconds
         });
         
         if (isTrailerMuted) { 
