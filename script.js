@@ -30,7 +30,7 @@ const itemsDatabase = {
     },
     "ori and the will of the wisps": {
         trailer: "kd0zbNw1VOg",
-        startTime: 3.6,
+        startTime: 3.75,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1057090/",
@@ -61,7 +61,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
-        startTime: 4.75,
+        startTime: 5.25,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
@@ -123,7 +123,7 @@ const itemsDatabase = {
     },
     "spore": {
         trailer: "jVH9Q8M8eaQ",
-        startTime: 4.5,
+        startTime: 4.75,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
@@ -139,7 +139,7 @@ const itemsDatabase = {
     },
     "plants vs zombies": {
         trailer: "CHAbHz8iYHc",
-        startTime: 3.6,
+        startTime: 3.75,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
@@ -354,7 +354,7 @@ const itemsDatabase = {
     },
     "kill la kill": {
         trailer: "B98NY8Hfo7I",
-        startTime: 6.5,
+        startTime: 7,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3114390/" },
         review: {
