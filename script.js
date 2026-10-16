@@ -350,7 +350,9 @@ const translations = {
         statusMangas: "What am I Reading?",
         statusManhwas: "What am I Reading?",
         frontlogExplanation: "Frontlog is similar to a Backlog, but these are {items} I plan to {verb} that caught my attention the most from everything in the Backlog, and which I plan to start right after finishing something from '{active}'.",
-        emptyList: "Empty at the moment..."
+        emptyList: "Empty at the moment...",
+        surpriseMeGlobal: "Surprise Me!",
+        surpriseMeCat: "Surprise Me!"
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
@@ -376,7 +378,9 @@ const translations = {
         statusMangas: "O que estou Lendo?",
         statusManhwas: "O que estou Lendo?",
         frontlogExplanation: "Frontlog é similar ao Backlog, porém, são {items} que eu planejo {verb} que me chamaram mais atenção com tudo que está no Backlog e que planejo começar logo após terminar algo do '{active}'.",
-        emptyList: "Vazio no momento..."
+        emptyList: "Vazio no momento...",
+        surpriseMeGlobal: "Me Surpreenda!",
+        surpriseMeCat: "Me Surpreenda!"
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
@@ -402,7 +406,9 @@ const translations = {
         statusMangas: "¿Qué estoy leyendo?",
         statusManhwas: "¿Qué estoy leyendo?",
         frontlogExplanation: "Frontlog es similar al Backlog, pero son {items} que planeo {verb} que más me llamaron la atención de todo lo que está en el Backlog y que planeo empezar justo después de terminar algo de '{active}'.",
-        emptyList: "Vacío por el momento..."
+        emptyList: "Vacío por el momento...",
+        surpriseMeGlobal: "¡Sorpréndeme! (Todos)",
+        surpriseMeCat: "¡Sorpréndeme!"
     }
 };
 
@@ -1321,4 +1327,44 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // ==========================================
+    // SISTEMA "ME SURPREENDA" (ROLETA DE RECOMENDAÇÕES)
+    // ==========================================
+    function rollSurprise(category = null) {
+        // Se a categoria for passada, sorteia só nela. Se não, sorteia em todas.
+        let selector = '.favorites-track a';
+        if (category) {
+            selector = `.category-card[data-category="${category}"] .favorites-track a`;
+        }
+        
+        const items = document.querySelectorAll(selector);
+        
+        if (items.length > 0) {
+            const randomIndex = Math.floor(Math.random() * items.length);
+            const randomItem = items[randomIndex];
+            
+            // Abre o painel do item sorteado automaticamente
+            openedFromFullGrid = false; 
+            openDetailsPanel(randomItem);
+        } else {
+            // Caso a categoria esteja vazia
+            alert(currentLang === 'pt' ? "Nenhum item encontrado para roletar!" : currentLang === 'es' ? "¡Ningún artículo encontrado!" : "No items found!");
+        }
+    }
+
+    // Evento do Botão Mundial
+    const btnSurpriseGlobal = document.querySelector('.btn-surprise-global');
+    if (btnSurpriseGlobal) {
+        btnSurpriseGlobal.addEventListener('click', () => rollSurprise(null));
+    }
+
+    // Evento dos Botões Específicos por Categoria
+    document.querySelectorAll('.btn-surprise-cat').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const parentCard = this.closest('.category-card');
+            const catKey = parentCard ? parentCard.getAttribute('data-category') : null;
+            rollSurprise(catKey);
+        });
+    });
 });
