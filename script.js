@@ -207,7 +207,7 @@ const itemsDatabase = {
             es: "¡Mad Max sí que tiene un videojuego! Es obra de los mismos desarrolladores de Just Cause, así que puedes estar seguro de que habrá muchas explosiones. Cuenta con uno de los mejores sistemas de combate vehicular, combates cuerpo a cuerpo al estilo de Batman Arkham, mejoras tanto para tu vehículo como para Max, y un mundo enorme y lleno de vida para explorar. ¿Buscas un mundo fantástico en el que perderte, que no sea el típico escenario medieval por centésima vez? Entonces, este juego es para ti."
         }
     },
-    "madeater": {
+    "maneater": {
         trailer: "EP8TiVaGDBE",
         bgImage: null,
         links: {
