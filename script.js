@@ -61,7 +61,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
-        startTime: 5.5,
+        startTime: 5.6,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
@@ -275,7 +275,7 @@ const itemsDatabase = {
         },
         review: {
             en: "Subnautica is a horror game disguised as a survival game. It drops you onto an alien planet covered in water and essentially tells you, 'figure it out yourself'—much like any other survival game. However, you know absolutely nothing about your surroundings; everything feels entirely new, creating a clash between curiosity and the fear of the unknown. See a beautiful fish in the distance? Why not scan it? But what if a leviathan is lurking nearby, waiting to strike when you least expect it? You will find yourself both awestruck and horrified by what you encounter on Planet 4546B—especially if you experience it in VR. Good luck—and don't forget your OXYGEN.",
-            pt: "Subnautica é um jogo de terro disfarçado como um de sobrevivencia, ele te joga em um planeta alienígena corberto de água e fala 'se vira ae' como qualquer outro jogo de sobrevivencia porém voce conheçe absolutamente nada ao seu redor e tudo parece algo completamente novo onde a curiosidade e medo do desconhecido se colidem, vistes um peixe bonito á distancia? Por que não scanea-lo? Mas e se tiver um leaviathan escondido na espreita te esperando para pegar no momento mais inesperado? Irãs ficar maravilhado e horrorizado com as coisas que verá no planeta 4546b, principalmente se viras elas em VR, boa sorte é oque eu digo e não esqueça OXIGÊNIO.",
+            pt: "Subnautica é um jogo de terror disfarçado como um de sobrevivencia, ele te joga em um planeta alienígena corberto de água e fala 'se vira ae' como qualquer outro jogo de sobrevivencia porém voce conheçe absolutamente nada ao seu redor e tudo parece algo completamente novo onde a curiosidade e medo do desconhecido se colidem, vistes um peixe bonito á distancia? Por que não scanea-lo? Mas e se tiver um leaviathan escondido na espreita te esperando para pegar no momento mais inesperado? Irãs ficar maravilhado e horrorizado com as coisas que verá no planeta 4546b, principalmente se viras elas em VR, boa sorte é oque eu digo e não esqueça OXIGÊNIO.",
             es: "Subnautica es un juego de terror disfrazado de juego de supervivencia; te lanza a un planeta alienígena cubierto de agua y te dice 'apáñatelas' como cualquier otro título del género. Sin embargo, no conoces absolutamente nada de tu entorno y todo resulta completamente nuevo: un escenario donde la curiosidad y el miedo a lo desconocido chocan. ¿Ves un pez bonito a lo lejos? ¿Por qué no escanearlo? Pero, ¿y si hay un leviatán al acecho, esperando para atraparte en el momento menos pensado? Te sentirás maravillado y, a la vez, aterrorizado por lo que verás en el planeta 4546B —especialmente si lo experimentas en realidad virtual—. Solo puedo decirte: ¡buena suerte! Y no olvides el OXÍGENIO."
         }
     },
