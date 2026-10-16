@@ -131,7 +131,7 @@ const itemsDatabase = {
             es: "Fui al cine a ver Robot salvaje, pensando —a juzgar por los tráileres— que sería una película realmente hermosa; pero lo que vi superó mis expectativas. ¿Sabes cuando algo es tan bonito que te faltan palabras para describirlo? Pues así es, literalmente, esta película. Lamentablemente, esta reseña no será muy larga porque, como dije antes, no tengo palavras para describirla; ¡solo, por favor, mírala! Por cierto, ¿sabías que está basada en una serie de libros? ¿Y que ya se está produciendo la segunda parte, basada en el segundo libro? ¡Espero con muchas ganas el tráiler de la próxima película!"
         }
     },
-    "mune: the guardian of the moon": {
+    "mune the guardian of the moon": {
         trailer: "2ONAlFkeYYo",
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3858372/" },
@@ -141,7 +141,7 @@ const itemsDatabase = {
             es: "Mune, el guardián de la Luna: si me preguntas cuál es mi película de animación favorita, es esta, sin lugar a dudas. Sí, los personajes son genéricos: el protagonista —que parece un tipo escuálido— es elegido para ser el guardián de la Luna, mientras que el musculoso imbécil es el guardián del Sol, ¡y la chica inteligente tiene que guiar a este trío para salvar su mundo! Es cierto, en ese aspecto la película es extremadamente genérica, no lo niego; pero, ¡Dios mío, qué mundo tan original, hermoso y lleno de vida! Si tuviera que elegir una sola película para mostrársela a todas las personas importantes de mi vida, sería esta, sin la menor duda."
         }
     },
-    "puss in boots: the last wish": {
+    "puss in boots the last wish": {
         trailer: {
             en: "Y5zqweZAEKI",
             pt: "Dyc8YANE6i8",
@@ -215,7 +215,7 @@ const itemsDatabase = {
     },
     "of all things, i became a crow": {
         trailer: null,
-        bgImage: "https://i.pinimg.com/736x/71/8b/1b/718b1b205e0da6a1ca4a9027f9afccea.jpg",
+        bgImage: "https://s4.anilist.co/file/anilistcdn/media/manga/banner/145538-7NeehXP9Ipf6.jpg",
         links: { anilist: "https://anilist.co/manga/145538/Hapirimyeon-Kkamagwiga-Doeeobeoryeotda" },
         review: {
             en: "Of All Things, I Became a Crow—let’s be honest, who doesn’t love a classic isekai? Personally, I prefer the ones that don’t just lead to an overpowered protagonist—you know, the strongest character ever trope, collecting a harem, blah, blah, blah—all that tedious stuff we’ve seen a thousand times before. I like unique *isekai* stories, and this happens to be one of them. If you’re into isekai that steer clear of the typical, absurdly overpowered hero who crushes everyone in their path—and would rather follow a crow trying to navigate a fantasy world—give this manhwa a chance.",
