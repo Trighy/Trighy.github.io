@@ -815,28 +815,13 @@ function openFullGrid(categoryCard) {
     const catTitle = categoryCard.querySelector('h2').innerText;
     fullGridTitle.innerText = catTitle;
 
-    // --- INÍCIO DO SISTEMA DE PESQUISA ---
 // --- INÍCIO DO SISTEMA DE PESQUISA ---
     let searchContainer = document.getElementById('full-grid-search-container');
     if (!searchContainer) {
+        // Cria os elementos apenas na primeira vez
         searchContainer = document.createElement('div');
         searchContainer.id = 'full-grid-search-container';
-
-        // 1. Detecta o idioma atual (lê o atributo lang da tag <html>, ex: <html lang="en">)
-        // Se o seu site usa uma variável global diferente (ex: currentLang), basta trocá-la aqui.
-        const siteLang = document.documentElement.lang || "pt"; 
-
-        // 2. Define as traduções do placeholder
-        const placeholders = {
-            "pt": "Pesquisar nesta lista...",
-            "en": "Search in this list...",
-            "es": "Buscar en esta lista..."
-        };
-
-        // Escolhe o texto correto ou cai no português como padrão
-        const placeholderText = placeholders[siteLang.substring(0, 2)] || placeholders["pt"];
-
-        searchContainer.innerHTML = `<i class="fas fa-search"></i> <input type="text" id="full-grid-search" placeholder="${placeholderText}">`;
+        searchContainer.innerHTML = `<i class="fas fa-search"></i> <input type="text" id="full-grid-search">`;
         fullGridContent.parentNode.insertBefore(searchContainer, fullGridContent);
 
         document.getElementById('full-grid-search').addEventListener('input', (e) => {
@@ -845,6 +830,30 @@ function openFullGrid(categoryCard) {
             filterGridItems(term);
         });
     }
+
+    const searchInput = document.getElementById('full-grid-search');
+    
+    if (searchInput) {
+        // 1. Tenta identificar o idioma atual (HTML, localStorage ou variável).
+        // Adapte 'seu_sistema_de_idioma' se você usar localStorage.
+        let siteLang = document.documentElement.lang || localStorage.getItem('lang') || "pt";
+        
+        // 2. Dicionário de traduções
+        const placeholders = {
+            "pt": "Pesquisar nesta lista...",
+            "en": "Search in this list...",
+            "es": "Buscar en esta lista..."
+        };
+
+        // 3. Atualiza o texto do placeholder toda vez que a janela abre
+        const langKey = siteLang.substring(0, 2).toLowerCase();
+        searchInput.placeholder = placeholders[langKey] || placeholders["pt"];
+
+        // 4. Restaura a pesquisa anterior da categoria atual
+        const savedTerm = savedSearchTerms[currentCategoryKey] || "";
+        searchInput.value = savedTerm;
+    }
+    // --- FIM DO SISTEMA DE PESQUISA ---
 
     // Restaura a pesquisa anterior da categoria atual
     const searchInput = document.getElementById('full-grid-search');
