@@ -5,6 +5,7 @@
 // ==========================================
 const ALLOWED_IP = "0"; 
 let currentCategoryKey = "";
+let currentListCategory = "games";
 let savedSearchTerms = {};
 
 // ==========================================
@@ -232,12 +233,18 @@ const userLists = {
         title: { en: "Games", pt: "Jogos", es: "Juegos" },
         icon: "fas fa-gamepad",
         activeLabel: { en: "Playing", pt: "Jogando", es: "Jugando" },
-        active: [   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
+        terms: {
+            items: { en: "games", pt: "jogos", es: "juegos" },
+            verb: { en: "play", pt: "jogar", es: "jugar" }
+        },
+        active: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
             "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4",
             "https://imgproxy.eneba.games/qeAgvJP7pqfoSJBHVld8LNtHE3dNdOteCr4ONDiHMic/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy91/dGZZRkhuczl4ZVJ3/QUI2WU1nMGxqS2pZ/aHVOajgyZmJDc0h2/c09NNEtJLmpwZw",
             "https://static.wikia.nocookie.net/ptstarwars/images/f/fc/LEGO_Star_Wars_TCS.jpg/revision/latest?cb=20091230153244"
         ],
-        frontlog: [     "https://m.media-amazon.com/images/M/MV5BOTY2NGMxMDItZjE5ZS00ZTgyLWJmMzktM2EzNzc4ZWM2MDczXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        frontlog: [
+            "https://m.media-amazon.com/images/M/MV5BOTY2NGMxMDItZjE5ZS00ZTgyLWJmMzktM2EzNzc4ZWM2MDczXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
             "https://store-images.s-microsoft.com/image/apps.21257.71633162879241707.7cf18b3b-9fa5-486f-9a68-067f06d50bf1.8f7909cf-d9a5-44aa-9901-2635255ab2ee",
             "https://m.media-amazon.com/images/M/MV5BM2NhYjJhMWYtN2Q3Yy00Y2IxLTg4MTQtZjA2ODk0MjZlMzVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
             "https://store-images.s-microsoft.com/image/apps.15028.14346269945886296.6f97d7ca-56af-436f-ba7f-82aed0a77d47.8ec73e74-2841-466d-bc9c-ed218c885826",
@@ -247,7 +254,8 @@ const userLists = {
             "https://store-images.s-microsoft.com/image/apps.615.67362291782661543.eb0267ee-9235-487a-b697-5cc49c0703c1.327dcfde-8472-4f0e-b91e-9b4856238352",
             "https://store-images.s-microsoft.com/image/apps.52880.65129518710082559.30d43137-919f-4215-820e-038b409fb968.9b56f6c5-bfd1-4b02-beaf-666f707aa0da"
         ],
-        backlog: [      "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/NmTEnt5SIVRk4dHDqcydervu.png",
+        backlog: [
+            "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/NmTEnt5SIVRk4dHDqcydervu.png",
             "https://upload.wikimedia.org/wikipedia/pt/a/a3/Frostpunk_cover_art.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
             "https://m.media-amazon.com/images/I/81kAkZVV4RL._UF1000,1000_QL80_.jpg"
         ]
@@ -256,48 +264,61 @@ const userLists = {
         title: { en: "Movies", pt: "Filmes", es: "Películas" },
         icon: "fas fa-film",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        frontlog: [],
-        backlog: []
+        terms: {
+            items: { en: "movies", pt: "filmes", es: "películas" },
+            verb: { en: "watch", pt: "assistir", es: "ver" }
+        },
+        active: [], frontlog: [], backlog: []
     },
     series: {
         title: { en: "Series", pt: "Séries", es: "Series" },
         icon: "fas fa-tv",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        active: [],
-        frontlog: [],
-        backlog: []
+        terms: {
+            items: { en: "series", pt: "séries", es: "series" },
+            verb: { en: "watch", pt: "assistir", es: "ver" }
+        },
+        active: [], frontlog: [], backlog: []
     },
     animes: {
         title: { en: "Anime", pt: "Animes", es: "Anime" },
         icon: "fas fa-star",
         activeLabel: { en: "Watching", pt: "Assistindo", es: "Viendo" },
-        active: [],
-        frontlog: [],
-        backlog: []
+        terms: {
+            items: { en: "anime", pt: "animes", es: "anime" },
+            verb: { en: "watch", pt: "assistir", es: "ver" }
+        },
+        active: [], frontlog: [], backlog: []
     },
     books: {
         title: { en: "Books", pt: "Livros", es: "Libros" },
         icon: "fas fa-book",
         activeLabel: { en: "Reading", pt: "Lendo", es: "Leyendo" },
-        active: [],
-        frontlog: [],
-        backlog: []
+        terms: {
+            items: { en: "books", pt: "livros", es: "libros" },
+            verb: { en: "read", pt: "ler", es: "leer" }
+        },
+        active: [], frontlog: [], backlog: []
     },
     mangas: {
         title: { en: "Manga", pt: "Mangás", es: "Manga" },
         icon: "fas fa-book-open",
         activeLabel: { en: "Reading", pt: "Lendo", es: "Leyendo" },
-        active: [],
-        frontlog: [],
-        backlog: []
+        terms: {
+            items: { en: "manga", pt: "mangás", es: "manga" },
+            verb: { en: "read", pt: "ler", es: "leer" }
+        },
+        active: [], frontlog: [], backlog: []
     },
     manhwas: {
         title: { en: "Manhwa", pt: "Manhwa", es: "Manhwa" },
         icon: "fas fa-book-reader",
         activeLabel: { en: "Reading", pt: "Lendo", es: "Leyendo" },
-        active: [],
-        frontlog: [],
-        backlog: []
+        terms: {
+            items: { en: "manhwa", pt: "manhwas", es: "manhwa" },
+            verb: { en: "read", pt: "ler", es: "leer" }
+        },
+        active: [], frontlog: [], backlog: []
     }
 };
 
@@ -328,6 +349,7 @@ const translations = {
         statusBooks: "What am I Reading?",
         statusMangas: "What am I Reading?",
         statusManhwas: "What am I Reading?",
+        frontlogExplanation: "Frontlog is similar to a Backlog, but these are {items} I plan to {verb} that caught my attention the most from everything in the Backlog, and which I plan to start right after finishing something from '{active}'.",
         emptyList: "Empty at the moment..."
     },
     pt: {
@@ -353,6 +375,7 @@ const translations = {
         statusBooks: "O que estou Lendo?",
         statusMangas: "O que estou Lendo?",
         statusManhwas: "O que estou Lendo?",
+        frontlogExplanation: "Frontlog é similar ao Backlog, porém, são {items} que eu planejo {verb} que me chamaram mais atenção com tudo que está no Backlog e que planejo começar logo após terminar algo do '{active}'.",
         emptyList: "Vazio no momento..."
     },
     es: {
@@ -378,6 +401,7 @@ const translations = {
         statusBooks: "¿Qué estoy leyendo?",
         statusMangas: "¿Qué estoy leyendo?",
         statusManhwas: "¿Qué estoy leyendo?",
+        frontlogExplanation: "Frontlog es similar al Backlog, pero son {items} que planeo {verb} que más me llamaron la atención de todo lo que está en el Backlog y que planeo empezar justo después de terminar algo de '{active}'.",
         emptyList: "Vacío por el momento..."
     }
 };
@@ -501,75 +525,89 @@ function changeLanguage(lang) {
 }
 
 // ==========================================
-// RENDERIZADOR DO PAINEL DE LISTAS PESSOAIS
+// RENDERIZADOR DO PAINEL DE LISTAS PESSOAIS (CATEGORIA ÚNICA)
 // ==========================================
 function renderUserLists() {
     const container = document.getElementById('list-panel-content');
-    if (!container) return;
+    if (!container || !currentListCategory) return;
 
-    let html = '';
-    const emptyText = translations[currentLang].emptyList || "Vazio no momento...";
+    const cat = userLists[currentListCategory];
+    if (!cat) return;
 
-    for (const catKey in userLists) {
-        const cat = userLists[catKey];
-        const catName = cat.title[currentLang] || cat.title['pt'];
-        const activeLabel = cat.activeLabel[currentLang] || cat.activeLabel['pt'];
-        const frontlogLabel = translations[currentLang].frontlogLabel;
-        const backlogLabel = translations[currentLang].backlogLabel;
+    const catName = cat.title[currentLang] || cat.title['pt'];
+    const activeLabel = cat.activeLabel[currentLang] || cat.activeLabel['pt'];
+    const frontlogLabel = translations[currentLang].frontlogLabel;
+    const backlogLabel = translations[currentLang].backlogLabel;
 
-        const activeImgs = cat.active || [];
-        const frontlogImgs = cat.frontlog || [];
-        const backlogImgs = cat.backlog || [];
+    // Configura os termos dinâmicos para a explicação do Frontlog
+    const itemsTerm = cat.terms.items[currentLang] || cat.terms.items['pt'];
+    const verbTerm = cat.terms.verb[currentLang] || cat.terms.verb['pt'];
+    let frontlogDesc = translations[currentLang].frontlogExplanation || translations['pt'].frontlogExplanation;
+    frontlogDesc = frontlogDesc.replace('{items}', itemsTerm).replace('{verb}', verbTerm).replace('{active}', activeLabel);
 
-        const isEmpty = activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0;
+    const activeImgs = cat.active || [];
+    const frontlogImgs = cat.frontlog || [];
+    const backlogImgs = cat.backlog || [];
 
-        html += `
-            <div id="list-cat-${catKey}" class="list-category-block">
-                <div class="list-category-title">
-                    <i class="${cat.icon}"></i> ${catName}
+    const isEmpty = activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0;
+
+    // Estrutura principal da categoria com visual limpo
+    let html = `
+        <div id="list-cat-${currentListCategory}" class="list-category-block" style="border: none; background: transparent; padding: 0;">
+            <div class="list-category-title" style="font-size: 2rem; border-bottom: 2px solid rgba(100, 255, 218, 0.4); margin-bottom: 25px; padding-bottom: 15px;">
+                <i class="${cat.icon}"></i> ${catName}
+            </div>
+    `;
+
+    if (isEmpty) {
+        const emptyText = translations[currentLang].emptyList || "Vazio no momento...";
+        html += `<p style="color: #a0b2c6; font-size: 0.95rem; font-style: italic; padding: 5px 0;">${emptyText}</p>`;
+    } else {
+        if (activeImgs.length > 0) {
+            html += `
+                <div class="list-status-subblock">
+                    <div class="list-status-title"><i class="fas fa-play-circle"></i> ${activeLabel}</div>
+                    <div class="list-grid">
+                        ${activeImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                    </div>
                 </div>
-        `;
-
-        if (isEmpty) {
-            html += `<p style="color: #a0b2c6; font-size: 0.95rem; font-style: italic; padding: 5px 0;">${emptyText}</p>`;
-        } else {
-            if (activeImgs.length > 0) {
-                html += `
-                    <div class="list-status-subblock">
-                        <div class="list-status-title"><i class="fas fa-play-circle"></i> ${activeLabel}</div>
-                        <div class="list-grid">
-                            ${activeImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-
-            if (frontlogImgs.length > 0) {
-                html += `
-                    <div class="list-status-subblock">
-                        <div class="list-status-title"><i class="fas fa-forward"></i> ${frontlogLabel}</div>
-                        <div class="list-grid">
-                            ${frontlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-
-            if (backlogImgs.length > 0) {
-                html += `
-                    <div class="list-status-subblock">
-                        <div class="list-status-title"><i class="fas fa-clock"></i> ${backlogLabel}</div>
-                        <div class="list-grid">
-                            ${backlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
-                        </div>
-                    </div>
-                `;
-            }
+            `;
         }
 
-        html += `</div>`;
+        // Adiciona a caixa do Frontlog apenas se houver um Frontlog ou Backlog
+        if (frontlogImgs.length > 0 || backlogImgs.length > 0) {
+            html += `
+                <div class="frontlog-info-box">
+                    <h4><i class="fas fa-question-circle"></i> Frontlog?</h4>
+                    <p>${frontlogDesc}</p>
+                </div>
+            `;
+        }
+
+        if (frontlogImgs.length > 0) {
+            html += `
+                <div class="list-status-subblock">
+                    <div class="list-status-title"><i class="fas fa-forward"></i> ${frontlogLabel}</div>
+                    <div class="list-grid">
+                        ${frontlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (backlogImgs.length > 0) {
+            html += `
+                <div class="list-status-subblock">
+                    <div class="list-status-title"><i class="fas fa-clock"></i> ${backlogLabel}</div>
+                    <div class="list-grid">
+                        ${backlogImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
     }
 
+    html += `</div>`;
     container.innerHTML = html;
 }
 
@@ -1184,16 +1222,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             closeDetailsPanel();
             closeFullGrid();
-            document.body.classList.add('right-panel-open');
-
+            
+            // Define a categoria atual e renderiza apenas ela
             if (catKey) {
-                setTimeout(() => {
-                    const targetElem = document.getElementById(`list-cat-${catKey}`);
-                    if (targetElem) {
-                        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }, 100);
+                currentListCategory = catKey;
+                renderUserLists(); 
             }
+            
+            document.body.classList.add('right-panel-open');
         });
     });
 

@@ -965,6 +965,33 @@ body.full-grid-open {
 }
 
 /* ==========================================
+   CAIXA DE INFORMAÇÃO DO FRONTLOG
+   ========================================== */
+.frontlog-info-box {
+    background: rgba(74, 144, 226, 0.1);
+    border-left: 4px solid #64ffda;
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.frontlog-info-box h4 {
+    color: #64ffda;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.frontlog-info-box p {
+    color: #a0b2c6;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
    RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
    ========================================== */
 
