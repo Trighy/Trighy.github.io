@@ -138,8 +138,7 @@ const itemsDatabase = {
         links: {
             steam: "https://store.steampowered.com/app/17390/",
             xbox: "https://www.xbox.com/games/store/plants-vs-zombies/br1d9cr82zm8",
-            ps: null,
-            nin: null
+            phone: "https://play.google.com/store/apps/details?id=com.ea.game.pvzfree_row&hl=en"
         },
         review: {
             en: "Plants vs. Zombies is another game from my childhood that stands as a pinnacle of the tower defense genre. If you’re looking for a unique tower defense experience—one so intuitive that even a child can pick it up, learn what each plant does, and figure out which plants to use against specific zombies—this is the game for you. It may be silly, but it respects a child’s intelligence, encouraging them to think critically about which plants to bring to counter different zombies. Plus, the soundtrack is truly memorable. Despite its age and its limited, low-resolution display, please make sure to purchase only the original or the GOTY (Game of the Year) version. The Replanted remake was created without any soul or care—to the point that the original developers and the original artist weren't even contacted to help recreate the artwork. If you’re looking for a distinct tower defense game, this is it; please, give it a chance.",
@@ -184,7 +183,8 @@ const itemsDatabase = {
             steam: "https://store.steampowered.com/app/751780/",
             xbox: "https://www.xbox.com/games/store/forager/9mv2s7q5phsw",
             ps: "https://store.playstation.com/product/UP3864-CUSA13967_00-APP0990000000022",
-            nin: "https://www.nintendo.com/store/products/forager-switch/?srsltid=AU7gw4UTI-V9hvHGsizgoQ184_ssb6Tc7ve6RDKWV-0NCyiPXmVIXuvo"
+            nin: "https://www.nintendo.com/store/products/forager-switch/?srsltid=AU7gw4UTI-V9hvHGsizgoQ184_ssb6Tc7ve6RDKWV-0NCyiPXmVIXuvo",
+            phone: "https://play.google.com/store/apps/details?id=com.humblebundle.forager&hl=en"
         },
         review: {
             en: "Forager! It’s a simple gathering game where you collect resources and keep progressing further and further. There isn’t much to say about it, other than the fact that I really like it—though it was abandoned by the original creator, even after a multiplayer mode was promised but never added... Oh, and it has mod support! As far as I know, there’s an attempt to create a multiplayer mode for the game via mods, but I’m not sure if that project is still moving forward...",
@@ -220,6 +220,22 @@ const itemsDatabase = {
             en: "Maneater! If you’ve always dreamed of a 3D Hungry Shark game, this one is definitely for you! You control a shark that evolves as you progress; you can follow a specific evolutionary path or mix and match traits, gradually becoming capable of devouring larger and larger prey. If you’re looking for pure, chaotic fun—without worrying about a deep, complex story—just dive in and enjoy! This game is guaranteed to put a huge smile on your face! Oh, and a sequel has been announced for 2027—I’m eagerly and happily looking forward to it!",
             pt: "Maneater! Se você sempre sonhou em um Hungry Shark 3D esse jogo é definitivamente para você! Você controla um tubarão que evolui conforme avanças no jogo podendo seguir o seu próprio caminho evolutivo ou misturar eles se quiseres e lentamente podendo comer coisas maiores e maiores, se queres puro chãos e diversão sem estar interessado em historia profunda, se divirta! Esse jogo vai te dar um sorrisão! Ah e a continuação foi anunciada para 2027, estou aguardando ansiosamente alegre!",
             es: "¡Maneater! Si siempre has soñado con un *Hungry Shark* en 3D, ¡este juego es definitivamente para ti! Controlas a un tiburón que evoluciona a medida que avanzas; puedes seguir tu propia ruta evolutiva o combinar varias, permitiéndote devorar presas cada vez más grandes. Si buscas pura acción y diversión, sin necesidad de una historia profunda, ¡disfrútalo! ¡Este juego te sacará una gran sonrisa! Ah, y se ha anunciado una secuela para 2027; ¡la espero con mucha ilusión!"
+        }
+    },
+    "minecraft": {
+        trailer: "MmB9b5njVbA",
+        bgImage: null,
+        links: {
+            pc: "https://www.minecraft.net/choose-your-game",
+            xbox: "https://www.xbox.com/games/store/minecraft/9mvxmvt8zkwc",
+            ps: "https://store.playstation.com/product/UP4433-CUSA00744_00-MINECRAFTPS40001",
+            nin: "https://www.nintendo.com/store/products/minecraft-switch/?srsltid=AU7gw4Uc4sglFobI_WjE7OMGgk1dVu3qw0L6ynGWKcZZwDLrXI0989m3",
+            phone: "https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en"
+        },
+        review: {
+            en: "Minecraft, Minecraft! The second best-selling game in history and, without a doubt, a landmark in gaming. I’ve never had a particularly deep history with Minecraft—I played it a few times during my childhood, but never to the point of having a unique, long-term world saved somewhere (like on an old Xbox or PlayStation). Even so, I still have a soft spot for it, and I’m always asking my friends to play with me every now and then (though most of them say no—looking at you, Daniel!). What a game, though—just have fun building!",
+            pt: "Minecraft, Minecraft! O segundo jogo mais vendido da historia e certamente um marco para os jogos, eu nunca possui uma historia muito profunda com Minecraft, joguei algumas vezes na minha infância mas nada ao ponto de ter um mundo único salvo para sempre que ainda tenho la de sei la do Xbox our Playstation, mesmo assim, sinto um carinho por esse jogo e sempre peço para os meus amigos para jogarmos de vez em quando (apessar da maioria negar, principalmente você Daniel) eu que jogo é esse, só se divirta ae construindo.",
+            es: "¡Minecraft, Minecraft! El segundo juego más vendido de la historia y, sin duda, un hito en el mundo de los videojuegos. Nunca tuve una relación muy profunda con Minecraft; jugué algunas veces durante mi infancia, pero no tanto como para haber conservado un mundo único guardado para siempre —quizás en alguna Xbox o PlayStation de hace tiempo—. Aun así, le guardo cariño a este juego y siempre les pido a mis amigos que juguemos de vez en cuando (aunque la mayoría se niega, ¡especialmente tú, Daniel!). ¡Qué gran juego! Simplemente diviértete construyendo."
         }
     },
     "minecraft dungeons": {
@@ -304,7 +320,8 @@ const itemsDatabase = {
         }
     },
     "the owl house": {
-        trailer: "9eoDJufrO3k",
+        trailer: "9tLbSLMt2Co",
+        startTime: 2.5,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt8050756/" },
         review: {
@@ -806,14 +823,14 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-function showMediaBackground(videoId, bgImageUrl) {
+function showMediaBackground(videoId, bgImageUrl, startTime = 0) {
     const bgImg = document.getElementById('bg-image');
     const playerElem = document.getElementById('player');
 
     if (videoId) {
         if (bgImg) bgImg.style.display = 'none';
         if (playerElem) playerElem.style.display = 'block';
-        playTrailerId(videoId);
+        playTrailerId(videoId, startTime);
     } else if (bgImageUrl) {
         if (youtubePlayer && typeof youtubePlayer.pauseVideo === 'function') {
             youtubePlayer.pauseVideo();
@@ -832,19 +849,18 @@ function showMediaBackground(videoId, bgImageUrl) {
     }
 }
 
-function playTrailerId(videoId) {
+function playTrailerId(videoId, startSeconds = 0) {
     if (!videoId) return;
 
     document.body.classList.add('showing-trailer');
 
     if (youtubePlayer && typeof youtubePlayer.loadVideoById === 'function') {
-        if (currentLoadedTrailer !== videoId) {
-            currentLoadedTrailer = videoId;
-            youtubePlayer.loadVideoById({
-                videoId: videoId,
-                startSeconds: 0
-            });
-        }
+        // Recarrega se for um vídeo diferente ou se for um tempo de início diferente
+        currentLoadedTrailer = videoId;
+        youtubePlayer.loadVideoById({
+            videoId: videoId,
+            startSeconds: startSeconds // <--- Aqui o YouTube pula direto para o segundo desejado
+        });
         
         if (isTrailerMuted) { 
             youtubePlayer.mute(); 
@@ -940,8 +956,9 @@ function openDetailsPanel(linkElement) {
         setupBtn('platform-book', bookUrl);
         
         const videoId = getTrailerId(itemData.trailer);
+        const startTime = itemData.startTime || 0;
         const bgImageUrl = itemData.bgImage || null;
-        showMediaBackground(videoId, bgImageUrl);
+        showMediaBackground(videoId, bgImageUrl, startTime);
     } else {
         const reviewBox = document.getElementById('details-review');
         if (reviewBox) reviewBox.innerText = "Análise em construção...";
