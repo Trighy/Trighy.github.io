@@ -14,7 +14,7 @@ let savedSearchTerms = {};
 const itemsDatabase = {
     "ori and the blind forest": {
         trailer: "zU3rmggIcpc",
-        startTime: 3.25,
+        startTime: 3.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/387290/",
@@ -30,7 +30,7 @@ const itemsDatabase = {
     },
     "ori and the will of the wisps": {
         trailer: "kd0zbNw1VOg",
-        startTime: 3.25,
+        startTime: 3.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1057090/",
@@ -61,7 +61,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
-        startTime: 4,
+        startTime: 4.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
@@ -139,7 +139,7 @@ const itemsDatabase = {
     },
     "plants vs zombies": {
         trailer: "CHAbHz8iYHc",
-        startTime: 3.25,
+        startTime: 3.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/17390/",
@@ -200,7 +200,7 @@ const itemsDatabase = {
     },
     "mad max": {
         trailer: "wioZwZbUgn0",
-        startTime: 4.25,
+        startTime: 4.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/234140/",
@@ -280,7 +280,7 @@ const itemsDatabase = {
     },
     "mune the guardian of the moon": {
         trailer: "2ONAlFkeYYo",
-        startTime: 3,
+        startTime: 3.25,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3858372/" },
         review: {
@@ -354,7 +354,7 @@ const itemsDatabase = {
     },
     "kill la kill": {
         trailer: "B98NY8Hfo7I",
-        startTime: 5,
+        startTime: 6,
         bgImage: null,
         links: { imdb: "https://www.imdb.com/title/tt3114390/" },
         review: {
