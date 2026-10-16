@@ -144,7 +144,7 @@ const itemsDatabase = {
         links: {
             steam: "https://store.steampowered.com/app/17390/",
             xbox: "https://www.xbox.com/games/store/plants-vs-zombies/br1d9cr82zm8",
-            phone: "https://play.google.com/store/apps/details?id=com.ea.game.pvzfree_row&hl=en"
+            phone: "https://play.google.com/store/apps/details?id=com.ea.game.pvzfree_row&hl"
         },
         review: {
             en: "Plants vs. Zombies is another game from my childhood that stands as a pinnacle of the tower defense genre. If you’re looking for a unique tower defense experience—one so intuitive that even a child can pick it up, learn what each plant does, and figure out which plants to use against specific zombies—this is the game for you. It may be silly, but it respects a child’s intelligence, encouraging them to think critically about which plants to bring to counter different zombies. Plus, the soundtrack is truly memorable. Despite its age and its limited, low-resolution display, please make sure to purchase only the original or the GOTY (Game of the Year) version. The Replanted remake was created without any soul or care—to the point that the original developers and the original artist weren't even contacted to help recreate the artwork. If you’re looking for a distinct tower defense game, this is it; please, give it a chance.",
@@ -190,7 +190,7 @@ const itemsDatabase = {
             xbox: "https://www.xbox.com/games/store/forager/9mv2s7q5phsw",
             ps: "https://store.playstation.com/product/UP3864-CUSA13967_00-APP0990000000022",
             nin: "https://www.nintendo.com/store/products/forager-switch/?srsltid=AU7gw4UTI-V9hvHGsizgoQ184_ssb6Tc7ve6RDKWV-0NCyiPXmVIXuvo",
-            phone: "https://play.google.com/store/apps/details?id=com.humblebundle.forager&hl=en"
+            phone: "https://play.google.com/store/apps/details?id=com.humblebundle.forager&hl"
         },
         review: {
             en: "Forager! It’s a simple gathering game where you collect resources and keep progressing further and further. There isn’t much to say about it, other than the fact that I really like it—though it was abandoned by the original creator, even after a multiplayer mode was promised but never added... Oh, and it has mod support! As far as I know, there’s an attempt to create a multiplayer mode for the game via mods, but I’m not sure if that project is still moving forward...",
@@ -227,6 +227,23 @@ const itemsDatabase = {
             en: "Maneater! If you’ve always dreamed of a 3D Hungry Shark game, this one is definitely for you! You control a shark that evolves as you progress; you can follow a specific evolutionary path or mix and match traits, gradually becoming capable of devouring larger and larger prey. If you’re looking for pure, chaotic fun—without worrying about a deep, complex story—just dive in and enjoy! This game is guaranteed to put a huge smile on your face! Oh, and a sequel has been announced for 2027—I’m eagerly and happily looking forward to it!",
             pt: "Maneater! Se você sempre sonhou em um Hungry Shark 3D esse jogo é definitivamente para você! Você controla um tubarão que evolui conforme avanças no jogo podendo seguir o seu próprio caminho evolutivo ou misturar eles se quiseres e lentamente podendo comer coisas maiores e maiores, se queres puro chãos e diversão sem estar interessado em historia profunda, se divirta! Esse jogo vai te dar um sorrisão! Ah e a continuação foi anunciada para 2027, estou aguardando ansiosamente alegre!",
             es: "¡Maneater! Si siempre has soñado con un *Hungry Shark* en 3D, ¡este juego es definitivamente para ti! Controlas a un tiburón que evoluciona a medida que avanzas; puedes seguir tu propia ruta evolutiva o combinar varias, permitiéndote devorar presas cada vez más grandes. Si buscas pura acción y diversión, sin necesidad de una historia profunda, ¡disfrútalo! ¡Este juego te sacará una gran sonrisa! Ah, y se ha anunciado una secuela para 2027; ¡la espero con mucha ilusión!"
+        }
+    },
+    "terraria": {
+        trailer: "6nUvWkD8rAE",
+        starTime: 2.25,
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/105600/",
+            xbox: "https://www.xbox.com/games/store/terraria/btnps60n3114",
+            ps: "https://store.playstation.com/concept/205080",
+            nin: "https://www.nintendo.com/store/products/terraria-switch/?srsltid=AU7gw4XF9ZBV30Nz4QP3Tca1P5Re9q7h1EHfy5OXTITJ9RgSFgY8Hayb",
+            phone: "https://play.google.com/store/apps/details?id=com.and.games505.TerrariaPaid&hl"
+        },
+        review: {
+            en: "Terraria is a sandbox game disguised as a Metroidvania; if you look at it and think, 'Oh, but that's just 2D Minecraft' you couldn't be more wrong. If you're looking for a Metroidvania that somehow offers the freedom of a sandbox, Terraria delivers both: it features Metroidvania-style progression alongside the freedom to do whatever you want—typical of a sandbox. Words can't really do it justice; you just have to play it yourself. And for heaven's sake, play this game—it's incredibly cheap on any platform, supports mods with one of the best mod libraries out there, and receives constant updates. The developers keep saying, 'Oh, this is the last update!' only to release a new one months later. If you're looking for an affordable game that will provide hours upon hours of fun, Terraria is exactly what you need, my friend.",
+            pt: "Terraria, é um sandbox disfarçado de metroidvania, se ao veres Terraria e pensas 'ah mas isso ae é Minecraft 2D' não tem como estares mais errado, se procuras um metroidvania com de alguma forma a liberdade de um sandbox, Terraria consegue os dois, ele tem uma progressão de metroidvania com a liberdade de fazer oque quiser de um sandbox e não há palavras á descrever anão ser jogando o jogo por si só e pela mor de deus, jogue esse jogo, ele é extremamente barato em qualquer plataforma além de ter suporte á mods e uma das melhores blibliotecas de mods e updates constantes com os desenvolvedores falando 'ah esse é o último update!' e meses depois eles lançando um novo update, se procuras um jogo barato que te dará diversão por horas e horas, Terraria é oque procuras meu caro.",
+            es: "Terraria es un sandbox disfrazado de *metroidvania*. Si al ver Terraria piensas: 'ah, pero eso es básicamente Minecraft en 2D', no podrías estar más equivocado. Si buscas un metroidvania que ofrezca, en cierto modo, la libertad de un sandbox, Terraria logra ambas cosas: combina la progresión propia de un metroidvania con la libertad de hacer lo que quieras, característica de un sandbox. No hay palabras para describirlo; la única forma de entenderlo es jugándolo. ¡Por el amor de Dios, juega a este título! Es extremadamente barato en cualquier plataforma, admite mods —cuenta con una de las mejores bibliotecas de modificaciones— y recibe actualizaciones constantes. Es más, los desarrolladores a veces dicen: '¡esta es la última actualización!', y meses después lanzan otra nueva. Si buscas un juego económico que te brinde diversión durante horas y horas, Terraria es justo lo que necesitas, amigo mío."
         }
     },
     "minecraft": {
@@ -1541,4 +1558,21 @@ document.addEventListener("DOMContentLoaded", () => {
             rollSurprise(catKey);
         });
     });
+
+    const discordBtn = document.getElementById("discord-copy-btn");
+    if (discordBtn) {
+        discordBtn.addEventListener("click", () => {
+            const myNick = "trighy"; // Substitua pelo seu nick exato do Discord
+            navigator.clipboard.writeText(myNick).then(() => {
+                const textSpan = document.getElementById("discord-text");
+                const originalText = textSpan.innerText;
+            
+                textSpan.innerText = currentLang === 'pt' ? "Copiado!" : currentLang === 'es' ? "¡Copiado!" : "Copied!";
+            
+                setTimeout(() => {
+                    textSpan.innerText = originalText;
+                }, 2000);
+            });
+        });
+    }
 });

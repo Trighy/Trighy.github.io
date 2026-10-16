@@ -991,6 +991,15 @@ body.full-grid-open {
     line-height: 1.5;
 }
 
+.social-links-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
 /* ==========================================
    RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
    ========================================== */
