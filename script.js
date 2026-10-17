@@ -414,6 +414,36 @@ const itemsDatabase = {
             es: "LEGO Batman, el título principal de la trilogía de oro de los juegos de LEGO que disfruté en mi PS2; si tuviera que elegir mi favorito de esa trilogía, sin duda gana Batman. Fue el primer juego de LEGO que completé en mi infancia, por mi cuenta, por lo que le guardo un gran cariño tanto a este título como a la trilogía en general. Si quieres que me divierta sin complicaciones, solo tienes que invitarme a jugar a cualquier título de LEGO."
         }
     },
+    "pikuniku": {
+        trailer: "wjEC6_VEEs4",
+        startTime: 1.75,
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/572890/",
+            xbox: "https://www.xbox.com/games/store/pikuniku/9n8wrdc25k6j",
+            nin: "https://www.nintendo.com/store/products/pikuniku-switch/?srsltid=AU7gw4XGVE3nav8DACgbuWQf8hG1VQhTs0BybXgn8vxOULoMgnPgc0o0"
+        },
+        review: {
+            en: "PIKUNIKU—a unique game that made me fall in love with this style of title (I’m not even sure what to call it). If you’re looking for something silly and fun, this game will definitely satisfy you. Just be prepared to do a lot of kicking—I mean, a lot—and one last thing... THE MONSTER! AAAAAAAAAAAA.",      
+            pt: "PIKUNIKU, Um jogo único e que me fez me apaixonar por jogos desse estilo que não sei bem nomear como é, só sei que se procuras alguma coisa boba e para se divertir, esse jogo vai certamente te satisfazer, só saiba que irás chutar muito, muito mesmo, ah e um último detal- O MONSTRO AAAAAAAAAAAA.",
+            es: "PIKUNIKU, un juego único que me hizo enamorarme de títulos de este estilo —no sabría muy bien cómo definirlos—; solo sé que si buscas algo desenfadado para pasar un buen rato, este juego sin duda te satisfará. Eso sí, prepárate para dar muchas, muchísimas patadas. Ah, y un último detalle: ¡EL MONSTRUO! ¡AAAAAAAAAAAA!"
+        }
+    },
+    "wuppo": {
+        trailer: "c3wj9KmeucU",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/400630/",
+            xbox: "https://www.xbox.com/games/store/wuppo/brbpw76hgkhb",
+            ps: "https://store.playstation.com/product/UP1470-CUSA08517_00-WUPPOUS000000000",
+            nin: "https://www.nintendo.com/store/products/wuppo-definitive-edition-switch/?srsltid=AU7gw4XUbqA-LzKYCnJglyQGsbLQKpppOpiDRxPWYHIj3q_-Eud-Ee31"
+        },
+        review: {
+            en: "Wuppo—the game that satisfied my craving for more titles in the style of PIKUNIKU. If you enjoyed PIKUNIKU, you’ll love Wuppo; it strikes the perfect balance between being silly and, at times, serious, featuring a story with surprising depth for a project created by two adults who were still in college when they worked on it. It’s the most niche game I know, and one I constantly urge all my friends to play (I’m still waiting, Daniel).",      
+            pt: "Wuppo, o jogo que satisfazeu meu desejo por mais jogos no estilo PIKUNIKU, se gostastes de PIKUNIKU, vais adorar Wuppo, sendo bobo na medida certa, sério as vezes e com uma historia surpreendentemente profunda para um projeto feito por dois adultos que ainda estavam na faculdade nesse projeto pessoal. Esse é o jogo mais nicho que conheço e que peço para todos meus amigos jogarem (até hoje estou esperando Daniel)",
+            es: "Wuppo, el juego que satisfizo mi deseo de más títulos al estilo de PIKUNIKU. Si te gustó PIKUNIKU, te encantará Wuppo: es divertido y alocado en su justa medida, serio por momentos, y cuenta con una historia sorprendentemente profunda para ser un proyecto personal creado por dos adultos que aún estaban en la universidad. Es el juego más de nicho que conozco, y siempre les pido a todos mis amigos que lo jueguen (todavía sigo esperando a Daniel)."
+        }
+    },
     "the wild robot": {
         trailer: {
             en: "pSI0XetHZCw",
@@ -1801,7 +1831,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-// ==========================================
+    // ==========================================
     // SISTEMA DE EVENTOS TEMÁTICOS (HALLOWEEN & NATAL)
     // ==========================================
     function initThematicEvents() {
@@ -1883,4 +1913,115 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     initThematicEvents();
+    
+});
+
+// ==========================================
+// EFEITO DO FANTASMINHA FLUTUANTE
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const profilePic = document.querySelector('.profile-pic');
+    
+    if (profilePic) {
+        // Cria um contêiner "wrapper" para manter a foto e o fantasma juntos
+        const wrapper = document.createElement('div');
+        wrapper.style.position = 'relative';
+        wrapper.style.display = 'inline-block'; 
+        
+        // Coloca a foto dentro do wrapper sem quebrar o HTML original
+        profilePic.parentNode.insertBefore(wrapper, profilePic);
+        wrapper.appendChild(profilePic);
+
+        // Cria o fantasminha
+        const ghost = document.createElement('div');
+        ghost.innerHTML = '👻'; // Você pode trocar por uma imagem de Halloween se preferir
+        ghost.style.position = 'absolute';
+        ghost.style.fontSize = '35px'; // Tamanho do fantasma
+        ghost.style.pointerEvents = 'none'; // Para não atrapalhar o clique em outras coisas
+        ghost.style.zIndex = '100';
+        
+        // Posição inicial no centro da foto
+        ghost.style.top = '50%';
+        ghost.style.left = '50%';
+        ghost.style.transform = 'translate(-50%, -50%)';
+        
+        wrapper.appendChild(ghost);
+
+        // Função que faz ele flutuar sem ritmo definido
+        function floatGhost() {
+            // Distância máxima que ele pode voar para longe da foto (em pixels)
+            const maxRadius = 75; 
+            
+            // Sorteia uma nova posição X e Y dentro do limite
+            const randomX = (Math.random() - 0.5) * 2 * maxRadius;
+            const randomY = (Math.random() - 0.5) * 2 * maxRadius;
+            
+            // Sorteia uma leve inclinação para ele balançar no ar (-20 a 20 graus)
+            const randomRot = (Math.random() - 0.5) * 40;
+            
+            // Sorteia um tempo aleatório para o movimento (entre 2s e 4.5s) quebrando o "ritmo"
+            const time = 2000 + Math.random() * 2500; 
+            
+            // Aplica a transição e o movimento
+            ghost.style.transition = `transform ${time}ms ease-in-out`;
+            ghost.style.transform = `translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${randomRot}deg)`;
+            
+            // Chama a função novamente um pouco antes da animação atual terminar
+            // Isso cria a sensação de que ele está sempre "mudando de ideia" no ar
+            setTimeout(floatGhost, time * 0.8);
+        }
+
+        // Inicia a flutuação
+        setTimeout(floatGhost, 100);
+    }
+});
+
+// ==========================================
+// CURSOR PERSONALIZADO TEMÁTICO (HALLOWEEN / NATAL)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // Verifica se é um dispositivo com mouse (PC) para não sobrecarregar mobile
+    if (window.matchMedia("(pointer: fine)").matches) {
+        const date = new Date();
+        const month = date.getMonth() + 1; 
+        
+        let cursorColor = '';
+        let cursorEmoji = '';
+        
+        if (month === 10) { // Outubro (Halloween)
+            cursorColor = '#ffaa00'; // Laranja
+            cursorEmoji = '🎃';     // Você pode trocar por 🦇, 🕷️ ou 👻
+        } else if (month === 12) { // Dezembro (Natal)
+            cursorColor = '#ff4d4d'; // Vermelho
+            cursorEmoji = '🎄';     // Você pode trocar por 🎅, 🎁 ou ❄️
+        }
+
+        if (cursorColor) {
+            // Criamos um SVG maior. A ponta da seta continua lá, e o emoji fica no canto inferior direito!
+            const svgCursor = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+                    <!-- O emoji posicionado do lado da setinha -->
+                    <text x="14" y="32" font-size="20">${cursorEmoji}</text>
+                    <!-- A setinha clássica desenhada com a cor do evento e bordinha preta -->
+                    <path fill="${cursorColor}" stroke="black" stroke-width="1.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.42c.45 0 .67-.54.35-.85L5.5 3.21z"/>
+                </svg>
+            `;
+            
+            // Usamos encodeURIComponent porque emojis quebram a conversão padrão (btoa) de texto para base64
+            const encodedSvg = `data:image/svg+xml;utf8,${encodeURIComponent(svgCursor)}`;
+            
+            const style = document.createElement('style');
+            
+            // O "5 3" indica os pixels exatos de onde é a "ponta" do clique na nossa imagem
+            style.innerHTML = `
+                body, .container, .main-wrapper, .details-panel, .list-panel { 
+                    cursor: url("${encodedSvg}") 5 3, auto !important; 
+                }
+                a, button, [role="button"], input, select, textarea, .carousel-btn, .music-btn, .modal-close-btn, .close-panel-btn { 
+                    cursor: url("${encodedSvg}") 5 3, pointer !important; 
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
 });
