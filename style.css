@@ -1145,8 +1145,7 @@ body.halloween-theme .profile-pic {
     box-shadow: 0 0 20px rgba(255, 115, 0, 0.4);
     position: relative;
 }
-body.halloween-theme .profile-pic::after {
-    content: "👻"; /* Substituímos o mago por um fantasma fofo! */
+<!-- body.halloween-theme .profile-pic::after {
     position: absolute;
     top: -20px;
     right: -15px;
@@ -1255,7 +1254,6 @@ body.christmas-theme .profile-pic {
     position: relative;
 }
 body.christmas-theme .profile-pic::after {
-    content: "🎅"; 
     position: absolute;
     top: -30px;
     right: -10px;

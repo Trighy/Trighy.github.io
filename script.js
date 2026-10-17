@@ -1839,7 +1839,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const eventBtn = document.getElementById("eventToggleBtn");
         const eventDisabled = localStorage.getItem("event_theme_disabled") === "true";
         let effectInterval = null;
+        let floatTimeout = null;
 
+        // 1. CHUVA DE ITENS
         function startFallingEffect(items, cssClass) {
             if (document.getElementById("falling-effect-container")) return;
             const container = document.createElement("div");
@@ -1865,24 +1867,101 @@ document.addEventListener("DOMContentLoaded", () => {
             if (container) container.remove();
         }
 
-        function toggleEvent(themeClass, items, cssClass) {
+        // 2. MASCOTE FLUTUANTE (FANTASMA / PAPAI NOEL)
+        function startFloatingMascot(emoji) {
+            if (document.getElementById('floating-mascot')) return;
+            const profilePic = document.querySelector('.profile-pic');
+            if (!profilePic) return;
+
+            profilePic.style.position = 'relative';
+            
+            const mascot = document.createElement('div');
+            mascot.id = 'floating-mascot';
+            mascot.innerHTML = emoji;
+            mascot.style.position = 'absolute';
+            mascot.style.fontSize = '35px';
+            mascot.style.pointerEvents = 'none';
+            mascot.style.zIndex = '100';
+            mascot.style.top = '50%';
+            mascot.style.left = '50%';
+            mascot.style.transform = 'translate(-50%, -50%)';
+            mascot.style.filter = 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))';
+            profilePic.appendChild(mascot);
+
+            function float() {
+                if (!document.getElementById('floating-mascot')) return;
+                const maxRadius = 75; 
+                const randomX = (Math.random() - 0.5) * 2 * maxRadius;
+                const randomY = (Math.random() - 0.5) * 2 * maxRadius;
+                const randomRot = (Math.random() - 0.5) * 40;
+                const time = 2000 + Math.random() * 2500; 
+                
+                mascot.style.transition = `transform ${time}ms ease-in-out`;
+                mascot.style.transform = `translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${randomRot}deg)`;
+                
+                floatTimeout = setTimeout(float, time * 0.8);
+            }
+            setTimeout(float, 100);
+        }
+
+        function stopFloatingMascot() {
+            clearTimeout(floatTimeout);
+            const mascot = document.getElementById('floating-mascot');
+            if (mascot) mascot.remove();
+        }
+
+        // 3. MOUSE TEMÁTICO
+        function startCursor(cursorColor, cursorEmoji) {
+            if (!window.matchMedia("(pointer: fine)").matches) return;
+            if (document.getElementById('thematic-cursor-style')) return;
+
+            const svgCursor = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+                    <text x="14" y="32" font-size="20">${cursorEmoji}</text>
+                    <path fill="${cursorColor}" stroke="black" stroke-width="1.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.42c.45 0 .67-.54.35-.85L5.5 3.21z"/>
+                </svg>
+            `;
+            const encodedSvg = `data:image/svg+xml;utf8,${encodeURIComponent(svgCursor)}`;
+            const style = document.createElement('style');
+            style.id = 'thematic-cursor-style';
+            style.innerHTML = `
+                body, .container, .main-wrapper, .details-panel, .list-panel { cursor: url("${encodedSvg}") 5 3, auto !important; }
+                a, button, [role="button"], input, select, textarea, .carousel-btn, .music-btn, .modal-close-btn, .close-panel-btn { cursor: url("${encodedSvg}") 5 3, pointer !important; }
+            `;
+            document.head.appendChild(style);
+        }
+
+        function stopCursor() {
+            const style = document.getElementById('thematic-cursor-style');
+            if (style) style.remove();
+        }
+
+        // 4. LÓGICA DE ATIVAR/DESATIVAR TUDO
+        function toggleEvent(themeClass, items, cssClass, cursorColor, cursorEmoji, mascotEmoji) {
             const isActive = document.body.classList.contains(themeClass);
             if (isActive) {
+                // Desligando
                 document.body.classList.remove(themeClass);
                 localStorage.setItem("event_theme_disabled", "true");
                 stopFallingEffect();
+                stopFloatingMascot();
+                stopCursor();
             } else {
+                // Ligando
                 document.body.classList.add(themeClass);
                 localStorage.setItem("event_theme_disabled", "false");
                 startFallingEffect(items, cssClass);
+                startFloatingMascot(mascotEmoji);
+                startCursor(cursorColor, cursorEmoji);
             }
-            // Troca a música dinamicamente ao ativar/desativar
             if (typeof updateBgMusicPlayer === "function") updateBgMusicPlayer();
         }
 
-        function activateEvent(themeClass, items, cssClass) {
+        function activateEvent(themeClass, items, cssClass, cursorColor, cursorEmoji, mascotEmoji) {
             document.body.classList.add(themeClass);
             startFallingEffect(items, cssClass);
+            startFloatingMascot(mascotEmoji);
+            startCursor(cursorColor, cursorEmoji);
         }
 
         // LÓGICA DE OUTUBRO (HALLOWEEN)
@@ -1890,18 +1969,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if (eventBtn) {
                 eventBtn.style.display = "flex";
                 eventBtn.innerText = "🎃";
-                eventBtn.onclick = () => toggleEvent("halloween-theme", ["🍬", "🍭", "🍫", "🎃", "🦇"], "candy-drop");
+                eventBtn.onclick = () => toggleEvent("halloween-theme", ["🍬", "🍭", "🍫", "🎃", "🦇"], "candy-drop", "#ffaa00", "🎃", "👻");
             }
-            if (!eventDisabled) activateEvent("halloween-theme", ["🍬", "🍭", "🍫", "🎃", "🦇"], "candy-drop");
+            if (!eventDisabled) activateEvent("halloween-theme", ["🍬", "🍭", "🍫", "🎃", "🦇"], "candy-drop", "#ffaa00", "🎃", "👻");
 
         // LÓGICA DE DEZEMBRO (NATAL)
         } else if (currentMonth === 11) { 
             if (eventBtn) {
                 eventBtn.style.display = "flex";
                 eventBtn.innerText = "🎄";
-                eventBtn.onclick = () => toggleEvent("christmas-theme", ["❄️", "⛄", "🎁", "⭐"], "snow-drop");
+                eventBtn.onclick = () => toggleEvent("christmas-theme", ["❄️", "⛄", "🎁", "⭐"], "snow-drop", "#ff4d4d", "🎄", "🎅");
             }
-            if (!eventDisabled) activateEvent("christmas-theme", ["❄️", "⛄", "🎁", "⭐"], "snow-drop");
+            if (!eventDisabled) activateEvent("christmas-theme", ["❄️", "⛄", "🎁", "⭐"], "snow-drop", "#ff4d4d", "🎄", "🎅");
 
         // FORA DE EVENTOS
         } else {
@@ -1909,119 +1988,10 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove("halloween-theme", "christmas-theme");
             localStorage.setItem("event_theme_disabled", "false"); 
             stopFallingEffect();
+            stopFloatingMascot();
+            stopCursor();
         }
     }
 
     initThematicEvents();
-    
-});
-
-// ==========================================
-// EFEITO DO FANTASMINHA FLUTUANTE
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const profilePic = document.querySelector('.profile-pic');
-    
-    if (profilePic) {
-        // Cria um contêiner "wrapper" para manter a foto e o fantasma juntos
-        const wrapper = document.createElement('div');
-        wrapper.style.position = 'relative';
-        wrapper.style.display = 'inline-block'; 
-        
-        // Coloca a foto dentro do wrapper sem quebrar o HTML original
-        profilePic.parentNode.insertBefore(wrapper, profilePic);
-        wrapper.appendChild(profilePic);
-
-        // Cria o fantasminha
-        const ghost = document.createElement('div');
-        ghost.innerHTML = '👻'; // Você pode trocar por uma imagem de Halloween se preferir
-        ghost.style.position = 'absolute';
-        ghost.style.fontSize = '35px'; // Tamanho do fantasma
-        ghost.style.pointerEvents = 'none'; // Para não atrapalhar o clique em outras coisas
-        ghost.style.zIndex = '100';
-        
-        // Posição inicial no centro da foto
-        ghost.style.top = '50%';
-        ghost.style.left = '50%';
-        ghost.style.transform = 'translate(-50%, -50%)';
-        
-        wrapper.appendChild(ghost);
-
-        // Função que faz ele flutuar sem ritmo definido
-        function floatGhost() {
-            // Distância máxima que ele pode voar para longe da foto (em pixels)
-            const maxRadius = 75; 
-            
-            // Sorteia uma nova posição X e Y dentro do limite
-            const randomX = (Math.random() - 0.5) * 2 * maxRadius;
-            const randomY = (Math.random() - 0.5) * 2 * maxRadius;
-            
-            // Sorteia uma leve inclinação para ele balançar no ar (-20 a 20 graus)
-            const randomRot = (Math.random() - 0.5) * 40;
-            
-            // Sorteia um tempo aleatório para o movimento (entre 2s e 4.5s) quebrando o "ritmo"
-            const time = 2000 + Math.random() * 2500; 
-            
-            // Aplica a transição e o movimento
-            ghost.style.transition = `transform ${time}ms ease-in-out`;
-            ghost.style.transform = `translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${randomRot}deg)`;
-            
-            // Chama a função novamente um pouco antes da animação atual terminar
-            // Isso cria a sensação de que ele está sempre "mudando de ideia" no ar
-            setTimeout(floatGhost, time * 0.8);
-        }
-
-        // Inicia a flutuação
-        setTimeout(floatGhost, 100);
-    }
-});
-
-// ==========================================
-// CURSOR PERSONALIZADO TEMÁTICO (HALLOWEEN / NATAL)
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    // Verifica se é um dispositivo com mouse (PC) para não sobrecarregar mobile
-    if (window.matchMedia("(pointer: fine)").matches) {
-        const date = new Date();
-        const month = date.getMonth() + 1; 
-        
-        let cursorColor = '';
-        let cursorEmoji = '';
-        
-        if (month === 10) { // Outubro (Halloween)
-            cursorColor = '#ffaa00'; // Laranja
-            cursorEmoji = '🎃';     // Você pode trocar por 🦇, 🕷️ ou 👻
-        } else if (month === 12) { // Dezembro (Natal)
-            cursorColor = '#ff4d4d'; // Vermelho
-            cursorEmoji = '🎄';     // Você pode trocar por 🎅, 🎁 ou ❄️
-        }
-
-        if (cursorColor) {
-            // Criamos um SVG maior. A ponta da seta continua lá, e o emoji fica no canto inferior direito!
-            const svgCursor = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
-                    <!-- O emoji posicionado do lado da setinha -->
-                    <text x="14" y="32" font-size="20">${cursorEmoji}</text>
-                    <!-- A setinha clássica desenhada com a cor do evento e bordinha preta -->
-                    <path fill="${cursorColor}" stroke="black" stroke-width="1.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.42c.45 0 .67-.54.35-.85L5.5 3.21z"/>
-                </svg>
-            `;
-            
-            // Usamos encodeURIComponent porque emojis quebram a conversão padrão (btoa) de texto para base64
-            const encodedSvg = `data:image/svg+xml;utf8,${encodeURIComponent(svgCursor)}`;
-            
-            const style = document.createElement('style');
-            
-            // O "5 3" indica os pixels exatos de onde é a "ponta" do clique na nossa imagem
-            style.innerHTML = `
-                body, .container, .main-wrapper, .details-panel, .list-panel { 
-                    cursor: url("${encodedSvg}") 5 3, auto !important; 
-                }
-                a, button, [role="button"], input, select, textarea, .carousel-btn, .music-btn, .modal-close-btn, .close-panel-btn { 
-                    cursor: url("${encodedSvg}") 5 3, pointer !important; 
-                }
-            `;
-            document.head.appendChild(style);
-        }
-    }
 });
