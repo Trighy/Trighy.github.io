@@ -61,7 +61,7 @@ const itemsDatabase = {
     },
     "oneshot": {
         trailer: "ctYNBd6t4-g",
-        startTime: 5.6,
+        startTime: 5.75,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/420530/OneShot/",
@@ -231,7 +231,7 @@ const itemsDatabase = {
     },
     "terraria": {
         trailer: "6nUvWkD8rAE",
-        starTime: 2.25,
+        starTime: 4,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/105600/",
@@ -254,7 +254,7 @@ const itemsDatabase = {
             xbox: "https://www.xbox.com/games/store/minecraft/9mvxmvt8zkwc",
             ps: "https://store.playstation.com/product/UP4433-CUSA00744_00-MINECRAFTPS40001",
             nin: "https://www.nintendo.com/store/products/minecraft-switch/?srsltid=AU7gw4Uc4sglFobI_WjE7OMGgk1dVu3qw0L6ynGWKcZZwDLrXI0989m3",
-            phone: "https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl=en"
+            phone: "https://play.google.com/store/apps/details?id=com.mojang.minecraftpe&hl"
         },
         review: {
             en: "Minecraft, Minecraft! The second best-selling game in history and, without a doubt, a landmark in gaming. I’ve never had a particularly deep history with Minecraft—I played it a few times during my childhood, but never to the point of having a unique, long-term world saved somewhere (like on an old Xbox or PlayStation). Even so, I still have a soft spot for it, and I’m always asking my friends to play with me every now and then (though most of them say no—looking at you, Daniel!). What a game, though—just have fun building!",
@@ -294,6 +294,52 @@ const itemsDatabase = {
             en: "Subnautica is a horror game disguised as a survival game. It drops you onto an alien planet covered in water and essentially tells you, 'figure it out yourself'—much like any other survival game. However, you know absolutely nothing about your surroundings; everything feels entirely new, creating a clash between curiosity and the fear of the unknown. See a beautiful fish in the distance? Why not scan it? But what if a leviathan is lurking nearby, waiting to strike when you least expect it? You will find yourself both awestruck and horrified by what you encounter on Planet 4546B—especially if you experience it in VR. Good luck—and don't forget your OXYGEN.",
             pt: "Subnautica é um jogo de terror disfarçado como um de sobrevivencia, ele te joga em um planeta alienígena corberto de água e fala 'se vira ae' como qualquer outro jogo de sobrevivencia porém voce conheçe absolutamente nada ao seu redor e tudo parece algo completamente novo onde a curiosidade e medo do desconhecido se colidem, vistes um peixe bonito á distancia? Por que não scanea-lo? Mas e se tiver um leaviathan escondido na espreita te esperando para pegar no momento mais inesperado? Irãs ficar maravilhado e horrorizado com as coisas que verá no planeta 4546b, principalmente se viras elas em VR, boa sorte é oque eu digo e não esqueça OXIGÊNIO.",
             es: "Subnautica es un juego de terror disfrazado de juego de supervivencia; te lanza a un planeta alienígena cubierto de agua y te dice 'apáñatelas' como cualquier otro título del género. Sin embargo, no conoces absolutamente nada de tu entorno y todo resulta completamente nuevo: un escenario donde la curiosidad y el miedo a lo desconocido chocan. ¿Ves un pez bonito a lo lejos? ¿Por qué no escanearlo? Pero, ¿y si hay un leviatán al acecho, esperando para atraparte en el momento menos pensado? Te sentirás maravillado y, a la vez, aterrorizado por lo que verás en el planeta 4546B —especialmente si lo experimentas en realidad virtual—. Solo puedo decirte: ¡buena suerte! Y no olvides el OXÍGENIO."
+        }
+    },
+    "undertale": {
+        trailer: "1Hojv0m3TqA",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/391540/",
+            xbox: "https://www.xbox.com/games/store/undertale/9pjggx9xjxpb",
+            ps: "https://store.playstation.com/product/UP3893-CUSA08801_00-TFSHVCUTPS400084",
+            nin: "https://www.nintendo.com/store/products/undertale-switch/?srsltid=AU7gw4XA9f7drCxldBF6JHvTNcmPHG-Fgc7nEHhXt6KgCOCWbTfzfcaN"
+        },
+        review: {
+            en: "UNDERTALE, certainly one of the RPG's without a doubt, developed by a single dog as a personal project, it became an unexpected phenomenon that shook the internet, I was part of those who followed there in 2015 but I didn't play it, because playing it was only in 2026 that I actually experienced UNDERTALE. I recommend it even for non-RPG lovers as it is more focused on its story than RPG ensi, if you like a detailed, deep story and where your actions define what happens, UNDERTALE is for you.",
+            pt: "UNDERTALE, certamente um dos RPG's sem dúvidas, desenvolvido por um único cachorro como um projeto pessoal, ele se tornou um fenômeno inesperado que abalou a internet, fiz parte dos que acompanharam lá em 2015 mas não jogar ensi, pois jogar só foi em 2026 que de fato experiencie UNDERTALE. Recomendo até para os não amantes de RPG já que ele é mais focado em sua historia do que RPG ensi, se gostas de uma historia detalhada, profunda e que as suas ações definem oque acontece, UNDERTALE é para você.",
+            es: "UNDERTALE es, sin lugar a dudas, uno de los RPG más destacados. Desarrollado por un solo perro como proyecto personal, se convirtió en un fenómeno inesperado que sacudió internet. Seguí su trayectoria allá por 2015, pero no fue hasta 2026 que realmente pude jugar y experimentar UNDERTALE. Lo recomiendo incluso para quienes no son aficionados a los RPG, ya que el juego se centra más en su historia que en las mecánicas propias del género. Si te gustan las historias detalladas y profundas, donde tus acciones determinan el desarrollo de los acontecimientos, UNDERTALE es para ti."
+        }
+    },
+    "cookie clicker": {
+        trailer: "nq3GI-fK8fs",
+        bgImage: null,
+        links: {
+            pc: "https://orteil.dashnet.org/cookieclicker/",
+            steam: "https://store.steampowered.com/app/1454400/",
+            xbox: "https://www.xbox.com/games/store/cookie-clicker/9n7l3v49zs5t",
+            ps: "https://store.playstation.com/concept/10008761",
+            nin: "https://www.nintendo.com/store/products/cookie-clicker-switch/?srsltid=AU7gw4U0roPwc5y7S8ue6IrlY-c3cY4kQ8liSf8XjvzMFJH11AymYnOK",
+            phone: "https://play.google.com/store/apps/details?id=org.dashnet.cookieclicker&hl"
+        },
+        review: {
+            en: "Cookie Clicker—one of the clicker games from my childhood. I absolutely LOVE the clicker genre; I can spend hours and hours playing them without any trouble at all. It’s one of the genres I’ve been most addicted to and passionate about since I was a kid. Not only is it one of the best in its category, but it’s also available on LITERALLY any platform—you can even play it on the web for free, without spending a single cent! So, why not give it a try? After all, as the saying goes: if it’s free, it’s a deal!",
+            pt: "Cookie Clicker, um dos jogos da minha infância do gênero clicker, eu ADORO jogos do gênero clicker, posso passar horas e horas jogando eles sem nenhum problema, é um dos gêneros que mais viciei e me apaixonei deis de criança, além de ser um dos melhores do seu gênero, ele existe em QUALQUER plataforma, podendo até mesmo ser jogado na web de graça sem nenhum tustão! Então, por que não dar uma chance? Afinal, de graça até injeção na testa!",
+            es: "Cookie Clicker, uno de los juegos de mi infancia del género clicker. ¡Me encantan los juegos de este tipo! Puedo pasar horas y horas jugándolos sin ningún problema; es uno de los géneros que más me ha enganchado y que más me ha apasionado desde niño. Además de ser uno de los mejores de su categoría, está disponible en CUALQUIER plataforma; ¡incluso se puede jugar en la web totalmente gratis, sin gastar ni un centavo! Así que, ¿por qué no darle una oportunidad? Al fin y al cabo, ¡a caballo regalado no se le mira el diente!"
+        }
+    },
+    "deep rock galactic": {
+        trailer: "65ICqpd6rlc",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/548430/",
+            xbox: "https://www.xbox.com/games/store/deep-rock-galactic/9nhfvwx1v7qj",
+            ps: "https://www.playstation.com/games/deep-rock-galactic/",
+        },
+        review: {
+            en: "",
+            pt: "",
+            es: ""
         }
     },
     "the wild robot": {
