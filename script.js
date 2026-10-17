@@ -356,7 +356,7 @@ const itemsDatabase = {
         }
     },
     "sky children of the light": {
-        trailer: "65ICqpd6rlc",
+        trailer: "rLOesNZTtqo",
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/2325290/",
@@ -365,9 +365,9 @@ const itemsDatabase = {
             phone: "https://play.google.com/store/apps/details?id=com.tgc.sky.android&hl"
         },
         review: {
-            en: "",
-            pt: "",
-            es: ""
+            en: "Sky Children of the Light is a social game from the creators of Journey; if you played Club Penguin or Habbo back in the day, you’ll feel right at home in Sky. It features a captivating story and a unique community—some players will want to help you, others will watch as you experience the game for the first time, some might toss you toward enemies, and others may 'adopt' you, acting as your guides. The game places a heavy emphasis on cosmetics, though this will only matter if you intend to focus on the social side of things; if you’re just here for the story, you can finish it quite quickly—it’s a short, beautiful experience. Sky is also my comfort game—with 1.582 hours on Steam (and counting), it’s where I’ve established a routine and grown accustomed to the process of farming the in-game currency.",
+            pt: "Sky Crianças da Luz é um jogo social dos mesmos criadores de Journey, se jogastes Club Penguim ou HABBO no passado, se sentiras em casa no Sky. Ele tem uma historia cativante e uma comunidade única, uns vão querer te ajudar, outros te observar experienciar o jogo pela primeira vez, outros te jogar encima de inimigos e outros te 'adotarem' e serem seu guia no jogo. O jogo também é extremamente focado em cosmesticos mas isso só te interessera se planejas focar no aspecto social do jogo, pois se planejas focar apenas no da historia, o jogo pode ser zerado rapidinho, nessa questão é um jogo curto e bonito. Sky também é o meu jogo de conforto, com 1.582 horas na Steam (e subindo) é aonde criei uma rotina e me acostumei com a forma de farmar a moeda do jogo.",
+            es: "Sky Niños de la Luz es un juego social de los mismos creadores de Journey; si jugaste a Club Penguin o Habbo en el pasado, te sentirás como en casa en Sky. Tiene una historia cautivadora y una comunidad única: algunos querrán ayudarte, otros observarte mientras experimentas el juego por primera vez, otros lanzarte sobre enemigos y otros 'adoptarte' para ser tus guías. El juego también se centra enormemente en los elementos cosméticos, aunque esto solo te interesará si planeas enfocarte en el aspecto social; si prefieres centrarte únicamente en la historia, el juego se puede completar muy rápido, ya que es una experiencia breve y hermosa. Sky es también mi juego de refugio: con 1.582 horas en Steam (y sumando), es donde he creado una rutina y me he acostumbrado a la mecánica para conseguir la moneda del juego."
         }
     },
     "the wild robot": {
@@ -890,16 +890,25 @@ function initYouTubePlayer() {
 
 function startLoopCheck() {
     if (loopTimer) clearInterval(loopTimer);
+    const progressBar = document.getElementById('trailerProgressBar'); 
+    
     loopTimer = setInterval(() => {
         if (youtubePlayer && typeof youtubePlayer.getCurrentTime === 'function' && typeof youtubePlayer.getDuration === 'function') {
             const duration = youtubePlayer.getDuration();
             const currentTime = youtubePlayer.getCurrentTime();
+            
+            // Atualiza a barra de progresso suavemente
+            if (duration > 0 && progressBar) {
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+            }
+
             if (duration > 0 && currentTime >= duration - 0.5) {
                 youtubePlayer.seekTo(currentStartTime);
                 youtubePlayer.playVideo();
             }
         }
-    }, 500);
+    }, 100); // Mudou de 500 para 100 milissegundos para a barra andar suavemente!
 }
 
 function onYouTubeIframeAPIReady() {
@@ -928,10 +937,15 @@ function onYouTubeIframeAPIReady() {
                 }
             },
             'onStateChange': (event) => {
+                const playIcon = document.querySelector("#playPauseToggle i"); 
+                
                 if (event.data === YT.PlayerState.PLAYING) {
                     startLoopCheck();
+                    if (playIcon) playIcon.className = "fas fa-pause"; // Muda pra pause
+                } else if (event.data === YT.PlayerState.PAUSED) {
+                    if (playIcon) playIcon.className = "fas fa-play"; // Muda pra play
                 } else if (event.data === YT.PlayerState.ENDED && youtubePlayer && typeof youtubePlayer.playVideo === 'function') {
-                    youtubePlayer.seekTo(currentStartTime); // <--- Muda de 0 para currentStartTime
+                    youtubePlayer.seekTo(currentStartTime); 
                     youtubePlayer.playVideo(); 
                 }
             }
@@ -1001,6 +1015,10 @@ function stopTrailer() {
 
     const playerElem = document.getElementById('player');
     if (playerElem) playerElem.style.display = 'block';
+    
+    // Zera a barra de progresso visualmente ao fechar
+    const progressBar = document.getElementById('trailerProgressBar');
+    if (progressBar) progressBar.style.width = '0%';
 
     if (youtubePlayer) {
         if (typeof youtubePlayer.pauseVideo === 'function') {
@@ -1647,6 +1665,41 @@ document.addEventListener("DOMContentLoaded", () => {
                     textSpan.innerText = originalText;
                 }, 2000);
             });
+        });
+    }
+
+    const playPauseBtn = document.getElementById("playPauseToggle");
+    if (playPauseBtn) {
+        playPauseBtn.addEventListener("click", () => {
+            if (youtubePlayer && typeof youtubePlayer.getPlayerState === 'function') {
+                const state = youtubePlayer.getPlayerState();
+                if (state === YT.PlayerState.PLAYING) {
+                    youtubePlayer.pauseVideo();
+                } else {
+                    youtubePlayer.playVideo();
+                }
+            }
+        });
+    }
+
+    const progressWrapper = document.getElementById("trailerProgressWrapper");
+    if (progressWrapper) {
+        progressWrapper.addEventListener("click", (e) => {
+            if (youtubePlayer && typeof youtubePlayer.getDuration === 'function') {
+                const duration = youtubePlayer.getDuration();
+                const rect = progressWrapper.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const clickRatio = clickX / rect.width;
+                let seekTime = duration * clickRatio;
+                
+                // Se a pessoa clicar antes do startTime definido, força ir pro startTime!
+                if (seekTime < currentStartTime) {
+                    seekTime = currentStartTime;
+                }
+                
+                youtubePlayer.seekTo(seekTime);
+                youtubePlayer.playVideo();
+            }
         });
     }
 });
