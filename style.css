@@ -1063,7 +1063,6 @@ body.showing-trailer .trailer-progress-wrapper {
 /* ==========================================
    SISTEMA DE EVENTOS TEMÁTICOS (HALLOWEEN)
    ========================================== */
-/* Fundo principal e brilhos */
 body.halloween-theme {
     background: radial-gradient(circle at center, #2b1100 0%, #0a0000 100%);
 }
@@ -1071,11 +1070,38 @@ body.halloween-theme .spirit-tree-bg {
     background: radial-gradient(circle at top, rgba(255, 115, 0, 0.15) 0%, transparent 60%);
 }
 
-/* Textos e Títulos temáticos */
+/* Textos, ícones e destaques menores (Laranja Claro) */
 body.halloween-theme .subtitle, 
 body.halloween-theme .category-card h3,
-body.halloween-theme .list-status-title {
-    color: #ff7300;
+body.halloween-theme .list-status-title,
+body.halloween-theme .frontlog-info-box h4,
+body.halloween-theme #full-grid-search-container i,
+body.halloween-theme .form-group label,
+body.halloween-theme .modal-close-btn:hover {
+    color: #ffaa00;
+}
+
+/* Títulos principais e Sombras (Laranja Escuro) */
+body.halloween-theme .category-card h2,
+body.halloween-theme .list-panel-header h2,
+body.halloween-theme .full-grid-container h2,
+body.halloween-theme #details-title {
+    text-shadow: 0 0 15px rgba(255, 115, 0, 0.8);
+    border-bottom-color: rgba(255, 115, 0, 0.3);
+}
+
+/* Bordas e caixas dos painéis que eram azuis agora são Laranja */
+body.halloween-theme .container,
+body.halloween-theme .category-card,
+body.halloween-theme .list-category-block,
+body.halloween-theme .review-box,
+body.halloween-theme #full-grid-search,
+body.halloween-theme .form-group input,
+body.halloween-theme .form-group textarea,
+body.halloween-theme .carousel-btn,
+body.halloween-theme .controls-bar .music-btn,
+body.halloween-theme .list-category-title {
+    border-color: rgba(255, 115, 0, 0.4);
 }
 
 /* Botões com brilho Laranja */
@@ -1091,18 +1117,40 @@ body.halloween-theme .trailer-progress-bar {
     box-shadow: 0 0 10px #ff7300, 0 0 20px rgba(255, 115, 0, 0.4);
 }
 
-/* O Chapéu de Mago na Foto de Perfil (Via CSS Puro!) */
+/* Hover de capas de jogos e borda da capa aberta */
+body.halloween-theme .favorites-track a:hover,
+body.halloween-theme .full-grid-content a:hover {
+    border-color: #ffaa00;
+    box-shadow: 0 0 20px rgba(255, 170, 0, 0.6);
+}
+body.halloween-theme #details-cover {
+    border-color: #ffaa00;
+}
+
+/* Caixa do Frontlog */
+body.halloween-theme .frontlog-info-box {
+    background: rgba(255, 115, 0, 0.1);
+    border-left-color: #ffaa00;
+}
+
+/* Pesquisa Focus na grade cheia */
+body.halloween-theme #full-grid-search:focus {
+    border-color: #ffaa00;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.5);
+}
+
+/* O Fantasminha na Foto de Perfil */
 body.halloween-theme .profile-pic {
     border-color: #ff7300;
     box-shadow: 0 0 20px rgba(255, 115, 0, 0.4);
     position: relative;
 }
 body.halloween-theme .profile-pic::after {
-    content: "🧙‍♂️"; /* O Chapéu de Mago Mágico */
+    content: "👻"; /* Substituímos o mago por um fantasma fofo! */
     position: absolute;
-    top: -30px;
+    top: -20px;
     right: -15px;
-    font-size: 3.5rem;
+    font-size: 3rem;
     transform: rotate(15deg);
     filter: drop-shadow(0 0 10px #ff7300);
 }
@@ -1113,7 +1161,7 @@ body.halloween-theme .profile-pic::after {
     top: -50px;
     z-index: 9999;
     font-size: 1.5rem;
-    pointer-events: none; /* Pra não atrapalhar o clique do usuário */
+    pointer-events: none;
     animation: fall linear infinite;
 }
 @keyframes fall {
@@ -1123,7 +1171,6 @@ body.halloween-theme .profile-pic::after {
 /* ==========================================
    SISTEMA DE EVENTOS TEMÁTICOS (NATAL)
    ========================================== */
-/* Fundo principal e brilhos (Branco e Vermelho Escuro) */
 body.christmas-theme {
     background: radial-gradient(circle at center, #3a0808 0%, #050000 100%);
 }
@@ -1131,14 +1178,41 @@ body.christmas-theme .spirit-tree-bg {
     background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
 }
 
-/* Textos e Títulos temáticos em Vermelho/Branco */
+/* Textos e ícones (Branco Neve) */
 body.christmas-theme .subtitle, 
 body.christmas-theme .category-card h3,
-body.christmas-theme .list-status-title {
-    color: #ff4d4d;
+body.christmas-theme .list-status-title,
+body.christmas-theme .frontlog-info-box h4,
+body.christmas-theme #full-grid-search-container i,
+body.christmas-theme .form-group label,
+body.christmas-theme .modal-close-btn:hover {
+    color: #ffffff;
 }
 
-/* Botões com brilho Vermelho Neve */
+/* Títulos principais (Sombra Vermelha) */
+body.christmas-theme .category-card h2,
+body.christmas-theme .list-panel-header h2,
+body.christmas-theme .full-grid-container h2,
+body.christmas-theme #details-title {
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.8);
+    border-bottom-color: rgba(255, 77, 77, 0.3);
+}
+
+/* Bordas de painéis (Vermelho Escuro) */
+body.christmas-theme .container,
+body.christmas-theme .category-card,
+body.christmas-theme .list-category-block,
+body.christmas-theme .review-box,
+body.christmas-theme #full-grid-search,
+body.christmas-theme .form-group input,
+body.christmas-theme .form-group textarea,
+body.christmas-theme .carousel-btn,
+body.christmas-theme .controls-bar .music-btn,
+body.christmas-theme .list-category-title {
+    border-color: rgba(255, 77, 77, 0.4);
+}
+
+/* Botões Natalinos */
 body.christmas-theme .glow-button.ori-light {
     border-color: #ff4d4d;
 }
@@ -1153,6 +1227,27 @@ body.christmas-theme .trailer-progress-bar {
     box-shadow: 0 0 10px #ff4d4d, 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
+/* Hover de capas */
+body.christmas-theme .favorites-track a:hover,
+body.christmas-theme .full-grid-content a:hover {
+    border-color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+body.christmas-theme #details-cover {
+    border-color: #ffffff;
+}
+
+/* Caixa do Frontlog Natal */
+body.christmas-theme .frontlog-info-box {
+    background: rgba(255, 77, 77, 0.1);
+    border-left-color: #ffffff;
+}
+
+body.christmas-theme #full-grid-search:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
 /* O Gorro de Papai Noel na Foto de Perfil */
 body.christmas-theme .profile-pic {
     border-color: #ff4d4d;
@@ -1160,7 +1255,7 @@ body.christmas-theme .profile-pic {
     position: relative;
 }
 body.christmas-theme .profile-pic::after {
-    content: "🎅"; /* O Gorro Mágico */
+    content: "🎅"; 
     position: absolute;
     top: -30px;
     right: -10px;
@@ -1169,7 +1264,7 @@ body.christmas-theme .profile-pic::after {
     filter: drop-shadow(0 0 10px #ff4d4d);
 }
 
-/* Base comum para Chuva de Doces e Neve */
+/* Chuva de Neve */
 .candy-drop, .snow-drop {
     position: fixed;
     top: -50px;
