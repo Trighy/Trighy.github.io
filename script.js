@@ -154,7 +154,7 @@ const itemsDatabase = {
     },
     "plants vs zombies garden warfare 2": {
         trailer: "l1Bj5y43now",
-        startTime: 25,
+        startTime: 25.5,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1922560/",
@@ -352,7 +352,7 @@ const itemsDatabase = {
         },
         review: {
             en: "SPACEPLAN is a story-driven game disguised as a clicker game—yes, a clicker game with a narrative. And, unironically, it’s a good story that you can finish in about 6–8 hours. So, if you’re looking for a quick yet engaging story, give SPACEPLAN a try. Plus, it features the best ending sequence for a clicker game I have ever seen.",
-            pt: "SPACEPLAN, um jogo de historia disfarçado como um jogo clicker, sim um jogo clicker com historia e não ironicamente é uma historia boa e que da para finalizar em uams 6-8 horas, então, se procuras uma historia rápida mas que possa te interessar, de SPACEPLAN uma chance, além de ter á melhor sequencia de final de um jogo clicker que já vi na minha vida.",
+            pt: "SPACEPLAN, um jogo de historia disfarçado como um jogo clicker, sim um jogo clicker com historia e não ironicamente é uma historia boa e que da para finalizar em umas 6-8 horas, então, se procuras uma historia rápida mas que possa te interessar, de SPACEPLAN uma chance, além de ter á melhor sequencia de final de um jogo clicker que já vi na minha vida.",
             es: "SPACEPLAN, un juego narrativo disfrazado de clicker; sí, un clicker con historia —y, sin ironía, es una buena historia— que se puede completar en unas 6-8 horas. Así que, si buscas una historia breve pero que pueda interesarte, dale una oportunidad a SPACEPLAN; además, cuenta con la mejor secuencia final de un clicker que he visto en mi vida."
         }
     },
