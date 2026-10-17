@@ -400,6 +400,20 @@ const itemsDatabase = {
             es: "GRIS es un juego artístico, atmosférico y emocional que incluye puzles sencillos; se trata más de una historia y una obra de arte visual que de un juego con mecánicas complejas. Si te gustaron Journey o Flow, te gustará GRIS y su profundo mensaje sobre las emociones y las etapas de la pérdida."
         }
     },
+    "lego batman": {
+        trailer: "cEVoc3FXCpI",
+        startTime: 3,
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/21000/",
+            xbox: "https://www.xbox.com/games/store/lego-batman/c1v1ffwq7b17"
+        },
+        review: {
+            en: "LEGO Batman—the standout title in the golden trilogy of LEGO games that I played on my PS2—is, without a doubt, my favorite of the three. It was the first LEGO game I ever completed as a child, all on my own, and I hold a special fondness for both this game and the trilogy as a whole. If you want to ensure I have a good time, just invite me to play a LEGO game!",
+            pt: "LEGO Batman, o principal da trilogia de ouro dos jogos LEGO que joguei no meu PS2, se fosse para eu escolher meu jogo LEGO favorito dessa trilogia, Batman vence com certeza, sendo o primeiro jogo LEGO que zerei na minha infância, sozinho, sinto um carinho por esse jogo e a trilogia, se queres me divertir facilmente, só basta me chamar para jogar algum jogo LEGO.",
+            es: "LEGO Batman, el título principal de la trilogía de oro de los juegos de LEGO que disfruté en mi PS2; si tuviera que elegir mi favorito de esa trilogía, sin duda gana Batman. Fue el primer juego de LEGO que completé en mi infancia, por mi cuenta, por lo que le guardo un gran cariño tanto a este título como a la trilogía en general. Si quieres que me divierta sin complicaciones, solo tienes que invitarme a jugar a cualquier título de LEGO."
+        }
+    },
     "the wild robot": {
         trailer: {
             en: "pSI0XetHZCw",
@@ -1569,29 +1583,81 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // MÚSICA DE FUNDO
-    const music = document.getElementById("bgMusic");
-    const musicBtn = document.getElementById("musicToggle");
-    if (music && musicBtn) {
-        const icon = musicBtn.querySelector("i");
-        let isPlaying = false;
-        music.volume = 1; 
+    // ==========================================
+    // MÚSICA DE FUNDO GLOBAL (YOUTUBE API)
+    // ==========================================
+    let bgMusicPlayer = null;
+    let isBgMusicPlaying = false;
+    
+    // --- COLOQUE AQUI OS SEUS IDs DO YOUTUBE ---
+    const MUSIC_IDS = {
+        normal: "cj0GTYqA168",  // <-- ID da sua música padrão
+        halloween: "K0f69RTj6LM",      // <-- ID do Halloween
+        christmas: "JZCEPQWCVrM"        // <-- ID do Natal
+    };
 
+    function getCurrentMusicId() {
+        if (document.body.classList.contains("halloween-theme")) return MUSIC_IDS.halloween;
+        if (document.body.classList.contains("christmas-theme")) return MUSIC_IDS.christmas;
+        return MUSIC_IDS.normal;
+    }
+
+    function updateBgMusicPlayer() {
+        if (bgMusicPlayer && isBgMusicPlaying) {
+            bgMusicPlayer.loadVideoById(getCurrentMusicId());
+        }
+    }
+
+    const musicBtn = document.getElementById("musicToggle");
+    if (musicBtn) {
         musicBtn.addEventListener("click", () => {
-            if (isPlaying) {
-                music.pause();
-                if (icon) icon.className = "fas fa-music";
-                isPlaying = false;
+            const icon = musicBtn.querySelector("i");
+            const currentId = getCurrentMusicId();
+
+            if (!bgMusicPlayer) {
+                const div = document.createElement("div");
+                div.id = "bg-music-container";
+                div.style.display = "none";
+                document.body.appendChild(div);
+
+                bgMusicPlayer = new YT.Player('bg-music-container', {
+                    videoId: currentId,
+                    playerVars: { 'autoplay': 1, 'controls': 0, 'loop': 1, 'playlist': currentId },
+                    events: {
+                        'onReady': (event) => {
+                            event.target.setVolume(50);
+                            event.target.playVideo();
+                            isBgMusicPlaying = true;
+                            if (icon) icon.className = "fas fa-pause";
+                        },
+                        'onStateChange': (event) => {
+                            if (event.data === YT.PlayerState.ENDED) {
+                                event.target.playVideo(); // Força o loop perfeito
+                            }
+                        }
+                    }
+                });
             } else {
-                music.play().then(() => {
+                if (isBgMusicPlaying) {
+                    bgMusicPlayer.pauseVideo();
+                    isBgMusicPlaying = false;
+                    if (icon) icon.className = "fas fa-music";
+                } else {
+                    const loadedUrl = bgMusicPlayer.getVideoUrl();
+                    if (loadedUrl && !loadedUrl.includes(currentId)) {
+                        bgMusicPlayer.loadVideoById(currentId);
+                    }
+                    bgMusicPlayer.playVideo();
+                    isBgMusicPlaying = true;
                     if (icon) icon.className = "fas fa-pause";
-                    isPlaying = true;
-                }).catch(e => console.error(e));
+                }
             }
         });
     }
 
+    // ==========================================
     // ALTERNAR SOM DO TRAILER
+    // ==========================================
     const trailerSoundBtn = document.getElementById("trailerSoundToggle");
     if (trailerSoundBtn) {
         trailerSoundBtn.addEventListener("click", () => {
@@ -1605,11 +1671,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (icon) icon.className = "fas fa-volume-up";
                 isTrailerMuted = false;
 
-                if (music && !music.paused) {
-                    music.pause();
-                    if (musicBtn && musicBtn.querySelector("i")) {
-                        musicBtn.querySelector("i").className = "fas fa-music";
-                    }
+                // Desliga a música de fundo se você ligar o som do trailer
+                if (isBgMusicPlaying && bgMusicPlayer) {
+                    bgMusicPlayer.pauseVideo();
+                    isBgMusicPlaying = false;
+                    const musicIcon = document.querySelector("#musicToggle i");
+                    if (musicIcon) musicIcon.className = "fas fa-music";
                 }
             } else {
                 if (youtubePlayer && typeof youtubePlayer.mute === 'function') {
@@ -1733,4 +1800,87 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+// ==========================================
+    // SISTEMA DE EVENTOS TEMÁTICOS (HALLOWEEN & NATAL)
+    // ==========================================
+    function initThematicEvents() {
+        const currentMonth = new Date().getMonth(); // 9 = Outubro, 11 = Dezembro
+        const eventBtn = document.getElementById("eventToggleBtn");
+        const eventDisabled = localStorage.getItem("event_theme_disabled") === "true";
+        let effectInterval = null;
+
+        function startFallingEffect(items, cssClass) {
+            if (document.getElementById("falling-effect-container")) return;
+            const container = document.createElement("div");
+            container.id = "falling-effect-container";
+            document.body.appendChild(container);
+            
+            effectInterval = setInterval(() => {
+                if (document.hidden) return; 
+                const item = document.createElement("div");
+                item.className = cssClass;
+                item.innerText = items[Math.floor(Math.random() * items.length)];
+                item.style.left = Math.random() * 100 + "vw";
+                item.style.animationDuration = (Math.random() * 3 + 2) + "s"; 
+                container.appendChild(item);
+                
+                setTimeout(() => item.remove(), 5000); 
+            }, 300);
+        }
+
+        function stopFallingEffect() {
+            clearInterval(effectInterval);
+            const container = document.getElementById("falling-effect-container");
+            if (container) container.remove();
+        }
+
+        function toggleEvent(themeClass, items, cssClass) {
+            const isActive = document.body.classList.contains(themeClass);
+            if (isActive) {
+                document.body.classList.remove(themeClass);
+                localStorage.setItem("event_theme_disabled", "true");
+                stopFallingEffect();
+            } else {
+                document.body.classList.add(themeClass);
+                localStorage.setItem("event_theme_disabled", "false");
+                startFallingEffect(items, cssClass);
+            }
+            // Troca a música dinamicamente ao ativar/desativar
+            if (typeof updateBgMusicPlayer === "function") updateBgMusicPlayer();
+        }
+
+        function activateEvent(themeClass, items, cssClass) {
+            document.body.classList.add(themeClass);
+            startFallingEffect(items, cssClass);
+        }
+
+        // LÓGICA DE OUTUBRO (HALLOWEEN)
+        if (currentMonth === 9) { 
+            if (eventBtn) {
+                eventBtn.style.display = "flex";
+                eventBtn.innerText = "🎃";
+                eventBtn.onclick = () => toggleEvent("halloween-theme", ["🍬", "🍭", "🍫", "🎃", "🦇"], "candy-drop");
+            }
+            if (!eventDisabled) activateEvent("halloween-theme", ["🍬", "🍭", "🍫", "🎃", "🦇"], "candy-drop");
+
+        // LÓGICA DE DEZEMBRO (NATAL)
+        } else if (currentMonth === 11) { 
+            if (eventBtn) {
+                eventBtn.style.display = "flex";
+                eventBtn.innerText = "🎄";
+                eventBtn.onclick = () => toggleEvent("christmas-theme", ["❄️", "⛄", "🎁", "⭐"], "snow-drop");
+            }
+            if (!eventDisabled) activateEvent("christmas-theme", ["❄️", "⛄", "🎁", "⭐"], "snow-drop");
+
+        // FORA DE EVENTOS
+        } else {
+            if (eventBtn) eventBtn.style.display = "none";
+            document.body.classList.remove("halloween-theme", "christmas-theme");
+            localStorage.setItem("event_theme_disabled", "false"); 
+            stopFallingEffect();
+        }
+    }
+
+    initThematicEvents();
 });

@@ -1061,6 +1061,125 @@ body.showing-trailer .trailer-progress-wrapper {
 }
 
 /* ==========================================
+   SISTEMA DE EVENTOS TEMÁTICOS (HALLOWEEN)
+   ========================================== */
+/* Fundo principal e brilhos */
+body.halloween-theme {
+    background: radial-gradient(circle at center, #2b1100 0%, #0a0000 100%);
+}
+body.halloween-theme .spirit-tree-bg {
+    background: radial-gradient(circle at top, rgba(255, 115, 0, 0.15) 0%, transparent 60%);
+}
+
+/* Textos e Títulos temáticos */
+body.halloween-theme .subtitle, 
+body.halloween-theme .category-card h3,
+body.halloween-theme .list-status-title {
+    color: #ff7300;
+}
+
+/* Botões com brilho Laranja */
+body.halloween-theme .glow-button.ori-light {
+    border-color: #ff7300;
+}
+body.halloween-theme .glow-button.ori-light:hover {
+    border-color: #ffaa00;
+    box-shadow: 0 0 25px rgba(255, 115, 0, 0.6), inset 0 0 15px rgba(255, 115, 0, 0.4);
+}
+body.halloween-theme .trailer-progress-bar {
+    background: #ff7300;
+    box-shadow: 0 0 10px #ff7300, 0 0 20px rgba(255, 115, 0, 0.4);
+}
+
+/* O Chapéu de Mago na Foto de Perfil (Via CSS Puro!) */
+body.halloween-theme .profile-pic {
+    border-color: #ff7300;
+    box-shadow: 0 0 20px rgba(255, 115, 0, 0.4);
+    position: relative;
+}
+body.halloween-theme .profile-pic::after {
+    content: "🧙‍♂️"; /* O Chapéu de Mago Mágico */
+    position: absolute;
+    top: -30px;
+    right: -15px;
+    font-size: 3.5rem;
+    transform: rotate(15deg);
+    filter: drop-shadow(0 0 10px #ff7300);
+}
+
+/* Animação da Chuva de Doces */
+.candy-drop {
+    position: fixed;
+    top: -50px;
+    z-index: 9999;
+    font-size: 1.5rem;
+    pointer-events: none; /* Pra não atrapalhar o clique do usuário */
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+}
+
+/* ==========================================
+   SISTEMA DE EVENTOS TEMÁTICOS (NATAL)
+   ========================================== */
+/* Fundo principal e brilhos (Branco e Vermelho Escuro) */
+body.christmas-theme {
+    background: radial-gradient(circle at center, #3a0808 0%, #050000 100%);
+}
+body.christmas-theme .spirit-tree-bg {
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+}
+
+/* Textos e Títulos temáticos em Vermelho/Branco */
+body.christmas-theme .subtitle, 
+body.christmas-theme .category-card h3,
+body.christmas-theme .list-status-title {
+    color: #ff4d4d;
+}
+
+/* Botões com brilho Vermelho Neve */
+body.christmas-theme .glow-button.ori-light {
+    border-color: #ff4d4d;
+}
+body.christmas-theme .glow-button.ori-light:hover {
+    background: rgba(255, 77, 77, 0.15);
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 77, 77, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.4);
+}
+body.christmas-theme .trailer-progress-bar {
+    background: #ff4d4d;
+    box-shadow: 0 0 10px #ff4d4d, 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* O Gorro de Papai Noel na Foto de Perfil */
+body.christmas-theme .profile-pic {
+    border-color: #ff4d4d;
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
+    position: relative;
+}
+body.christmas-theme .profile-pic::after {
+    content: "🎅"; /* O Gorro Mágico */
+    position: absolute;
+    top: -30px;
+    right: -10px;
+    font-size: 3.5rem;
+    transform: rotate(10deg);
+    filter: drop-shadow(0 0 10px #ff4d4d);
+}
+
+/* Base comum para Chuva de Doces e Neve */
+.candy-drop, .snow-drop {
+    position: fixed;
+    top: -50px;
+    z-index: 9999;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+/* ==========================================
    RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
    ========================================== */
 
