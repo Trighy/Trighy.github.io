@@ -371,6 +371,10 @@ body.cinema-mode .controls-bar:hover {
     opacity: 1;
 }
 
+body.cinema-mode::after {
+    display: none !important;
+}
+
 /* ==========================================
    CARROSSEL INFINITO DE FAVORITOS
    ========================================== */

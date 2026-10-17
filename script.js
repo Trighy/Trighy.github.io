@@ -1599,6 +1599,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // FECHAR PAINÉIS AO CLICAR FORA
     document.addEventListener('click', (e) => {
+        // Se o modo cinema estiver ativado, ignora o clique para não fechar o vídeo acidentalmente!
+        if (document.body.classList.contains('cinema-mode')) {
+            return;
+        }
+
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
             if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.full-grid-content a') && !e.target.closest('.controls-bar') && !e.target.closest('.trailer-progress-wrapper')) {
