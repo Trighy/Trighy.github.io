@@ -296,7 +296,7 @@ const itemsDatabase = {
             es: "Subnautica es un juego de terror disfrazado de juego de supervivencia; te lanza a un planeta alienígena cubierto de agua y te dice 'apáñatelas' como cualquier otro título del género. Sin embargo, no conoces absolutamente nada de tu entorno y todo resulta completamente nuevo: un escenario donde la curiosidad y el miedo a lo desconocido chocan. ¿Ves un pez bonito a lo lejos? ¿Por qué no escanearlo? Pero, ¿y si hay un leviatán al acecho, esperando para atraparte en el momento menos pensado? Te sentirás maravillado y, a la vez, aterrorizado por lo que verás en el planeta 4546B —especialmente si lo experimentas en realidad virtual—. Solo puedo decirte: ¡buena suerte! Y no olvides el OXÍGENIO."
         }
     },
-    "undertale": {
+    "UNDERTALE": {
         trailer: "1Hojv0m3TqA",
         bgImage: null,
         links: {
@@ -328,6 +328,19 @@ const itemsDatabase = {
             es: "Cookie Clicker, uno de los juegos de mi infancia del género clicker. ¡Me encantan los juegos de este tipo! Puedo pasar horas y horas jugándolos sin ningún problema; es uno de los géneros que más me ha enganchado y que más me ha apasionado desde niño. Además de ser uno de los mejores de su categoría, está disponible en CUALQUIER plataforma; ¡incluso se puede jugar en la web totalmente gratis, sin gastar ni un centavo! Así que, ¿por qué no darle una oportunidad? Al fin y al cabo, ¡a caballo regalado no se le mira el diente!"
         }
     },
+    "SPACEPLAN": {
+        trailer: "Br686sJTnmw",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/616110/",
+            phone: "https://play.google.com/store/apps/details?id=com.devolver.spaceplan&hl"
+        },
+        review: {
+            en: "SPACEPLAN is a story-driven game disguised as a clicker game—yes, a clicker game with a narrative. And, unironically, it’s a good story that you can finish in about 6–8 hours. So, if you’re looking for a quick yet engaging story, give SPACEPLAN a try. Plus, it features the best ending sequence for a clicker game I have ever seen.",
+            pt: "SPACEPLAN, um jogo de historia disfarçado como um jogo clicker, sim um jogo clicker com historia e não ironicamente é uma historia boa e que da para finalizar em uams 6-8 horas, então, se procuras uma historia rápida mas que possa te interessar, de SPACEPLAN uma chance, além de ter á melhor sequencia de final de um jogo clicker que já vi na minha vida.",
+            es: "SPACEPLAN, un juego narrativo disfrazado de clicker; sí, un clicker con historia —y, sin ironía, es una buena historia— que se puede completar en unas 6-8 horas. Así que, si buscas una historia breve pero que pueda interesarte, dale una oportunidad a SPACEPLAN; además, cuenta con la mejor secuencia final de un clicker que he visto en mi vida."
+        }
+    },
     "deep rock galactic": {
         trailer: "65ICqpd6rlc",
         bgImage: null,
@@ -335,6 +348,21 @@ const itemsDatabase = {
             steam: "https://store.steampowered.com/app/548430/",
             xbox: "https://www.xbox.com/games/store/deep-rock-galactic/9nhfvwx1v7qj",
             ps: "https://www.playstation.com/games/deep-rock-galactic/",
+        },
+        review: {
+            en: "If you’re wondering which 'gun game' I play, it’s definitely Deep Rock Galactic. It features unique weapons, character builds, customization options, regular updates, a variety of missions with diverse objectives, and four distinct classes—each with its own specific arsenal. If you’re looking for a shooter to play with friends that’s inspired by Left 4 Dead 2 but includes the map-destruction mechanics of Minecraft, then Deep Rock Galactic is the game for you. ROCK AND STONE!",
+            pt: "Deep Rock Galactic, se você que saber qual é o Gun Game que eu jogo, é esse certamente o jogo, armas únicas, builds, customização, atualizações, múltiplas missões com objetivos diferentes e quatro classes com cada uma com suas armas? Se procuras um gun game para jogar com seus amigos inspirado no Left 4 Dead 2 com a destruição de mapa do Minecraft, Deep Rock Galactic é o jogo, ROCK AND STONE!",
+            es: "Deep Rock Galactic; si quieres saber a qué juego de disparos juego, es sin duda este. Cuenta con armas únicas, configuraciones (builds), personalización, actualizaciones, múltiples misiones con objetivos variados y cuatro clases, cada una con sus propias armas. Si buscas un juego de disparos para disfrutar con tus amigos, inspirado en Left 4 Dead 2 y con la capacidad de destruir el entorno al estilo de Minecraft, Deep Rock Galactic es el juego indicado. ¡ROCK AND STONE!"
+        }
+    },
+    "sky children of the light": {
+        trailer: "65ICqpd6rlc",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/2325290/",
+            ps: "https://www.playstation.com/games/sky-children-of-the-light/",
+            nin: "https://www.nintendo.com/store/products/sky-children-of-the-light-switch/?srsltid=AU7gw4WaQa7UMGHv91XnafupD90NoUgCGz4YiQg3J4wrBbHx0syfwZYN",
+            phone: "https://play.google.com/store/apps/details?id=com.tgc.sky.android&hl"
         },
         review: {
             en: "",
