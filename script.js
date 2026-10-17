@@ -296,7 +296,7 @@ const itemsDatabase = {
             es: "Subnautica es un juego de terror disfrazado de juego de supervivencia; te lanza a un planeta alienígena cubierto de agua y te dice 'apáñatelas' como cualquier otro título del género. Sin embargo, no conoces absolutamente nada de tu entorno y todo resulta completamente nuevo: un escenario donde la curiosidad y el miedo a lo desconocido chocan. ¿Ves un pez bonito a lo lejos? ¿Por qué no escanearlo? Pero, ¿y si hay un leviatán al acecho, esperando para atraparte en el momento menos pensado? Te sentirás maravillado y, a la vez, aterrorizado por lo que verás en el planeta 4546B —especialmente si lo experimentas en realidad virtual—. Solo puedo decirte: ¡buena suerte! Y no olvides el OXÍGENIO."
         }
     },
-    "UNDERTALE": {
+    "undertale": {
         trailer: "1Hojv0m3TqA",
         bgImage: null,
         links: {
@@ -328,7 +328,7 @@ const itemsDatabase = {
             es: "Cookie Clicker, uno de los juegos de mi infancia del género clicker. ¡Me encantan los juegos de este tipo! Puedo pasar horas y horas jugándolos sin ningún problema; es uno de los géneros que más me ha enganchado y que más me ha apasionado desde niño. Además de ser uno de los mejores de su categoría, está disponible en CUALQUIER plataforma; ¡incluso se puede jugar en la web totalmente gratis, sin gastar ni un centavo! Así que, ¿por qué no darle una oportunidad? Al fin y al cabo, ¡a caballo regalado no se le mira el diente!"
         }
     },
-    "SPACEPLAN": {
+    "spaceplan": {
         trailer: "Br686sJTnmw",
         bgImage: null,
         links: {
