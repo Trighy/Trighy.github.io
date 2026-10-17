@@ -1849,7 +1849,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(container);
             
             effectInterval = setInterval(() => {
-                if (document.hidden) return; 
+                // Nova regra: Se a página estiver oculta, no Modo Cinema ou tocando Trailer, NÃO crie novos itens!
+                if (document.hidden || 
+                    document.body.classList.contains('cinema-mode') || 
+                    document.body.classList.contains('showing-trailer')) {
+                    return; 
+                }
+                
                 const item = document.createElement("div");
                 item.className = cssClass;
                 item.innerText = items[Math.floor(Math.random() * items.length)];

@@ -1273,6 +1273,17 @@ body.christmas-theme .profile-pic::after {
 }
 
 /* ==========================================
+   OCULTAR EFEITOS NO MODO CINEMA E TRAILERS
+   ========================================== */
+body.cinema-mode #falling-effect-container,
+body.showing-trailer #falling-effect-container {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* ==========================================
    RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
    ========================================== */
 
