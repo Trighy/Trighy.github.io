@@ -152,6 +152,21 @@ const itemsDatabase = {
             es: "Plants vs. Zombies es otro juego de mi infancia que representa uno de los puntos culminantes del género tower defense. Si buscas un tower defense único, donde todo es tan intuitivo que incluso un niño puede empezar a jugar, aprender qué hace cada planta y saber cuál utilizar contra cada tipo de zombi, este es el juego indicado. Aunque tiene un tono desenfadado, respeta la inteligencia de los niños y los obliga a pensar realmente qué plantas elegir para contrarrestar a los distintos zombis; además, su banda sonora es memorable. A pesar de su antigüedad y de estar limitado a una resolución baja, te recomiendo adquirir únicamente la versión original o la edición GOTY. La versión remake llamada Replanted carece de alma y de cariño; de hecho, ni siquiera contactaron a los desarrolladores ni al artista original para rehacer el apartado visual. En definitiva, si buscas un tower defense distinto, este es el juego; por favor, dale una oportunidad."
         }
     },
+    "plants vs zombies garden warfare 2": {
+        trailer: "l1Bj5y43now",
+        startTime: 25,
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/1922560/",
+            xbox: "https://www.xbox.com/games/store/plants-vs-zombies-garden-warfare-2/bnrh7brc1d02",
+            ps: "https://store.playstation.com/product/UP0006-CUSA01975_00-PVZGW2BASEGAME00"
+        },
+        review: {
+            en: "Plants vs. Zombies: Garden Warfare 2 is the hero shooter I discovered back in my childhood—ever since the first Garden Warfare—and always wanted to play; unfortunately, I was stuck with a PS2 back then, so most of my knowledge of the game came from videos. However, in 2025, I finally started playing it with friends (who have since dropped the game completely—I'm still waiting on them), and it was exactly as I imagined: a silly hero shooter that can also be serious and, above all, amazing to play with friends. If you're looking for a hero shooter to introduce to a child? I’d certainly recommend this one.",
+            pt: "Plantas vs. Zumbis Garden Warfare 2 é o Hero Shooter que descobri durante a minha infância deis do primeiro Garden Warfare e sempre quis jogar durante ela, infelizmente eu estava preso em um PS2 durante a minha infância e maior parte do meu conhecimento do jogo foi via vídeos, porém, em 2025, finalmente comecei á jogar o jogo com meus amigos (que agora droparam o jogo completamente, ainda estou esperando) e ele era exatamente como eu imaginava, um Hero Shooter bobo mas que pode ser sério e principalmente incrível com amigos. Se procuras um Hero Shooter para introduzir para uma criança? Eu diria certamente esse. ",
+            es: "Plants vs. Zombies: Garden Warfare 2 es el hero shooter que descubrí durante mi infancia —desde el primer Garden Warfare— y que siempre quise jugar en aquella época. Por desgracia, durante mi infancia estaba limitado a una PS2, así que la mayor parte de lo que sabía sobre el juego provenía de vídeos. Sin embargo, en 2025, por fin empecé a jugarlo con mis amigos (quienes, por cierto, ya han dejado el juego por completo; yo sigo esperando). Resultó ser exactamente tal como me lo imaginaba: un hero shooter desenfadado, pero capaz de ponerse serio y, sobre todo, increíble para disfrutar con amigos. ¿Buscas un hero shooter para introducir a un niño en el género? Sin duda, recomendaría este.."
+        }
+    },
     "slime rancher": {
         trailer: "oOL-dsa79Xs",
         bgImage: null,
@@ -368,6 +383,21 @@ const itemsDatabase = {
             en: "Sky Children of the Light is a social game from the creators of Journey; if you played Club Penguin or Habbo back in the day, you’ll feel right at home in Sky. It features a captivating story and a unique community—some players will want to help you, others will watch as you experience the game for the first time, some might toss you toward enemies, and others may 'adopt' you, acting as your guides. The game places a heavy emphasis on cosmetics, though this will only matter if you intend to focus on the social side of things; if you’re just here for the story, you can finish it quite quickly—it’s a short, beautiful experience. Sky is also my comfort game—with 1.582 hours on Steam (and counting), it’s where I’ve established a routine and grown accustomed to the process of farming the in-game currency.",
             pt: "Sky Crianças da Luz é um jogo social dos mesmos criadores de Journey, se jogastes Club Penguim ou HABBO no passado, se sentiras em casa no Sky. Ele tem uma historia cativante e uma comunidade única, uns vão querer te ajudar, outros te observar experienciar o jogo pela primeira vez, outros te jogar encima de inimigos e outros te 'adotarem' e serem seu guia no jogo. O jogo também é extremamente focado em cosmesticos mas isso só te interessera se planejas focar no aspecto social do jogo, pois se planejas focar apenas no da historia, o jogo pode ser zerado rapidinho, nessa questão é um jogo curto e bonito. Sky também é o meu jogo de conforto, com 1.582 horas na Steam (e subindo) é aonde criei uma rotina e me acostumei com a forma de farmar a moeda do jogo.",
             es: "Sky Niños de la Luz es un juego social de los mismos creadores de Journey; si jugaste a Club Penguin o Habbo en el pasado, te sentirás como en casa en Sky. Tiene una historia cautivadora y una comunidad única: algunos querrán ayudarte, otros observarte mientras experimentas el juego por primera vez, otros lanzarte sobre enemigos y otros 'adoptarte' para ser tus guías. El juego también se centra enormemente en los elementos cosméticos, aunque esto solo te interesará si planeas enfocarte en el aspecto social; si prefieres centrarte únicamente en la historia, el juego se puede completar muy rápido, ya que es una experiencia breve y hermosa. Sky es también mi juego de refugio: con 1.582 horas en Steam (y sumando), es donde he creado una rutina y me he acostumbrado a la mecánica para conseguir la moneda del juego."
+        }
+    },
+    "gris": {
+        trailer: "AEGrfq1Io9s",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/683320/",
+            ps: "https://www.playstation.com/games/gris/",
+            xbox: "https://www.xbox.com/games/store/gris/9n6c6j7c3gtqs",
+            nin: "https://www.nintendo.com/store/products/gris-switch/?srsltid=AU7gw4VQTJIe65qP6pdOqRu9ahwGrF-KNidQihIepbW_xHIyFECUIiFi"
+        },
+        review: {
+            en: "GRIS is an artistic, atmospheric, and emotional game featuring simple puzzles; it functions more as a story and a piece of visual art than a game with complex mechanics. If you enjoyed Journey or Flow, you will likely appreciate GRIS and its profound message regarding emotions and the stages of loss.",
+            pt: "GRIS é um jogo artístico, atmosférico, emocional e um puzzle simples, o jogo é mais uma historia e arte visual do que um jogo complexo em mecânicas, se gostastes de Journey ou Flow, gostaras de GRIS e sua mensagem profunda sobre emoções e os estágios da perda.",
+            es: "GRIS es un juego artístico, atmosférico y emocional que incluye puzles sencillos; se trata más de una historia y una obra de arte visual que de un juego con mecánicas complejas. Si te gustaron Journey o Flow, te gustará GRIS y su profundo mensaje sobre las emociones y las etapas de la pérdida."
         }
     },
     "the wild robot": {
@@ -1527,7 +1557,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', (e) => {
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
-            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.full-grid-content a') && !e.target.closest('.controls-bar')) {
+            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.full-grid-content a') && !e.target.closest('.controls-bar') && !e.target.closest('.trailer-progress-wrapper')) {
                 closeDetailsPanel();
             }
         }
@@ -1685,6 +1715,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressWrapper = document.getElementById("trailerProgressWrapper");
     if (progressWrapper) {
         progressWrapper.addEventListener("click", (e) => {
+            e.stopPropagation();
             if (youtubePlayer && typeof youtubePlayer.getDuration === 'function') {
                 const duration = youtubePlayer.getDuration();
                 const rect = progressWrapper.getBoundingClientRect();
