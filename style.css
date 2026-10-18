@@ -1291,21 +1291,30 @@ body.full-grid-open #falling-effect-container {
 }
 
 /* ==========================================
-   CARD DE HIPERFOCO ATUAL
+   CARD E TÍTULO DE HIPERFOCO ATUAL
    ========================================== */
 .hyperfocus-section {
     width: 100%;
     margin-bottom: 20px;
 }
 
+.hyperfocus-title {
+    color: #64ffda; /* Cor ciano padrão */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
 .hyperfocus-card {
     display: block;
-    width: 220px; /* Um pouco maior que as capas normais */
+    width: 220px; 
     aspect-ratio: 2 / 3;
     border-radius: 15px;
     overflow: hidden;
-    border: 3px solid #ffaa00; /* Borda laranja/dourada para destacar */
-    box-shadow: 0 0 30px rgba(255, 170, 0, 0.5);
+    border: 3px solid #64ffda; /* Borda ciano normal */
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.5); /* Brilho ciano normal */
     transition: all 0.4s ease;
     cursor: pointer;
 }
@@ -1320,12 +1329,39 @@ body.full-grid-open #falling-effect-container {
 
 .hyperfocus-card:hover {
     transform: translateY(-10px) scale(1.05);
-    border-color: #ffc13b;
-    box-shadow: 0 0 40px rgba(255, 170, 0, 0.8);
+    border-color: #ffffff;
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.8);
 }
 
 .hyperfocus-card:hover img {
     transform: scale(1.1);
+}
+
+/* Modificadores para os Temas de Evento (Card e Título) */
+body.halloween-theme .hyperfocus-title {
+    color: #ffaa00;
+    text-shadow: 0 0 10px rgba(255, 115, 0, 0.5);
+}
+body.halloween-theme .hyperfocus-card { 
+    border-color: #ff7300; 
+    box-shadow: 0 0 30px rgba(255, 115, 0, 0.5); 
+}
+body.halloween-theme .hyperfocus-card:hover { 
+    border-color: #ffaa00; 
+    box-shadow: 0 0 40px rgba(255, 170, 0, 0.8); 
+}
+
+body.christmas-theme .hyperfocus-title {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+body.christmas-theme .hyperfocus-card { 
+    border-color: #ff4d4d; 
+    box-shadow: 0 0 30px rgba(255, 77, 77, 0.5); 
+}
+body.christmas-theme .hyperfocus-card:hover { 
+    border-color: #ffffff; 
+    box-shadow: 0 0 40px rgba(255, 77, 77, 0.8); 
 }
 
 /* Modificadores para os Temas de Evento */

@@ -1645,7 +1645,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (document.body.classList.contains('panel-open')) {
             const panel = document.getElementById('details-panel');
-            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.full-grid-content a') && !e.target.closest('.controls-bar') && !e.target.closest('.trailer-progress-wrapper')) {
+            // ADICIONAMOS A EXCEÇÃO DO .hyperfocus-card BEM AQUI EMBAIXO:
+            if (panel && !panel.contains(e.target) && !e.target.closest('.favorites-track a') && !e.target.closest('.full-grid-content a') && !e.target.closest('.controls-bar') && !e.target.closest('.trailer-progress-wrapper') && !e.target.closest('.hyperfocus-card')) {
                 closeDetailsPanel();
             }
         }
