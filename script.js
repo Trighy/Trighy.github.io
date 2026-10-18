@@ -153,8 +153,7 @@ const itemsDatabase = {
         }
     },
     "plants vs zombies garden warfare 2": {
-        trailer: "l1Bj5y43now",
-        startTime: 25.5,
+        trailer: "Hv7t_zFUDBk",
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/1922560/",
@@ -444,6 +443,23 @@ const itemsDatabase = {
             es: "Wuppo, el juego que satisfizo mi deseo de más títulos al estilo de PIKUNIKU. Si te gustó PIKUNIKU, te encantará Wuppo: es divertido y alocado en su justa medida, serio por momentos, y cuenta con una historia sorprendentemente profunda para ser un proyecto personal creado por dos adultos que aún estaban en la universidad. Es el juego más de nicho que conozco, y siempre les pido a todos mis amigos que lo jueguen (todavía sigo esperando a Daniel)."
         }
     },
+    "kingdom two crowns": {
+        trailer: "GnqjjY38anQ",
+        starTime: 2,
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/701160/",
+            xbox: "https://www.xbox.com/games/store/kingdom-two-crowns/bwt2gpvwch2f",
+            ps: "https://store.playstation.com/product/UP2320-CUSA13597_00-KINGDOMTWOCROWNS",
+            nin: "https://www.nintendo.com/store/products/kingdom-two-crowns-switch/?srsltid=AU7gw4VLfeVSIvlmmO-d5fq3mg_OZWF_wYK4zgwIEuh_vdW28EeN9OyS",
+            phone: "https://play.google.com/store/apps/details?id=com.rawfury.kingdom2crowns&hl"
+        },
+        review: {
+            en: "If I had to choose a game inspired by real-time strategy, it would definitely be Kingdom Two Crowns. It’s beautiful, punishing, and challenging, yet easy to grasp. If you’re looking for something that evokes real-time strategy without being as complex or difficult as most RTS games, give Kingdom Two Crowns a try—especially with a friend!",      
+            pt: "Kingdom Two Crowns, se for para eu escolher um jogo inspirado em estratégia em tempo real, certamente é esse, lindo, punitivo, difícil mas fácil de entender, se procuras algo remetente á estratégia em tempo real mas não tão complexo ou difícil quanto maioria dos RTS (estratégia em tempo real) são, experimente Kingdom Two Crowns, especialmente com um amigo!",
+            es: "Si tengo que elegir un juego inspirado en la estrategia en tiempo real, sin duda es Kingdom Two Crowns: es precioso, implacable y difícil, pero a la vez fácil de entender. Si buscas algo relacionado con la estrategia en tiempo real, pero que no sea tan complejo o difícil como lo son la mayoría de los juegos de este género, ¡prueba Kingdom Two Crowns, especialmente con un amigo!"
+        }
+    },
     "the wild robot": {
         trailer: {
             en: "pSI0XetHZCw",
@@ -567,6 +583,9 @@ const userLists = {
             items: { en: "games", pt: "jogos", es: "juegos" },
             verb: { en: "play", pt: "jogar", es: "jugar" }
         },
+        upcoming: [
+            "https://store-images.s-microsoft.com/image/apps.44670.13819986506526216.9578dd2a-5de5-430d-97c4-388931f09cf4.b2fb8a54-f5e3-4e5c-bf45-2223f7b2e01f"
+        ],
         active: [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
             "https://store-images.s-microsoft.com/image/apps.61541.14619536583353710.9e307ff1-14c4-4d1a-813e-cef9bbad5dc5.90b67c9e-834e-44f1-b16c-16624e50f9b4",
@@ -582,7 +601,8 @@ const userLists = {
             "https://store-images.s-microsoft.com/image/apps.53771.71995601368241962.063be1f5-e727-44b9-9243-8f287ee0ae94.704f16ca-988d-4f3f-a8d2-17df8306a647",
             "https://image.api.playstation.com/vulcan/ap/rnd/202011/1819/m7gCTrMRQBTPHi87Mi3leVVY.jpg",
             "https://store-images.s-microsoft.com/image/apps.615.67362291782661543.eb0267ee-9235-487a-b697-5cc49c0703c1.327dcfde-8472-4f0e-b91e-9b4856238352",
-            "https://store-images.s-microsoft.com/image/apps.52880.65129518710082559.30d43137-919f-4215-820e-038b409fb968.9b56f6c5-bfd1-4b02-beaf-666f707aa0da"
+            "https://store-images.s-microsoft.com/image/apps.52880.65129518710082559.30d43137-919f-4215-820e-038b409fb968.9b56f6c5-bfd1-4b02-beaf-666f707aa0da",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXWozwwKX1aVw1zIYLhjxiVJck24hPpDGjniYcZTwEKXFW6uo0f9ZNlvps&s=10"
         ],
         backlog: [
             "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/NmTEnt5SIVRk4dHDqcydervu.png",
@@ -598,6 +618,9 @@ const userLists = {
             items: { en: "movies", pt: "filmes", es: "películas" },
             verb: { en: "watch", pt: "assistir", es: "ver" }
         },
+        upcoming: [
+            "https://static0.moviewebimages.com/wordpress/wp-content/uploads/sharedimages/2026/06/a77ymiz9avyx44duj23qulzga9j.jpg?q=70&fit=contain&w=480&dpr=1"
+        ], 
         active: [], frontlog: [], backlog: []
     },
     series: {
@@ -608,7 +631,7 @@ const userLists = {
             items: { en: "series", pt: "séries", es: "series" },
             verb: { en: "watch", pt: "assistir", es: "ver" }
         },
-        active: [], frontlog: [], backlog: []
+        upcoming: [], active: [], frontlog: [], backlog: []
     },
     animes: {
         title: { en: "Anime", pt: "Animes", es: "Anime" },
@@ -618,7 +641,7 @@ const userLists = {
             items: { en: "anime", pt: "animes", es: "anime" },
             verb: { en: "watch", pt: "assistir", es: "ver" }
         },
-        active: [], frontlog: [], backlog: []
+        upcoming: [], active: [], frontlog: [], backlog: []
     },
     books: {
         title: { en: "Books", pt: "Livros", es: "Libros" },
@@ -628,7 +651,7 @@ const userLists = {
             items: { en: "books", pt: "livros", es: "libros" },
             verb: { en: "read", pt: "ler", es: "leer" }
         },
-        active: [], frontlog: [], backlog: []
+        upcoming: [], active: [], frontlog: [], backlog: []
     },
     mangas: {
         title: { en: "Manga", pt: "Mangás", es: "Manga" },
@@ -638,7 +661,7 @@ const userLists = {
             items: { en: "manga", pt: "mangás", es: "manga" },
             verb: { en: "read", pt: "ler", es: "leer" }
         },
-        active: [], frontlog: [], backlog: []
+        upcoming: [], active: [], frontlog: [], backlog: []
     },
     manhwas: {
         title: { en: "Manhwa", pt: "Manhwa", es: "Manhwa" },
@@ -648,7 +671,7 @@ const userLists = {
             items: { en: "manhwa", pt: "manhwas", es: "manhwa" },
             verb: { en: "read", pt: "ler", es: "leer" }
         },
-        active: [], frontlog: [], backlog: []
+        upcoming: [], active: [], frontlog: [], backlog: []
     }
 };
 
@@ -682,7 +705,9 @@ const translations = {
         frontlogExplanation: "Frontlog is similar to a Backlog, but these are {items} I plan to {verb} that caught my attention the most from everything in the Backlog, and which I plan to start right after finishing something from '{active}'.",
         emptyList: "Empty at the moment...",
         surpriseMeGlobal: "Surprise Me!",
-        surpriseMeCat: "Surprise Me!"
+        surpriseMeCat: "Surprise Me!",
+        hyperfocusTitle: "Current Hyperfocus",
+        upcomingLabel: "Upcoming Releases"
     },
     pt: {
         greeting: "Olá, eu sou Trighy / Oryn!",
@@ -710,7 +735,9 @@ const translations = {
         frontlogExplanation: "Frontlog é similar ao Backlog, porém, são {items} que eu planejo {verb} que me chamaram mais atenção com tudo que está no Backlog e que planejo começar logo após terminar algo do '{active}'.",
         emptyList: "Vazio no momento...",
         surpriseMeGlobal: "Me Surpreenda!",
-        surpriseMeCat: "Me Surpreenda!"
+        surpriseMeCat: "Me Surpreenda!",
+        hyperfocusTitle: "Hiperfoco Atual",
+        upcomingLabel: "Futuros Interesses"
     },
     es: {
         greeting: "¡Hola, soy Trighy / Oryn!",
@@ -738,7 +765,9 @@ const translations = {
         frontlogExplanation: "Frontlog es similar al Backlog, pero son {items} que planeo {verb} que más me llamaron la atención de todo lo que está en el Backlog y que planeo empezar justo después de terminar algo de '{active}'.",
         emptyList: "Vacío por el momento...",
         surpriseMeGlobal: "¡Sorpréndeme!",
-        surpriseMeCat: "¡Sorpréndeme!"
+        surpriseMeCat: "¡Sorpréndeme!",
+        hyperfocusTitle: "Hiperfoco Actual",
+        upcomingLabel: "Futuros Intereses"
     }
 };
 
@@ -875,8 +904,8 @@ function renderUserLists() {
     const activeLabel = cat.activeLabel[currentLang] || cat.activeLabel['pt'];
     const frontlogLabel = translations[currentLang].frontlogLabel;
     const backlogLabel = translations[currentLang].backlogLabel;
+    const upcomingLabel = translations[currentLang].upcomingLabel || translations['pt'].upcomingLabel;
 
-    // Configura os termos dinâmicos para a explicação do Frontlog
     const itemsTerm = cat.terms.items[currentLang] || cat.terms.items['pt'];
     const verbTerm = cat.terms.verb[currentLang] || cat.terms.verb['pt'];
     let frontlogDesc = translations[currentLang].frontlogExplanation || translations['pt'].frontlogExplanation;
@@ -885,10 +914,10 @@ function renderUserLists() {
     const activeImgs = cat.active || [];
     const frontlogImgs = cat.frontlog || [];
     const backlogImgs = cat.backlog || [];
+    const upcomingImgs = cat.upcoming || [];
 
-    const isEmpty = activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0;
+    const isEmpty = activeImgs.length === 0 && frontlogImgs.length === 0 && backlogImgs.length === 0 && upcomingImgs.length === 0;
 
-    // Estrutura principal da categoria com visual limpo
     let html = `
         <div id="list-cat-${currentListCategory}" class="list-category-block" style="border: none; background: transparent; padding: 0;">
             <div class="list-category-title" style="font-size: 2rem; border-bottom: 2px solid rgba(100, 255, 218, 0.4); margin-bottom: 25px; padding-bottom: 15px;">
@@ -910,8 +939,18 @@ function renderUserLists() {
                 </div>
             `;
         }
+        
+        if (upcomingImgs.length > 0) {
+            html += `
+                <div class="list-status-subblock">
+                    <div class="list-status-title" style="color: #ffaa00;"><i class="fas fa-satellite-dish"></i> ${upcomingLabel}</div>
+                    <div class="list-grid">
+                        ${upcomingImgs.map(imgUrl => `<div class="list-grid-item" style="border-color: rgba(255, 170, 0, 0.4);"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
 
-        // Adiciona a caixa do Frontlog apenas se houver um Frontlog ou Backlog
         if (frontlogImgs.length > 0 || backlogImgs.length > 0) {
             html += `
                 <div class="frontlog-info-box">
@@ -1555,7 +1594,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // GERENCIADOR DE CLIQUE NOS FAVORITOS DOS CARROSSEIS
-    const trackLinks = document.querySelectorAll('.favorites-track a');
+    const trackLinks = document.querySelectorAll('.favorites-track a, .hyperfocus-card');
     trackLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -1854,12 +1893,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(container);
             
             effectInterval = setInterval(() => {
-                // Nova regra: Se a página estiver oculta, no Modo Cinema ou tocando Trailer, NÃO crie novos itens!
-                if (document.hidden || 
-                    document.body.classList.contains('cinema-mode') || 
-                    document.body.classList.contains('showing-trailer')) {
-                    return; 
-                }
+                // Pausa a criação apenas se a pessoa mudar de aba no navegador (para economizar RAM)
+                if (document.hidden) return; 
                 
                 const item = document.createElement("div");
                 item.className = cssClass;

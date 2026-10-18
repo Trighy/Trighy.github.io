@@ -1277,15 +1277,60 @@ body.christmas-theme .profile-pic::after {
 }
 
 /* ==========================================
-   OCULTAR EFEITOS NO MODO CINEMA E TRAILERS
+   OCULTAR EFEITOS FORA DA PÁGINA PRINCIPAL
    ========================================== */
 body.cinema-mode #falling-effect-container,
-body.showing-trailer #falling-effect-container {
+body.showing-trailer #falling-effect-container,
+body.panel-open #falling-effect-container,
+body.right-panel-open #falling-effect-container,
+body.full-grid-open #falling-effect-container {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
+
+/* ==========================================
+   CARD DE HIPERFOCO ATUAL
+   ========================================== */
+.hyperfocus-section {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.hyperfocus-card {
+    display: block;
+    width: 220px; /* Um pouco maior que as capas normais */
+    aspect-ratio: 2 / 3;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #ffaa00; /* Borda laranja/dourada para destacar */
+    box-shadow: 0 0 30px rgba(255, 170, 0, 0.5);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.hyperfocus-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hyperfocus-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: #ffc13b;
+    box-shadow: 0 0 40px rgba(255, 170, 0, 0.8);
+}
+
+.hyperfocus-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Modificadores para os Temas de Evento */
+body.halloween-theme .hyperfocus-card { border-color: #ff7300; box-shadow: 0 0 30px rgba(255, 115, 0, 0.5); }
+body.christmas-theme .hyperfocus-card { border-color: #ff4d4d; box-shadow: 0 0 30px rgba(255, 77, 77, 0.5); }
 
 /* ==========================================
    RESPONSIVIDADE E DISPOSITIVOS MÓVEIS
