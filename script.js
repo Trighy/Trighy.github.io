@@ -445,7 +445,7 @@ const itemsDatabase = {
     },
     "kingdom two crowns": {
         trailer: "GnqjjY38anQ",
-        starTime: 2,
+        starTime: 3,
         bgImage: null,
         links: {
             steam: "https://store.steampowered.com/app/701160/",
@@ -497,6 +497,20 @@ const itemsDatabase = {
             en: "Puss in Boots: The Last Wish—what an unexpectedly incredible film! The first movie was pretty generic and largely ignored by everyone, so when a sequel was announced, I assumed it would just be another run-of-the-mill, uninspired entry. Thankfully, I—and everyone else—was wrong. My goodness, what a fantastic film! If you’re looking for something that can be silly, yet deep and serious when it needs to be—featuring multiple villains who interact with one another in a masterfully orchestrated way—or if you just need something to watch on an afternoon when you have no idea what to pick, please, watch this movie.",
             pt: "Gato de Botas e o último desejo, que filme inesperadamente incrível, o primeiro filme foi um filme genérico e que ninguém deu bola basicamente, então quando anunciaram uma continuação eu pensei que séria mais um genérico com nada de diferente, ainda bem que eu e todo mundo estava errado, pois MEU DEUS que filme simplesmente BOM, se queres um filme bobo mas quando é necessário profundo e sério com múltiplos vilões que conseguem se interagir entre si de uma forma muito bem orchestrada ou um filme para assistir em uma tarde sem ideia de oque assistir? Por favor, assista esse filme. ",
             es: "El Gato con Botas: El último deseo — ¡qué película tan increíble e inesperada! La primera entrega fue bastante genérica y, básicamente, a nadie le importó; por eso, cuando anunciaron una secuela, pensé que sería otra película genérica más, sin nada especial. Menos mal que yo —y todo el mundo— estábamos equivocados, porque, ¡madre mía!, ¡qué película tan buena! ¿Buscas algo que sea divertido y ligero, pero que a la vez sepa ponerse serio y profundo cuando hace falta? ¿Quieres una historia con varios villanos que interactúan entre sí de una forma magistralmente orquestada? ¿O simplemente no sabes qué ver una tarde cualquiera? ¡Por favor, mira esta película!"
+        }
+    },
+    "nimona": {
+        trailer: {
+            en: "f_fuHRyQbOc",
+            pt: "yBiU39bUFlA",
+            es: "f_fuHRyQbOc"
+        },
+        bgImage: null,
+        links: { imdb: "https://www.imdb.com/title/tt19500164/" },
+        review: {
+            en: "I sat down to watch the Netflix film Nimona expecting just another movie to pass a random afternoon—especially given it’s a Netflix release—but I was caught off guard by a story centered on an anti-hero, exploring the complex dynamics of trust and the consequences of deciding whom to rely on. If you’re looking for a film that is both entertaining and serious, give this one a watch.",
+            pt: "Nimona, é um filme da Netflix que fui assistir na mentalidade de mais um filme para assistir durante uma tarde qualquer, especialmente sendo da Netflix, oque me fez ser pego desprevenido quando me deparei com uma historia de anti-herói e os efeitos e consequências em confiança e em quem confiar, se procuras um filme divertido mas também sério, veja esse filme.",
+            es: "Nimona es una película de Netflix que me dispuse a ver pensando que sería una más para pasar una tarde cualquiera —especialmente al ser de Netflix—, pero me tomó por sorpresa al encontrarme con una historia sobre un antihéroe y las repercusiones que esto tiene en la confianza y en en quién confiar. Si buscas una película divertida pero, a la vez, seria, échale un vistazo."
         }
     },
     "gravity falls": {
@@ -929,23 +943,23 @@ function renderUserLists() {
         const emptyText = translations[currentLang].emptyList || "Vazio no momento...";
         html += `<p style="color: #a0b2c6; font-size: 0.95rem; font-style: italic; padding: 5px 0;">${emptyText}</p>`;
     } else {
-        if (activeImgs.length > 0) {
-            html += `
-                <div class="list-status-subblock">
-                    <div class="list-status-title"><i class="fas fa-play-circle"></i> ${activeLabel}</div>
-                    <div class="list-grid">
-                        ${activeImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
-                    </div>
-                </div>
-            `;
-        }
-        
         if (upcomingImgs.length > 0) {
             html += `
                 <div class="list-status-subblock">
                     <div class="list-status-title" style="color: #ffaa00;"><i class="fas fa-satellite-dish"></i> ${upcomingLabel}</div>
                     <div class="list-grid">
                         ${upcomingImgs.map(imgUrl => `<div class="list-grid-item" style="border-color: rgba(255, 170, 0, 0.4);"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        if (activeImgs.length > 0) {
+            html += `
+                <div class="list-status-subblock">
+                    <div class="list-status-title"><i class="fas fa-play-circle"></i> ${activeLabel}</div>
+                    <div class="list-grid">
+                        ${activeImgs.map(imgUrl => `<div class="list-grid-item"><img src="${imgUrl}" alt="Cover"></div>`).join('')}
                     </div>
                 </div>
             `;
