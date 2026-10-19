@@ -384,6 +384,18 @@ const itemsDatabase = {
             es: "Sky Niños de la Luz es un juego social de los mismos creadores de Journey; si jugaste a Club Penguin o Habbo en el pasado, te sentirás como en casa en Sky. Tiene una historia cautivadora y una comunidad única: algunos querrán ayudarte, otros observarte mientras experimentas el juego por primera vez, otros lanzarte sobre enemigos y otros 'adoptarte' para ser tus guías. El juego también se centra enormemente en los elementos cosméticos, aunque esto solo te interesará si planeas enfocarte en el aspecto social; si prefieres centrarte únicamente en la historia, el juego se puede completar muy rápido, ya que es una experiencia breve y hermosa. Sky es también mi juego de refugio: con 1.582 horas en Steam (y sumando), es donde he creado una rutina y me he acostumbrado a la mecánica para conseguir la moneda del juego."
         }
     },
+    "webfishing": {
+        trailer: "OsRZqHtOIhc",
+        bgImage: null,
+        links: {
+            steam: "https://store.steampowered.com/app/3146520/",
+        },
+        review: {
+            en: "WEBFISHING is an interesting game; it originated from the developer's desire to create a social experience centered on fishing and upgrades, with a primary focus on social interaction. The game saw great success and exploded in popularity in 2024. However, in November of that same year, the creator abandoned the project following an incident of doxxing. This was triggered by the developer using a joke title—specifically the word ''straight'' (in quotation marks)—which some members of the community failed to interpret as a joke, leading them to dox him. Fearing the community and the actions taken against him, the developer walked away from the game, and it remains abandoned to this day. Yet, there is a light at the end of the tunnel: other developers, inspired by WEBFISHING, are now creating Rift Fishing—a game modeled after WEBFISHING that has received the green light from the original developer.",      
+            pt: "WEBFISHING, é um jogo interessante, ele nasceu na vontade do seu desenvolvedor de criar um jogo social com pescaria e upgrades, porém, ainda focado em socialização. Ele teve um sucesso e explodiu em 2024, mas, no mesmo ano em Novembro o criador abandonou o jogo por motivos de Doxxing, dévido ao desenvolvedor ter colocado um titulo de piada sendo ''hétero'' com aspas mesmo, mas alguns da comunidade não levaram como piada ao ponto de fazerem Doxxing dele, após isso com o medo da comunidade e oque a mesma fez ele abandonou o jogo e até hoje está abandonado, porém, como uma luz no fim do túnel desenvolvedores se inspiraram em WEBFISHING e estão fazendo Rift Fishing um jogo inspirado em WEBFISHING e com o green light do desenvolvedor de WEBFISHING.",
+            es: "WEBFISHING es un juego interesante que surgió del deseo de su desarrollador de crear un título social centrado en la pesca y las mejoras, pero manteniendo el énfasis en la interacción social. El juego tuvo éxito y se volvió muy popular en 2024; sin embargo, en noviembre de ese mismo año, el creador lo abandonó tras sufrir doxxing. Esto ocurrió porque el desarrollador había incluido una broma —la palabra ''straight'' (heterosexual) entre comillas—, la cual no fue bien recibida por algunos miembros de la comunidad, quienes llegaron al extremo de revelar su información personal (doxxing). Ante el miedo provocado por las acciones de estos usuarios, el desarrollador decidió dejar el proyecto, el cual permanece abandonado hasta el día de hoy. No obstante, ha surgido una luz al final del túnel: otros desarrolladores, inspirados en WEBFISHING, están creando Rift Fishing, un título que toma como referencia a WEBFISHING y que cuenta con el visto bueno de su creador original."
+        }
+    },
     "gris": {
         trailer: "AEGrfq1Io9s",
         bgImage: null,
@@ -598,7 +610,21 @@ const userLists = {
             verb: { en: "play", pt: "jogar", es: "jugar" }
         },
         upcoming: [
-            "https://store-images.s-microsoft.com/image/apps.44670.13819986506526216.9578dd2a-5de5-430d-97c4-388931f09cf4.b2fb8a54-f5e3-4e5c-bf45-2223f7b2e01f"
+            "https://store-images.s-microsoft.com/image/apps.44670.13819986506526216.9578dd2a-5de5-430d-97c4-388931f09cf4.b2fb8a54-f5e3-4e5c-bf45-2223f7b2e01f",
+            "https://images.igdb.com/igdb/image/upload/t_cover_big/coc7ob.jpg",
+            "https://upload.wikimedia.org/wikipedia/en/6/6a/HyperLightDrifterBoxArt.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://upload.wikimedia.org/wikipedia/en/2/20/The_Midnight_Walk_cover_art.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://upload.wikimedia.org/wikipedia/en/2/28/Assassin%27s_Creed_IV_-_Black_Flag_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://cdn1.epicgames.com/offer/clover/s2_1200x1600-b618f50c670fd376a41ef921cf57841b",
+            "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_com.MartianRexInc.StoneStory.jpg",
+            "https://store-images.s-microsoft.com/image/apps.12941.13615498624789457.0f1e2b4a-813c-4d19-97bd-5970188ac852.1b5cde37-9d2b-4f69-9d4f-dd53128cca59",
+            "https://data.xxlgamer.com/products/5077/QXa1LuAogDeJUF-medium.jpg",
+            "https://static0.dualshockersimages.com/wordpress/wp-content/uploads/sharedimages/2025/02/mixcollage-10-feb-2025-07-04-am-9359.jpg?q=49&fit=contain&w=480&dpr=2",
+            "https://store-images.s-microsoft.com/image/apps.39456.64467054462611390.5ec3df50-cb94-49e1-8de0-6751bede49a6.e3d15163-98ac-492f-9996-fdc9e5d02133",
+            "https://store-images.s-microsoft.com/image/apps.31587.65070011667439814.38a66438-6077-4a22-b955-818468201a12.57f6cf72-aafd-42f4-8ba7-0bdb3371a6c2",
+            "https://images.igdb.com/igdb/image/upload/t_original/co9544.webp",
+            "https://preview.redd.it/two-years-ago-i-quit-my-job-to-develop-tyto-now-its-on-v0-yb59rwsaj9re1.jpeg?width=748&format=pjpg&auto=webp&s=8d69c88cebc057e4a03bd1cad60ef8009382247f",
+            "https://imgproxy.eneba.games/KsvtSg2tf-cN6fYLmbg9FcNsLE6wliXkYC-VR0WH77c/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9i/dGZZSHRjeGpGd1dX/YmdDdVFWS2g2UW5W/eV9ZdVA0UFZLQ1RQ/YnFwcXpZLmpwZw",
         ],
         active: [
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwC9mo0oPop0caT8xomIgNUJBEZV7yC4mhDR0acKKzNg&s=10",
@@ -616,12 +642,40 @@ const userLists = {
             "https://image.api.playstation.com/vulcan/ap/rnd/202011/1819/m7gCTrMRQBTPHi87Mi3leVVY.jpg",
             "https://store-images.s-microsoft.com/image/apps.615.67362291782661543.eb0267ee-9235-487a-b697-5cc49c0703c1.327dcfde-8472-4f0e-b91e-9b4856238352",
             "https://store-images.s-microsoft.com/image/apps.52880.65129518710082559.30d43137-919f-4215-820e-038b409fb968.9b56f6c5-bfd1-4b02-beaf-666f707aa0da",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXWozwwKX1aVw1zIYLhjxiVJck24hPpDGjniYcZTwEKXFW6uo0f9ZNlvps&s=10"
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXWozwwKX1aVw1zIYLhjxiVJck24hPpDGjniYcZTwEKXFW6uo0f9ZNlvps&s=10",
+            "https://imgproxy.eneba.games/Q5d3RdW4tzvKvjsDgOCNOresMIObfk1WmYyn_5WNuxU/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9k/TFNQUXZJM2FhSHRG/dFpXZ1dDZmRuMmtr/bUhtaXZTbGxpcnFh/SjdpMFVjLmpwZWc",
+            "https://m.media-amazon.com/images/M/MV5BNDU5MDYxYWEtZDlkMi00ZWIyLThmOGEtMDExNjU1ZjVkMGNjXkEyXkFqcGc@._V1_.jpg",
+            "https://store-images.s-microsoft.com/image/apps.18889.69016865837780293.9b6820fe-f7d4-4de3-9591-ae50b5b3401a.4d4a9107-6b96-429b-8a2b-03771d2eca9c",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkLQIWv-NM3dtWRjGQYfifbU02w7nTgs4ydrvCoVS_AX2xmKEmNvENFQo&s=10",
+            "https://upload.wikimedia.org/wikipedia/en/0/0f/SonicFrontiersCoverArt.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://m.media-amazon.com/images/M/MV5BYzMxYzc4MjYtZmU2NC00ZDA2LTlhNjAtZGQ3ODNmODdkY2M4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            "https://upload.wikimedia.org/wikipedia/en/4/46/TheForest_Game.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://thumb.wikimedia.org/wikipedia/pt/thumb/e/ee/Titanfall_2_cover.jpg/250px-Titanfall_2_cover.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
         ],
         backlog: [
             "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/NmTEnt5SIVRk4dHDqcydervu.png",
             "https://upload.wikimedia.org/wikipedia/pt/a/a3/Frostpunk_cover_art.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
-            "https://m.media-amazon.com/images/I/81kAkZVV4RL._UF1000,1000_QL80_.jpg"
+            "https://m.media-amazon.com/images/I/81kAkZVV4RL._UF1000,1000_QL80_.jpg",
+            "https://static.wikia.nocookie.net/alice/images/0/06/AMR_cover.png/revision/latest?cb=20140928034006&path-prefix=pt-br",
+            "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/58ed27b3e50da45865000cd4/boxshots/zmwvrwwoygkszolvbdi6.jpg",
+            "https://upload.wikimedia.org/wikipedia/en/8/8d/Darkest_Dungeon_Logo.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJhtcrx326iwp51RcsSp8vVTYmi8iBFJxtA7sTd0JbezL_zidhz286pQ&s=10",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNzWYoI4DIy2RkUwDklMtyGg7ZdMLXyBmmxcx249kuOe63883ire2qSE&s=10",
+            "https://cdn.awsli.com.br/2500x2500/229/229111/produto/322287815/1-fyzljoyddg.jpg,
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsGIgFcbV0mVmDT49T5XjdInOkfkZEqZHved2PRcZN_-hIHPzTTk4LRO4&s=10",
+            "https://store-images.s-microsoft.com/image/apps.50400.65858607118306853.fbb50b59-ac60-4f64-9908-5f89de905ebd.934c451c-9859-4b75-a29e-af255d2d8fab",
+            "https://m.media-amazon.com/images/M/MV5BMWYzN2I5YWMtMjA1Zi00MzU2LTg3YmEtMWE1ODE0NGNhMDE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgFxj6P0nOfzWDbUsJMmzTwlErYrlIO0O8Pnn3nlH_QelAQJR1g-bI3JkQ&s=10",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Hc9F1v3pOl08Tbf6g19Mbdu5sMqZ536mEeBmlU1x04xkGGAzAW_hTD4&s=10",
+            "https://upload.wikimedia.org/wikipedia/en/f/f6/Oxygen_Not_Included_cover_art.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://upload.wikimedia.org/wikipedia/en/8/8f/MiddleEarthShadowOfWar.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://imgproxy.eneba.games/Oyq-kpULpl7L36LAg3obPrPNSoh1RCvvATCqcYruzHU/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9N/aWRkbGUtZWFydGg6/IFNoYWRvdyBvZiBN/b3Jkb3IuanBn",
+            "https://store-images.s-microsoft.com/image/apps.21995.14344758136653430.0a9ce6ed-b26d-40f7-a6e0-5e2514866b02.c5adc4e8-fba7-4ac5-b220-ca281c299074",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTg8DuYdez6-jGIkK4Fn8qPvyhFPAFI83NzgCXnsNkictxCpGOjUPwNlku&s=10",
+            "https://store-images.s-microsoft.com/image/apps.39148.13785223586843168.612c6166-3afd-413c-9b13-549ae975f01e.46f67620-4620-489b-bde4-c32435480914",
+            "https://imgproxy.eneba.games/860AwtsGLljPQ50MUi8UzYvfLbLaEfBGkLwsZ0oxRRs/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9B/WHVXeEx5OFVGWDdL/QnNHdThUSEcxQnhz/bjFtZTg1QTY1anhm/X0k0SUc4LmpwZw",
+            "https://upload.wikimedia.org/wikipedia/pt/e/e4/FC4_KEYART_PACK_FINAL-610x722.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://store-images.s-microsoft.com/image/apps.26142.69997608528322872.06dc9610-5c4e-484e-b028-58ad215e637a.b216af15-301f-4f23-83a3-69a59a87985b"
         ]
     },
     movies: {
