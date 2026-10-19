@@ -661,7 +661,7 @@ const userLists = {
             "https://upload.wikimedia.org/wikipedia/en/8/8d/Darkest_Dungeon_Logo.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJhtcrx326iwp51RcsSp8vVTYmi8iBFJxtA7sTd0JbezL_zidhz286pQ&s=10",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNzWYoI4DIy2RkUwDklMtyGg7ZdMLXyBmmxcx249kuOe63883ire2qSE&s=10",
-            "https://cdn.awsli.com.br/2500x2500/229/229111/produto/322287815/1-fyzljoyddg.jpg,
+            "https://cdn.awsli.com.br/2500x2500/229/229111/produto/322287815/1-fyzljoyddg.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsGIgFcbV0mVmDT49T5XjdInOkfkZEqZHved2PRcZN_-hIHPzTTk4LRO4&s=10",
             "https://store-images.s-microsoft.com/image/apps.50400.65858607118306853.fbb50b59-ac60-4f64-9908-5f89de905ebd.934c451c-9859-4b75-a29e-af255d2d8fab",
             "https://m.media-amazon.com/images/M/MV5BMWYzN2I5YWMtMjA1Zi00MzU2LTg3YmEtMWE1ODE0NGNhMDE3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
