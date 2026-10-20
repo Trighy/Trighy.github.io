@@ -689,7 +689,11 @@ const userLists = {
         upcoming: [
             "https://static0.moviewebimages.com/wordpress/wp-content/uploads/sharedimages/2026/06/a77ymiz9avyx44duj23qulzga9j.jpg?q=70&fit=contain&w=480&dpr=1"
         ], 
-        active: [], frontlog: [], backlog: []
+        active: [], 
+        frontlog: ["https://upload.wikimedia.org/wikipedia/pt/3/3a/Interstellar_Filme.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaQzag8-otJNqQj8fnQkSRd2tjJOg8gjXSp1OulgwvzA&s=10"
+        ], 
+        backlog: []
     },
     series: {
         title: { en: "Series", pt: "Séries", es: "Series" },
@@ -699,7 +703,10 @@ const userLists = {
             items: { en: "series", pt: "séries", es: "series" },
             verb: { en: "watch", pt: "assistir", es: "ver" }
         },
-        upcoming: [], active: [], frontlog: [], backlog: []
+        upcoming: [], 
+        active: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcUfLR0BCRqBTeQQ0HYirifrhpuQSlGVcuCXLo9HzFjA&s"], 
+        frontlog: [], 
+        backlog: []
     },
     animes: {
         title: { en: "Anime", pt: "Animes", es: "Anime" },
@@ -709,7 +716,10 @@ const userLists = {
             items: { en: "anime", pt: "animes", es: "anime" },
             verb: { en: "watch", pt: "assistir", es: "ver" }
         },
-        upcoming: [], active: [], frontlog: [], backlog: []
+        upcoming: [], 
+        active: [], 
+        frontlog: [], 
+        backlog: []
     },
     books: {
         title: { en: "Books", pt: "Livros", es: "Libros" },
@@ -719,7 +729,10 @@ const userLists = {
             items: { en: "books", pt: "livros", es: "libros" },
             verb: { en: "read", pt: "ler", es: "leer" }
         },
-        upcoming: [], active: [], frontlog: [], backlog: []
+        upcoming: [], 
+        active: ["https://m.media-amazon.com/images/I/61Inkv0s0AL._AC_UF350,350_QL50_.jpg"], 
+        frontlog: [], 
+        backlog: []
     },
     mangas: {
         title: { en: "Manga", pt: "Mangás", es: "Manga" },
@@ -729,7 +742,10 @@ const userLists = {
             items: { en: "manga", pt: "mangás", es: "manga" },
             verb: { en: "read", pt: "ler", es: "leer" }
         },
-        upcoming: [], active: [], frontlog: [], backlog: []
+        upcoming: [], 
+        active: [], 
+        frontlog: [], 
+        backlog: []
     },
     manhwas: {
         title: { en: "Manhwa", pt: "Manhwa", es: "Manhwa" },
@@ -739,7 +755,10 @@ const userLists = {
             items: { en: "manhwa", pt: "manhwas", es: "manhwa" },
             verb: { en: "read", pt: "ler", es: "leer" }
         },
-        upcoming: [], active: [], frontlog: [], backlog: []
+        upcoming: [], 
+        active: ["https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx142372-VxBWB93S9siN.jpg"], 
+        frontlog: [], 
+        backlog: []
     }
 };
 
