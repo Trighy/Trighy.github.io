@@ -1852,6 +1852,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // MODO CINEMA
     const cinemaBtn = document.getElementById("cinemaModeToggle");
+    const hiperfocoElement = document.querySelector(".hyperfocus-card");
     if (cinemaBtn) {
         cinemaBtn.addEventListener("click", () => {
             document.body.classList.toggle("cinema-mode");
@@ -1866,9 +1867,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (hiperfocoElement) {
                 if (isCinemaMode) {
-                    hiperfocoElement.style.display = "none"; // Esconde no modo cinema
+                    hiperfocoElement.style.display = "none";
                 } else {
-                    hiperfocoElement.style.display = ""; // Restaura o valor original
+                    hiperfocoElement.style.display = ""; 
                 }
             }
         });
