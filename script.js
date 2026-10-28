@@ -1863,6 +1863,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     icon.className = "fas fa-expand";
                 }
             }
+
+            if (hiperfocoElement) {
+                if (isCinemaMode) {
+                    hiperfocoElement.style.display = "none"; // Esconde no modo cinema
+                } else {
+                    hiperfocoElement.style.display = ""; // Restaura o valor original
+                }
+            }
         });
     }
 
