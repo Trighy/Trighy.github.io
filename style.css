@@ -1364,6 +1364,10 @@ body.christmas-theme .hyperfocus-card:hover {
     box-shadow: 0 0 40px rgba(255, 77, 77, 0.8); 
 }
 
+body.cinema-mode #id-do-hiperfoco {
+    display: none !important;
+}
+
 /* Modificadores para os Temas de Evento */
 body.halloween-theme .hyperfocus-card { border-color: #ff7300; box-shadow: 0 0 30px rgba(255, 115, 0, 0.5); }
 body.christmas-theme .hyperfocus-card { border-color: #ff4d4d; box-shadow: 0 0 30px rgba(255, 77, 77, 0.5); }
